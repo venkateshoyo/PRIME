@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class JavaMenuBarExample implements Runnable, ActionListener
+public class controller implements Runnable, ActionListener
 {
   private JFrame frame;
   private JMenuBar menuBar;
@@ -19,12 +19,12 @@ public class JavaMenuBarExample implements Runnable, ActionListener
     System.setProperty("apple.laf.useScreenMenuBar", "true");
 
     // the proper way to show a jframe (invokeLater)
-    SwingUtilities.invokeLater(new JavaMenuBarExample());
+    SwingUtilities.invokeLater(new controller());
   }
 
   public void run()
   {
-    frame = new JFrame("Maddy Dissertation");
+    frame = new JFrame("Reconverge");
     menuBar = new JMenuBar();
    
     // build the File menu
@@ -55,6 +55,7 @@ public class JavaMenuBarExample implements Runnable, ActionListener
     frame.pack();
     frame.setLocationRelativeTo(null);
     frame.setVisible(true);
+    frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:/Users/submi/Desktop/GUI/GUI/src/main/resources/images/icon.png"));
   }
 
   /**
