@@ -1,0 +1,16 @@
+1. Download and run Sublime text 3 from https://www.sublimetext.com/3
+2. Download JDK and run from http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+3. Update System Path Variable in Environment Variable with installed your JDK(like C:\Program Files\Java\jdk1.8.0_121\bin) and JRE(like C:\Program Files\Java\jre1.8.0_121\bin) bin directory. Press OK at all steps.
+4. Open new file in Sublime Text and paste this code
+	{
+		"cmd":["javac","$file_name","&&","java","$file_base_name"],
+    		"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    		"path":Your JDK bin folderpath with double backslash (like "C:\\Program Files\\Java\\jdk1.8.0_121\\bin\\") within inverted quotes,
+    		"selector": "source.java",
+    		"shell":true
+	}
+5. Click Browse packages from Preferences in Menu Bar. It will give you all folder containing packages installed on your sublime.
+6. Press Ctrl+L and Ctrl+C to copy this directory path(like C:\Users\submi\AppData\Roaming\Sublime Text 3\Packages).
+7. Now Save file created at step 4 with filename as above "path\<Build system name(like JAVAGUI)>.sublime-build" within inverted quote(like "C:\Users\submi\AppData\Roaming\Sublime Text 3\Packages\JAVAGUI.sublime-build)
+8. Select recently builded system(like JAVAGUI) as Build System from Tools in Sublime Text MenuBar.
+9. For Compling and Running any java file, open that file in sublime text and press Ctrl+b. 
