@@ -1,8 +1,12 @@
+// package controller;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class controller implements Runnable, ActionListener
+// import Variables.java; // importing all variables
+
+public class Controller implements Runnable, ActionListener
 {
   private JFrame frame;
   private JMenuBar menuBar;
@@ -19,7 +23,7 @@ public class controller implements Runnable, ActionListener
     System.setProperty("apple.laf.useScreenMenuBar", "true");
 
     // the proper way to show a jframe (invokeLater)
-    SwingUtilities.invokeLater(new controller());
+    SwingUtilities.invokeLater(new Controller());
   }
 
   public void run()
