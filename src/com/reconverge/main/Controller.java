@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-// import Variables.java; // importing all variables
+import com.reconverge.utils.Variables;
 
 public class Controller implements Runnable, ActionListener
 {
@@ -59,7 +59,7 @@ public class Controller implements Runnable, ActionListener
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:/Users/submi/Desktop/GUI/GUI/src/main/resources/images/icon.png"));
+        frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Variables.MAIN_WINDOW_ICON));
     }
 
     /**
