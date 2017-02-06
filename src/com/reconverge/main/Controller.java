@@ -1,8 +1,5 @@
 package com.reconverge.main;
 
-/**
- * Created by submi on 06-02-2017.
- */
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
