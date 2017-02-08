@@ -24,54 +24,55 @@ public class main extends Application {
         window.setTitle("Reconverge");
 
         //File Menu
-        Menu fileMenu = new Menu("file");
-        Menu editMenu = new Menu("Edit");
-        Menu projectMenu = new Menu("Project");
-        Menu dataMenu = new Menu("Data");
-        Menu plotsMenu = new Menu("Plots");
-        Menu programmerMenu = new Menu("Programmer");
-        Menu helpMenu = new Menu("Help");
-        Menu aboutMenu = new Menu("About");
+        Menu fileMenu = new Menu("_File");
+        Menu editMenu = new Menu("_Edit");
+        Menu projectMenu = new Menu("_Project");
+        Menu dataMenu = new Menu("_Data");
+        Menu plotsMenu = new Menu("_Plots");
+        Menu programmerMenu = new Menu("P_rogrammer");
+        Menu helpMenu = new Menu("_Help");
+        Menu aboutMenu = new Menu("_About");
 
         //Menu Item
 
-        MenuItem newFile = new MenuItem("New File");
-        newFile.setOnAction(e -> System.out.println());
+        MenuItem newFile = new MenuItem("_New File");
+        newFile.setOnAction(e -> System.out.println(""));
 
-        MenuItem openFile = new MenuItem("Open File...");
+        MenuItem openFile = new MenuItem("_Open File...");
         openFile.setOnAction(e -> System.out.println());
 
-        MenuItem openFolder = new MenuItem("Open Folder...");
+        MenuItem openFolder = new MenuItem("Open _Folder...");
         openFolder.setOnAction(e -> System.out.println());
 
-        MenuItem openRecent = new MenuItem("Open Recent File");
+        MenuItem openRecent = new MenuItem("Open _Recent File");
         openRecent.setOnAction(e -> System.out.println());
 
         SeparatorMenuItem firstseparater= new SeparatorMenuItem();
 
-        MenuItem save = new MenuItem("Save ");
+        MenuItem save = new MenuItem("_Save ");
         save.setOnAction(e -> System.out.println());
 
-        MenuItem saveAs = new MenuItem("Save As");
+        MenuItem saveAs = new MenuItem("Save _As");
         saveAs.setOnAction(e -> System.out.println());
 
         SeparatorMenuItem secondseparater= new SeparatorMenuItem();
 
-        MenuItem importFile = new MenuItem("Import");
+        MenuItem importFile = new MenuItem("_Import");
         importFile.setOnAction(e -> System.out.println());
 
-        MenuItem exportFile = new MenuItem("Export");
+        MenuItem exportFile = new MenuItem("_Export");
         exportFile.setOnAction(e -> System.out.println());
+        exportFile.setDisable(true);
 
-        MenuItem settings = new MenuItem("Settings");
+        MenuItem settings = new MenuItem("Se_ttings");
         settings.setOnAction(e -> System.out.println());
 
         SeparatorMenuItem thirdseparater= new SeparatorMenuItem();
 
-        MenuItem closeFile = new MenuItem("Close File");
+        MenuItem closeFile = new MenuItem("_Close File");
         closeFile.setOnAction(e -> System.out.println());
 
-        MenuItem exit = new MenuItem("Exit");
+        MenuItem exit = new MenuItem("E_xit");
         exit.setOnAction(e -> System.out.println());
 
         fileMenu.getItems().addAll(newFile,openFile,openFolder,openRecent,firstseparater,save,saveAs,secondseparater,importFile,exportFile,settings,thirdseparater,closeFile,exit);
