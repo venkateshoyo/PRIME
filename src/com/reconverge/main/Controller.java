@@ -59,7 +59,7 @@ public class Controller implements Runnable, ActionListener
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Variables.MAIN_WINDOW_ICON));
+        frame.setIconImage(Toolkit.getDefaultToolkit().getImage(""));
     }
 
     /**

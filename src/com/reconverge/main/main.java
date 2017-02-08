@@ -6,10 +6,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-
-import javax.swing.text.Keymap;
+import com.reconverge.main.*;
 
 public class main extends Application {
     Stage window;
@@ -81,7 +81,10 @@ public class main extends Application {
             else
                 System.out.println("Do when not checked");
         });
+        showlinenumbers.setSelected(true);
+
         editMenu.getItems().addAll(showlinenumbers);
+
 
         //Project Menu
         Menu projectMenu = new Menu("_Project");
@@ -150,6 +153,9 @@ public class main extends Application {
 
         //Menu Bar
         MenuBar menuBar= new MenuBar();
+//        menuBar.setStyle("-fx-background-color: #383838");
+        menuBar.setStyle("-fx-text-fill: white");
+
         menuBar.getMenus().addAll(fileMenu,editMenu,projectMenu,dataMenu,plotsMenu,programmerMenu,helpMenu);
 
 
