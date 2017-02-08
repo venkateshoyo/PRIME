@@ -153,8 +153,6 @@ public class main extends Application {
 
         //Menu Bar
         MenuBar menuBar= new MenuBar();
-//        menuBar.setStyle("-fx-background-color: #383838");
-        menuBar.setStyle("-fx-text-fill: white");
 
         menuBar.getMenus().addAll(fileMenu,editMenu,projectMenu,dataMenu,plotsMenu,programmerMenu,helpMenu);
 
@@ -164,6 +162,8 @@ public class main extends Application {
 
         Scene scene = new Scene(layout,600,500);
         window.setScene(scene);
+        scene.getStylesheets().add(main.class.getResource("sample.css").toExternalForm());
+        window.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
         window.show();
     }
 }
