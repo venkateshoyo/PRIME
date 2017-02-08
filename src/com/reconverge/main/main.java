@@ -9,6 +9,8 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import javax.swing.text.Keymap;
+
 public class main extends Application {
     Stage window;
     BorderPane layout;
@@ -25,16 +27,8 @@ public class main extends Application {
 
         //File Menu
         Menu fileMenu = new Menu("_File");
-        Menu editMenu = new Menu("_Edit");
-        Menu projectMenu = new Menu("_Project");
-        Menu dataMenu = new Menu("_Data");
-        Menu plotsMenu = new Menu("_Plots");
-        Menu programmerMenu = new Menu("P_rogrammer");
-        Menu helpMenu = new Menu("_Help");
-        Menu aboutMenu = new Menu("_About");
 
-        //Menu Item
-
+        //File Sub Menu
         MenuItem newFile = new MenuItem("_New File");
         newFile.setOnAction(e -> System.out.println(""));
 
@@ -47,7 +41,7 @@ public class main extends Application {
         MenuItem openRecent = new MenuItem("Open _Recent File");
         openRecent.setOnAction(e -> System.out.println());
 
-        SeparatorMenuItem firstseparater= new SeparatorMenuItem();
+        SeparatorMenuItem fileseparater_1= new SeparatorMenuItem();
 
         MenuItem save = new MenuItem("_Save ");
         save.setOnAction(e -> System.out.println());
@@ -55,7 +49,7 @@ public class main extends Application {
         MenuItem saveAs = new MenuItem("Save _As");
         saveAs.setOnAction(e -> System.out.println());
 
-        SeparatorMenuItem secondseparater= new SeparatorMenuItem();
+        SeparatorMenuItem fileseparater_2= new SeparatorMenuItem();
 
         MenuItem importFile = new MenuItem("_Import");
         importFile.setOnAction(e -> System.out.println());
@@ -67,7 +61,7 @@ public class main extends Application {
         MenuItem settings = new MenuItem("Se_ttings");
         settings.setOnAction(e -> System.out.println());
 
-        SeparatorMenuItem thirdseparater= new SeparatorMenuItem();
+        SeparatorMenuItem fileseparater_3= new SeparatorMenuItem();
 
         MenuItem closeFile = new MenuItem("_Close File");
         closeFile.setOnAction(e -> System.out.println());
@@ -75,12 +69,88 @@ public class main extends Application {
         MenuItem exit = new MenuItem("E_xit");
         exit.setOnAction(e -> System.out.println());
 
-        fileMenu.getItems().addAll(newFile,openFile,openFolder,openRecent,firstseparater,save,saveAs,secondseparater,importFile,exportFile,settings,thirdseparater,closeFile,exit);
+        fileMenu.getItems().addAll(newFile,openFile,openFolder,openRecent,fileseparater_1,save,saveAs,fileseparater_2,importFile,exportFile,settings,fileseparater_3,closeFile,exit);
+
+
+        //edit Menu
+        Menu editMenu = new Menu("_Edit");
+        CheckMenuItem showlinenumbers = new CheckMenuItem("Show Line numbers");
+        showlinenumbers.setOnAction(e -> {
+            if(showlinenumbers.isSelected())
+                System.out.println("Execute when item checked");
+            else
+                System.out.println("Do when not checked");
+        });
+        editMenu.getItems().addAll(showlinenumbers);
+
+        //Project Menu
+        Menu projectMenu = new Menu("_Project");
+
+
+        //Data Menu
+        Menu dataMenu = new Menu("_Data");
+
+
+        //edit Menu
+        Menu plotsMenu = new Menu("_Plots");
+
+        //Programmer Menu
+        Menu programmerMenu = new Menu("P_rogrammer");
+
+
+        //Help Menu
+        Menu helpMenu = new Menu("_Help");
+
+        //Help Sub Menu
+        MenuItem findAction = new MenuItem("Fi_nd Action");
+        newFile.setOnAction(e -> System.out.println(""));
+
+        MenuItem help = new MenuItem("_Help");
+        help.setOnAction(e -> System.out.println());
+
+        MenuItem gettingstarted = new MenuItem("_Getting Started");
+        gettingstarted.setOnAction(e -> System.out.println());
+
+        MenuItem keymap = new MenuItem("_Keymap Reference");
+        keymap.setOnAction(e -> System.out.println());
+
+        SeparatorMenuItem helpseparater_1= new SeparatorMenuItem();
+
+        MenuItem demos = new MenuItem("_Demos and Screencasts ");
+        demos.setOnAction(e -> System.out.println());
+
+        MenuItem tip = new MenuItem("_Tips of the Day");
+        tip.setOnAction(e -> System.out.println());
+
+        MenuItem whatsnew = new MenuItem("_Whats New in Reconverge");
+        whatsnew.setOnAction(e -> System.out.println());
+
+        SeparatorMenuItem helpseparater_2= new SeparatorMenuItem();
+
+        MenuItem supportcenter = new MenuItem("_Support Center");
+        supportcenter.setOnAction(e -> System.out.println());
+
+        MenuItem feedback = new MenuItem("Submit _Feedback");
+        feedback.setOnAction(e -> System.out.println());
+        feedback.setDisable(true);
+
+        MenuItem showlogs = new MenuItem("Show log in _Explorer");
+        showlogs.setOnAction(e -> System.out.println());
+
+        SeparatorMenuItem helpseparater_3= new SeparatorMenuItem();
+
+        MenuItem updates = new MenuItem("Check for _Updates");
+        updates.setOnAction(e -> System.out.println());
+
+        MenuItem about = new MenuItem("_About");
+        about.setOnAction(e -> System.out.println());
+
+        helpMenu.getItems().addAll(findAction,help,gettingstarted, keymap,helpseparater_1,demos,tip,whatsnew,helpseparater_2,supportcenter,feedback,showlogs,helpseparater_3,updates,about);
+
 
         //Menu Bar
         MenuBar menuBar= new MenuBar();
-        menuBar.getMenus().addAll(fileMenu,editMenu,projectMenu,dataMenu,plotsMenu,programmerMenu,helpMenu,aboutMenu);
-
+        menuBar.getMenus().addAll(fileMenu,editMenu,projectMenu,dataMenu,plotsMenu,programmerMenu,helpMenu);
 
 
         layout = new BorderPane();
