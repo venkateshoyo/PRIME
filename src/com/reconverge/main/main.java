@@ -34,16 +34,47 @@ public class main extends Application {
         Menu aboutMenu = new Menu("About");
 
         //Menu Item
-        fileMenu.getItems().add(new MenuItem("New File"));
-        fileMenu.getItems().add(new MenuItem("Open File..."));
-        fileMenu.getItems().add(new MenuItem("Open Folder..."));
-        fileMenu.getItems().add(new MenuItem("Open Recent File"));
-        fileMenu.getItems().add(new MenuItem("Save "));
-        fileMenu.getItems().add(new MenuItem("Save As"));
-        fileMenu.getItems().add(new MenuItem("Import"));
-        fileMenu.getItems().add(new MenuItem("Export"));
-        fileMenu.getItems().add(new MenuItem("Close File"));
-        fileMenu.getItems().add(new MenuItem("Exit"));
+
+        MenuItem newFile = new MenuItem("New File");
+        newFile.setOnAction(e -> System.out.println());
+
+        MenuItem openFile = new MenuItem("Open File...");
+        openFile.setOnAction(e -> System.out.println());
+
+        MenuItem openFolder = new MenuItem("Open Folder...");
+        openFolder.setOnAction(e -> System.out.println());
+
+        MenuItem openRecent = new MenuItem("Open Recent File");
+        openRecent.setOnAction(e -> System.out.println());
+
+        SeparatorMenuItem firstseparater= new SeparatorMenuItem();
+
+        MenuItem save = new MenuItem("Save ");
+        save.setOnAction(e -> System.out.println());
+
+        MenuItem saveAs = new MenuItem("Save As");
+        saveAs.setOnAction(e -> System.out.println());
+
+        SeparatorMenuItem secondseparater= new SeparatorMenuItem();
+
+        MenuItem importFile = new MenuItem("Import");
+        importFile.setOnAction(e -> System.out.println());
+
+        MenuItem exportFile = new MenuItem("Export");
+        exportFile.setOnAction(e -> System.out.println());
+
+        MenuItem settings = new MenuItem("Settings");
+        settings.setOnAction(e -> System.out.println());
+
+        SeparatorMenuItem thirdseparater= new SeparatorMenuItem();
+
+        MenuItem closeFile = new MenuItem("Close File");
+        closeFile.setOnAction(e -> System.out.println());
+
+        MenuItem exit = new MenuItem("Exit");
+        exit.setOnAction(e -> System.out.println());
+
+        fileMenu.getItems().addAll(newFile,openFile,openFolder,openRecent,firstseparater,save,saveAs,secondseparater,importFile,exportFile,settings,thirdseparater,closeFile,exit);
 
         //Menu Bar
         MenuBar menuBar= new MenuBar();
