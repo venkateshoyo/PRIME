@@ -33,8 +33,6 @@ public class main extends Application {
             confirmclose();
         });
 
-//        window.initModality(Modality.APPLICATION_MODAL);
-
         //File Menu
         Menu fileMenu = new Menu("_File");
 
