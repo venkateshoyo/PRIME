@@ -28,10 +28,10 @@ public class main extends Application {
         window=primaryStage;
         window.setTitle("Reconverge");
 
-        window.setOnCloseRequest(e -> {
-            e.consume();
-            confirmclose();
-        });
+//        window.setOnCloseRequest(e -> {
+//            e.consume();
+//            confirmclose();
+//        });
 
         //File Menu
         Menu fileMenu = new Menu("_File");
@@ -161,7 +161,6 @@ public class main extends Application {
 
         //Menu Bar
         MenuBar menuBar= new MenuBar();
-        menuBar.getStyleClass().add("topmenu");
         menuBar.getMenus().addAll(fileMenu,editMenu,projectMenu,dataMenu,plotsMenu,programmerMenu,helpMenu);
 
 
