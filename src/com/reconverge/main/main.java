@@ -46,7 +46,7 @@ public class main extends Application {
         MenuItem openFolder = new MenuItem("Open _Folder...");
         openFolder.setOnAction(e -> System.out.println());
 
-        MenuItem openRecent = new MenuItem("Open _Recent File");
+        MenuItem openRecent = new MenuItem("Open _Last File");
         openRecent.setOnAction(e -> System.out.println());
 
         SeparatorMenuItem fileseparater_1= new SeparatorMenuItem();
