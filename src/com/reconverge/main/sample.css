@@ -1,3 +1,7 @@
 .root{
-    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+    -fx-background-color: #939393;
+}
+
+.topmenu{
+    -fx-background-color: #d3d3d3;
 }

@@ -1,6 +1,7 @@
 package com.reconverge.main;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Menu;
@@ -8,8 +9,10 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
-import com.reconverge.main.*;
 
 public class main extends Application {
     Stage window;
@@ -24,6 +27,13 @@ public class main extends Application {
     public void start(Stage primaryStage) throws Exception {
         window=primaryStage;
         window.setTitle("Reconverge");
+
+        window.setOnCloseRequest(e -> {
+            e.consume();
+            confirmclose();
+        });
+
+//        window.initModality(Modality.APPLICATION_MODAL);
 
         //File Menu
         Menu fileMenu = new Menu("_File");
@@ -67,7 +77,7 @@ public class main extends Application {
         closeFile.setOnAction(e -> System.out.println());
 
         MenuItem exit = new MenuItem("E_xit");
-        exit.setOnAction(e -> System.out.println());
+        exit.setOnAction(e -> confirmclose());
 
         fileMenu.getItems().addAll(newFile,openFile,openFolder,openRecent,fileseparater_1,save,saveAs,fileseparater_2,importFile,exportFile,settings,fileseparater_3,closeFile,exit);
 
@@ -153,7 +163,7 @@ public class main extends Application {
 
         //Menu Bar
         MenuBar menuBar= new MenuBar();
-
+        menuBar.getStyleClass().add("topmenu");
         menuBar.getMenus().addAll(fileMenu,editMenu,projectMenu,dataMenu,plotsMenu,programmerMenu,helpMenu);
 
 
@@ -162,8 +172,44 @@ public class main extends Application {
 
         Scene scene = new Scene(layout,600,500);
         window.setScene(scene);
+
         scene.getStylesheets().add(main.class.getResource("sample.css").toExternalForm());
         window.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
+
         window.show();
+    }
+
+    public void confirmclose(){
+        Stage confirm = new Stage();
+        confirm.initModality(Modality.APPLICATION_MODAL);
+
+        Label text= new Label("Are you sure you want to exit ?");
+        confirm.setTitle("Confirm");
+
+        Button yes = new Button("Yes");
+        yes.setOnAction(e -> {
+            confirm.close();
+            window.close();
+        });
+
+        Button no = new Button("No");
+        no.setOnAction(e -> {
+            confirm.close();
+        });
+
+        HBox layout = new HBox();
+        layout.setAlignment(Pos.CENTER);
+        layout.setSpacing(10);
+        layout.getChildren().addAll(yes,no);
+
+        VBox layout11 = new VBox();
+        layout11.setAlignment(Pos.CENTER);
+        layout11.setSpacing(20);
+        layout11.getChildren().addAll(text,layout);
+
+        Scene scene1= new Scene(layout11,300,150);
+        confirm.setScene(scene1);
+        confirm.show();
+        confirm.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
     }
 }
