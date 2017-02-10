@@ -20,22 +20,25 @@ public class closewindow{
                 confirm.initModality(Modality.APPLICATION_MODAL);
 
                 Label text= new Label("Are you sure you want to exit ?");
+                text.setId("labeltext");
                 confirm.setTitle("Confirm");
 
                 Button yes = new Button("Yes");
+                yes.setId("yes");
                 yes.setOnAction(e -> {
                         confirm.close();
                         ob.getstage().close();
                 });
 
                 Button no = new Button("No");
+                no.setId("no");
                 no.setOnAction(e -> {
                         confirm.close();
                 });
 
                 HBox layout = new HBox();
                 layout.setAlignment(Pos.CENTER);
-                layout.setSpacing(10);
+                layout.setSpacing(35);
                 layout.getChildren().addAll(yes,no);
 
                 VBox layout11 = new VBox();
@@ -43,10 +46,12 @@ public class closewindow{
                 layout11.setSpacing(20);
                 layout11.getChildren().addAll(text,layout);
 
-                Scene scene1= new Scene(layout11,300,150);
+                Scene scene= new Scene(layout11,350,150);
 
-                confirm.setScene(scene1);
+                confirm.setScene(scene);
                 confirm.show();
-                confirm.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
+                confirm.setResizable(false);
+                confirm.getIcons().add(new Image(getClass().getResourceAsStream("no.png")));
+                scene.getStylesheets().add(closewindow.class.getResource("closecss.css").toExternalForm());
         }
 }

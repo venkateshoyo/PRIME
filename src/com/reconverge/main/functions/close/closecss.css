@@ -1,0 +1,18 @@
+.root{
+    -fx-background-color: #939393;
+}
+
+#yes{
+    -fx-background-color: linear-gradient(#00BE1D, #007f2a);
+    -fx-text-fill: white;
+    }
+
+#no{
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-text-fill: white;
+}
+
+#labeltext{
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+}

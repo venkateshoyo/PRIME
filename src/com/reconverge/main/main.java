@@ -46,6 +46,7 @@ public class main extends Application {
         scene.getStylesheets().add(main.class.getResource("sample.css").toExternalForm());
         window.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
 
+        window.setMaximized(true);
         window.show();
 
         //calling shortcuts class
