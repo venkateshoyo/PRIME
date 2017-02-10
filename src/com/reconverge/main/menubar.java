@@ -59,42 +59,147 @@ class menubar {
         Menu editMenu = new Menu("_Edit");
 
         //Edit Sub Menu starts------------------------------------------------------------------------------------------
-        CheckMenuItem showlinenumbers = new CheckMenuItem("Show Line numbers");
-        showlinenumbers.setOnAction(e -> {
-            if(showlinenumbers.isSelected())
-                System.out.println("Execute when item checked");
-            else
-                System.out.println("Do when not checked");
-        });
-        showlinenumbers.setSelected(true);
 
-        editMenu.getItems().addAll(showlinenumbers);
+        MenuItem editLogs = new MenuItem( "_Logs");
+        editLogs.setOnAction(e -> System.out.println(""));
+
+        MenuItem seismic = new MenuItem( "_Seismic");
+        editLogs.setOnAction(e -> System.out.println(""));
+
+        MenuItem ASCII = new MenuItem( "_ASCII");
+        ASCII.setOnAction(e -> System.out.println(""));
+
+        MenuItem Geometry = new MenuItem( "_Geometry");
+        Geometry.setOnAction(e -> System.out.println(""));
+
+//        CheckMenuItem showlinenumbers = new CheckMenuItem("Show Line numbers");
+//        showlinenumbers.setOnAction(e -> {
+//            if(showlinenumbers.isSelected())
+//                System.out.println("Execute when item checked");
+//            else
+//                System.out.println("Do when not checked");
+//        });
+//        showlinenumbers.setSelected(true);
+
+        editMenu.getItems().addAll(editLogs,seismic,ASCII,Geometry);
 
         //Edit Sub Menu ends--------------------------------------------------------------------------------------------
 
 
         //Project Menu
         Menu projectMenu = new Menu("_Project");
+
         //Project Sub Menu starts---------------------------------------------------------------------------------------
+        MenuItem openproject = new MenuItem( "_Open Project...");
+        openproject.setOnAction(e -> System.out.println(""));
+
+        MenuItem newproject = new MenuItem( "_New Project");
+        newproject.setOnAction(e -> System.out.println(""));
+
+        MenuItem recentproject = new MenuItem( "_Recent Project");
+        recentproject.setOnAction(e -> System.out.println(""));
+
+        MenuItem lastsaveproject = new MenuItem( "_Last Saved");
+        lastsaveproject.setOnAction(e -> System.out.println(""));
+
+        projectMenu.getItems().addAll(openproject,newproject,recentproject,lastsaveproject);
+
         //Project Sub Menu ends-----------------------------------------------------------------------------------------
 
 
         //Data Menu
         Menu dataMenu = new Menu("_Data");
+
         //Data Sub Menu starts------------------------------------------------------------------------------------------
+
+        MenuItem loadlas = new MenuItem( "Load _LAS");
+        loadlas.setOnAction(e -> System.out.println(""));
+
+        MenuItem loaddlis = new MenuItem( "Load _DlIS");
+        loaddlis.setOnAction(e -> System.out.println(""));
+
+        MenuItem loadseismic = new MenuItem( "Load _Seismic");
+        loadseismic.setOnAction(e -> System.out.println(""));
+
+        MenuItem loadascii = new MenuItem( "Load ASC_II");
+        loadascii.setOnAction(e -> System.out.println(""));
+
+        MenuItem loaddirectionalsurvey = new MenuItem( "Load Di_rectional Survey");
+        loaddirectionalsurvey.setOnAction(e -> System.out.println(""));
+
+        MenuItem loadcheckshot = new MenuItem( "Load _CheckShot");
+        loadcheckshot.setOnAction(e -> System.out.println(""));
+
+        MenuItem loadimage = new MenuItem( "Load _Image File");
+        loadimage.setOnAction(e -> System.out.println(""));
+
+        MenuItem loadarray = new MenuItem( "Load _Array");
+        loadarray.setOnAction(e -> System.out.println(""));
+
+        dataMenu.getItems().addAll(loadlas,loaddlis,loadseismic,loadascii,loaddirectionalsurvey,loadcheckshot,loadimage,loadarray);
+
         //Data Sub Menu ends--------------------------------------------------------------------------------------------
 
 
-        //Plot Menu
-        Menu plotsMenu = new Menu("_Plots");
-        //Plot Sub Menu starts------------------------------------------------------------------------------------------
-        //Plot Sub Menu ends--------------------------------------------------------------------------------------------
+        //Analysis Menu
+        Menu analysisMenu = new Menu("_Analysis");
+        //Analysis Sub Menu starts------------------------------------------------------------------------------------------
+
+        MenuItem singlewellview = new MenuItem( "Single _Well Viewer");
+        singlewellview.setOnAction(e -> System.out.println(""));
+
+        MenuItem multiwellview = new MenuItem( "_Multi Well Viewer");
+        multiwellview.setOnAction(e -> System.out.println(""));
+
+        MenuItem seimicviewer = new MenuItem( "_Seismic Viewer");
+        seimicviewer.setOnAction(e -> System.out.println(""));
+
+        MenuItem crossplots = new MenuItem( "_Cross Plots");
+        crossplots.setOnAction(e -> System.out.println(""));
+
+        analysisMenu.getItems().addAll(singlewellview,multiwellview,seimicviewer,crossplots);
+
+        //Analysis Sub Menu ends--------------------------------------------------------------------------------------------
+
 
 
         //Programmer Menu
         Menu programmerMenu = new Menu("P_rogrammer");
         //Programmer Sub Menu starts------------------------------------------------------------------------------------
+
+        MenuItem scienticcalcultor = new MenuItem( "Scientific _Calculator");
+        scienticcalcultor.setOnAction(e -> System.out.println(""));
+
+        MenuItem simplecalcultor = new MenuItem( "_Simple Calculator");
+        simplecalcultor.setOnAction(e -> System.out.println(""));
+
+        MenuItem programmernotepad = new MenuItem( "Programmer _Notepad");
+        programmernotepad.setOnAction(e -> System.out.println(""));
+
+        MenuItem editorconsole = new MenuItem( "_Editor and Console");
+        editorconsole.setOnAction(e -> System.out.println(""));
+
+        programmerMenu.getItems().addAll(scienticcalcultor,simplecalcultor,programmernotepad,editorconsole);
         //Programmer Sub Menu ends--------------------------------------------------------------------------------------
+
+
+
+        //Print Menu
+        Menu printMenu = new Menu("Pri_nt");
+        //Programmer Sub Menu starts------------------------------------------------------------------------------------
+
+        MenuItem printscreen = new MenuItem( "_Screen");
+        printscreen.setOnAction(e -> System.out.println(""));
+
+        MenuItem printwindow = new MenuItem( "_Window");
+        printwindow.setOnAction(e -> System.out.println(""));
+
+        MenuItem printplotter = new MenuItem( "Pl_otter");
+        printplotter.setOnAction(e -> System.out.println(""));
+
+        printMenu.getItems().addAll(printscreen,printwindow,printplotter);
+        //Programmer Sub Menu ends--------------------------------------------------------------------------------------
+
 
 
         //Help Menu
@@ -152,7 +257,7 @@ class menubar {
         //Menu Bar
         MenuBar menuBar= new MenuBar();
         menuBar.getStyleClass().add("topmenu");
-        menuBar.getMenus().addAll(fileMenu,editMenu,projectMenu,dataMenu,plotsMenu,programmerMenu,helpMenu);
+        menuBar.getMenus().addAll(fileMenu,editMenu,projectMenu,dataMenu,analysisMenu,programmerMenu,printMenu,helpMenu);
 
         return menuBar;
     }
