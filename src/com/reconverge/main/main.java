@@ -18,13 +18,16 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class main extends Application {
-    Stage window;
-    BorderPane layout;
+    public Stage window;
+    public BorderPane layout;
+    public static Scene scene;
 
     public static void main(String args[])
     {
         launch(args);
     }
+
+    public static Scene getscene() { return scene; }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -36,19 +39,24 @@ public class main extends Application {
 //            confirmclose();
 //        });
 
+        //calling menubar class
         menubar mb= new menubar();
         MenuBar sample = mb.displayMenuBar();
 
         layout = new BorderPane();
         layout.setTop(sample);
 
-        Scene scene = new Scene(layout,600,500);
+        scene = new Scene(layout,600,500);
         window.setScene(scene);
 
         scene.getStylesheets().add(main.class.getResource("sample.css").toExternalForm());
         window.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
 
         window.show();
+
+        //calling shortcuts class
+        shortcuts sc= new shortcuts();
+        sc.shortcuts();
     }
 
     public void confirmclose(){
