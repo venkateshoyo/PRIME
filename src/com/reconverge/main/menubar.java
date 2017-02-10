@@ -87,15 +87,6 @@ class menubar {
         MenuItem Geometry = new MenuItem( "_Geometry");
         Geometry.setOnAction(e -> System.out.println(""));
 
-//        CheckMenuItem showlinenumbers = new CheckMenuItem("Show Line numbers");
-//        showlinenumbers.setOnAction(e -> {
-//            if(showlinenumbers.isSelected())
-//                System.out.println("Execute when item checked");
-//            else
-//                System.out.println("Do when not checked");
-//        });
-//        showlinenumbers.setSelected(true);
-
         editMenu.getItems().addAll(editLogs,seismic,ASCII,Geometry);
 
         //Edit Sub Menu ends--------------------------------------------------------------------------------------------
@@ -183,7 +174,7 @@ class menubar {
 
         //Analysis Menu
         Menu analysisMenu = new Menu("_Analysis");
-        //Analysis Sub Menu starts------------------------------------------------------------------------------------------
+        //Analysis Sub Menu starts--------------------------------------------------------------------------------------
 
         MenuItem singlewellview = new MenuItem( "Single _Well Viewer");
         singlewellview.setOnAction(e -> System.out.println(""));
