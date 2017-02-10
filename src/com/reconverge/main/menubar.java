@@ -10,10 +10,10 @@ class menubar {
         Menu fileMenu = new Menu("_File");
 
         //File Sub Menu
-        MenuItem newFile = new MenuItem("_New File");
+        MenuItem newFile = new MenuItem("_New File      Ctrl+N");
         newFile.setOnAction(e -> System.out.println(""));
 
-        MenuItem openFile = new MenuItem("_Open File...");
+        MenuItem openFile = new MenuItem("_Open File...  Ctrl+O");
         openFile.setOnAction(e -> System.out.println());
 
         MenuItem openFolder = new MenuItem("Open _Folder...");
@@ -47,7 +47,10 @@ class menubar {
         MenuItem closeFile = new MenuItem("_Close File");
         closeFile.setOnAction(e -> System.out.println());
 
-        fileMenu.getItems().addAll(newFile,openFile,openFolder,openRecent,fileseparater_1,save,saveAs,fileseparater_2,importFile,exportFile,settings,fileseparater_3,closeFile);
+        MenuItem exit = new MenuItem("Exit      Ctrl+W");
+        exit.setOnAction(e -> System.out.println());
+
+        fileMenu.getItems().addAll(newFile,openFile,openFolder,openRecent,fileseparater_1,save,saveAs,fileseparater_2,importFile,exportFile,settings,fileseparater_3,closeFile,exit);
 
 
         //edit Menu

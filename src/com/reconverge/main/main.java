@@ -1,19 +1,15 @@
 package com.reconverge.main;
 
 import javafx.application.Application;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
+import com.reconverge.main.functions.close.closewindow;
 
 public class main extends Application {
-    public Stage window;
+    public static Stage window;
     public BorderPane layout;
     public static Scene scene;
 
@@ -23,16 +19,19 @@ public class main extends Application {
     }
 
     public static Scene getscene() { return scene; }
+    public Stage getstage() { return window; }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         window=primaryStage;
         window.setTitle("Reconverge");
 
-//        window.setOnCloseRequest(e -> {
-//            e.consume();
-//            confirmclose();
-//        });
+        closewindow ob = new closewindow();
+
+        window.setOnCloseRequest(e -> {
+            e.consume();
+            ob.confirmclose();
+        });
 
         //calling menubar class
         menubar mb= new menubar();
@@ -52,41 +51,5 @@ public class main extends Application {
         //calling shortcuts class
         shortcuts sc= new shortcuts();
         sc.shortcuts();
-    }
-
-    public void confirmclose(){
-        Stage confirm = new Stage();
-        confirm.initModality(Modality.APPLICATION_MODAL);
-
-        Label text= new Label("Are you sure you want to exit ?");
-        confirm.setTitle("Confirm");
-
-        Button yes = new Button("Yes");
-        yes.setOnAction(e -> {
-            confirm.close();
-            window.close();
-        });
-
-        Button no = new Button("No");
-        no.setOnAction(e -> {
-            confirm.close();
-        });
-
-        HBox layout = new HBox();
-        layout.setAlignment(Pos.CENTER);
-        layout.setSpacing(10);
-        layout.getChildren().addAll(yes,no);
-
-        VBox layout11 = new VBox();
-        layout11.setAlignment(Pos.CENTER);
-        layout11.setSpacing(20);
-        layout11.getChildren().addAll(text,layout);
-
-        Scene scene1= new Scene(layout11,300,150);
-//        scene1.setOnKeyPressed(e -> System.out.println("Key pressed: "+ e.getCode()));
-
-        confirm.setScene(scene1);
-        confirm.show();
-        confirm.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
     }
 }

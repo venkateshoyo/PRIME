@@ -14,5 +14,17 @@ public class shortcuts {
                     System.out.println("Key pressed: New file");
                 }
         );
+        main.getscene().getAccelerators().put(
+                new KeyCodeCombination(KeyCode.O, KeyCombination.SHORTCUT_DOWN),
+                () -> {
+                    System.out.println("Key pressed: Open file");
+                }
+        );
+        main.getscene().getAccelerators().put(
+                new KeyCodeCombination(KeyCode.W, KeyCombination.SHORTCUT_DOWN),
+                () -> {
+                    System.out.println("Key pressed: Exit");
+                }
+        );
     }
 }
