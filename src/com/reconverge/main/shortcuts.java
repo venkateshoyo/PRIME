@@ -13,10 +13,8 @@ public class shortcuts {
 
         main.getscene().getAccelerators().put(
                 new KeyCodeCombination(KeyCode.N, KeyCombination.SHORTCUT_DOWN),
-                new Runnable() {
-                    @Override public void run() {
-                        System.out.println("Key pressed: New file");
-                    }
+                () -> {
+                    System.out.println("Key pressed: New file");
                 }
         );
     }
