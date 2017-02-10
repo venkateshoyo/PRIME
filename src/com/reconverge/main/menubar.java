@@ -32,6 +32,21 @@ class menubar {
 
         SeparatorMenuItem fileseparater_2= new SeparatorMenuItem();
 
+        Menu print = new Menu("Print");
+
+        MenuItem printscreen = new MenuItem( "_Screen");
+        printscreen.setOnAction(e -> System.out.println(""));
+
+        MenuItem printwindow = new MenuItem( "_Window");
+        printwindow.setOnAction(e -> System.out.println(""));
+
+        MenuItem printplotter = new MenuItem( "Pl_otter");
+        printplotter.setOnAction(e -> System.out.println(""));
+
+        print.getItems().addAll(printscreen,printwindow,printplotter);
+
+        SeparatorMenuItem fileseparater_3= new SeparatorMenuItem();
+
         MenuItem importFile = new MenuItem("_Import");
         importFile.setOnAction(e -> System.out.println());
 
@@ -42,7 +57,7 @@ class menubar {
         MenuItem settings = new MenuItem("Se_ttings");
         settings.setOnAction(e -> System.out.println());
 
-        SeparatorMenuItem fileseparater_3= new SeparatorMenuItem();
+        SeparatorMenuItem fileseparater_4= new SeparatorMenuItem();
 
         MenuItem closeFile = new MenuItem("_Close File");
         closeFile.setOnAction(e -> System.out.println());
@@ -50,7 +65,7 @@ class menubar {
         MenuItem exit = new MenuItem(   "Exit                   Ctrl+W");
         exit.setOnAction(e -> System.out.println());
 
-        fileMenu.getItems().addAll(newFile,openFile,openFolder,openRecent,fileseparater_1,save,saveAs,fileseparater_2,importFile,exportFile,settings,fileseparater_3,closeFile,exit);
+        fileMenu.getItems().addAll(newFile,openFile,openFolder,openRecent,fileseparater_1,save,saveAs,fileseparater_2,print,fileseparater_3,importFile,exportFile,settings,fileseparater_4,closeFile,exit);
 
         //File Sub Menu ends--------------------------------------------------------------------------------------------
 
@@ -102,7 +117,32 @@ class menubar {
         MenuItem lastsaveproject = new MenuItem( "_Last Saved");
         lastsaveproject.setOnAction(e -> System.out.println(""));
 
-        projectMenu.getItems().addAll(openproject,newproject,recentproject,lastsaveproject);
+        Menu autosave = new Menu("Auto Save Duration");
+
+        RadioMenuItem none = new RadioMenuItem("None");
+        none.setOnAction(e -> System.out.println(""));
+
+        RadioMenuItem halfhourautosave = new RadioMenuItem("30 minutes");
+        halfhourautosave.setOnAction(e -> System.out.println(""));
+
+        RadioMenuItem onehourautosave = new RadioMenuItem("1 hour");
+        onehourautosave.setOnAction(e -> System.out.println(""));
+
+        ToggleGroup toggle = new ToggleGroup();
+
+        none.setToggleGroup(toggle);
+        halfhourautosave.setToggleGroup(toggle);
+        onehourautosave.setToggleGroup(toggle);
+        none.setSelected(true);
+
+        TextField manual = new TextField();
+        manual.setPromptText("Duration in minutes");
+        CustomMenuItem custom = new CustomMenuItem(manual);
+        custom.setHideOnClick(false);
+
+        autosave.getItems().addAll(none,onehourautosave,halfhourautosave,custom);
+
+        projectMenu.getItems().addAll(openproject,newproject,recentproject,lastsaveproject,autosave);
 
         //Project Sub Menu ends-----------------------------------------------------------------------------------------
 
@@ -130,7 +170,7 @@ class menubar {
         MenuItem loadcheckshot = new MenuItem( "Load _CheckShot");
         loadcheckshot.setOnAction(e -> System.out.println(""));
 
-        MenuItem loadimage = new MenuItem( "Load _Image File");
+        MenuItem loadimage = new MenuItem( "Load Image _File");
         loadimage.setOnAction(e -> System.out.println(""));
 
         MenuItem loadarray = new MenuItem( "Load _Array");
@@ -181,25 +221,6 @@ class menubar {
 
         programmerMenu.getItems().addAll(scienticcalcultor,simplecalcultor,programmernotepad,editorconsole);
         //Programmer Sub Menu ends--------------------------------------------------------------------------------------
-
-
-
-        //Print Menu
-        Menu printMenu = new Menu("Pri_nt");
-        //Programmer Sub Menu starts------------------------------------------------------------------------------------
-
-        MenuItem printscreen = new MenuItem( "_Screen");
-        printscreen.setOnAction(e -> System.out.println(""));
-
-        MenuItem printwindow = new MenuItem( "_Window");
-        printwindow.setOnAction(e -> System.out.println(""));
-
-        MenuItem printplotter = new MenuItem( "Pl_otter");
-        printplotter.setOnAction(e -> System.out.println(""));
-
-        printMenu.getItems().addAll(printscreen,printwindow,printplotter);
-        //Programmer Sub Menu ends--------------------------------------------------------------------------------------
-
 
 
         //Help Menu
@@ -257,7 +278,7 @@ class menubar {
         //Menu Bar
         MenuBar menuBar= new MenuBar();
         menuBar.getStyleClass().add("topmenu");
-        menuBar.getMenus().addAll(fileMenu,editMenu,projectMenu,dataMenu,analysisMenu,programmerMenu,printMenu,helpMenu);
+        menuBar.getMenus().addAll(fileMenu,editMenu,projectMenu,dataMenu,analysisMenu,programmerMenu,helpMenu);
 
         return menuBar;
     }
