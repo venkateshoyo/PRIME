@@ -1,5 +1,5 @@
 .root{
-    -fx-background-color: #939393;
+    -fx-background-color: #323232;
 }
 
 .menu-bar, .menu-bar .label,.menu:hover, .menu .label, .menu-item, .menu-item:hover, .menu-item .label, .context-menu, .menu-button, .check-menu-item{

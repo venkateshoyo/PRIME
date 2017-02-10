@@ -32,9 +32,7 @@ public class closewindow{
 
                 Button no = new Button("No");
                 no.setId("no");
-                no.setOnAction(e -> {
-                        confirm.close();
-                });
+                no.setOnAction(e -> confirm.close());
 
                 HBox layout = new HBox();
                 layout.setAlignment(Pos.CENTER);

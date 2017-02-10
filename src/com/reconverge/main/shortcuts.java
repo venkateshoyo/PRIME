@@ -26,5 +26,11 @@ public class shortcuts {
                     System.out.println("Key pressed: Exit");
                 }
         );
+        main.getscene().getAccelerators().put(
+                new KeyCodeCombination(KeyCode.S, KeyCombination.SHORTCUT_DOWN),
+                () -> {
+                    System.out.println("Key pressed: Save");
+                }
+        );
     }
 }

@@ -9,11 +9,11 @@ class menubar {
         //File Menu
         Menu fileMenu = new Menu("_File");
 
-        //File Sub Menu
-        MenuItem newFile = new MenuItem("_New File      Ctrl+N");
+        //File Sub Menu starts------------------------------------------------------------------------------------------
+        MenuItem newFile = new MenuItem( "_New File             Ctrl+N");
         newFile.setOnAction(e -> System.out.println(""));
 
-        MenuItem openFile = new MenuItem("_Open File...  Ctrl+O");
+        MenuItem openFile = new MenuItem("_Open File...         Ctrl+O");
         openFile.setOnAction(e -> System.out.println());
 
         MenuItem openFolder = new MenuItem("Open _Folder...");
@@ -24,7 +24,7 @@ class menubar {
 
         SeparatorMenuItem fileseparater_1= new SeparatorMenuItem();
 
-        MenuItem save = new MenuItem("_Save ");
+        MenuItem save = new MenuItem(    "_Save                   Ctrl+S");
         save.setOnAction(e -> System.out.println());
 
         MenuItem saveAs = new MenuItem("Save _As");
@@ -47,14 +47,18 @@ class menubar {
         MenuItem closeFile = new MenuItem("_Close File");
         closeFile.setOnAction(e -> System.out.println());
 
-        MenuItem exit = new MenuItem("Exit      Ctrl+W");
+        MenuItem exit = new MenuItem(   "Exit                   Ctrl+W");
         exit.setOnAction(e -> System.out.println());
 
         fileMenu.getItems().addAll(newFile,openFile,openFolder,openRecent,fileseparater_1,save,saveAs,fileseparater_2,importFile,exportFile,settings,fileseparater_3,closeFile,exit);
 
+        //File Sub Menu ends--------------------------------------------------------------------------------------------
 
-        //edit Menu
+
+        //Edit Menu
         Menu editMenu = new Menu("_Edit");
+
+        //Edit Sub Menu starts------------------------------------------------------------------------------------------
         CheckMenuItem showlinenumbers = new CheckMenuItem("Show Line numbers");
         showlinenumbers.setOnAction(e -> {
             if(showlinenumbers.isSelected())
@@ -66,26 +70,37 @@ class menubar {
 
         editMenu.getItems().addAll(showlinenumbers);
 
+        //Edit Sub Menu ends--------------------------------------------------------------------------------------------
+
 
         //Project Menu
         Menu projectMenu = new Menu("_Project");
+        //Project Sub Menu starts---------------------------------------------------------------------------------------
+        //Project Sub Menu ends-----------------------------------------------------------------------------------------
 
 
         //Data Menu
         Menu dataMenu = new Menu("_Data");
+        //Data Sub Menu starts------------------------------------------------------------------------------------------
+        //Data Sub Menu ends--------------------------------------------------------------------------------------------
 
 
-        //edit Menu
+        //Plot Menu
         Menu plotsMenu = new Menu("_Plots");
+        //Plot Sub Menu starts------------------------------------------------------------------------------------------
+        //Plot Sub Menu ends--------------------------------------------------------------------------------------------
+
 
         //Programmer Menu
         Menu programmerMenu = new Menu("P_rogrammer");
+        //Programmer Sub Menu starts------------------------------------------------------------------------------------
+        //Programmer Sub Menu ends--------------------------------------------------------------------------------------
 
 
         //Help Menu
         Menu helpMenu = new Menu("_Help");
 
-        //Help Sub Menu
+        //Help Sub Menu starts------------------------------------------------------------------------------------------
         MenuItem findAction = new MenuItem("Fi_nd Action");
         newFile.setOnAction(e -> System.out.println(""));
 
@@ -131,7 +146,7 @@ class menubar {
 
         helpMenu.getItems().addAll(findAction,help,gettingstarted, keymap,helpseparater_1,demos,tip,whatsnew,helpseparater_2,supportcenter,feedback,showlogs,helpseparater_3,updates,about);
 
-
+        //Help Sub Menu ends--------------------------------------------------------------------------------------------
 
 
         //Menu Bar
