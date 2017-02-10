@@ -1,5 +1,5 @@
 .root{
-    -fx-background-color: #323232;
+    -fx-background-color: #2a2a2a;
 }
 
 #yes{
@@ -13,6 +13,11 @@
 }
 
 #labeltext{
-    -fx-text-fill: black;
+    -fx-text-fill: #bdbdbd;
     -fx-font-size: 14px;
+}
+
+#dontagain{
+    -fx-text-fill: #bdbdbd;
+
 }
