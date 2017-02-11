@@ -210,7 +210,7 @@ class menubar {
         MenuItem editorconsole = new MenuItem( "_Editor and Console");
         editorconsole.setOnAction(e -> System.out.println(""));
 
-        programmerMenu.getItems().addAll(scienticcalcultor,simplecalcultor,programmernotepad,editorconsole);
+        programmerMenu.getItems().addAll(simplecalcultor,scienticcalcultor,programmernotepad,editorconsole);
         //Programmer Sub Menu ends--------------------------------------------------------------------------------------
 
 
