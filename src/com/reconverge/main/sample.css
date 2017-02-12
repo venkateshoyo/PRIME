@@ -1,10 +1,20 @@
+//defining Main Window theme Color variable
+* {
+   -fx-mainWindowBackgroundColor: #323232;
+   -fx-menubarBackgroundColor: #545454;
+   -fx-menuTextColor: #bdbdbd;
+   -fx-menubarHoverColor: #383838;
+   -fx-WhiteColor: white;
+}
+
+
 .root{
-    -fx-background-color: #323232;
+    -fx-background-color: -fx-mainWindowBackgroundColor;
 }
 
 .menu-bar, .menu-bar .label,.context-menu, .menu-button{
-    -fx-background-color: #545454;
-    -fx-text-fill: #bdbdbd;
+    -fx-background-color: -fx-menubarBackgroundColor;
+    -fx-text-fill: -fx-menuTextColor;
 }
 
 .menu-bar,.context-menu{
@@ -12,5 +22,5 @@
 }
 
 .menu:focused, .menu-item:hover, .menu-item:hover .label, .menu-item:focused, .menu-item:focused .label{
-    -fx-background-color: #383838;
+    -fx-background-color: -fx-menubarHoverColor;
 }
