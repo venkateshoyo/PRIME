@@ -1,4 +1,4 @@
-package com.reconverge.main;
+package com.reconverge.main.windows.main;
 
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;

@@ -1,12 +1,12 @@
-package com.reconverge.main;
+package com.reconverge.main.windows.main;
 
+import com.reconverge.main.windows.close.closeconfirm;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import com.reconverge.main.functions.close.closewindow;
 
 public class main extends Application {
     public static Stage window;
@@ -26,11 +26,11 @@ public class main extends Application {
         window=primaryStage;
         window.setTitle("Reconverge");
 
-        closewindow ob = new closewindow();
+        closeconfirm ob = new closeconfirm();
 
         window.setOnCloseRequest(e -> {
             e.consume();
-            ob.confirmclose();
+            ob.displayconfirmclose();
         });
 
         //calling menubar class
@@ -43,8 +43,8 @@ public class main extends Application {
         scene = new Scene(layout,600,500);
         window.setScene(scene);
 
-        scene.getStylesheets().add(main.class.getResource("sample.css").toExternalForm());
-        window.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
+        scene.getStylesheets().add(main.class.getResource("../../resources/css/main.css").toExternalForm());
+        window.getIcons().add(new Image(getClass().getResourceAsStream("../../resources/images/main_favicon.png")));
 
         window.setMaximized(true);
         window.show();

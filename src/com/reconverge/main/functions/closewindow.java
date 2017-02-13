@@ -1,6 +1,6 @@
-package com.reconverge.main.functions.close;
+package com.reconverge.main.functions;
 
-import com.reconverge.main.main;
+import com.reconverge.main.windows.main.main;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -13,9 +13,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class closewindow{
+public class closewindow {
 
-    public void confirmclose(){
+    public void closefunction(){
         main ob = new main();
         Stage confirm = new Stage();
         confirm.initModality(Modality.APPLICATION_MODAL);
@@ -56,7 +56,7 @@ public class closewindow{
         confirm.setScene(scene);
         confirm.show();
         confirm.setResizable(false);
-        confirm.getIcons().add(new Image(getClass().getResourceAsStream("no.png")));
-        scene.getStylesheets().add(closewindow.class.getResource("closecss.css").toExternalForm());
+        scene.getStylesheets().add(closewindow.class.getResource("../resources/css/close.css").toExternalForm());
+        confirm.getIcons().add(new Image(getClass().getResourceAsStream("../resources/images/close_favicon.png")));
     }
 }
