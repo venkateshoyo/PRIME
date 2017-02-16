@@ -1,10 +1,10 @@
-package com.reconverge.main;
+package com.reconverge.main.windows.main;
 
 import javafx.scene.control.*;
 
 class menubar {
 
-    public static MenuBar displayMenuBar(){
+    public MenuBar displayMenuBar(){
 
         //File Menu
         Menu fileMenu = new Menu("_File");
@@ -210,7 +210,7 @@ class menubar {
         MenuItem editorconsole = new MenuItem( "_Editor and Console");
         editorconsole.setOnAction(e -> System.out.println(""));
 
-        programmerMenu.getItems().addAll(scienticcalcultor,simplecalcultor,programmernotepad,editorconsole);
+        programmerMenu.getItems().addAll(simplecalcultor,scienticcalcultor,programmernotepad,editorconsole);
         //Programmer Sub Menu ends--------------------------------------------------------------------------------------
 
 
