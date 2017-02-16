@@ -24,7 +24,7 @@ public class main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         window=primaryStage;
-        window.setTitle("PNRPM");
+        window.setTitle(System.getProperty("user.dir")+"   PNRPM ES IITR 2017.1.0");
 
         closeconfirm ob = new closeconfirm();
 
