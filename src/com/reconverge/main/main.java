@@ -24,7 +24,7 @@ public class main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         window=primaryStage;
-        window.setTitle("Reconverge");
+        window.setTitle("PNRPM");
 
         closewindow ob = new closewindow();
 
