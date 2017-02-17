@@ -1,4 +1,4 @@
-package com.reconverge.main.windows.main;
+package com.PNRPM.main.windows.main;
 
 import javafx.scene.control.*;
 
@@ -238,7 +238,7 @@ class menubar {
         MenuItem tip = new MenuItem("_Tips of the Day");
         tip.setOnAction(e -> System.out.println());
 
-        MenuItem whatsnew = new MenuItem("_Whats New in Reconverge");
+        MenuItem whatsnew = new MenuItem("_Whats New in PNRPM");
         whatsnew.setOnAction(e -> System.out.println());
 
         SeparatorMenuItem helpseparater_2= new SeparatorMenuItem();

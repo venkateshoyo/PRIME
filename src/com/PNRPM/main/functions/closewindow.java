@@ -1,6 +1,6 @@
-package com.reconverge.main.functions;
+package com.PNRPM.main.functions;
 
-import com.reconverge.main.windows.main.main;
+import com.PNRPM.main.windows.main.main;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

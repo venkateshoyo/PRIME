@@ -1,6 +1,6 @@
-package com.reconverge.main.windows.close;
+package com.PNRPM.main.windows.close;
 
-import com.reconverge.main.functions.closewindow;
+import com.PNRPM.main.functions.closewindow;
 
 public class closeconfirm {
 

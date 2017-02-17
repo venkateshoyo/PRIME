@@ -1,6 +1,6 @@
-package com.reconverge.main.windows.main;
+package com.PNRPM.main.windows.main;
 
-import com.reconverge.main.windows.close.closeconfirm;
+import com.PNRPM.main.windows.close.closeconfirm;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
