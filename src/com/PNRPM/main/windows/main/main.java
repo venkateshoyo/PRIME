@@ -26,6 +26,7 @@ public class main extends Application {
         window=primaryStage;
         window.setTitle(System.getProperty("user.dir")+"   PNRPM ES IITR 2017.1.0");
 
+        //creating close window object
         closeconfirm ob = new closeconfirm();
 
         window.setOnCloseRequest(e -> {
@@ -33,7 +34,7 @@ public class main extends Application {
             ob.displayconfirmclose();
         });
 
-        //calling menubar class
+        //creating menubar class object
         menubar mb= new menubar();
         MenuBar sample = mb.displayMenuBar();
 
@@ -49,7 +50,7 @@ public class main extends Application {
         window.setMaximized(true);
         window.show();
 
-        //calling shortcuts class
+        //creating shortcut class object
         shortcuts sc= new shortcuts();
         sc.shortcuts();
     }
