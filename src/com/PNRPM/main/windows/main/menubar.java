@@ -258,10 +258,13 @@ class menubar {
         MenuItem updates = new MenuItem("Check for _Updates");
         updates.setOnAction(e -> System.out.println());
 
+        MenuItem literature = new MenuItem("Related literatures");
+        literature.setOnAction(e -> System.out.println());
+
         MenuItem about = new MenuItem("_About");
         about.setOnAction(e -> System.out.println());
 
-        helpMenu.getItems().addAll(findAction,help,gettingstarted, keymap,helpseparater_1,demos,tip,whatsnew,helpseparater_2,supportcenter,feedback,showlogs,helpseparater_3,updates,about);
+        helpMenu.getItems().addAll(findAction,help,gettingstarted, keymap,helpseparater_1,demos,tip,whatsnew,helpseparater_2,supportcenter,feedback,showlogs,helpseparater_3,updates,literature, about);
 
         //Help Sub Menu ends--------------------------------------------------------------------------------------------
 
