@@ -194,6 +194,28 @@ class menubar {
 
 
 
+        //Display Menu
+        Menu displayMenu = new Menu("_Display");
+        //Display Sub Menu starts--------------------------------------------------------------------------------------
+
+        MenuItem display_location = new MenuItem( "_Location");
+        display_location.setOnAction(e -> System.out.println(""));
+
+        MenuItem display_logs = new MenuItem( "L_ogs");
+        display_logs.setOnAction(e -> System.out.println(""));
+
+        MenuItem display_seimic = new MenuItem( "_Seismic");
+        display_seimic.setOnAction(e -> System.out.println(""));
+
+        MenuItem display_ASCII = new MenuItem( "_ASCII");
+        display_ASCII.setOnAction(e -> System.out.println(""));
+
+        displayMenu.getItems().addAll(display_location,display_logs,display_seimic,display_ASCII);
+
+        //Analysis Sub Menu ends--------------------------------------------------------------------------------------------
+
+
+
         //Programmer Menu
         Menu programmerMenu = new Menu("P_rogrammer");
         //Programmer Sub Menu starts------------------------------------------------------------------------------------
@@ -272,7 +294,7 @@ class menubar {
         //Menu Bar
         MenuBar menuBar= new MenuBar();
         menuBar.getStyleClass().add("topmenu");
-        menuBar.getMenus().addAll(fileMenu,editMenu,projectMenu,dataMenu,analysisMenu,programmerMenu,helpMenu);
+        menuBar.getMenus().addAll(fileMenu,editMenu,projectMenu,dataMenu,analysisMenu,displayMenu, programmerMenu,helpMenu);
 
         return menuBar;
     }
