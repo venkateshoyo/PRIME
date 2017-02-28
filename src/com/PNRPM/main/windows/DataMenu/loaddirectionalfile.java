@@ -1,6 +1,5 @@
 package com.PNRPM.main.windows.DataMenu;
 
 
-public class loadlas {
-
+public class loaddirectionalfile {
 }

@@ -1,5 +1,6 @@
 package com.PNRPM.main.windows.main;
 
+import com.PNRPM.main.windows.DataMenu.*;
 import javafx.scene.control.*;
 import javafx.stage.DirectoryChooser;
 
@@ -150,49 +151,89 @@ class menubar {
         MenuItem loadlas = new MenuItem( "Load _LAS");
         loadlas.setOnAction(e -> {
             DirectoryChooser loadlasdirrctory = new DirectoryChooser();
-            File selecteddir =  loadlasdirrctory.showDialog(ob.getstage());
+            File selectedlas =  loadlasdirrctory.showDialog(ob.getstage());
+            if(selectedlas == null){
+                System.out.println("LAS file not selected");
+            }else{
+                loadlasfile lasobject = new loadlasfile();
+            }
         });
 
         MenuItem loaddlis = new MenuItem( "Load _DlIS");
         loaddlis.setOnAction(e -> {
             DirectoryChooser loaddiisdirrctory = new DirectoryChooser();
-            File selecteddir =  loaddiisdirrctory.showDialog(ob.getstage());
+            File selecteddiis =  loaddiisdirrctory.showDialog(ob.getstage());
+            if(selecteddiis == null){
+                System.out.println("LAS file not selected");
+            }else{
+                loadlasfile diisobject = new loadlasfile();
+            }
         });
 
         MenuItem loadseismic = new MenuItem( "Load _Seismic");
         loadseismic.setOnAction(e -> {
             DirectoryChooser loadseismicdirrctory = new DirectoryChooser();
-            File selecteddir =  loadseismicdirrctory.showDialog(ob.getstage());
+            File selectedseismic =  loadseismicdirrctory.showDialog(ob.getstage());
+            if(selectedseismic == null){
+                System.out.println("Seismic file not selected");
+            }else{
+                loadlasfile seismicobject = new loadlasfile();
+            }
         });
 
         MenuItem loadascii = new MenuItem( "Load ASC_II");
         loadascii.setOnAction(e -> {
             DirectoryChooser loadasciidirrctory = new DirectoryChooser();
-            File selecteddir =  loadasciidirrctory.showDialog(ob.getstage());
+            File selectedascii =  loadasciidirrctory.showDialog(ob.getstage());
+            if(selectedascii == null){
+                System.out.println("ASCII file not selected");
+            }else{
+                loadlasfile asciiobject = new loadlasfile();
+            }
         });
 
         MenuItem loaddirectionalsurvey = new MenuItem( "Load Di_rectional Survey");
         loaddirectionalsurvey.setOnAction(e -> {
             DirectoryChooser loaddirectionaldirrctory = new DirectoryChooser();
-            File selecteddir =  loaddirectionaldirrctory.showDialog(ob.getstage());
+            File selecteddirectional =  loaddirectionaldirrctory.showDialog(ob.getstage());
+            if(selecteddirectional == null){
+                System.out.println("Directional file not selected");
+            }else{
+                loadlasfile directionalobject = new loadlasfile();
+            }
         });
 
         MenuItem loadcheckshot = new MenuItem( "Load _CheckShot");
         loadcheckshot.setOnAction(e -> {
             DirectoryChooser loadcheckshotdirrctory = new DirectoryChooser();
-            File selecteddir =  loadcheckshotdirrctory.showDialog(ob.getstage());
+            File selectedcheckshot =  loadcheckshotdirrctory.showDialog(ob.getstage());
+            if(selectedcheckshot == null){
+                System.out.println("CheckShot file not selected");
+            }else{
+                loadlasfile checkshotobject = new loadlasfile();
+            }
         });
 
         MenuItem loadimage = new MenuItem( "Load Image _File");
         loadimage.setOnAction(e -> {
             DirectoryChooser loadimagedirrctory = new DirectoryChooser();
-            File selecteddir =  loadimagedirrctory.showDialog(ob.getstage());
+            File selectedimage =  loadimagedirrctory.showDialog(ob.getstage());
+            if(selectedimage == null){
+                System.out.println("Image file not selected");
+            }else{
+                loadlasfile imageobject = new loadlasfile();
+            }
         });
 
         MenuItem loadarray = new MenuItem( "Load _Array");
         loadarray.setOnAction(e -> {
             DirectoryChooser loadarraydirrctory = new DirectoryChooser();
-            File selecteddir =  loadarraydirrctory.showDialog(ob.getstage());
+            File selectedarray =  loadarraydirrctory.showDialog(ob.getstage());
+            if(selectedarray == null){
+                System.out.println("Array file not selected");
+            }else{
+                loadlasfile arrayobject = new loadlasfile();
+            }
         });
 
         dataMenu.getItems().addAll(loadlas,loaddlis,loadseismic,loadascii,loaddirectionalsurvey,loadcheckshot,loadimage,loadarray);
