@@ -1,4 +1,4 @@
-package com.PNRPM.main.windows.close;
+package com.PNRPM.main.operations.close;
 
 import com.PNRPM.main.functions.closewindow;
 

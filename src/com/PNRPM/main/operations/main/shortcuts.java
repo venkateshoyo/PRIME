@@ -1,4 +1,4 @@
-package com.PNRPM.main.windows.main;
+package com.PNRPM.main.operations.main;
 
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;

@@ -1,6 +1,6 @@
 package com.PNRPM.main.functions;
 
-import com.PNRPM.main.windows.main.main;
+import com.PNRPM.main.operations.main.main;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

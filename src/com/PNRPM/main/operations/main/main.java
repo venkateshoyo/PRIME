@@ -1,6 +1,6 @@
-package com.PNRPM.main.windows.main;
+package com.PNRPM.main.operations.main;
 
-import com.PNRPM.main.windows.close.closeconfirm;
+import com.PNRPM.main.operations.close.closeconfirm;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;

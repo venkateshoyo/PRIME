@@ -1,6 +1,6 @@
-package com.PNRPM.main.windows.main;
+package com.PNRPM.main.operations.main;
 
-import com.PNRPM.main.windows.DataMenu.*;
+import com.PNRPM.main.operations.DataMenu.*;
 import javafx.scene.control.*;
 import javafx.stage.DirectoryChooser;
 
