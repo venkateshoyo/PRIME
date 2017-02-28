@@ -1,11 +1,15 @@
 package com.PNRPM.main.windows.main;
 
 import javafx.scene.control.*;
+import javafx.stage.DirectoryChooser;
+
+import java.io.File;
 
 class menubar {
 
     public MenuBar displayMenuBar(){
 
+        main ob = new main();
         //File Menu
         Menu fileMenu = new Menu("_File");
 
@@ -144,28 +148,52 @@ class menubar {
         //Data Sub Menu starts------------------------------------------------------------------------------------------
 
         MenuItem loadlas = new MenuItem( "Load _LAS");
-        loadlas.setOnAction(e -> System.out.println(""));
+        loadlas.setOnAction(e -> {
+            DirectoryChooser loadlasdirrctory = new DirectoryChooser();
+            File selecteddir =  loadlasdirrctory.showDialog(ob.getstage());
+        });
 
         MenuItem loaddlis = new MenuItem( "Load _DlIS");
-        loaddlis.setOnAction(e -> System.out.println(""));
+        loaddlis.setOnAction(e -> {
+            DirectoryChooser loaddiisdirrctory = new DirectoryChooser();
+            File selecteddir =  loaddiisdirrctory.showDialog(ob.getstage());
+        });
 
         MenuItem loadseismic = new MenuItem( "Load _Seismic");
-        loadseismic.setOnAction(e -> System.out.println(""));
+        loadseismic.setOnAction(e -> {
+            DirectoryChooser loadseismicdirrctory = new DirectoryChooser();
+            File selecteddir =  loadseismicdirrctory.showDialog(ob.getstage());
+        });
 
         MenuItem loadascii = new MenuItem( "Load ASC_II");
-        loadascii.setOnAction(e -> System.out.println(""));
+        loadascii.setOnAction(e -> {
+            DirectoryChooser loadasciidirrctory = new DirectoryChooser();
+            File selecteddir =  loadasciidirrctory.showDialog(ob.getstage());
+        });
 
         MenuItem loaddirectionalsurvey = new MenuItem( "Load Di_rectional Survey");
-        loaddirectionalsurvey.setOnAction(e -> System.out.println(""));
+        loaddirectionalsurvey.setOnAction(e -> {
+            DirectoryChooser loaddirectionaldirrctory = new DirectoryChooser();
+            File selecteddir =  loaddirectionaldirrctory.showDialog(ob.getstage());
+        });
 
         MenuItem loadcheckshot = new MenuItem( "Load _CheckShot");
-        loadcheckshot.setOnAction(e -> System.out.println(""));
+        loadcheckshot.setOnAction(e -> {
+            DirectoryChooser loadcheckshotdirrctory = new DirectoryChooser();
+            File selecteddir =  loadcheckshotdirrctory.showDialog(ob.getstage());
+        });
 
         MenuItem loadimage = new MenuItem( "Load Image _File");
-        loadimage.setOnAction(e -> System.out.println(""));
+        loadimage.setOnAction(e -> {
+            DirectoryChooser loadimagedirrctory = new DirectoryChooser();
+            File selecteddir =  loadimagedirrctory.showDialog(ob.getstage());
+        });
 
         MenuItem loadarray = new MenuItem( "Load _Array");
-        loadarray.setOnAction(e -> System.out.println(""));
+        loadarray.setOnAction(e -> {
+            DirectoryChooser loadarraydirrctory = new DirectoryChooser();
+            File selecteddir =  loadarraydirrctory.showDialog(ob.getstage());
+        });
 
         dataMenu.getItems().addAll(loadlas,loaddlis,loadseismic,loadascii,loaddirectionalsurvey,loadcheckshot,loadimage,loadarray);
 
