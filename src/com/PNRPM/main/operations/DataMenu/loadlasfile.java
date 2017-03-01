@@ -1,13 +1,15 @@
 package com.PNRPM.main.operations.DataMenu;
 
-
 import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-
 public class loadlasfile {
+
+    public double values[][]= new double[4][4];
+    public double datas=0.0;
+    public String parameter[]=new String[30];
+    public int noOfParameter=0;
 
     public void loadlas(File selectedlas)throws IOException{
         BufferedReader bufferedReader = new BufferedReader(new FileReader(selectedlas));
@@ -15,11 +17,7 @@ public class loadlasfile {
             bufferedReader = new BufferedReader(new FileReader(selectedlas));
             String text;
             Pattern regex = Pattern.compile("(\\d+(?:\\.\\d+)?)");
-            double datas=0.0;
             boolean Isdata=false,Isparameter=false;
-            String parameter[]=new String[30];
-            double values[][]= new double[4][4];
-            int noOfParameter=0;
             int index=0,parameterindex=0;
             while ((text = bufferedReader.readLine()) != null && text.length()>0) {
                 if(Isdata){
@@ -71,6 +69,10 @@ public class loadlasfile {
         } finally {
 
         }
+    }
+
+    public void displaylas(){
+        
     }
 
 }
