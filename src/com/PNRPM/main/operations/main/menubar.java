@@ -3,8 +3,11 @@ package com.PNRPM.main.operations.main;
 import com.PNRPM.main.operations.DataMenu.*;
 import javafx.scene.control.*;
 import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 
 import java.io.File;
+import java.io.IOException;
 
 class menubar {
 
@@ -150,12 +153,20 @@ class menubar {
 
         MenuItem loadlas = new MenuItem( "Load _LAS");
         loadlas.setOnAction(e -> {
-            DirectoryChooser loadlasdirrctory = new DirectoryChooser();
-            File selectedlas =  loadlasdirrctory.showDialog(ob.getstage());
+            FileChooser loadlasdirrctory = new FileChooser();
+            loadlasdirrctory.getExtensionFilters().add(new ExtensionFilter("LAS Files", "*.las"));
+            loadlasdirrctory.setTitle("Load LAS file");
+            File selectedlas =  loadlasdirrctory.showOpenDialog(ob.getstage());
             if(selectedlas == null){
                 System.out.println("LAS file not selected");
             }else{
                 loadlasfile lasobject = new loadlasfile();
+                try {
+                    lasobject.loadlas(selectedlas);
+                }
+                catch (IOException el){
+                    System.out.println("Error in loading");
+                }
             }
         });
 
