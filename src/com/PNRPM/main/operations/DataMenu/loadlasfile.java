@@ -61,7 +61,6 @@ public class loadlasfile {
                     values= new double[(int)datas+1][noOfParameter];
                 }
             }
-            System.out.println(values[(int)datas][noOfParameter-1]);
         } catch (FileNotFoundException ex) {
 //            Logger.getLogger(JavaFX_OpenFile.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
