@@ -5,6 +5,7 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.*;
@@ -88,7 +89,7 @@ public class loadlasfile {
     public void displaylas(){
         Stage laswindow = new Stage();
         HBox hb = new HBox(10);
-        for(int i=1;i<=1;++i){
+        for(int i=1;i<=noOfParameter;++i){
             LineChart graph = datadisplay(i);
             hb.getChildren().add(graph);
         }
@@ -103,7 +104,7 @@ public class loadlasfile {
         xAxis.setLabel(parameter[i]);
 
         //Defining the y axis
-        NumberAxis yAxis = new NumberAxis   ();
+        NumberAxis yAxis = new NumberAxis(maxDepth,minDepth,-incrementDepth);
         yAxis.setLabel("Depth in meter");
 
         //Creating the line chart
@@ -118,10 +119,10 @@ public class loadlasfile {
         for (int j=0;j<=(int)datas;++j){
             series.getData().add(new XYChart.Data(values[j][i],values[j][0]));
         }
+        linechart.setAxisSortingPolicy(LineChart.SortingPolicy.NONE);
+
+        linechart.getData().add(series);
 
         return linechart;
     }
-
-
-
 }
