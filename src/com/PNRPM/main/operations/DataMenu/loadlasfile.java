@@ -4,8 +4,8 @@ import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.*;
@@ -102,18 +102,17 @@ public class loadlasfile {
     public void displaylas(){
         Stage laswindow = new Stage();
         HBox hb = new HBox(10);
-        for(int i=1;i<=1;++i){
+        for(int i=1;i<=noOfParameter;++i){
 
-            VBox vb= new VBox(10);
-            vb.setPrefHeight(1000);
+            BorderPane border = new BorderPane();
 
             LineChart graph = datadisplay(i);
-            vb.getChildren().add(graph);
+            border.setCenter(graph);
 
             Rectangle zoomRect = new Rectangle();
             zoomRect.setManaged(false);
             zoomRect.setFill(Color.LIGHTSEAGREEN.deriveColor(0, 1, 1, 0.5));
-            vb.getChildren().add(zoomRect);
+            border.setTop(zoomRect);
 
             final HBox controls = new HBox(10);
             controls.setPadding(new Insets(10));
@@ -121,7 +120,8 @@ public class loadlasfile {
 
             final Button zoomButton = new Button("Zoom");
             final Button resetButton = new Button("Reset");
-            zoomButton.setOnAction(e -> doZoom(zoomRect, graph));
+            final int param=i;
+            zoomButton.setOnAction(e -> doZoom(zoomRect, graph, param));
             final double lowerlimit=range[0][i];
             final double upperlimit=range[1][i];
             resetButton.setOnAction(e->
@@ -143,8 +143,8 @@ public class loadlasfile {
             controls.getChildren().addAll(zoomButton, resetButton);
             setUpZooming(zoomRect, graph);
 
-            vb.getChildren().add(controls);
-            hb.getChildren().add(vb);
+            border.setBottom(controls);
+            hb.getChildren().add(border);
         }
         Scene scene = new Scene(hb);
         laswindow.setScene(scene);
@@ -201,7 +201,7 @@ public class loadlasfile {
         });
     }
 
-    private void doZoom(Rectangle zoomRect, LineChart<Number, Number> chart) {
+    private void doZoom(Rectangle zoomRect, LineChart<Number, Number> chart, int i) {
         Point2D zoomTopLeft = new Point2D(zoomRect.getX(), zoomRect.getY());
         Point2D zoomBottomRight = new Point2D(zoomRect.getX() + zoomRect.getWidth(), zoomRect.getY() + zoomRect.getHeight());
         final NumberAxis yAxis = (NumberAxis) chart.getYAxis();
@@ -212,10 +212,8 @@ public class loadlasfile {
         double yOffset = zoomBottomRight.getY() - xAxisInScene.getY();
         double xAxisScale = xAxis.getScale();
         double yAxisScale = yAxis.getScale();
-        System.out.println(xAxisScale);
-        System.out.println(yAxisScale);
-//        xAxis.setLowerBound(xAxis.getLowerBound() + xOffset / xAxisScale);
-        xAxis.setUpperBound(xAxis.getLowerBound() + zoomRect.getWidth() / xAxisScale);
+        xAxis.setLowerBound(range[0][i]);
+        xAxis.setUpperBound(range[1][i]);  //Keeping x range constant b/w highest and lowest
         yAxis.setLowerBound(yAxis.getLowerBound() + yOffset / yAxisScale);
         yAxis.setUpperBound(yAxis.getLowerBound() - zoomRect.getHeight() / yAxisScale);
         zoomRect.setWidth(0);
