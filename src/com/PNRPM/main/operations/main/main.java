@@ -29,10 +29,10 @@ public class main extends Application {
         //creating close window object
         closeconfirm ob = new closeconfirm();
 
-        window.setOnCloseRequest(e -> {
-            e.consume();
-            ob.displayconfirmclose();
-        });
+//        window.setOnCloseRequest(e -> {
+//            e.consume();
+//            ob.displayconfirmclose();
+//        });
 
         //creating menubar class object
         menubar mb= new menubar();
