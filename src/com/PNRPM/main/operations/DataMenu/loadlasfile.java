@@ -126,6 +126,7 @@ public class loadlasfile {
         linechart.setAxisSortingPolicy(LineChart.SortingPolicy.NONE);
 
         linechart.getData().add(series);
+        series.getNode().setStyle("-fx-stroke-width: 1;-fx-stroke: red; ");
 
         return linechart;
     }
