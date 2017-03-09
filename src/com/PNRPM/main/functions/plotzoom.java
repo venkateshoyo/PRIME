@@ -43,8 +43,8 @@ public class plotzoom {
         xAxis.setUpperBound(ylowerlimit);  //Keeping x range constant b/w highest and lowest
         yAxis.setLowerBound(yAxis.getLowerBound() + yOffset / yAxisScale);
         yAxis.setUpperBound(yAxis.getLowerBound() - zoomRect.getHeight() / yAxisScale);
-        zoomRect.setWidth(0);
-        zoomRect.setHeight(0);
+//        zoomRect.setWidth(0);
+//        zoomRect.setHeight(0);
     }
 
 }
