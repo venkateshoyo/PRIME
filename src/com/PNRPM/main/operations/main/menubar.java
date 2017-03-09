@@ -1,12 +1,12 @@
 package com.PNRPM.main.operations.main;
 
-import com.PNRPM.main.operations.fileMenu.*;
-import com.PNRPM.main.operations.editMenu.*;
-import com.PNRPM.main.operations.projectMenu.*;
+//import com.PNRPM.main.operations.fileMenu.*;
+//import com.PNRPM.main.operations.editMenu.*;
+//import com.PNRPM.main.operations.projectMenu.*;
 import com.PNRPM.main.operations.dataMenu.*;
-import com.PNRPM.main.operations.analysisMenu.*;
+//import com.PNRPM.main.operations.analysisMenu.*;
 import com.PNRPM.main.operations.displayMenu.*;
-import com.PNRPM.main.operations.programmerMenu.*;
+//import com.PNRPM.main.operations.programmerMenu.*;
 import javafx.scene.control.*;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
