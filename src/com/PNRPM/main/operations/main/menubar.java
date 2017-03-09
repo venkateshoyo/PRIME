@@ -1,6 +1,12 @@
 package com.PNRPM.main.operations.main;
 
-import com.PNRPM.main.operations.DataMenu.*;
+import com.PNRPM.main.operations.fileMenu.*;
+import com.PNRPM.main.operations.editMenu.*;
+import com.PNRPM.main.operations.projectMenu.*;
+import com.PNRPM.main.operations.dataMenu.*;
+import com.PNRPM.main.operations.analysisMenu.*;
+import com.PNRPM.main.operations.displayMenu.*;
+import com.PNRPM.main.operations.programmerMenu.*;
 import javafx.scene.control.*;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
@@ -266,7 +272,10 @@ class menubar {
         seimicviewer.setOnAction(e -> System.out.println(""));
 
         MenuItem crossplots = new MenuItem( "_Cross Plots");
-        crossplots.setOnAction(e -> System.out.println(""));
+        crossplots.setOnAction(e -> {
+           crossplot cp = new crossplot();
+           cp.crossplots();
+        });
 
         analysisMenu.getItems().addAll(singlewellview,multiwellview,seimicviewer,crossplots);
 

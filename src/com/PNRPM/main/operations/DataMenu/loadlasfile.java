@@ -1,4 +1,4 @@
-package com.PNRPM.main.operations.DataMenu;
+package com.PNRPM.main.operations.dataMenu;
 
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
@@ -102,7 +102,7 @@ public class loadlasfile {
     public void displaylas(){
         Stage laswindow = new Stage();
         HBox hb = new HBox(10);
-        for(int i=1;i<=noOfParameter;++i){
+        for(int i=1;i<=6;++i){
 
             BorderPane border = new BorderPane();
 
@@ -219,5 +219,4 @@ public class loadlasfile {
         zoomRect.setWidth(0);
         zoomRect.setHeight(0);
     }
-
 }
