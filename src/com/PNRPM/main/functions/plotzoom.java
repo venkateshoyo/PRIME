@@ -28,7 +28,7 @@ public class plotzoom {
         });
     }
 
-    public void doZoom(Rectangle zoomRect, LineChart<Number, Number> chart, int i, double xlowerlimit, double ylowerlimit) {
+    public void doZoom(Rectangle zoomRect, LineChart<Number, Number> chart, double xlowerlimit, double ylowerlimit) {
         Point2D zoomTopLeft = new Point2D(zoomRect.getX(), zoomRect.getY());
         Point2D zoomBottomRight = new Point2D(zoomRect.getX() + zoomRect.getWidth(), zoomRect.getY() + zoomRect.getHeight());
         final NumberAxis yAxis = (NumberAxis) chart.getYAxis();

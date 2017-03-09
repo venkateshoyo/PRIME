@@ -119,7 +119,7 @@ public class loadlasfile {
             final Button zoomButton = new Button("Zoom");
             final Button resetButton = new Button("Reset");
             final int param=i;
-            zoomButton.setOnAction(e -> ob.doZoom(zoomRect, graph, param,range[0][param],range[1][param]));
+            zoomButton.setOnAction(e -> ob.doZoom(zoomRect, graph, range[0][param],range[1][param]));
             final double lowerlimit=range[0][i];
             final double upperlimit=range[1][i];
             resetButton.setOnAction(e->
