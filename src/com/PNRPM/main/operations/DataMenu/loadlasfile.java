@@ -1,6 +1,7 @@
 package com.PNRPM.main.operations.dataMenu;
 
 import com.PNRPM.main.functions.plotzoom;
+import com.PNRPM.main.functions.verticallinechart;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
@@ -28,7 +29,7 @@ public class loadlasfile {
     public double range[][];
 
     public void loadlas(File selectedlas)throws IOException{
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(selectedlas));
+        BufferedReader bufferedReader;
         try {
             bufferedReader = new BufferedReader(new FileReader(selectedlas));
             String text;
@@ -100,11 +101,13 @@ public class loadlasfile {
         Stage laswindow = new Stage();
         HBox hb = new HBox(10);
         plotzoom ob = new plotzoom();
-        for(int i=1;i<=2;++i){
+        for(int i=1;i<=8;++i){
 
             BorderPane border = new BorderPane();
 
-            LineChart graph = datadisplay(i);
+            verticallinechart vlineobject = new verticallinechart();
+            LineChart graph = vlineobject.plotVerticalLineChart(i,values,range[0][i],range[1][i],range[1][0],range[0][0],(int)datas, parameter[i]);
+
             border.setCenter(graph);
 
             Rectangle zoomRect = new Rectangle();
@@ -148,38 +151,5 @@ public class loadlasfile {
         Scene scene = new Scene(hb);
         laswindow.setScene(scene);
         laswindow.show();
-    }
-
-    public LineChart datadisplay(int i){
-        //Defining the x axis
-        NumberAxis xAxis = new NumberAxis(range[0][i],range[1][i],(range[1][i]-range[0][i])/5);
-        xAxis.setLabel(parameter[i]);
-        xAxis.setAutoRanging(false);
-
-        //Defining the y axis
-        NumberAxis yAxis = new NumberAxis(range[1][0],range[0][0],-increment);
-        yAxis.setAutoRanging(false);
-        if(i == 1)
-            yAxis.setLabel("Depth in meter");
-
-        //Creating the line chart
-        LineChart linechart = new LineChart(xAxis, yAxis);
-
-        linechart.setAnimated(false);
-        linechart.setCreateSymbols(false);
-
-        //Prepare XYChart.Series objects by setting data
-        XYChart.Series series = new XYChart.Series();
-        series.setName(parameter[i]);
-
-        for (int j=0;j<=(int)datas;++j){
-            series.getData().add(new XYChart.Data(values[j][i],values[j][0]));
-        }
-        linechart.setAxisSortingPolicy(LineChart.SortingPolicy.NONE);
-
-        linechart.getData().add(series);
-        series.getNode().setStyle("-fx-stroke-width: 1;-fx-stroke: red; ");
-
-        return linechart;
     }
 }
