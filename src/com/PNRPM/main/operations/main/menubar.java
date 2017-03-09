@@ -383,7 +383,7 @@ class menubar {
         //Menu Bar
         MenuBar menuBar= new MenuBar();
         menuBar.getStyleClass().add("topmenu");
-        menuBar.getMenus().addAll(fileMenu,editMenu,projectMenu,dataMenu,analysisMenu,displayMenu, programmerMenu,helpMenu);
+        menuBar.getMenus().addAll(fileMenu,projectMenu,dataMenu,editMenu,analysisMenu,displayMenu, programmerMenu,helpMenu);
 
         return menuBar;
     }
