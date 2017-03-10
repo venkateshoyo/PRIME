@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -18,12 +19,13 @@ public class verticalplots {
 
     public void displayplots(double values[][], double range[][], String parameter[]){
 
-        int noofplots=range[0].length-1;
+        int noofplots=8;
 
         Stage plotwindow = new Stage();
         plotzoom ob = new plotzoom();
 
-        BorderPane plots = new BorderPane();
+        ScrollPane plots = new ScrollPane();
+        plots.setFitToHeight(true);
 
         Rectangle zoomRect = new Rectangle();
         zoomRect.setManaged(false);
@@ -41,11 +43,16 @@ public class verticalplots {
 
             ob.setUpZooming(zoomRect, graph[i-1]);
 
+            if(noofplots>6)
+                graph[i-1].setMaxWidth(250);
+            else
+                plots.setFitToWidth(true);
+
             hb.getChildren().add(graph[i-1]);
         }
 
-        plots.setTop(zoomRect);
-        plots.setCenter(hb);
+        hb.getChildren().add(zoomRect);
+        plots.setContent(hb);
 
         Scene scene = new Scene(plots);
 
@@ -73,7 +80,6 @@ public class verticalplots {
         });
 
         plotwindow.setScene(scene);
-        plotwindow.setMaximized(true);
         plotwindow.show();
     }
 }
