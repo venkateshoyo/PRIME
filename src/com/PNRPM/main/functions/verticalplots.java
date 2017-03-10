@@ -1,6 +1,5 @@
 package com.PNRPM.main.functions;
 
-import com.PNRPM.main.operations.main.main;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;

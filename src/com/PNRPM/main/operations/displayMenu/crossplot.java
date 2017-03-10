@@ -23,38 +23,80 @@ public class crossplot {
 
         BorderPane legends = new BorderPane();
 
-        Text text = new Text("Select the X and y axis legends for crossplots.");
+        Text text = new Text("Select the X and Y axis labels corresponding to Z-axis parameter.");
         legends.setTop(text);
 
         VBox xaxis = new VBox(5);
         xaxis.setPadding(new Insets(20));
         VBox yaxis = new VBox(5);
         yaxis.setPadding(new Insets(20));
+        VBox zaxis = new VBox(5);
+        zaxis.setPadding(new Insets(20));
 
         ToggleGroup group1 = new ToggleGroup();
         ToggleGroup group2 = new ToggleGroup();
+        ToggleGroup group3 = new ToggleGroup();
         for(int i=1;i<noOfParameter;++i)
         {
             RadioButton button1 = new RadioButton(parameter[i]);
+            button1.setMinWidth(150);
             button1.setToggleGroup(group1);
-            if(i==1)
+            if(i==2)
                 button1.setSelected(true);
             xaxis.getChildren().add(button1);
 
             RadioButton button2 = new RadioButton(parameter[i]);
+            button2.setMinWidth(150);
             button2.setToggleGroup(group2);
             if(i==2)
                 button2.setSelected(true);
             yaxis.getChildren().add(button2);
+
+            RadioButton button3 = new RadioButton(parameter[i]);
+            button3.setMinWidth(150);
+            button3.setToggleGroup(group3);
+            if(i==1)
+                button3.setSelected(true);
+            zaxis.getChildren().add(button3);
         }
 
+        ScrollPane x= new ScrollPane();
+        x.setContent(xaxis);
+        x.setFitToWidth(true);
+
+        ScrollPane y= new ScrollPane();
+        y.setContent(yaxis);
+        y.setFitToWidth(true);
+
+        ScrollPane z= new ScrollPane();
+        z.setContent(zaxis);
+        z.setFitToWidth(true);
+
         BorderPane xlabel = new BorderPane();
-        xlabel.setLeft(xaxis);
+        Label xlegend = new Label("X-axis Parameter");
+        xlegend.setMinWidth(170);
+        xlegend.setAlignment(Pos.BASELINE_CENTER);
+        xlabel.setTop(xlegend);
+        xlabel.setLeft(x);
+
         BorderPane ylabel = new BorderPane();
-        ylabel.setLeft(yaxis);
+        Label ylegend = new Label("Y-axis Parameter");
+        ylegend.setMinWidth(170);
+        ylegend.setAlignment(Pos.BASELINE_CENTER);
+        ylabel.setTop(ylegend);
+        ylabel.setCenter(y);
+
+        BorderPane zlabel = new BorderPane();
+        Label zlegend = new Label("Z-axis Parameter");
+        zlegend.setMinWidth(170);
+        zlegend.setAlignment(Pos.BASELINE_CENTER);
+        zlabel.setTop(zlegend);
+        zlabel.setRight(z);
 
         HBox labels= new HBox();
-        labels.getChildren().addAll(xlabel,ylabel);
+        labels.setSpacing(15);
+        labels.setPadding(new Insets(10));
+        labels.getChildren().addAll(xlabel,ylabel,zlabel);
 
         legends.setCenter(labels);
 
@@ -69,8 +111,9 @@ public class crossplot {
         controls.getChildren().addAll(ok, cancel);
         legends.setBottom(controls);
 
-        Scene scene = new Scene(legends,300,300);
+        Scene scene = new Scene(legends,620,400);
         cPlot.setScene(scene);
         cPlot.show();
+        cPlot.setResizable(false);
     }
 }
