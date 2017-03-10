@@ -18,7 +18,7 @@ public class verticalplots {
 
     public void displayplots(double values[][], double range[][], String parameter[]){
 
-        int noofplots=2;
+        int noofplots=range[0].length-1;
 
         Stage plotwindow = new Stage();
         plotzoom ob = new plotzoom();
@@ -44,26 +44,17 @@ public class verticalplots {
             hb.getChildren().add(graph[i-1]);
         }
 
-
-//        Button zoomButton = new Button("zoom");
-//        zoomButton.setOnAction(e -> {
-//            for (int i=1;i<=noofplots;++i){
-//                final int param =i;
-//                ob.doZoom(zoomRect, graph[i-1], range[0][param],range[1][param]);
-//            }
-//        });
         plots.setTop(zoomRect);
-
-//        hb.getChildren().add(zoomButton);
         plots.setCenter(hb);
 
         Scene scene = new Scene(plots);
 
-        scene.setOnDragDropped (e->{
-            System.out.println("Drag over");
-            for (int i=1;i<=noofplots;++i){
-                final int param =i;
-                ob.doZoom(zoomRect, graph[i-1], range[0][param],range[1][param]);
+        plots.setOnMouseReleased(e-> {
+            if (!e.isDragDetect()) {
+                for (int i = 1; i <= noofplots; ++i) {
+                    final int param = i;
+                    ob.doZoom(zoomRect, graph[i - 1], range[0][param], range[1][param]);
+                }
             }
         });
 
