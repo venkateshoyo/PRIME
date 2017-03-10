@@ -1,15 +1,11 @@
 package com.PNRPM.main.functions;
 
-import javafx.beans.binding.BooleanBinding;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
+import com.PNRPM.main.operations.main.main;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
-import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseButton;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -19,7 +15,7 @@ public class verticalplots {
 
     public void displayplots(double values[][], double range[][], String parameter[]){
 
-        int noofplots=8;
+        int noofplots=range[0].length-1;
 
         Stage plotwindow = new Stage();
         plotzoom ob = new plotzoom();
@@ -40,7 +36,7 @@ public class verticalplots {
         for(int i=1;i<=noofplots;++i){
 
             graph[i-1]=vlineobject.plotVerticalLineChart(i,values,range[0][i],range[1][i],range[1][0],range[0][0],values.length-1, parameter[i]);
-
+            graph[i-1].setLegendVisible(false);
             ob.setUpZooming(zoomRect, graph[i-1]);
 
             if(noofplots>6)
@@ -78,6 +74,8 @@ public class verticalplots {
                 }
             }
         });
+
+        scene.getStylesheets().add(verticalplots.class.getResource("../resources/css/themes/maintheme1.css").toExternalForm());
 
         plotwindow.setScene(scene);
         plotwindow.show();
