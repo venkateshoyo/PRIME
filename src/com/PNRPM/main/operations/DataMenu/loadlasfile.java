@@ -1,7 +1,7 @@
 package com.PNRPM.main.operations.dataMenu;
 
 import com.PNRPM.main.functions.verticalplots;
-
+import com.PNRPM.main.functions.xyzcrossplot;
 import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -77,8 +77,11 @@ public class loadlasfile {
             range[0][0] = values[0][0];
             range[1][0] = values[(int) datas][0];
 
-            verticalplots vplotsobject = new verticalplots();
-            vplotsobject.displayplots(values,range,parameter);
+//            verticalplots vplotsobject = new verticalplots();
+//            vplotsobject.displayplots(values,range,parameter);
+
+            xyzcrossplot crosplot = new xyzcrossplot();
+            crosplot.crossplotdisplay(1,2,0,values,range,parameter);
         }
         catch (FileNotFoundException ex) {}
         catch (IOException ex) {}

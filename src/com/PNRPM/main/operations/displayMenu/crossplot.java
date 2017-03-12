@@ -105,6 +105,7 @@ public class crossplot {
         controls.setAlignment(Pos.BASELINE_RIGHT);
 
         final Button ok = new Button("Plot");
+        ok.setOnAction(e-> {});
         final Button cancel = new Button("Cancel");
         cancel.setOnAction(e-> cPlot.close());
 
