@@ -26,21 +26,21 @@ public class xyzcrossplot {
             zranges[j]=range[0][z]+j*difference;
 
         XYChart.Series series1 = new XYChart.Series();
-        series1.setName((int)zranges[0]+" - "+(int)zranges[1]+"  ");
+        series1.setName(zranges[0]+" - "+zranges[1]+"  ");
         XYChart.Series series2 = new XYChart.Series();
-        series2.setName((int)zranges[1]+" - "+(int)zranges[2]+"  ");
+        series2.setName(zranges[1]+" - "+zranges[2]+"  ");
         XYChart.Series series3 = new XYChart.Series();
-        series3.setName((int)zranges[2]+" - "+(int)zranges[3]+"  ");
+        series3.setName(zranges[2]+" - "+zranges[3]+"  ");
         XYChart.Series series4 = new XYChart.Series();
-        series4.setName((int)zranges[3]+" - "+(int)zranges[4]+"  ");
+        series4.setName(zranges[3]+" - "+zranges[4]+"  ");
         XYChart.Series series5 = new XYChart.Series();
-        series5.setName((int)zranges[4]+" - "+(int)zranges[5]+"  ");
+        series5.setName(zranges[4]+" - "+zranges[5]+"  ");
         XYChart.Series series6 = new XYChart.Series();
-        series6.setName((int)zranges[5]+" - "+(int)zranges[6]+"  ");
+        series6.setName(zranges[5]+" - "+zranges[6]+"  ");
         XYChart.Series series7 = new XYChart.Series();
-        series7.setName((int)zranges[6]+" - "+(int)zranges[7]+"  ");
+        series7.setName(zranges[6]+" - "+zranges[7]+"  ");
         XYChart.Series series8 = new XYChart.Series();
-        series8.setName((int)zranges[7]+" - "+(int)zranges[8]+"  ");
+        series8.setName(zranges[7]+" - "+zranges[8]+"  ");
 
         for (int i=0;i<values.length;++i)
         {
