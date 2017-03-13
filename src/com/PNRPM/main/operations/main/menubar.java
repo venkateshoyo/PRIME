@@ -274,7 +274,7 @@ class menubar {
         MenuItem crossplots = new MenuItem( "_Cross Plots");
         crossplots.setOnAction(e -> {
            crossplot cp = new crossplot();
-           cp.crossplots();
+//           cp.crossplots();
         });
 
         analysisMenu.getItems().addAll(singlewellview,multiwellview,seimicviewer,crossplots);

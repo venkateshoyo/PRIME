@@ -1,5 +1,6 @@
 package com.PNRPM.main.operations.displayMenu;
 
+import com.PNRPM.main.functions.xyzcrossplot;
 import javafx.geometry.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -14,10 +15,9 @@ import javafx.stage.Stage;
 
 public class crossplot {
 
-    public void crossplots(){
+    public void crossplots(double values[][],double range[][],String parameter[]){
 
-        int noOfParameter=6;
-        String parameter[] = {"ToggleGroup","ToggleGroup","ToggleGroup","ToggleGroup","ToggleGroup","ToggleGroup"};
+        int noOfParameter=range[0].length;
 
         Stage cPlot = new Stage();
 
@@ -36,10 +36,11 @@ public class crossplot {
         ToggleGroup group1 = new ToggleGroup();
         ToggleGroup group2 = new ToggleGroup();
         ToggleGroup group3 = new ToggleGroup();
-        for(int i=1;i<noOfParameter;++i)
+        for(int i=0;i<noOfParameter;++i)
         {
             RadioButton button1 = new RadioButton(parameter[i]);
             button1.setMinWidth(150);
+            button1.setUserData(i);
             button1.setToggleGroup(group1);
             if(i==2)
                 button1.setSelected(true);
@@ -47,6 +48,7 @@ public class crossplot {
 
             RadioButton button2 = new RadioButton(parameter[i]);
             button2.setMinWidth(150);
+            button2.setUserData(i);
             button2.setToggleGroup(group2);
             if(i==2)
                 button2.setSelected(true);
@@ -54,6 +56,7 @@ public class crossplot {
 
             RadioButton button3 = new RadioButton(parameter[i]);
             button3.setMinWidth(150);
+            button3.setUserData(i);
             button3.setToggleGroup(group3);
             if(i==1)
                 button3.setSelected(true);
@@ -105,7 +108,13 @@ public class crossplot {
         controls.setAlignment(Pos.BASELINE_RIGHT);
 
         final Button ok = new Button("Plot");
-        ok.setOnAction(e-> {});
+        ok.setOnAction(e-> {
+            int xindex=Integer.parseInt(group1.getSelectedToggle().getUserData().toString());
+            int yindex=Integer.parseInt(group2.getSelectedToggle().getUserData().toString());
+            int zindex=Integer.parseInt(group3.getSelectedToggle().getUserData().toString());
+            xyzcrossplot ob = new xyzcrossplot();
+            ob.crossplotdisplay(xindex,yindex,zindex,values,range,parameter);
+        });
         final Button cancel = new Button("Cancel");
         cancel.setOnAction(e-> cPlot.close());
 
