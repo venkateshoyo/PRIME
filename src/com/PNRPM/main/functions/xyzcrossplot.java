@@ -1,6 +1,7 @@
 package com.PNRPM.main.functions;
 
 import com.PNRPM.main.operations.main.main;
+import javafx.geometry.Side;
 import javafx.scene.Scene;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
@@ -62,6 +63,7 @@ public class xyzcrossplot {
                 series8.getData().add(new XYChart.Data(values[i][x],values[i][y]));
         }
         scatterchart.getData().addAll(series1,series2,series3,series4,series5,series6,series7,series8);
+        scatterchart.setLegendSide(Side.RIGHT);
         Scene scene = new Scene(scatterchart);
         scene.getStylesheets().add(main.class.getResource("../../resources/css/crossplot.css").toExternalForm());
         Stage crossplot = new Stage();
