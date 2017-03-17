@@ -11,8 +11,8 @@ public class xyzcrossplot {
 
     public void crossplotdisplay(int x, int y, int z, double values[][],double range[][],String parameter[]){
 
-        final NumberAxis xaxis = new NumberAxis(range[0][x],range[1][x],(range[1][x]-range[0][x])/15);
-        final NumberAxis yaxis = new NumberAxis(range[0][y],range[1][y],(range[1][y]-range[0][y])/15);
+        final NumberAxis xaxis = new NumberAxis(0.9*range[0][x],1.1*range[1][x],(range[1][x]-range[0][x])/15);
+        final NumberAxis yaxis = new NumberAxis(0.9*range[0][y],1.1*range[1][y],(range[1][y]-range[0][y])/15);
 
         ScatterChart scatterchart = new ScatterChart(xaxis,yaxis);
         xaxis.setLabel(parameter[x]);

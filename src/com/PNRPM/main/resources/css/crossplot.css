@@ -1,45 +1,48 @@
 .series0.chart-symbol {
-    -fx-stroke: #e9967a;
-    -fx-padding: 4px ;
+    -fx-stroke: #e9967a, green;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
+    -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
 .series1.chart-symbol {
-    -fx-stroke: #e9967a;
-    -fx-padding: 4px ;
+    -fx-stroke: #e9967a, green;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
+    -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
 .series2.chart-symbol {
-    -fx-stroke: #e9967a;
-    -fx-padding: 4px ;
+    -fx-stroke: #e9967a, green;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
+    -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
 .series3.chart-symbol {
-    -fx-stroke: #e9967a;
-    -fx-padding: 4px ;
+    -fx-stroke: #e9967a, green;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
+    -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
 .series4.chart-symbol {
-    -fx-stroke: #e9967a;
-    -fx-padding: 4px ;
+    -fx-stroke: #e9967a, green;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
+    -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
 .series5.chart-symbol {
-    -fx-stroke: #e9967a;
-    -fx-padding: 4px ;
+    -fx-stroke: #e9967a, green;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
+    -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
 .series6.chart-symbol {
-    -fx-stroke: #e9967a;
-    -fx-padding: 4px ;
+    -fx-stroke: #e9967a, green;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
+    -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
 .series7.chart-symbol {
-    -fx-stroke: #e9967a;
-    -fx-padding: 4px ;
-    -fx-background-radius: 50px;
-}
-.series8.chart-symbol {
-    -fx-stroke: #e9967a;
-    -fx-padding: 4px ;
+    -fx-stroke: #e9967a, green;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
+    -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
