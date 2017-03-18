@@ -39,7 +39,7 @@ public class verticalplots {
             ob.setUpZooming(zoomRect, graph[i-1]);
 
             if(noofplots>6)
-                graph[i-1].setMaxWidth(250);
+                graph[i-1].setMaxWidth(180);
             else
                 plots.setFitToWidth(true);
 

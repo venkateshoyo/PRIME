@@ -1,88 +1,48 @@
 .series0.chart-symbol {
-    -fx-background-color: #f9d900;
-    -fx-shape: "M10 10 H 90 V 90 H 10 L 10 10";
+    -fx-background-color: #ff0000;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
     -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
 .series1.chart-symbol {
-    -fx-background-color: #a9e200;
-    -fx-shape: "M10 10 H 90 V 90 H 10 L 10 10";
+    -fx-background-color: #f48024;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
     -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
 .series2.chart-symbol {
-    -fx-background-color: #22bad9;
-    -fx-shape: "M10 10 H 90 V 90 H 10 L 10 10 ";
+    -fx-background-color: #edff00;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
     -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
 .series3.chart-symbol {
-    -fx-background-color: #0181e2;
-    -fx-shape: "M10 10 H 90 V 90 H 10 L 10 10";
+    -fx-background-color: #25ff00;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
     -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
 .series4.chart-symbol {
-    -fx-background-color: #2f357f;
-    -fx-shape: "M10 10 H 90 V 90 H 10 L 10 10";
+    -fx-background-color: #00ffe9;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
     -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
 .series5.chart-symbol {
-    -fx-background-color: #860061;
-    -fx-shape: "M10 10 H 90 V 90 H 10 L 10 10 ";
+    -fx-background-color: #1d00ff;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
     -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
 .series6.chart-symbol {
-    -fx-background-color: #c62b00;
-    -fx-shape: "M10 10 H 90 V 90 H 10 L 10 10 ";
+    -fx-background-color: #ff00af;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
     -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
 .series7.chart-symbol {
-    -fx-background-color: #ff5700;
-    -fx-shape: "M10 10 H 90 V 90 H 10 L 10 10 ";
+    -fx-background-color: #40142a;
+    -fx-shape: "M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0 ";
     -fx-padding: 2px ;
     -fx-background-radius: 50px;
-}
-
-.default-color0.chart-legend-item-symbol {
-    -fx-background-color: #f9d900;
-    -fx-padding: 50px;
-}
-
-.default-color1.chart-legend-item-symbol {
-    -fx-background-color: #a9e200;
-    -fx-padding: 50px;
-}
-
-.default-color2.chart-legend-item-symbol {
-    -fx-background-color: #22bad9;
-    -fx-padding: 50px;
-}
-
-.default-color3.chart-legend-item-symbol {
-    -fx-background-color: #0181e2;
-    -fx-padding: 50px;
-}
-
-.default-color4.chart-legend-item-symbol {
-    -fx-background-color: #2f357f;
-    -fx-padding: 50px;
-}
-
-.default-color5.chart-legend-item-symbol {
-    -fx-background-color: #860061;
-    -fx-padding: 50px;
-}
-
-.default-color6.chart-legend-item-symbol {
-    -fx-background-color: #c62b00;
-    -fx-padding: 50px;
-}
-
-.default-color7.chart-legend-item-symbol {
-    -fx-background-color: #ff5700;
-    -fx-padding: 50px;
 }

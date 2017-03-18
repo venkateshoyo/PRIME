@@ -1,24 +1,30 @@
 package com.PNRPM.main.functions;
 
 import com.PNRPM.main.operations.main.main;
+import javafx.geometry.Insets;
 import javafx.geometry.Side;
 import javafx.scene.Scene;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.paint.LinearGradient;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class xyzcrossplot {
 
     public void crossplotdisplay(int x, int y, int z, double values[][],double range[][],String parameter[]){
-
+        Stage crossplot = new Stage();
+        crossplot.show();
         final NumberAxis xaxis = new NumberAxis(0.9*range[0][x],1.1*range[1][x],(range[1][x]-range[0][x])/15);
         final NumberAxis yaxis = new NumberAxis(0.9*range[0][y],1.1*range[1][y],(range[1][y]-range[0][y])/15);
 
         ScatterChart scatterchart = new ScatterChart(xaxis,yaxis);
         xaxis.setLabel(parameter[x]);
         yaxis.setLabel(parameter[y]);
-        scatterchart.setTitle(parameter[x]+" vs "+parameter[y]+" with variation in "+parameter[z]);
+//        scatterchart.setTitle(parameter[x]+" vs "+parameter[y]+" with variation in "+parameter[z]);
 
         double difference=(range[1][z]-range[0][z])/8;
         double zranges[] = new double[9];
@@ -63,11 +69,21 @@ public class xyzcrossplot {
                 series8.getData().add(new XYChart.Data(values[i][x],values[i][y]));
         }
         scatterchart.getData().addAll(series1,series2,series3,series4,series5,series6,series7,series8);
-        scatterchart.setLegendSide(Side.RIGHT);
-        Scene scene = new Scene(scatterchart);
+//        scatterchart.setLegendSide(Side.RIGHT);
+        scatterchart.setLegendVisible(false);
+        BorderPane crossP = new BorderPane();
+        crossP.setPadding(new Insets(40));
+        crossP.setCenter(scatterchart);
+        Rectangle rect = new Rectangle(25,crossplot.getHeight());
+
+        LinearGradient g
+                = LinearGradient.valueOf("from 0% 0% to 0% 100%, #ff0000  6.25% , #f48024 18.75%,  #edff00  31.25%,  #25ff00 43.75%,  #00ffe9 56.25%,  #1d00ff 68.75%,  #ff00af 81.25%,  #40142a 93.75%");
+        rect.setFill(g);
+
+        crossP.setRight(rect);
+        Scene scene = new Scene(crossP);
         scene.getStylesheets().add(main.class.getResource("../../resources/css/crossplot.css").toExternalForm());
-        Stage crossplot = new Stage();
         crossplot.setScene(scene);
-        crossplot.show();
+        crossplot.heightProperty().addListener( e -> rect.setHeight(0.84*crossplot.getHeight()));
     }
 }
