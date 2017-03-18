@@ -51,12 +51,14 @@ public class verticalplots {
 
         Scene scene = new Scene(plots);
 
+        plots.setOnMousePressed(e-> zoomRect.setVisible(true));
         plots.setOnMouseReleased(e-> {
             if (!e.isDragDetect()) {
                 for (int i = 1; i <= noofplots; ++i) {
                     final int param = i;
                     ob.doZoom(zoomRect, graph[i - 1], range[0][param], range[1][param]);
                 }
+                zoomRect.setVisible(false);
             }
         });
 
