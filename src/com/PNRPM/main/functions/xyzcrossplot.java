@@ -34,9 +34,9 @@ public class xyzcrossplot {
         Stage crossplot = new Stage();
         BorderPane crossP = scatterplot();
         Scene scene = new Scene(crossP);
-        scene.getStylesheets().add(main.class.getResource("../../resources/css/crossplot.css").toExternalForm());
         crossplot.setScene(scene);
         crossplot.show();
+        scene.getStylesheets().add(xyzcrossplot.class.getResource("../resources/css/crossplot.css").toExternalForm());
     }
     public BorderPane scatterplot(){
 
