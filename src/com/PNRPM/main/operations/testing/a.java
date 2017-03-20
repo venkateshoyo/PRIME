@@ -1,69 +1,53 @@
-package com.PNRPM.main.operations.testing;
-
 import javafx.application.Application;
-import javafx.geometry.Side;
-import javafx.scene.Group;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.chart.AreaChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
-import javafx.scene.effect.BlurType;
-import javafx.scene.effect.DropShadow;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-/**
- *
- * @web http://java-buddy.blogspot.com/
- */
 public class a extends Application {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
+    static class ResizableRectangle extends Rectangle {
+        ResizableRectangle(double w, double h) {
+            super(w, h);
+        }
+
+        @Override
+        public boolean isResizable() {
+            return true;
+        }
+
+        @Override
+        public double minWidth(double height) {
+            return 0.0;
+        }
     }
 
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("java-buddy.blogspot.com");
-        Group root = new Group();
+        BorderPane borderPane = new BorderPane();
+        HBox hBox = new HBox();
 
-        final CategoryAxis xAxis = new CategoryAxis();
-        final NumberAxis yAxis = new NumberAxis();
+        hBox.setAlignment(Pos.CENTER);
 
-        xAxis.setLabel("Month");
-        yAxis.setLabel("Value");
+        Rectangle rect = new ResizableRectangle(hBox.getWidth(),50);
+        rect.setFill(Color.RED);
+        rect.widthProperty().bind(hBox.widthProperty().subtract(20));
 
-        final AreaChart<String,Number> areaChart = new AreaChart<>(xAxis,yAxis);
+        hBox.getChildren().add(rect);
 
-        areaChart.setTitle("AreaChart");
-        XYChart.Series series = new XYChart.Series();
-        series.setName("XYChart.Series");
+        borderPane.setCenter(hBox);
 
-        series.getData().add(new XYChart.Data("January", 100));
-        series.getData().add(new XYChart.Data("February", 200));
-        series.getData().add(new XYChart.Data("March", 50));
-        series.getData().add(new XYChart.Data("April", 75));
-        series.getData().add(new XYChart.Data("May", 110));
-        series.getData().add(new XYChart.Data("June", 300));
-        series.getData().add(new XYChart.Data("July", 111));
-        series.getData().add(new XYChart.Data("August", 30));
-        series.getData().add(new XYChart.Data("September", 75));
-        series.getData().add(new XYChart.Data("October", 55));
-        series.getData().add(new XYChart.Data("November", 225));
-        series.getData().add(new XYChart.Data("December", 99));
+        Scene scene = new Scene(borderPane, 900, 600, Color.WHITE);
 
-        areaChart.getData().add(series);
-
-        areaChart.setLegendSide(Side.RIGHT);
-
-        root.getChildren().add(areaChart);
-
-        primaryStage.setScene(new Scene(root, 500, 400));
+        primaryStage.setScene(scene);
         primaryStage.show();
+
     }
 
+    public static void main(String[] args) {
+        launch(args);
+    }
 }
