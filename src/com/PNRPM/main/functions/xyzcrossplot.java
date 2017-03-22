@@ -7,11 +7,16 @@ import javafx.scene.Scene;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
 
 public class xyzcrossplot {
     public int xindex;
@@ -20,6 +25,7 @@ public class xyzcrossplot {
     public double values[][];
     public double range[][];
     public String parameter[];
+    Stage crossplot;
 
     public void crossplotdisplay(int x, int y, int z, double v[][],double r[][],String p[]){
 
@@ -31,17 +37,42 @@ public class xyzcrossplot {
         range=r;
         parameter=p;
 
-        Stage crossplot = new Stage();
+        crossplot = new Stage();
+        crossplot.show();
         BorderPane crossP = scatterplot();
         Scene scene = new Scene(crossP);
         crossplot.setScene(scene);
-        crossplot.show();
         scene.getStylesheets().add(xyzcrossplot.class.getResource("../resources/css/crossplot.css").toExternalForm());
     }
     public BorderPane scatterplot(){
 
         BorderPane crossP = new BorderPane();
-        crossP.setPadding(new Insets(10));
+        crossP.setPadding(new Insets(0));
+
+        BorderPane legend = new BorderPane();
+        legend.setPadding(new Insets(0,10,50,10));
+
+        Rectangle rect = new ResizableRectangle(25,crossP.getHeight());
+        LinearGradient g = LinearGradient.valueOf("from 0% 0% to 0% 100%, #ff0000  6.25% , #f48024 18.75%,  #edff00  31.25%,  #25ff00 43.75%,  #00ffe9 56.25%,  #1d00ff 68.75%,  #ff00af 81.25%,  #40142a 93.75%");
+        rect.setFill(g);
+        rect.heightProperty().bind(crossP.heightProperty().subtract(50));
+        legend.setCenter(rect);
+
+        double difference=(range[1][zindex]-range[0][zindex])/8;
+        double zranges[] = new double[9];
+
+        VBox vb = new VBox(crossplot.getHeight()/10);
+        vb.setPadding(new Insets(0,10,0,10));
+
+        for (int j=0;j<=8;++j) {
+            zranges[j] = range[0][zindex] + j * difference;
+            Text a = new Text(zranges[j]+"");
+            vb.getChildren().add(a);
+        }
+
+        legend.setRight(vb);
+
+        crossP.setRight(legend);
 
         final NumberAxis xaxis = new NumberAxis(0.9*range[0][xindex],1.1*range[1][xindex],(range[1][xindex]-range[0][xindex])/15);
         final NumberAxis yaxis = new NumberAxis(0.9*range[0][yindex],1.1*range[1][yindex],(range[1][yindex]-range[0][yindex])/15);
@@ -49,12 +80,6 @@ public class xyzcrossplot {
         ScatterChart scatterchart = new ScatterChart(xaxis,yaxis);
         xaxis.setLabel(parameter[xindex]);
         yaxis.setLabel(parameter[yindex]);
-
-        double difference=(range[1][zindex]-range[0][zindex])/8;
-        double zranges[] = new double[9];
-
-        for (int j=0;j<=8;++j)
-            zranges[j]=range[0][zindex]+j*difference;
 
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(zranges[0]+" - "+zranges[1]+"  ");
@@ -96,12 +121,6 @@ public class xyzcrossplot {
         scatterchart.getData().addAll(series1,series2,series3,series4,series5,series6,series7,series8);
         scatterchart.setLegendVisible(false);
         crossP.setCenter(scatterchart);
-
-        Rectangle rect = new ResizableRectangle(25,crossP.getHeight());
-        LinearGradient g = LinearGradient.valueOf("from 0% 0% to 0% 100%, #ff0000  6.25% , #f48024 18.75%,  #edff00  31.25%,  #25ff00 43.75%,  #00ffe9 56.25%,  #1d00ff 68.75%,  #ff00af 81.25%,  #40142a 93.75%");
-        rect.setFill(g);
-        rect.heightProperty().bind(crossP.heightProperty().subtract(80));
-        crossP.setRight(rect);
 
         return crossP;
     }
