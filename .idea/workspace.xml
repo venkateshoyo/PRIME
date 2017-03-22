@@ -18,7 +18,98 @@
     <favorites_list name="GUI madHEYsia" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="verticalplots.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/functions/verticalplots.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="53" column="38" lean-forward="false" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="xyzcrossplot.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/functions/xyzcrossplot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4974#4975#0" expanded="true" />
+                <element signature="e#5009#5010#0" expanded="true" />
+                <element signature="e#5067#5068#0" expanded="true" />
+                <element signature="e#5102#5103#0" expanded="true" />
+                <element signature="e#5169#5170#0" expanded="true" />
+                <element signature="e#5203#5204#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="closewindow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/functions/closewindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="661">
+              <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crossplot.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/css/crossplot.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="51" column="29" lean-forward="false" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="a.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/operations/testing/a.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#405#406#0" expanded="true" />
+                <element signature="e#440#441#0" expanded="true" />
+                <element signature="e#498#499#0" expanded="true" />
+                <element signature="e#533#534#0" expanded="true" />
+                <element signature="e#600#601#0" expanded="true" />
+                <element signature="e#634#635#0" expanded="true" />
+                <element signature="e#1260#1261#0" expanded="true" />
+                <element signature="e#1288#1289#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loadlasfile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/operations/dataMenu/loadlasfile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crossplot.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/operations/displayMenu/crossplot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -45,11 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/view/Renderer2d.java" />
-        <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/text/drawable/cells/DrawableTextCell.java" />
-        <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/text/drawable/cells/TextCellRenderer.java" />
-        <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/text/drawable/DrawableTextTexture.java" />
-        <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/text/drawable/TextImageRenderer.java" />
         <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/text/overlay/TextOverlay.java" />
         <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/text/renderers/jogl/DefaultTextStyle.java" />
         <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/text/renderers/jogl/GradientTextStyle.java" />
@@ -96,14 +182,18 @@
         <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/maths/TicToc.java" />
         <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/scene/Decomposition.java" />
         <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/view/View.java" />
+        <option value="$PROJECT_DIR$/src/com/PNRPM/main/functions/verticalplots.java" />
+        <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/css/crossplot.css" />
+        <option value="$PROJECT_DIR$/src/com/PNRPM/main/operations/displayMenu/crossplot.java" />
+        <option value="$PROJECT_DIR$/src/com/PNRPM/main/operations/testing/a.java" />
+        <option value="$PROJECT_DIR$/src/com/PNRPM/main/functions/xyzcrossplot.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-7" />
+    <option name="width" value="1932" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -142,7 +232,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -194,11 +283,60 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUI shubham" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUI shubham" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUI shubham" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUI shubham" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="functions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,11 +366,11 @@
     <configuration default="false" name="a" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.PNRPM.main.operations.*" />
+          <option name="PATTERN" value="com.PNRPM.main.operations.testing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.PNRPM.main.operations.a" />
+      <option name="MAIN_CLASS_NAME" value="com.PNRPM.main.operations.testing.a" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -241,7 +379,7 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="GUI madHEYsia" />
+      <module name="GUI shubham" />
       <envs />
       <method />
     </configuration>
@@ -256,7 +394,7 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="GUI madHEYsia" />
+      <module name="GUI shubham" />
       <envs />
       <method />
     </configuration>
@@ -475,24 +613,24 @@
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
+      <module name="GUI shubham" />
       <envs />
       <method />
     </configuration>
     <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Application.a" />
-      <item index="1" class="java.lang.String" itemvalue="Application.a (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Application.main" />
+      <item index="0" class="java.lang.String" itemvalue="Application.main" />
+      <item index="1" class="java.lang.String" itemvalue="Application.a" />
+      <item index="2" class="java.lang.String" itemvalue="Application.a (1)" />
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.a" />
-        <item index="1" class="java.lang.String" itemvalue="Application.a (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Application.a (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.a" />
       </list>
     </recent_temporary>
   </component>
@@ -519,31 +657,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="-7" y="0" width="1932" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17653278" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09178229" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24010417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24060543" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39167556" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -564,411 +702,123 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/jzy3d-api-master/jzy3d-api-master/jzy3d-api/src/awt/org/jzy3d/bridge/awt/DoubleBufferedPanelAWT.java">
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/ControllerType.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/AbstractController.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/ControllerEvent.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/ControllerEventListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/DrawableChangedEvent.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/IDrawableListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/IScaleChangedListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/IViewIsVerticalEventListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/IViewLifecycleEventListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/ViewPointChangedEvent.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/ViewLifecycleEvent.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/view/modes/ViewBoundMode.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/view/modes/ViewPositionMode.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/view/modes/CameraMode.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/ViewModeChangedEvent.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/ViewIsVerticalEvent.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/ScaleChangedEvent.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/IViewPointChangedListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/IViewModeChangedListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/colors/Color.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/lights/Light.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/lights/LightSwitch.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/lights/LightSet.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/keyboard/camera/AbstractCameraController.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/bridge/awt/DoubleBufferedPanelAWT.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/bridge/awt/FrameAWT.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/camera/AWTCameraKeyController.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/bridge/awt/SimpleBufferedPanelAWT.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/bridge/BufferedPanel.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/bridge/IFrame.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/camera/AbstractCameraController.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/keyboard/lights/AWTLightKeyController.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/keyboard/screenshot/AWTScreenshotKeyController.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/mouse/camera/AWTCameraMouseController.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/mouse/camera/ICameraMouseController.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/maths/IntegerCoord2d.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/maths/TicToc.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/picking/PickingSupport.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/picking/IObjectPickedListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/scene/Decomposition.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/scene/Graph.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/mouse/picking/AWTMousePickingController.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/view/View.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/scene/Scene.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/functions/verticalplots.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        <state relative-caret-position="510">
+          <caret line="53" column="38" lean-forward="false" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/jzy3d-api-master/jzy3d-api-master/jzy3d-api/src/awt/org/jzy3d/bridge/awt/FrameAWT.java">
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/css/crossplot.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="4" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="483">
+          <caret line="51" column="29" lean-forward="false" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/jzy3d-api-master/jzy3d-api-master/jzy3d-api/src/api/org/jzy3d/chart/controllers/mouse/camera/ICameraMouseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/mouse/camera/CameraThreadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/view/Camera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/thread/camera/AbstractCameraController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/thread/camera/CameraThreadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="8" column="88" lean-forward="true" selection-start-line="8" selection-start-column="88" selection-end-line="8" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/ControllerType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/AbstractController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/ControllerEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/ControllerEventListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/DrawableChangedEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/IDrawableListener.java">
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/operations/dataMenu/loadlasfile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/IScaleChangedListener.java">
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/operations/testing/a.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="221">
+          <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#634#635#0" expanded="true" />
+            <element signature="e#1260#1261#0" expanded="true" />
+            <element signature="e#1288#1289#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/operations/displayMenu/crossplot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/functions/closewindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/IViewIsVerticalEventListener.java">
+    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/functions/xyzcrossplot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/IViewLifecycleEventListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/ViewPointChangedEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="55" lean-forward="true" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/ViewLifecycleEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/view/modes/ViewBoundMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/view/modes/ViewPositionMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/view/modes/CameraMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/ViewModeChangedEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/ViewIsVerticalEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/ScaleChangedEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/IViewPointChangedListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/IViewModeChangedListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/colors/Color.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/lights/Light.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/lights/LightSwitch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/lights/LightSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/keyboard/camera/AbstractCameraController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="40" column="8" lean-forward="true" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/bridge/awt/DoubleBufferedPanelAWT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/bridge/awt/FrameAWT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/camera/AWTCameraKeyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="45" column="51" lean-forward="true" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/bridge/awt/SimpleBufferedPanelAWT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/bridge/BufferedPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/bridge/IFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/camera/AbstractCameraController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-536">
-          <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/keyboard/lights/AWTLightKeyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/keyboard/screenshot/AWTScreenshotKeyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/mouse/camera/AWTCameraMouseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/mouse/camera/ICameraMouseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/maths/IntegerCoord2d.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/maths/TicToc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/picking/PickingSupport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/picking/IObjectPickedListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/scene/Decomposition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/scene/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/mouse/picking/AWTMousePickingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/plot3d/rendering/scene/Scene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="442">
+          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4974#4975#0" expanded="true" />
+            <element signature="e#5009#5010#0" expanded="true" />
+            <element signature="e#5067#5068#0" expanded="true" />
+            <element signature="e#5102#5103#0" expanded="true" />
+            <element signature="e#5169#5170#0" expanded="true" />
+            <element signature="e#5203#5204#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
