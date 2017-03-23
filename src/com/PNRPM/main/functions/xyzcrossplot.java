@@ -69,6 +69,7 @@ public class xyzcrossplot {
             Text a = new Text(zranges[j]+"");
             vb.getChildren().add(a);
         }
+        crossP.heightProperty().addListener(e-> vb.setSpacing(crossplot.getHeight()/10));
 
         legend.setRight(vb);
 
