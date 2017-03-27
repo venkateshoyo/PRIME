@@ -43,6 +43,7 @@ public class xyzcrossplot {
     public double vHistorange[] = new double[11];
 
     Stage crossplot;
+    Scene scene;
 
     public void crossplotdisplay(int x, int y, int z, double v[][],double r[][],String p[]){
 
@@ -57,8 +58,12 @@ public class xyzcrossplot {
         crossplot = new Stage();
         crossplot.show();
 
-        GridPane grid = new GridPane();
+        crossplot.setScene(scene());
+        crossplot.setMaximized(true);
+    }
 
+    public Scene scene(){
+        GridPane grid = new GridPane();
         BorderPane crossP = scatterplot();
 
         Histograms ob= new Histograms();
@@ -77,11 +82,9 @@ public class xyzcrossplot {
         GridPane.setHgrow(crossP, Priority.ALWAYS);
         GridPane.setVgrow(crossP, Priority.ALWAYS);
 
-        Scene scene = new Scene(grid);
-        crossplot.setScene(scene);
-
-        crossplot.setMaximized(true);
-        scene.getStylesheets().add(xyzcrossplot.class.getResource("../../resources/css/crossplot.css").toExternalForm());
+        Scene retScene = new Scene(grid);
+        retScene.getStylesheets().add(xyzcrossplot.class.getResource("../../resources/css/crossplot.css").toExternalForm());
+        return retScene;
     }
 
     public BorderPane scatterplot(){
@@ -228,7 +231,23 @@ public class xyzcrossplot {
 
         Button plot = new Button("Plot");
         plot.setOnAction(e-> {
-            System.out.println("Update plots");
+            int xvalue = xParameters.getSelectionModel().getSelectedIndex();
+            int yvalue = yParameters.getSelectionModel().getSelectedIndex();
+            int zvalue = zParameters.getSelectionModel().getSelectedIndex();
+
+            if(xvalue==-1)
+                System.out.println("Invalid x value");
+            else if(yvalue==-1)
+                System.out.println("Invalid y value");
+            else if(zvalue==-1)
+                System.out.println("Invalid z value");
+            else {
+                xindex = xvalue;
+                yindex = yvalue;
+                zindex = zvalue;
+                crossplot.setScene(scene());
+                crossplot.setMaximized(true);
+            }
         });
 
         vb.getChildren().addAll(x,y,z,plot);
