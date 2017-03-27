@@ -71,7 +71,7 @@ public class xyzcrossplot {
         }
         crossP.heightProperty().addListener(e-> vb.setSpacing(crossplot.getHeight()/10));
 
-        legend.setRight(vb);
+//        legend.setRight(vb);
 
         crossP.setRight(legend);
 
