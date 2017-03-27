@@ -36,6 +36,11 @@ public class xyzcrossplot {
     public double values[][];
     public double range[][];
     public String parameter[];
+    public double hHisto[] = new double[20];
+    public double vHisto[] = new double[10];
+    public double hHistorange[] = new double[21];
+    public double vHistorange[] = new double[11];
+
     Stage crossplot;
 
     public void crossplotdisplay(int x, int y, int z, double v[][],double r[][],String p[]){
@@ -52,7 +57,6 @@ public class xyzcrossplot {
         crossplot.show();
 
         GridPane grid = new GridPane();
-        grid.setGridLinesVisible(true);
 
         BorderPane crossP = scatterplot();
 
@@ -65,7 +69,6 @@ public class xyzcrossplot {
         GridPane.setHgrow(Hbc, Priority.ALWAYS);
 
         grid.add(crossP,1,0);
-
         GridPane.setHgrow(crossP, Priority.ALWAYS);
         GridPane.setVgrow(crossP, Priority.ALWAYS);
 
@@ -75,6 +78,7 @@ public class xyzcrossplot {
         crossplot.setMaximized(true);
         scene.getStylesheets().add(xyzcrossplot.class.getResource("../resources/css/crossplot.css").toExternalForm());
     }
+
     public BorderPane scatterplot(){
 
         BorderPane crossP = new BorderPane();
@@ -105,6 +109,17 @@ public class xyzcrossplot {
 //        legend.setRight(vb);
 
         crossP.setRight(legend);
+
+        vHistorange[0]=0.9*range[0][yindex];
+        double vdiff = (1.1*range[1][yindex]-0.9*range[0][yindex])/10;
+        hHistorange[0]=0.9*range[0][xindex];
+        double hdiff = (1.1*range[1][xindex]-0.9*range[0][xindex])/20;
+
+        for(int i=1;i<=10;++i){
+            vHistorange[i] = vHistorange[0] + i*vdiff;
+            hHistorange[2*i-1] = hHistorange[0] + (2*i-1)*hdiff;
+            hHistorange[2*i] = hHistorange[0] + 2*i*hdiff;
+        }
 
         final NumberAxis xaxis = new NumberAxis(0.9*range[0][xindex],1.1*range[1][xindex],(range[1][xindex]-range[0][xindex])/15);
         final NumberAxis yaxis = new NumberAxis(0.9*range[0][yindex],1.1*range[1][yindex],(range[1][yindex]-range[0][yindex])/15);
@@ -148,6 +163,25 @@ public class xyzcrossplot {
                 series7.getData().add(new XYChart.Data(values[i][xindex],values[i][yindex]));
             else
                 series8.getData().add(new XYChart.Data(values[i][xindex],values[i][yindex]));
+
+            boolean hflag=true;
+            boolean vflag=true;
+            for (int j=1;j<=10;++j){
+                if(vflag && (values[i][yindex]>vHistorange[j-1] && values[i][yindex]<vHistorange[j])){
+                    vHisto[j-1]++;
+                    vflag=false;
+                }
+                if(hflag && (values[i][xindex]>hHistorange[2*j-2] && values[i][xindex]<hHistorange[2*j-1])){
+                    hHisto[2*j-2]++;
+                    hflag=false;
+                }
+                else if(hflag && (values[i][xindex]>hHistorange[2*j-1] && values[i][xindex]<hHistorange[2*j])){
+                    hHisto[2*j-1]++;
+                    hflag=false;
+                }
+                if(!hflag && !vflag)
+                    j=11;
+            }
         }
 
         scatterchart.getData().addAll(series1,series2,series3,series4,series5,series6,series7,series8);
@@ -163,15 +197,16 @@ public class xyzcrossplot {
 
         final BarChart<String,Number> bc = new BarChart<>(xAxis,yAxis);
         bc.setLegendVisible(false);
-        xAxis.setLabel("Range");
-        yAxis.setLabel("Value");
+        bc.getXAxis().setTickLabelsVisible(false);
+        bc.getXAxis().setOpacity(0);
+        bc.setCategoryGap(0);
+        bc.setBarGap(0);
+        xAxis.setLabel(parameter[xindex]);
+//        yAxis.setLabel("Frequency");
 
         XYChart.Series series1 = new XYChart.Series();
-        series1.getData().add(new XYChart.Data("a",25601.34));
-        series1.getData().add(new XYChart.Data("b",20148.82));
-        series1.getData().add(new XYChart.Data("c",10000));
-        series1.getData().add(new XYChart.Data("d",35407.15));
-        series1.getData().add(new XYChart.Data("e",12000));
+        for(int i=1;i<=20;++i)
+            series1.getData().add(new XYChart.Data(hHistorange[i-1]+"-"+hHistorange[i],hHisto[i-1]));
         bc.getData().addAll(series1);
 
         return bc;
@@ -183,16 +218,17 @@ public class xyzcrossplot {
 
         final BarChart<Number,String> bc = new BarChart<>(xAxis,yAxis);
         bc.setLegendVisible(false);
-        xAxis.setLabel("Value");
+        bc.getYAxis().setTickLabelsVisible(false);
+        bc.getYAxis().setOpacity(0);
+        bc.setCategoryGap(0);
+        bc.setBarGap(0);
+//        xAxis.setLabel("Frequency");
         xAxis.setTickLabelRotation(90);
-        yAxis.setLabel("Range");
+        yAxis.setLabel(parameter[yindex]);
 
         XYChart.Series series1 = new XYChart.Series();
-        series1.getData().add(new XYChart.Data(25601.34, "a"));
-        series1.getData().add(new XYChart.Data(20148.82, "b"));
-        series1.getData().add(new XYChart.Data(10000, "c"));
-        series1.getData().add(new XYChart.Data(35407.15, "d"));
-        series1.getData().add(new XYChart.Data(12000, "e"));
+        for(int i=1;i<=10;++i)
+            series1.getData().add(new XYChart.Data(vHisto[i-1],vHistorange[i-1]+"-"+vHistorange[i]));
         bc.getData().addAll(series1);
 
         return bc;
