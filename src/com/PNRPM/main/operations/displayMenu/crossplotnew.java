@@ -1,6 +1,6 @@
 package com.PNRPM.main.operations.displayMenu;
 
-import com.PNRPM.main.functions.xyzcrossplot;
+import com.PNRPM.main.functions.crossP.xyzcrossplot;
 
 public class crossplotnew {
 

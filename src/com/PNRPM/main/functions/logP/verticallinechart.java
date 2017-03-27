@@ -1,4 +1,4 @@
-package com.PNRPM.main.functions;
+package com.PNRPM.main.functions.logP;
 
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;

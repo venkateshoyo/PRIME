@@ -1,4 +1,4 @@
-package com.PNRPM.main.functions;
+package com.PNRPM.main.functions.crossP;
 
 import javafx.geometry.Insets;
 import javafx.scene.chart.BarChart;

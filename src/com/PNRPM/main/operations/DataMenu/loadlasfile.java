@@ -1,8 +1,5 @@
 package com.PNRPM.main.operations.dataMenu;
 
-import com.PNRPM.main.functions.verticalplots;
-import com.PNRPM.main.functions.xyzcrossplot;
-import com.PNRPM.main.operations.displayMenu.crossplot;
 import com.PNRPM.main.operations.displayMenu.crossplotnew;
 
 import java.io.*;

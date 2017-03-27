@@ -1,4 +1,4 @@
-package com.PNRPM.main.functions;
+package com.PNRPM.main.functions.logP;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;

@@ -1,4 +1,4 @@
-package com.PNRPM.main.functions;
+package com.PNRPM.main.functions.crossP;
 
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -74,7 +74,7 @@ public class xyzcrossplot {
         crossplot.setScene(scene);
 
         crossplot.setMaximized(true);
-        scene.getStylesheets().add(xyzcrossplot.class.getResource("../resources/css/crossplot.css").toExternalForm());
+        scene.getStylesheets().add(xyzcrossplot.class.getResource("../../resources/css/crossplot.css").toExternalForm());
     }
 
     public BorderPane scatterplot(){
@@ -187,4 +187,6 @@ public class xyzcrossplot {
         crossP.setCenter(scatterchart);
         return crossP;
     }
+
+
 }

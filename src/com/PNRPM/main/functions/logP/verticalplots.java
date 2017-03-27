@@ -1,4 +1,4 @@
-package com.PNRPM.main.functions;
+package com.PNRPM.main.functions.logP;
 
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
@@ -76,7 +76,7 @@ public class verticalplots {
             }
         });
 
-        scene.getStylesheets().add(verticalplots.class.getResource("../resources/css/themes/maintheme1.css").toExternalForm());
+        scene.getStylesheets().add(verticalplots.class.getResource("../../resources/css/themes/maintheme1.css").toExternalForm());
 
         plotwindow.setScene(scene);
         plotwindow.show();
