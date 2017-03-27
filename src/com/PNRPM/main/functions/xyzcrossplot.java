@@ -55,14 +55,24 @@ public class xyzcrossplot {
         grid.setGridLinesVisible(true);
 
         BorderPane crossP = scatterplot();
+
+        BarChart Vbc= verticalHistogram();
+        grid.add(Vbc,0,0);
+        GridPane.setVgrow(Vbc, Priority.ALWAYS);
+
+        BarChart Hbc= horizontalHistogram();
+        grid.add(Hbc,1,4);
+        GridPane.setHgrow(Hbc, Priority.ALWAYS);
+
         grid.add(crossP,1,0);
+
         GridPane.setHgrow(crossP, Priority.ALWAYS);
         GridPane.setVgrow(crossP, Priority.ALWAYS);
-        grid.add(verticalHistogram(),0,0);
-        grid.add(horizontalHistogram(),1,4);
 
         Scene scene = new Scene(grid);
         crossplot.setScene(scene);
+
+        crossplot.setMaximized(true);
         scene.getStylesheets().add(xyzcrossplot.class.getResource("../resources/css/crossplot.css").toExternalForm());
     }
     public BorderPane scatterplot(){
