@@ -1,11 +1,8 @@
 package com.PNRPM.main.functions;
 
-import com.PNRPM.main.operations.main.main;
 import javafx.geometry.Insets;
-import javafx.geometry.Side;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
-import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.shape.Rectangle;
@@ -60,11 +57,12 @@ public class xyzcrossplot {
 
         BorderPane crossP = scatterplot();
 
-        BarChart Vbc= verticalHistogram();
+        Histograms ob= new Histograms();
+        BarChart Vbc= ob.vHistogram(parameter[yindex],vHisto,vHistorange);
         grid.add(Vbc,0,0);
         GridPane.setVgrow(Vbc, Priority.ALWAYS);
 
-        BarChart Hbc= horizontalHistogram();
+        BarChart Hbc= ob.hHistogram(parameter[xindex],hHisto,hHistorange);
         grid.add(Hbc,1,4);
         GridPane.setHgrow(Hbc, Priority.ALWAYS);
 
@@ -187,52 +185,6 @@ public class xyzcrossplot {
         scatterchart.getData().addAll(series1,series2,series3,series4,series5,series6,series7,series8);
         scatterchart.setLegendVisible(false);
         crossP.setCenter(scatterchart);
-
         return crossP;
-    }
-
-    public BarChart horizontalHistogram(){
-        final CategoryAxis xAxis = new CategoryAxis();
-        final NumberAxis yAxis = new NumberAxis();
-
-        final BarChart<String,Number> bc = new BarChart<>(xAxis,yAxis);
-        bc.setPadding(new Insets(0,50,0,32));
-        bc.setLegendVisible(false);
-        bc.getXAxis().setTickLabelsVisible(false);
-        bc.getXAxis().setOpacity(0);
-        bc.setCategoryGap(0);
-        bc.setBarGap(0);
-        xAxis.setLabel(parameter[xindex]);
-//        yAxis.setLabel("Frequency");
-
-        XYChart.Series series1 = new XYChart.Series();
-        for(int i=1;i<=20;++i)
-            series1.getData().add(new XYChart.Data(hHistorange[i-1]+"-"+hHistorange[i],hHisto[i-1]));
-        bc.getData().addAll(series1);
-
-        return bc;
-    }
-
-    public BarChart verticalHistogram(){
-        final NumberAxis xAxis = new NumberAxis();
-        final CategoryAxis yAxis = new CategoryAxis();
-
-        final BarChart<Number,String> bc = new BarChart<>(xAxis,yAxis);
-        bc.setPadding(new Insets(7,0,17,0));
-        bc.setLegendVisible(false);
-        bc.getYAxis().setTickLabelsVisible(false);
-        bc.getYAxis().setOpacity(0);
-        bc.setCategoryGap(0);
-        bc.setBarGap(0);
-//        xAxis.setLabel("Frequency");
-        xAxis.setTickLabelRotation(90);
-        yAxis.setLabel(parameter[yindex]);
-
-        XYChart.Series series1 = new XYChart.Series();
-        for(int i=1;i<=10;++i)
-            series1.getData().add(new XYChart.Data(vHisto[i-1],vHistorange[i-1]+"-"+vHistorange[i]));
-        bc.getData().addAll(series1);
-
-        return bc;
     }
 }

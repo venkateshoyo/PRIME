@@ -3,6 +3,8 @@ package com.PNRPM.main.operations.dataMenu;
 import com.PNRPM.main.functions.verticalplots;
 import com.PNRPM.main.functions.xyzcrossplot;
 import com.PNRPM.main.operations.displayMenu.crossplot;
+import com.PNRPM.main.operations.displayMenu.crossplotnew;
+
 import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -84,7 +86,7 @@ public class loadlasfile {
 //            xyzcrossplot crosplot = new xyzcrossplot();
 //            crosplot.crossplotdisplay(2,4,0,values,range,parameter);
 
-            crossplot ob = new crossplot();
+            crossplotnew ob = new crossplotnew();
             ob.crossplots(values,range,parameter);
         }
         catch (FileNotFoundException ex) {}
