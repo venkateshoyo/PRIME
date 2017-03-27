@@ -1,8 +1,12 @@
 package com.PNRPM.main.functions.crossP;
 
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.shape.Rectangle;
@@ -65,6 +69,9 @@ public class xyzcrossplot {
         BarChart Hbc= ob.hHistogram(parameter[xindex],hHisto,hHistorange);
         grid.add(Hbc,1,4);
         GridPane.setHgrow(Hbc, Priority.ALWAYS);
+
+        VBox option = options();
+        grid.add(option,0,4);
 
         grid.add(crossP,1,0);
         GridPane.setHgrow(crossP, Priority.ALWAYS);
@@ -143,42 +150,40 @@ public class xyzcrossplot {
         XYChart.Series series8 = new XYChart.Series();
         series8.setName(zranges[7]+" - "+zranges[8]+"  ");
 
-        for (int i=0;i<values.length;++i)
-        {
-            if (values[i][zindex]<zranges[1])
-                series1.getData().add(new XYChart.Data(values[i][xindex],values[i][yindex]));
-            else if (values[i][zindex]>=zranges[1] && values[i][zindex]<zranges[2])
-                series2.getData().add(new XYChart.Data(values[i][xindex],values[i][yindex]));
-            else if (values[i][zindex]>=zranges[2] && values[i][zindex]<zranges[3])
-                series3.getData().add(new XYChart.Data(values[i][xindex],values[i][yindex]));
-            else if (values[i][zindex]>=zranges[3] && values[i][zindex]<zranges[4])
-                series4.getData().add(new XYChart.Data(values[i][xindex],values[i][yindex]));
-            else if (values[i][zindex]>=zranges[4] && values[i][zindex]<zranges[5])
-                series5.getData().add(new XYChart.Data(values[i][xindex],values[i][yindex]));
-            else if (values[i][zindex]>=zranges[5] && values[i][zindex]<zranges[6])
-                series6.getData().add(new XYChart.Data(values[i][xindex],values[i][yindex]));
-            else if (values[i][zindex]>=zranges[6] && values[i][zindex]<zranges[7])
-                series7.getData().add(new XYChart.Data(values[i][xindex],values[i][yindex]));
+        for (double[] value : values) {
+            if (value[zindex] < zranges[1])
+                series1.getData().add(new XYChart.Data(value[xindex], value[yindex]));
+            else if (value[zindex] >= zranges[1] && value[zindex] < zranges[2])
+                series2.getData().add(new XYChart.Data(value[xindex], value[yindex]));
+            else if (value[zindex] >= zranges[2] && value[zindex] < zranges[3])
+                series3.getData().add(new XYChart.Data(value[xindex], value[yindex]));
+            else if (value[zindex] >= zranges[3] && value[zindex] < zranges[4])
+                series4.getData().add(new XYChart.Data(value[xindex], value[yindex]));
+            else if (value[zindex] >= zranges[4] && value[zindex] < zranges[5])
+                series5.getData().add(new XYChart.Data(value[xindex], value[yindex]));
+            else if (value[zindex] >= zranges[5] && value[zindex] < zranges[6])
+                series6.getData().add(new XYChart.Data(value[xindex], value[yindex]));
+            else if (value[zindex] >= zranges[6] && value[zindex] < zranges[7])
+                series7.getData().add(new XYChart.Data(value[xindex], value[yindex]));
             else
-                series8.getData().add(new XYChart.Data(values[i][xindex],values[i][yindex]));
+                series8.getData().add(new XYChart.Data(value[xindex], value[yindex]));
 
-            boolean hflag=true;
-            boolean vflag=true;
-            for (int j=1;j<=10;++j){
-                if(vflag && (values[i][yindex]>vHistorange[j-1] && values[i][yindex]<vHistorange[j])){
-                    vHisto[j-1]++;
-                    vflag=false;
+            boolean hflag = true;
+            boolean vflag = true;
+            for (int j = 1; j <= 10; ++j) {
+                if (vflag && (value[yindex] > vHistorange[j - 1] && value[yindex] < vHistorange[j])) {
+                    vHisto[j - 1]++;
+                    vflag = false;
                 }
-                if(hflag && (values[i][xindex]>hHistorange[2*j-2] && values[i][xindex]<hHistorange[2*j-1])){
-                    hHisto[2*j-2]++;
-                    hflag=false;
+                if (hflag && (value[xindex] > hHistorange[2 * j - 2] && value[xindex] < hHistorange[2 * j - 1])) {
+                    hHisto[2 * j - 2]++;
+                    hflag = false;
+                } else if (hflag && (value[xindex] > hHistorange[2 * j - 1] && value[xindex] < hHistorange[2 * j])) {
+                    hHisto[2 * j - 1]++;
+                    hflag = false;
                 }
-                else if(hflag && (values[i][xindex]>hHistorange[2*j-1] && values[i][xindex]<hHistorange[2*j])){
-                    hHisto[2*j-1]++;
-                    hflag=false;
-                }
-                if(!hflag && !vflag)
-                    j=11;
+                if (!hflag && !vflag)
+                    j = 11;
             }
         }
 
@@ -188,5 +193,45 @@ public class xyzcrossplot {
         return crossP;
     }
 
+    public VBox options(){
+        VBox vb = new VBox(10);
+        vb.setAlignment(Pos.CENTER);
+        Label xlabel = new Label("x-axis");
+        Label ylabel = new Label("y-axis");
+        Label zlabel = new Label("z-axis");
 
+        final ComboBox xParameters = new ComboBox();
+        xParameters.setValue("X-axis Parameter");
+        final ComboBox yParameters = new ComboBox();
+        yParameters.setValue("Y-axis Parameter");
+        final ComboBox zParameters = new ComboBox();
+        zParameters.setValue("Z-axis Parameter");
+
+        for (int i = 0; i < range[0].length; i++) {
+            String parameters = parameter[i];
+            xParameters.getItems().add(parameters);
+            yParameters.getItems().add(parameters);
+            zParameters.getItems().add(parameters);
+        }
+
+        HBox x = new HBox(20);
+        x.getChildren().addAll(xlabel,xParameters);
+        x.setAlignment(Pos.BASELINE_CENTER);
+
+        HBox y = new HBox(20);
+        y.getChildren().addAll(ylabel,yParameters);
+        y.setAlignment(Pos.BASELINE_CENTER);
+
+        HBox z = new HBox(20);
+        z.getChildren().addAll(zlabel,zParameters);
+        z.setAlignment(Pos.BASELINE_CENTER);
+
+        Button plot = new Button("Plot");
+        plot.setOnAction(e-> {
+            System.out.println("Update plots");
+        });
+
+        vb.getChildren().addAll(x,y,z,plot);
+        return  vb;
+    }
 }
