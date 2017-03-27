@@ -196,6 +196,7 @@ public class xyzcrossplot {
         final NumberAxis yAxis = new NumberAxis();
 
         final BarChart<String,Number> bc = new BarChart<>(xAxis,yAxis);
+        bc.setPadding(new Insets(0,50,0,32));
         bc.setLegendVisible(false);
         bc.getXAxis().setTickLabelsVisible(false);
         bc.getXAxis().setOpacity(0);
@@ -217,6 +218,7 @@ public class xyzcrossplot {
         final CategoryAxis yAxis = new CategoryAxis();
 
         final BarChart<Number,String> bc = new BarChart<>(xAxis,yAxis);
+        bc.setPadding(new Insets(7,0,17,0));
         bc.setLegendVisible(false);
         bc.getYAxis().setTickLabelsVisible(false);
         bc.getYAxis().setOpacity(0);
