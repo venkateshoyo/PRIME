@@ -4,14 +4,9 @@ import com.PNRPM.main.operations.main.main;
 import javafx.geometry.Insets;
 import javafx.geometry.Side;
 import javafx.scene.Scene;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.ScatterChart;
-import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -55,8 +50,18 @@ public class xyzcrossplot {
 
         crossplot = new Stage();
         crossplot.show();
+
+        GridPane grid = new GridPane();
+        grid.setGridLinesVisible(true);
+
         BorderPane crossP = scatterplot();
-        Scene scene = new Scene(crossP);
+        grid.add(crossP,1,0);
+        GridPane.setHgrow(crossP, Priority.ALWAYS);
+        GridPane.setVgrow(crossP, Priority.ALWAYS);
+        grid.add(verticalHistogram(),0,0);
+        grid.add(horizontalHistogram(),1,4);
+
+        Scene scene = new Scene(grid);
         crossplot.setScene(scene);
         scene.getStylesheets().add(xyzcrossplot.class.getResource("../resources/css/crossplot.css").toExternalForm());
     }
@@ -140,5 +145,46 @@ public class xyzcrossplot {
         crossP.setCenter(scatterchart);
 
         return crossP;
+    }
+
+    public BarChart horizontalHistogram(){
+        final CategoryAxis xAxis = new CategoryAxis();
+        final NumberAxis yAxis = new NumberAxis();
+
+        final BarChart<String,Number> bc = new BarChart<>(xAxis,yAxis);
+        bc.setLegendVisible(false);
+        xAxis.setLabel("Range");
+        yAxis.setLabel("Value");
+
+        XYChart.Series series1 = new XYChart.Series();
+        series1.getData().add(new XYChart.Data("a",25601.34));
+        series1.getData().add(new XYChart.Data("b",20148.82));
+        series1.getData().add(new XYChart.Data("c",10000));
+        series1.getData().add(new XYChart.Data("d",35407.15));
+        series1.getData().add(new XYChart.Data("e",12000));
+        bc.getData().addAll(series1);
+
+        return bc;
+    }
+
+    public BarChart verticalHistogram(){
+        final NumberAxis xAxis = new NumberAxis();
+        final CategoryAxis yAxis = new CategoryAxis();
+
+        final BarChart<Number,String> bc = new BarChart<>(xAxis,yAxis);
+        bc.setLegendVisible(false);
+        xAxis.setLabel("Value");
+        xAxis.setTickLabelRotation(90);
+        yAxis.setLabel("Range");
+
+        XYChart.Series series1 = new XYChart.Series();
+        series1.getData().add(new XYChart.Data(25601.34, "a"));
+        series1.getData().add(new XYChart.Data(20148.82, "b"));
+        series1.getData().add(new XYChart.Data(10000, "c"));
+        series1.getData().add(new XYChart.Data(35407.15, "d"));
+        series1.getData().add(new XYChart.Data(12000, "e"));
+        bc.getData().addAll(series1);
+
+        return bc;
     }
 }
