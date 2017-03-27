@@ -18,6 +18,22 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 
+class ResizableRectangle extends Rectangle {
+    ResizableRectangle(double w, double h) {
+        super(w, h);
+    }
+
+    @Override
+    public boolean isResizable() {
+        return true;
+    }
+
+    @Override
+    public double minWidth(double height) {
+        return 0.0;
+    }
+}
+
 public class xyzcrossplot {
     public int xindex;
     public int yindex;
@@ -124,21 +140,5 @@ public class xyzcrossplot {
         crossP.setCenter(scatterchart);
 
         return crossP;
-    }
-
-    static class ResizableRectangle extends Rectangle {
-        ResizableRectangle(double w, double h) {
-            super(w, h);
-        }
-
-        @Override
-        public boolean isResizable() {
-            return true;
-        }
-
-        @Override
-        public double minWidth(double height) {
-            return 0.0;
-        }
     }
 }

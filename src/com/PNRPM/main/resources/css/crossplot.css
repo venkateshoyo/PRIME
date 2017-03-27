@@ -46,7 +46,7 @@
     -fx-padding: 2px ;
     -fx-background-radius: 50px;
 }
-.chart-plot-background {
+.chart-plot-background.chart-bar {
      -fx-background-color: transparent;
  }
  .chart-vertical-grid-lines.chart-bar {
