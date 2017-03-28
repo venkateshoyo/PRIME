@@ -273,8 +273,21 @@ class menubar {
 
         MenuItem crossplots = new MenuItem( "_Cross Plots");
         crossplots.setOnAction(e -> {
-           crossplot cp = new crossplot();
-//           cp.crossplots();
+            FileChooser loadlasdirrctory = new FileChooser();
+            loadlasdirrctory.getExtensionFilters().add(new ExtensionFilter("LAS Files", "*.las"));
+            loadlasdirrctory.setTitle("Load LAS file for crossplot ");
+            File selectedlas =  loadlasdirrctory.showOpenDialog(ob.getstage());
+            if(selectedlas == null){
+                System.out.println("LAS file not selected");
+            }else{
+                loadlasfile lasobject = new loadlasfile();
+                try {
+                    lasobject.loadlas(selectedlas);
+                }
+                catch (IOException el){
+                    System.out.println("Error in loading");
+                }
+            }
         });
 
         analysisMenu.getItems().addAll(singlewellview,multiwellview,seimicviewer,crossplots);
