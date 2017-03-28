@@ -46,6 +46,7 @@ public class xyzcrossplot {
     Stage crossplot;
     Scene scene;
     GridPane grid;
+    Histograms ob= new Histograms();
 
     public void crossplotdisplay(int x, int y, int z, double v[][],double r[][],String p[]){
 
@@ -63,7 +64,6 @@ public class xyzcrossplot {
         grid = new GridPane();
         BorderPane crossP = scatterplot();
 
-        Histograms ob= new Histograms();
         BarChart Vbc= ob.vHistogram(parameter[yindex],vHisto,vHistorange);
         grid.add(Vbc,0,0);
         GridPane.setVgrow(Vbc, Priority.ALWAYS);
@@ -256,7 +256,6 @@ public class xyzcrossplot {
                 BorderPane crossP = scatterplot();
 
                 grid.getChildren().clear();
-                Histograms ob= new Histograms();
                 BarChart Vbc= ob.vHistogram(parameter[yindex],vHisto,vHistorange);
                 grid.add(Vbc,0,0);
                 GridPane.setVgrow(Vbc, Priority.ALWAYS);
