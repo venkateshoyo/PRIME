@@ -7,6 +7,7 @@ import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import javafx.scene.paint.LinearGradient;
 import javafx.scene.shape.Rectangle;
@@ -37,13 +38,14 @@ public class xyzcrossplot {
     public double values[][];
     public double range[][];
     public String parameter[];
-    public double hHisto[] = new double[20];
-    public double vHisto[] = new double[10];
-    public double hHistorange[] = new double[21];
-    public double vHistorange[] = new double[11];
+    public double hHisto[];
+    public double vHisto[];
+    public double hHistorange[];
+    public double vHistorange[];
 
     Stage crossplot;
     Scene scene;
+    GridPane grid;
 
     public void crossplotdisplay(int x, int y, int z, double v[][],double r[][],String p[]){
 
@@ -58,12 +60,7 @@ public class xyzcrossplot {
         crossplot = new Stage();
         crossplot.show();
 
-        crossplot.setScene(scene());
-        crossplot.setMaximized(true);
-    }
-
-    public Scene scene(){
-        GridPane grid = new GridPane();
+        grid = new GridPane();
         BorderPane crossP = scatterplot();
 
         Histograms ob= new Histograms();
@@ -82,9 +79,14 @@ public class xyzcrossplot {
         GridPane.setHgrow(crossP, Priority.ALWAYS);
         GridPane.setVgrow(crossP, Priority.ALWAYS);
 
-        Scene retScene = new Scene(grid);
-        retScene.getStylesheets().add(xyzcrossplot.class.getResource("../../resources/css/crossplot.css").toExternalForm());
-        return retScene;
+        ScrollPane sCP = new ScrollPane(grid);
+        sCP.setFitToHeight(true);
+        sCP.setFitToWidth(true);
+
+        scene = new Scene(sCP);
+        crossplot.setScene(scene);
+        scene.getStylesheets().add(xyzcrossplot.class.getResource("../../resources/css/crossplot.css").toExternalForm());
+        crossplot.setMaximized(true);
     }
 
     public BorderPane scatterplot(){
@@ -117,6 +119,11 @@ public class xyzcrossplot {
 //        legend.setRight(vb);
 
         crossP.setRight(legend);
+
+        hHisto = new double[20];
+        vHisto = new double[10];
+        hHistorange = new double[21];
+        vHistorange = new double[11];
 
         vHistorange[0]=0.9*range[0][yindex];
         double vdiff = (1.1*range[1][yindex]-0.9*range[0][yindex])/10;
@@ -245,8 +252,25 @@ public class xyzcrossplot {
                 xindex = xvalue;
                 yindex = yvalue;
                 zindex = zvalue;
-                crossplot.setScene(scene());
-                crossplot.setMaximized(true);
+
+                BorderPane crossP = scatterplot();
+
+                grid.getChildren().clear();
+                Histograms ob= new Histograms();
+                BarChart Vbc= ob.vHistogram(parameter[yindex],vHisto,vHistorange);
+                grid.add(Vbc,0,0);
+                GridPane.setVgrow(Vbc, Priority.ALWAYS);
+
+                BarChart Hbc= ob.hHistogram(parameter[xindex],hHisto,hHistorange);
+                grid.add(Hbc,1,4);
+                GridPane.setHgrow(Hbc, Priority.ALWAYS);
+
+                VBox option = options();
+                grid.add(option,0,4);
+
+                grid.add(crossP,1,0);
+                GridPane.setHgrow(crossP, Priority.ALWAYS);
+                GridPane.setVgrow(crossP, Priority.ALWAYS);
             }
         });
 
