@@ -1,53 +1,68 @@
-import javafx.application.Application;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
+package com.PNRPM.main.operations.testing;
+//STEP 1. Import required packages
+import java.sql.*;
 
-public class a extends Application {
+public class a {
+    // JDBC driver name and database URL
+    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+    static final String DB_URL = "jdbc:mysql://localhost/pnrpm";
 
-    static class ResizableRectangle extends Rectangle {
-        ResizableRectangle(double w, double h) {
-            super(w, h);
-        }
-
-        @Override
-        public boolean isResizable() {
-            return true;
-        }
-
-        @Override
-        public double minWidth(double height) {
-            return 0.0;
-        }
-    }
-
-    @Override
-    public void start(Stage primaryStage) {
-        BorderPane borderPane = new BorderPane();
-        HBox hBox = new HBox();
-
-        hBox.setAlignment(Pos.CENTER);
-
-        Rectangle rect = new ResizableRectangle(hBox.getWidth(),50);
-        rect.setFill(Color.RED);
-        rect.widthProperty().bind(hBox.widthProperty().subtract(20));
-
-        hBox.getChildren().add(rect);
-
-        borderPane.setCenter(hBox);
-
-        Scene scene = new Scene(borderPane, 900, 600, Color.WHITE);
-
-        primaryStage.setScene(scene);
-        primaryStage.show();
-
-    }
+    //  Database credentials
+    static final String USER = "root";
+    static final String PASS = "root";
 
     public static void main(String[] args) {
-        launch(args);
-    }
-}
+        Connection conn = null;
+        Statement stmt = null;
+        try{
+            //STEP 2: Register JDBC driver
+            Class.forName(JDBC_DRIVER);
+
+            //STEP 3: Open a connection
+            System.out.println("Connecting to database...");
+            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+
+            //STEP 4: Execute a query
+            System.out.println("Creating statement...");
+            stmt = conn.createStatement();
+            String sql;
+            sql = "SELECT * FROM pnrpm.`global mnemonics`;";
+            ResultSet rs = stmt.executeQuery(sql);
+
+            //STEP 5: Extract data from result set
+            while(rs.next()){
+                //Retrieve by column name
+                String first = rs.getString("Mnemonic");
+                String last = rs.getString("Description");
+
+                //Display values
+                System.out.print(first);
+                System.out.println("  "+last);
+            }
+            //STEP 6: Clean-up environment
+            rs.close();
+            stmt.close();
+            conn.close();
+        }catch(SQLException se){
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }finally{
+            //finally block used to close resources
+            try{
+                if(stmt!=null)
+                    stmt.close();
+            }catch(SQLException se2){
+            }// nothing we can do
+            try{
+                if(conn!=null)
+                    conn.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }//end finally try
+        }//end try
+        System.out.println("Goodbye!");
+    }//end main
+}//end FirstExample

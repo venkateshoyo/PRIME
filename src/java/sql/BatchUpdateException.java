@@ -23,7 +23,7 @@
  *
  */
 
-package com.PNRPM.libs.java.sql;
+package java.sql;
 
 import java.io.IOException;
 import java.io.InvalidObjectException;
