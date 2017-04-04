@@ -4,7 +4,7 @@ import com.PNRPM.main.functions.closewindow;
 
 public class closeconfirm {
 
-    public  static void displayconfirmclose(){
+    public  static void closeconfirm(){
         closewindow ob = new closewindow();
         ob.closefunction();
     }

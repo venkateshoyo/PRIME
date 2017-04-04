@@ -26,12 +26,9 @@ public class main extends Application {
         window=primaryStage;
         window.setTitle(System.getProperty("user.dir")+"   PNRPM ES IITR 2017.1.0");
 
-        //creating close window object
-        closeconfirm ob = new closeconfirm();
-
 //        window.setOnCloseRequest(e -> {
 //            e.consume();
-//            ob.displayconfirmclose();
+//            closeconfirm.closeconfirm();
 //        });
 
         //creating menubar class object

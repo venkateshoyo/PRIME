@@ -1,14 +1,15 @@
 //defining Main Window theme Color variable
 * {
-   -fx-mainWindowBackgroundColor: #323232;
-   -fx-menubarBackgroundColor: #545454;
-   -fx-menuTextColor: #bdbdbd;
-   -fx-menubarHoverColor: #383838;
+   -fx-mainWindowBackgroundColor: #2a2a2a;
+   -fx-TextColor: #bdbdbd;
    -fx-WhiteColor: white;
 }
 
-
 .root{
     -fx-background-color: -fx-mainWindowBackgroundColor;
+    -fx-text-fill: -fx-WhiteColor;
 }
 
+#name{
+    -fx-text-fill: -fx-WhiteColor;
+}

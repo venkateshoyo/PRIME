@@ -2,7 +2,7 @@ package com.PNRPM.main.operations.main;
 
 //import com.PNRPM.main.operations.fileMenu.*;
 //import com.PNRPM.main.operations.editMenu.*;
-//import com.PNRPM.main.operations.projectMenu.*;
+import com.PNRPM.main.operations.projectMenu.*;
 import com.PNRPM.main.operations.dataMenu.*;
 //import com.PNRPM.main.operations.analysisMenu.*;
 import com.PNRPM.main.operations.displayMenu.*;
@@ -114,7 +114,9 @@ class menubar {
         openproject.setOnAction(e -> System.out.println(""));
 
         MenuItem newproject = new MenuItem( "_New Project");
-        newproject.setOnAction(e -> System.out.println(""));
+        newproject.setOnAction(e -> {
+            newProject.newProject();
+        });
 
         MenuItem recentproject = new MenuItem( "_Recent Project");
         recentproject.setOnAction(e -> System.out.println(""));
