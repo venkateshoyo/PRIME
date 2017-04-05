@@ -8,14 +8,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Properties;
 
 public class DBUtils {
-    private static Properties properties = null;
+
     private static final String DRIVER = property.JDBC_DRIVER;
+    private static final String DB_URL = property.DB_URL;
+    private static final String DB_USERNAME = property.DB_USERNAME;
+    private static final String DB_PASSWORD = property.DB_PASSWORD;
 
     private static final String BACKUP_URL = property.DB_URL;
-    private static final String BACKUP_DB = property.DB_DEFAULT_DB;
     private static final String BACKUP_USERNAME = property.DB_USERNAME;
     private static final String BACKUP_PASSWORD = property.DB_PASSWORD;
 
@@ -23,43 +24,29 @@ public class DBUtils {
         //setCredentials();
     }
     public static Connection getConnection() throws SQLException{
-
-        if(properties != null){
-            try{
-                Class.forName(DRIVER);
-                return DriverManager.getConnection(properties.getProperty(property.DB_URL) + properties.getProperty(property.DB_DEFAULT_DB),
-                        properties.getProperty(property.DB_USERNAME), properties.getProperty(property.DB_PASSWORD,""));
-                //return DriverManager.getConnection(URL + DEFAULT_DB,
-                //	USERNAME, PASSWORD);
-            }catch (ClassNotFoundException e) {
-                //
-                throw new SQLException(e);
-            }
-        }else{
-            throw new SQLException("Unable to load properties");
+        try{
+            Class.forName(DRIVER);
+            return DriverManager.getConnection(DB_URL,DB_USERNAME,DB_PASSWORD);
+        }catch (ClassNotFoundException e) {
+            //
+            throw new SQLException(e);
         }
     }
 
     public static Connection getConnection(String dataBase) throws SQLException{
-        if(properties != null){
             try{
                 Class.forName(DRIVER);
-                return DriverManager.getConnection(properties.getProperty(property.DB_URL) + dataBase,
-                        properties.getProperty(property.DB_USERNAME), properties.getProperty(property.DB_PASSWORD));
+                return DriverManager.getConnection(DB_URL+dataBase,DB_USERNAME,DB_PASSWORD);
             }catch (ClassNotFoundException e) {
                 //
                 throw new SQLException(e);
             }
-        }else{
-            throw new SQLException("Unable to load properties");
-        }
     }
 
     public static Connection getBackupConnection() throws SQLException{
         try{
             Class.forName(DRIVER);
-            return DriverManager.getConnection(BACKUP_URL + BACKUP_DB,
-                    BACKUP_USERNAME, BACKUP_PASSWORD);
+            return DriverManager.getConnection(BACKUP_URL,BACKUP_USERNAME, BACKUP_PASSWORD);
         }catch (ClassNotFoundException e) {
            //
             throw new SQLException(e);
