@@ -1,8 +1,7 @@
-package com.PNRPM.main.functions;
+package com.PNRPM.main.functions.newW;
 
 import com.PNRPM.database.utils.DBUtils;
 
-import javafx.beans.property.SimpleStringProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

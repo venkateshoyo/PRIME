@@ -1,4 +1,4 @@
-package com.PNRPM.main.functions;
+package com.PNRPM.main.functions.closeW;
 
 import com.PNRPM.main.operations.main.main;
 import javafx.geometry.Insets;
@@ -24,12 +24,18 @@ public class closewindow {
         text.setId("labeltext");
         confirm.setTitle("Confirm");
 
+        CheckBox dontask = new CheckBox("Don't ask me again");
+        dontask.setId("dontagain");
+        dontask.setSelected(true);
 
         Button yes = new Button("Yes");
         yes.setId("yes");
         yes.setOnAction(e -> {
             confirm.close();
             ob.getstage().close();
+            if(dontask.isSelected()){
+
+            }
         });
 
         Button no = new Button("No");
@@ -41,10 +47,6 @@ public class closewindow {
         layout.setSpacing(30);
         layout.setPadding(new Insets(15,35,10,35));
         layout.getChildren().addAll(yes,no);
-
-        CheckBox dontask = new CheckBox("Don't ask me again");
-        dontask.setId("dontagain");
-        dontask.setSelected(true);
 
         VBox layout11 = new VBox();
         layout11.setAlignment(Pos.CENTER);

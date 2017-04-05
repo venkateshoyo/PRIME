@@ -1,6 +1,6 @@
 package com.PNRPM.main.operations.close;
 
-import com.PNRPM.main.functions.closewindow;
+import com.PNRPM.main.functions.closeW.closewindow;
 
 public class closeconfirm {
 

@@ -1,6 +1,6 @@
 package com.PNRPM.main.operations.projectMenu;
 
-import com.PNRPM.main.functions.newProwindow;
+import com.PNRPM.main.functions.newW.newProwindow;
 
 public class newProject {
 
