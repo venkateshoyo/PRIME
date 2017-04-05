@@ -41,23 +41,23 @@ public class newProwindow {
 
         Button create = new Button("Create");
         create.setOnAction(e -> {
-            Connection con = null;
-            PreparedStatement stmt = null;
-            ResultSet rs = null;
+            if (text.getText()!=null && !(text.getText()).isEmpty()) {
+                Connection con = null;
+                PreparedStatement stmt = null;
+                ResultSet rs = null;
 
-            String TABNAME = "`pnrpm`.`projects`";
-            String query = DBUtils.prepareInsertQuery(TABNAME, "`Project Name`", "?");
-            try{
-                con = DBUtils.getConnection();
-                stmt = con.prepareStatement(query);
-                stmt.setString(1, text.getText());
-                stmt.executeUpdate();
-            }
-            catch (SQLException sql){
-//                sql.printStackTrace();
-            }
-            finally{
-                DBUtils.closeAll(rs,stmt,con);
+                String TABNAME = "`pnrpm`.`projects`";
+                String query = DBUtils.prepareInsertQuery(TABNAME, "`Project Name`", "?");
+                try {
+                    con = DBUtils.getConnection();
+                    stmt = con.prepareStatement(query);
+                    stmt.setString(1, text.getText());
+                    stmt.executeUpdate();
+                } catch (SQLException sql) {
+                    sql.printStackTrace();
+                } finally {
+                    DBUtils.closeAll(rs, stmt, con);
+                }
             }
         });
         create.setPadding(new Insets(5));
