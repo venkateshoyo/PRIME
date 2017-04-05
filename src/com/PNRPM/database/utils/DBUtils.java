@@ -89,22 +89,6 @@ public class DBUtils {
         DBUtils.closeConnection(con);
     }
 
-    public static int insertQuery(String query) throws SQLException{
-        if(query != null && query.isEmpty()){
-            Connection con = null;
-            Statement stmt = null;
-            try{
-                con = getConnection();
-                stmt = con.createStatement();
-                return stmt.executeUpdate(query);
-            }finally{
-                closeConnection(con);
-                closeStatement(stmt);
-            }
-        }
-        return -1;
-    }
-
     public static int insertQuery(Connection con, String query) throws SQLException{
         if(query != null && query.isEmpty()){
             Statement stmt = null;
