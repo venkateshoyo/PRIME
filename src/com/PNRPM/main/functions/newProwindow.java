@@ -79,6 +79,23 @@ public class newProwindow {
         });
         nP.add(pDb,7,2,1,1);
 
+        proName.textProperty().addListener((observable, oldValue, newValue) -> {
+            if(projectDirectory != null) {
+                textDir.setText(projectDirectory.getAbsolutePath() + "\\" + proName.getText());
+            }
+            else{
+                textDir.setText(proName.getText());
+            }
+            if(databaseDirectory != null) {
+                textDb.setText(databaseDirectory.getAbsolutePath() + "\\" + proName.getText());
+            }
+            else{
+                textDb.setText("Some_Default_Directory" + "\\" + proName.getText());
+            }
+            if (proName.getText().isEmpty())
+                textDb.setText("");
+        });
+
         Button create = new Button("Create");
         create.setOnAction(e -> {
             if (proName.getText()!=null && !(proName.getText()).isEmpty()) {
