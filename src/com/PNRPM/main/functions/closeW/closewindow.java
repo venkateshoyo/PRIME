@@ -1,6 +1,8 @@
 package com.PNRPM.main.functions.closeW;
 
+import com.PNRPM.database.utils.DBUtils;
 import com.PNRPM.main.operations.main.main;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -13,10 +15,36 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class closewindow {
 
     public void closefunction(){
         main ob = new main();
+
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            con = DBUtils.getConnection();
+            stmt = con.prepareStatement("SELECT link from defaults WHERE `parameter name`='close check'");
+            rs = stmt.executeQuery();
+            rs.next();
+            if(rs.getString("link").equals("1"))
+            {
+                ob.getstage().close();
+                return;
+            }
+        } catch (SQLException sql) {
+            sql.printStackTrace();
+        } finally {
+            DBUtils.closeAll(rs, stmt, con);
+        }
+
         Stage confirm = new Stage();
         confirm.initModality(Modality.APPLICATION_MODAL);
 
@@ -34,7 +62,19 @@ public class closewindow {
             confirm.close();
             ob.getstage().close();
             if(dontask.isSelected()){
+                Connection conn = null;
+                PreparedStatement stmtt = null;
 
+                try {
+                    conn = DBUtils.getConnection();
+                    stmtt = conn.prepareStatement("UPDATE `pnrpm`.`defaults` SET `link`='1' WHERE `parameter name`='close check';");
+                    stmtt.executeUpdate();
+                } catch (SQLException sql) {
+                    sql.printStackTrace();
+                } finally {
+                    DBUtils.closeStatement(stmtt);
+                    DBUtils.closeConnection(conn);
+                }
             }
         });
 
@@ -58,7 +98,7 @@ public class closewindow {
         confirm.setScene(scene);
         confirm.show();
         confirm.setResizable(false);
-        scene.getStylesheets().add(closewindow.class.getResource("../resources/css/close.css").toExternalForm());
-        confirm.getIcons().add(new Image(getClass().getResourceAsStream("../resources/images/close_favicon.png")));
+        scene.getStylesheets().add(closewindow.class.getResource("../../resources/css/close.css").toExternalForm());
+        confirm.getIcons().add(new Image(getClass().getResourceAsStream("../../resources/images/close_favicon.png")));
     }
 }

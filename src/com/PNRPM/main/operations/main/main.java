@@ -26,10 +26,10 @@ public class main extends Application {
         window=primaryStage;
         window.setTitle(System.getProperty("user.dir")+"   PNRPM ES IITR 2017.1.0");
 
-//        window.setOnCloseRequest(e -> {
-//            e.consume();
-//            closeconfirm.closeconfirm();
-//        });
+        window.setOnCloseRequest(e -> {
+            e.consume();
+            closeconfirm.closeconfirm();
+        });
 
         //creating menubar class object
         menubar mb= new menubar();
