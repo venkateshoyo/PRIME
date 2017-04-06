@@ -113,6 +113,8 @@ public class newProwindow {
                     sql.printStackTrace();
                 } finally {
                     DBUtils.closeAll(rs, stmt, con);
+                    e.consume();
+                    newWindow.close();
                 }
             }
         });
