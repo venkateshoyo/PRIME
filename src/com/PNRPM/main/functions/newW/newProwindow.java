@@ -135,7 +135,7 @@ public class newProwindow {
         newWindow.show();
         newWindow.setTitle("Create New Project");
         newWindow.setResizable(false);
-        scene.getStylesheets().add(newProwindow.class.getResource("../resources/css/themes/maintheme1.css").toExternalForm());
-        newWindow.getIcons().add(new Image(getClass().getResourceAsStream("../resources/images/main_favicon.png")));
+        scene.getStylesheets().add(newProwindow.class.getResource("../../resources/css/themes/maintheme1.css").toExternalForm());
+        newWindow.getIcons().add(new Image(getClass().getResourceAsStream("../../resources/images/main_favicon.png")));
     }
 }
