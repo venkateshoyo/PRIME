@@ -1,4 +1,4 @@
-package com.PNRPM.main.operations.editMenu;
+package com.PNRPM.main.operations.mainMenus.editMenu;
 
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;

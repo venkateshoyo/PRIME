@@ -1,13 +1,13 @@
 package com.PNRPM.main.operations.main;
 
-import com.PNRPM.main.operations.analysisMenu.analysismenulist;
-import com.PNRPM.main.operations.editMenu.editmenulist;
-import com.PNRPM.main.operations.fileMenu.filemenulist;
-import com.PNRPM.main.operations.projectMenu.*;
-import com.PNRPM.main.operations.dataMenu.*;
-import com.PNRPM.main.operations.helpMenu.*;
-import com.PNRPM.main.operations.displayMenu.*;
-import com.PNRPM.main.operations.programmerMenu.*;
+import com.PNRPM.main.operations.mainMenus.analysisMenu.analysismenulist;
+import com.PNRPM.main.operations.mainMenus.editMenu.editmenulist;
+import com.PNRPM.main.operations.mainMenus.fileMenu.filemenulist;
+import com.PNRPM.main.operations.mainMenus.projectMenu.*;
+import com.PNRPM.main.operations.mainMenus.dataMenu.*;
+import com.PNRPM.main.operations.mainMenus.helpMenu.*;
+import com.PNRPM.main.operations.mainMenus.displayMenu.*;
+import com.PNRPM.main.operations.mainMenus.programmerMenu.*;
 
 import javafx.scene.control.*;
 import javafx.stage.Stage;

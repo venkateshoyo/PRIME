@@ -1,6 +1,5 @@
-package com.PNRPM.main.operations.dataMenu;
+package com.PNRPM.main.operations.mainMenus.dataMenu;
 
-import com.PNRPM.main.operations.main.main;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.stage.DirectoryChooser;

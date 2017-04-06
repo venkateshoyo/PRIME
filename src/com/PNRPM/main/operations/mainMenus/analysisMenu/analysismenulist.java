@@ -1,6 +1,6 @@
-package com.PNRPM.main.operations.analysisMenu;
+package com.PNRPM.main.operations.mainMenus.analysisMenu;
 
-import com.PNRPM.main.operations.dataMenu.loadlasfile;
+import com.PNRPM.main.operations.mainMenus.dataMenu.loadlasfile;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.stage.FileChooser;

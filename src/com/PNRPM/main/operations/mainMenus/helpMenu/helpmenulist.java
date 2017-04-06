@@ -1,4 +1,4 @@
-package com.PNRPM.main.operations.helpMenu;
+package com.PNRPM.main.operations.mainMenus.helpMenu;
 
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;

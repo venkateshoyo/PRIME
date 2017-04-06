@@ -1,4 +1,4 @@
-package com.PNRPM.main.operations.projectMenu;
+package com.PNRPM.main.operations.mainMenus.projectMenu;
 
 import javafx.scene.control.*;
 
