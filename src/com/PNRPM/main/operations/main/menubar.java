@@ -118,8 +118,7 @@ class menubar {
             newProject.newProject();
         });
 
-        MenuItem recentproject = new MenuItem( "_Recent Project");
-        recentproject.setOnAction(e -> System.out.println(""));
+        Menu recentproject = recentProject.recentProject();
 
         MenuItem lastsaveproject = new MenuItem( "_Last Saved");
         lastsaveproject.setOnAction(e -> System.out.println(""));
