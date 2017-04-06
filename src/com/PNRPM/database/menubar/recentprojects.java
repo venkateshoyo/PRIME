@@ -8,8 +8,8 @@ import java.sql.Statement;
 public class recentprojects {
 
     public static ResultSet recentprojects() {
-        Connection con = null;
-        Statement stmt = null;
+        Connection con;
+        Statement stmt;
         ResultSet rs = null;
 
         String query = "SELECT * from projects";
