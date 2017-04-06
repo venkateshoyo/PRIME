@@ -1,4 +1,4 @@
-package com.PNRPM.main.operations.programmer;
+package com.PNRPM.main.operations.programmerMenu;
 
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
