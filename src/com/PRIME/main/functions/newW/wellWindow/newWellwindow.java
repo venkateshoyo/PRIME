@@ -1,4 +1,4 @@
-package com.PRIME.main.functions.newW;
+package com.PRIME.main.functions.newW.wellWindow;
 
 import com.PRIME.database.menubar.recentprojects;
 import com.PRIME.database.utils.DBUtils;
@@ -118,33 +118,19 @@ public class newWellwindow {
 
         Tab set = new Tab("Set");
         set.setClosable(false);
-//        HBox hbox = new HBox();
-//        hbox.getChildren().add(new Label("set content"));
-//        hbox.setAlignment(Pos.CENTER);
-//        set.setContent(hbox);
+        set.setContent(setContent.setContent());
 
         Tab contents= new Tab("Contents");
         contents.setClosable(false);
-//        HBox hbox = new HBox();
-//        hbox.getChildren().add(new Label("set content"));
-//        hbox.setAlignment(Pos.CENTER);
-//        contents.setContent(hbox);
+        contents.setContent(contentsContent.contentsContent());
 
         Tab comments = new Tab("Comments");
         comments.setClosable(false);
-//        HBox hbox = new HBox();
-//        hbox.getChildren().add(new Label("set content"));
-//        hbox.setAlignment(Pos.CENTER);
-//        comments.setContent(hbox);
-
+        comments.setContent(commentsContent.commentsContent());
 
         Tab logs = new Tab("Logs");
         logs.setClosable(false);
-//        HBox hbox = new HBox();
-//        hbox.getChildren().add(new Label("set content"));
-//        hbox.setAlignment(Pos.CENTER);
-//        logs.setContent(hbox);
-
+        logs.setContent(logsContent.logsContent());
 
         tabPane.getTabs().addAll(set,contents,comments,logs);
 

@@ -1,6 +1,6 @@
 package com.PRIME.main.operations.mainMenus.dataMenu;
 
-import com.PRIME.main.functions.newW.newWellwindow;
+import com.PRIME.main.functions.newW.wellWindow.newWellwindow;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.stage.DirectoryChooser;
