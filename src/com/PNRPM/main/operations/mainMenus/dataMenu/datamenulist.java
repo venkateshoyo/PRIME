@@ -1,5 +1,6 @@
 package com.PNRPM.main.operations.mainMenus.dataMenu;
 
+import com.PNRPM.main.functions.newW.newWellwindow;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.stage.DirectoryChooser;
@@ -17,21 +18,7 @@ public class datamenulist {
 
         MenuItem loadlas = new MenuItem( "Load _LAS");
         loadlas.setOnAction(e -> {
-            FileChooser loadlasdirrctory = new FileChooser();
-            loadlasdirrctory.getExtensionFilters().add(new FileChooser.ExtensionFilter("LAS Files", "*.las"));
-            loadlasdirrctory.setTitle("Load LAS file");
-            File selectedlas =  loadlasdirrctory.showOpenDialog(ob);
-            if(selectedlas == null){
-                System.out.println("LAS file not selected");
-            }else{
-                loadlasfile lasobject = new loadlasfile();
-                try {
-                    lasobject.loadlas(selectedlas);
-                }
-                catch (IOException el){
-                    System.out.println("Error in loading");
-                }
-            }
+            newWellwindow.newWellwindow();
         });
 
         MenuItem loaddlis = new MenuItem( "Load _DlIS");
