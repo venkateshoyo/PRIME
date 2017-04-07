@@ -2,12 +2,17 @@ package com.PRIME.main.functions.newW;
 
 import com.PRIME.database.menubar.recentprojects;
 import com.PRIME.database.utils.DBUtils;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.sql.ResultSet;
@@ -21,22 +26,36 @@ public class newWellwindow {
 
         BorderPane wellview = new BorderPane();
 
-        GridPane grid = new GridPane();
+        BorderPane grid = new BorderPane();
+        grid.setPadding(new Insets(15));
 
         Label file = new Label("File");
-        grid.add(file,0,0,1,1);
+        file.setPadding(new Insets(0,25,0,0));
+        grid.setLeft(file);
 
-        TextField filepath = new TextField("Default file path");
-        grid.add(filepath,1,0,4,1);
+        final ComboBox<String> combo = new ComboBox<String>();
+        combo.getItems().addAll(
+                "File Path 1",
+                "File Path 2",
+                "File Path 3",
+                "File Path 4",
+                "File Path 5"
+        );
+        combo.prefWidthProperty().bind(wellview.widthProperty());
+        combo.setEditable(true);
+        grid.setCenter(combo);
 
+        HBox hb = new HBox(25);
+        Label lb = new Label("");
         Button Browse = new Button("Browse");
-        grid.add(Browse,5,0,1,1);
+        hb.getChildren().addAll(lb,Browse);
+        grid.setRight(hb);
 
         wellview.setTop(grid);
 
         Scene scene = new Scene(wellview);
-        wellload.setMaximized(true);
         wellload.setScene(scene);
+        wellload.setMaximized(true);
         wellload.show();
     }
 
