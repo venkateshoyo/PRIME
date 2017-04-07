@@ -1,6 +1,6 @@
 package com.PNRPM.main.operations.mainMenus.dataMenu;
 
-import com.PNRPM.main.operations.mainMenus.displayMenu.crossplotnew;
+import com.PNRPM.main.operations.mainMenus.analysisMenu.crossplotnew;
 
 import java.io.*;
 import java.util.regex.Matcher;

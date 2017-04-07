@@ -1,4 +1,4 @@
-package com.PNRPM.main.operations.mainMenus.displayMenu;
+package com.PNRPM.main.operations.mainMenus.analysisMenu;
 
 import com.PNRPM.main.functions.crossP.xyzcrossplot;
 
