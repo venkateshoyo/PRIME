@@ -16,12 +16,48 @@ import java.sql.SQLException;
 
 public class newWellwindow {
 
+    public static BorderPane wellview;
     public static void newWellwindow(){
         Stage  wellload = new Stage();
         wellload.setTitle(fetchlatestproject());
 
-        BorderPane wellview = new BorderPane();
+        wellview = new BorderPane();
 
+        fetchHeader();
+
+        fetchMain();
+
+        Scene scene = new Scene(wellview);
+
+        // bind to take available space
+        wellview.prefHeightProperty().bind(scene.heightProperty());
+        wellview.prefWidthProperty().bind(scene.widthProperty());
+
+        wellload.setScene(scene);
+        wellload.setMaximized(true);
+        wellload.show();
+    }
+
+    public static String fetchlatestproject(){
+        String project="";
+
+        ResultSet rs = null;
+        try{
+            rs = recentprojects.recentprojects();
+            rs.last();
+            project = rs.getString("Project Name");
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            DBUtils.closeResultSet(rs);
+        }
+
+        return project;
+    }
+
+    public static void fetchHeader(){
         VBox vbHeader = new VBox(10);
 
         BorderPane grid = new BorderPane();
@@ -71,32 +107,47 @@ public class newWellwindow {
         hbWellBy.getChildren().addAll(wellBy,radioButton,wellImport);
         hbWellBy.setAlignment(Pos.BASELINE_RIGHT);
 
-        vbHeader.getChildren().addAll(grid,hbWellBy);
+        final Separator separator = new Separator();
+        vbHeader.getChildren().addAll(grid,hbWellBy,separator);
 
         wellview.setTop(vbHeader);
-
-        Scene scene = new Scene(wellview);
-        wellload.setScene(scene);
-        wellload.setMaximized(true);
-        wellload.show();
     }
 
-    public static String fetchlatestproject(){
-        String project="";
+    public static void fetchMain(){
+        TabPane tabPane = new TabPane();
 
-        ResultSet rs = null;
-        try{
-            rs = recentprojects.recentprojects();
-            rs.last();
-            project = rs.getString("Project Name");
-        }
-        catch (SQLException e){
-            e.printStackTrace();
-        }
-        finally {
-            DBUtils.closeResultSet(rs);
-        }
+        Tab set = new Tab("Set");
+        set.setClosable(false);
+//        HBox hbox = new HBox();
+//        hbox.getChildren().add(new Label("set content"));
+//        hbox.setAlignment(Pos.CENTER);
+//        set.setContent(hbox);
 
-        return project;
+        Tab contents= new Tab("Contents");
+        contents.setClosable(false);
+//        HBox hbox = new HBox();
+//        hbox.getChildren().add(new Label("set content"));
+//        hbox.setAlignment(Pos.CENTER);
+//        contents.setContent(hbox);
+
+        Tab comments = new Tab("Comments");
+        comments.setClosable(false);
+//        HBox hbox = new HBox();
+//        hbox.getChildren().add(new Label("set content"));
+//        hbox.setAlignment(Pos.CENTER);
+//        comments.setContent(hbox);
+
+
+        Tab logs = new Tab("Logs");
+        logs.setClosable(false);
+//        HBox hbox = new HBox();
+//        hbox.getChildren().add(new Label("set content"));
+//        hbox.setAlignment(Pos.CENTER);
+//        logs.setContent(hbox);
+
+
+        tabPane.getTabs().addAll(set,contents,comments,logs);
+
+        wellview.setCenter(tabPane);
     }
 }
