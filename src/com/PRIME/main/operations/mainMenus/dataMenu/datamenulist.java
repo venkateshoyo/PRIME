@@ -16,7 +16,8 @@ public class datamenulist {
 
         MenuItem loadlas = new MenuItem( "Load _LAS");
         loadlas.setOnAction(e -> {
-            newWellwindow.newWellwindow();
+            newWellwindow obj = new newWellwindow();
+            obj.newWellwindow();
         });
 
         MenuItem loaddlis = new MenuItem( "Load _DlIS");

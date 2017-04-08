@@ -2,12 +2,14 @@ package com.PRIME.main.functions.newW.wellWindow;
 
 import com.PRIME.database.menubar.recentprojects;
 import com.PRIME.database.utils.DBUtils;
+import com.PRIME.main.functions.newW.newProwindow;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -17,7 +19,7 @@ import java.sql.SQLException;
 public class newWellwindow {
 
     public static BorderPane wellview;
-    public static void newWellwindow(){
+    public void newWellwindow(){
         Stage  wellload = new Stage();
         wellload.setTitle(fetchlatestproject());
 
@@ -35,6 +37,8 @@ public class newWellwindow {
 
         wellload.setScene(scene);
         wellload.setMaximized(true);
+//        scene.getStylesheets().add(newWellwindow.class.getResource("../../../resources/css/themes/maintheme1.css").toExternalForm());
+        wellload.getIcons().add(new Image(getClass().getResourceAsStream("../../../resources/images/main_favicon.png")));
         wellload.show();
     }
 
