@@ -102,7 +102,7 @@ public class newProwindow {
                 PreparedStatement stmt = null;
                 ResultSet rs = null;
 
-                String TABNAME = "`pnrpm`.`projects`";
+                String TABNAME = "`prime`.`projects`";
                 String query = DBUtils.prepareInsertQuery(TABNAME, "`Project Name`", "?");
                 try {
                     con = DBUtils.getConnection();

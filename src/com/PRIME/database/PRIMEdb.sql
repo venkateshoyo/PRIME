@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `pnrpm` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `pnrpm`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: pnrpm
@@ -26,8 +24,7 @@ DROP TABLE IF EXISTS `defaults`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `defaults` (
   `parameter name` varchar(50) NOT NULL,
-  `link` varchar(500) NOT NULL,
-  `testing` varchar(45) DEFAULT NULL,
+  `link` varchar(10000) NOT NULL,
   PRIMARY KEY (`parameter name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -38,6 +35,7 @@ CREATE TABLE `defaults` (
 
 LOCK TABLES `defaults` WRITE;
 /*!40000 ALTER TABLE `defaults` DISABLE KEYS */;
+INSERT INTO `defaults` VALUES ('close check','1'),('well directory','C:\\Users\\submi\\Desktop\\ANN\\ann2017\\course projct?C:\\Users\\submi\\Desktop\\ANN\\ann2017\\?C:\\Appeti\\appetiweb\\src\\main\\webapp\\resources\\email-templates');
 /*!40000 ALTER TABLE `defaults` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,6 +107,7 @@ CREATE TABLE `projects` (
 
 LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
+INSERT INTO `projects` VALUES ('hello'),('Project A'),('Project B'),('Project C'),('Project D'),('testing latest project');
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -121,4 +120,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-03 22:50:48
+-- Dump completed on 2017-04-08 21:49:42
