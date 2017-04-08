@@ -1,22 +1,25 @@
 package com.PRIME.main.functions.newW.wellWindow.contents.set;
 
-import com.PRIME.main.functions.newW.wellWindow.contents.set.Well;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class setContent {
 
     public static TableView<Well> setContent(){
 
         TableView<Well> table = new TableView<>();
-        TableColumn<Well, Void> well = new TableColumn<>("Well");
-        TableColumn<Well, Void> set = new TableColumn<>("Set");
-        TableColumn<Well, Void> reference = new TableColumn<>("Reference");
-        TableColumn<Well, Void> units = new TableColumn<>("Units");
-        TableColumn<Well, Void> select = new TableColumn<>("Select");
+        TableColumn well = new TableColumn("Well");
+        TableColumn set = new TableColumn("Set");
+        TableColumn reference = new TableColumn("Reference");
+        TableColumn units = new TableColumn("Units");
+        TableColumn select = new TableColumn("Select");
+
+        well.setCellValueFactory( new PropertyValueFactory<Well, String>("well"));
+        set.setCellValueFactory( new PropertyValueFactory<Well, String>("set"));
+        reference.setCellValueFactory( new PropertyValueFactory<Well, String>("reference"));
+        units.setCellValueFactory( new PropertyValueFactory<Well, String>("units"));
+        select.setCellValueFactory( new PropertyValueFactory<Well, String>("select"));
 
         table.getColumns().addAll(well,set,reference,units,select);
 

@@ -126,7 +126,6 @@ public class newWellwindow{
         Button wellImport = new Button("Import");
         wellImport.setOnAction(e->{
             data.add(new Well("A","B","C","D","E"));
-            table.setItems(data);
         });
 
         hbWellBy.getChildren().addAll(wellBy,radioButton,wellImport);
@@ -143,7 +142,8 @@ public class newWellwindow{
 
         Tab set = new Tab("Set");
         set.setClosable(false);
-        table =setContent.setContent();
+        table = setContent.setContent();
+        table.setItems(data);
         set.setContent(table);
 
         Tab contents= new Tab("Contents");
