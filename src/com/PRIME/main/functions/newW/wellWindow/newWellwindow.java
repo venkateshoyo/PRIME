@@ -14,16 +14,22 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class newWellwindow {
 
     public static BorderPane wellview;
+    public static DirectoryChooser directoryChooser = new DirectoryChooser();
+    public static File projectDirectory ;
+    public static Stage wellload ;
+
     public void newWellwindow(){
-        Stage  wellload = new Stage();
+        wellload = new Stage();
         wellload.setTitle(fetchlatestproject());
 
         wellview = new BorderPane();
@@ -82,6 +88,15 @@ public class newWellwindow {
         HBox hbBrowse = new HBox(25);
         Label space = new Label("");
         Button Browse = new Button("Browse");
+        Browse.setOnAction(e -> {
+            directoryChooser.setInitialDirectory(new File("C:\\Program Files\\Common Files"));
+            projectDirectory = directoryChooser.showDialog(wellload);
+            if (projectDirectory!=null) {
+                combo.setValue(projectDirectory.getAbsolutePath());
+            }
+        });
+
+
         hbBrowse.getChildren().addAll(space,Browse);
         grid.setRight(hbBrowse);
 
