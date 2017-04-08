@@ -6,6 +6,8 @@ import com.PRIME.main.functions.newW.wellWindow.contents.commentsContent;
 import com.PRIME.main.functions.newW.wellWindow.contents.contentsContent;
 import com.PRIME.main.functions.newW.wellWindow.contents.logsContent;
 import com.PRIME.main.functions.newW.wellWindow.contents.setContent;
+import com.PRIME.database.mainMenus.dataMenu.wellload.fetchWellDir;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -30,14 +32,13 @@ public class newWellwindow {
 
         fetchMain();
 
-        Scene scene = new Scene(wellview);
+        Scene scene = new Scene(wellview,800,300);
 
         // bind to take available space
         wellview.prefHeightProperty().bind(scene.heightProperty());
         wellview.prefWidthProperty().bind(scene.widthProperty());
 
         wellload.setScene(scene);
-        wellload.setMaximized(true);
 //        scene.getStylesheets().add(newWellwindow.class.getResource("../../../resources/css/themes/maintheme1.css").toExternalForm());
         wellload.getIcons().add(new Image(getClass().getResourceAsStream("../../../resources/images/main_favicon.png")));
         wellload.show();
@@ -72,14 +73,8 @@ public class newWellwindow {
         file.setPadding(new Insets(5,25,0,0));
         grid.setLeft(file);
 
-        final ComboBox<String> combo = new ComboBox<String>();
-        combo.getItems().addAll(
-                "File Path 1",
-                "File Path 2",
-                "File Path 3",
-                "File Path 4",
-                "File Path 5"
-        );
+        final ComboBox<String> combo = fetchWellDir.fetchWellDir();
+
         combo.prefWidthProperty().bind(wellview.widthProperty());
         combo.setEditable(true);
         grid.setCenter(combo);
