@@ -5,9 +5,12 @@ import com.PRIME.database.utils.DBUtils;
 import com.PRIME.main.functions.newW.wellWindow.contents.commentsContent;
 import com.PRIME.main.functions.newW.wellWindow.contents.contentsContent;
 import com.PRIME.main.functions.newW.wellWindow.contents.logsContent;
-import com.PRIME.main.functions.newW.wellWindow.contents.setContent;
+import com.PRIME.main.functions.newW.wellWindow.contents.set.Well;
+import com.PRIME.main.functions.newW.wellWindow.contents.set.setContent;
 import com.PRIME.database.mainMenus.dataMenu.wellload.fetchWellDir;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -21,12 +24,15 @@ import java.io.File;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class newWellwindow {
+
+public class newWellwindow{
 
     public static BorderPane wellview;
     public static DirectoryChooser directoryChooser = new DirectoryChooser();
     public static File projectDirectory ;
     public static Stage wellload ;
+    public static ObservableList<Well> data = FXCollections.observableArrayList();
+    public static TableView<Well> table;
 
     public void newWellwindow(){
         wellload = new Stage();
@@ -118,6 +124,10 @@ public class newWellwindow {
         radioButton.getChildren().addAll(rb1,rb2,rb3);
 
         Button wellImport = new Button("Import");
+        wellImport.setOnAction(e->{
+            data.add(new Well("A","B","C","D","E"));
+            table.setItems(data);
+        });
 
         hbWellBy.getChildren().addAll(wellBy,radioButton,wellImport);
         hbWellBy.setAlignment(Pos.BASELINE_RIGHT);
@@ -133,7 +143,8 @@ public class newWellwindow {
 
         Tab set = new Tab("Set");
         set.setClosable(false);
-        set.setContent(setContent.setContent());
+        table =setContent.setContent();
+        set.setContent(table);
 
         Tab contents= new Tab("Contents");
         contents.setClosable(false);

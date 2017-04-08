@@ -1,21 +1,22 @@
-package com.PRIME.main.functions.newW.wellWindow.contents;
+package com.PRIME.main.functions.newW.wellWindow.contents.set;
 
-import javafx.scene.control.Label;
+import com.PRIME.main.functions.newW.wellWindow.contents.set.Well;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
 
 public class setContent {
 
-    public static BorderPane setContent(){
-        BorderPane setcontent = new BorderPane();
+    public static TableView<Well> setContent(){
 
-        TableView<Void> table = new TableView<>();
-        TableColumn<Void, Void> well = new TableColumn<>("Well");
-        TableColumn<Void, Void> set = new TableColumn<>("Set");
-        TableColumn<Void, Void> reference = new TableColumn<>("Reference");
-        TableColumn<Void, Void> units = new TableColumn<>("Units");
-        TableColumn<Void, Void> select = new TableColumn<>("Select");
+        TableView<Well> table = new TableView<>();
+        TableColumn<Well, Void> well = new TableColumn<>("Well");
+        TableColumn<Well, Void> set = new TableColumn<>("Set");
+        TableColumn<Well, Void> reference = new TableColumn<>("Reference");
+        TableColumn<Well, Void> units = new TableColumn<>("Units");
+        TableColumn<Well, Void> select = new TableColumn<>("Select");
 
         table.getColumns().addAll(well,set,reference,units,select);
 
@@ -31,7 +32,6 @@ public class setContent {
         units.setResizable(false);
         select.setResizable(false);
 
-        setcontent.setCenter(table);
-        return setcontent;
+        return table;
     }
 }
