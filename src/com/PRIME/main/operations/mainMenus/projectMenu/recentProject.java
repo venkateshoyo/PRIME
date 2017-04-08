@@ -1,6 +1,6 @@
 package com.PRIME.main.operations.mainMenus.projectMenu;
 
-import com.PRIME.database.menubar.recentprojects;
+import com.PRIME.database.mainMenus.projectMenu.recentprojects;
 import com.PRIME.database.utils.DBUtils;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;

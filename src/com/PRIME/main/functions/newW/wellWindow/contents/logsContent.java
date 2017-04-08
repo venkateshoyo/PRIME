@@ -1,4 +1,4 @@
-package com.PRIME.main.functions.newW.wellWindow;
+package com.PRIME.main.functions.newW.wellWindow.contents;
 
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;

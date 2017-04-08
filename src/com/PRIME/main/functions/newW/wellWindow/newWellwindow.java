@@ -1,7 +1,11 @@
 package com.PRIME.main.functions.newW.wellWindow;
 
-import com.PRIME.database.menubar.recentprojects;
+import com.PRIME.database.mainMenus.projectMenu.recentprojects;
 import com.PRIME.database.utils.DBUtils;
+import com.PRIME.main.functions.newW.wellWindow.contents.commentsContent;
+import com.PRIME.main.functions.newW.wellWindow.contents.contentsContent;
+import com.PRIME.main.functions.newW.wellWindow.contents.logsContent;
+import com.PRIME.main.functions.newW.wellWindow.contents.setContent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

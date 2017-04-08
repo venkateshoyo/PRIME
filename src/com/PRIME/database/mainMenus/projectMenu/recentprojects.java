@@ -1,4 +1,4 @@
-package com.PRIME.database.menubar;
+package com.PRIME.database.mainMenus.projectMenu;
 
 import com.PRIME.database.utils.DBUtils;
 import java.sql.Connection;
