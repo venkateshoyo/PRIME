@@ -1,5 +1,6 @@
 package com.PRIME.main.functions.newW.projectWindow;
 
+import com.PRIME.database.mainMenus.dataMenu.projectload.projectload;
 import com.PRIME.database.utils.DBUtils;
 
 import javafx.geometry.Insets;
@@ -98,24 +99,9 @@ public class newProwindow {
         Button create = new Button("Create");
         create.setOnAction(e -> {
             if (proName.getText()!=null && !(proName.getText()).isEmpty()) {
-                Connection con = null;
-                PreparedStatement stmt = null;
-                ResultSet rs = null;
-
-                String TABNAME = "`prime`.`projects`";
-                String query = DBUtils.prepareInsertQuery(TABNAME, "`Project Name`", "?");
-                try {
-                    con = DBUtils.getConnection();
-                    stmt = con.prepareStatement(query);
-                    stmt.setString(1, proName.getText());
-                    stmt.executeUpdate();
-                } catch (SQLException sql) {
-                    sql.printStackTrace();
-                } finally {
-                    DBUtils.closeAll(rs, stmt, con);
-                    e.consume();
-                    newWindow.close();
-                }
+                projectload.projectload(proName.getText());
+                e.consume();
+                newWindow.close();
             }
         });
         create.setPadding(new Insets(5));

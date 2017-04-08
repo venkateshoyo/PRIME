@@ -1,5 +1,7 @@
 package com.PRIME.main.functions.closeW;
 
+import com.PRIME.database.closeWIndow.getCloseCheck;
+import com.PRIME.database.closeWIndow.setCloseCheck;
 import com.PRIME.database.utils.DBUtils;
 import com.PRIME.main.operations.main.main;
 
@@ -29,20 +31,9 @@ public class closewindow {
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
-        try {
-            con = DBUtils.getConnection();
-            stmt = con.prepareStatement("SELECT link from defaults WHERE `parameter name`='close check'");
-            rs = stmt.executeQuery();
-            rs.next();
-            if(rs.getString("link").equals("1"))
-            {
-                ob.getstage().close();
-                return;
-            }
-        } catch (SQLException sql) {
-            sql.printStackTrace();
-        } finally {
-            DBUtils.closeAll(rs, stmt, con);
+        if(getCloseCheck.getCloseCheck()==1){
+            ob.getstage().close();
+            return;
         }
 
         Stage confirm = new Stage();
@@ -61,21 +52,8 @@ public class closewindow {
         yes.setOnAction(e -> {
             confirm.close();
             ob.getstage().close();
-            if(dontask.isSelected()){
-                Connection conn = null;
-                PreparedStatement stmtt = null;
-
-                try {
-                    conn = DBUtils.getConnection();
-                    stmtt = conn.prepareStatement("UPDATE `pnrpm`.`defaults` SET `link`='1' WHERE `parameter name`='close check';");
-                    stmtt.executeUpdate();
-                } catch (SQLException sql) {
-                    sql.printStackTrace();
-                } finally {
-                    DBUtils.closeStatement(stmtt);
-                    DBUtils.closeConnection(conn);
-                }
-            }
+            if(dontask.isSelected())
+                setCloseCheck.setCloseCheck();
         });
 
         Button no = new Button("No");
