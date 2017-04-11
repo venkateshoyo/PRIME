@@ -1,6 +1,8 @@
 package com.PRIME.main.functions.newW.projectWindow;
 
 import com.PRIME.database.mainMenus.dataMenu.projectload.projectload;
+import com.PRIME.database.mainMenus.projectMenu.dbDirectory;
+import com.PRIME.database.mainMenus.projectMenu.proDirectory;
 import com.PRIME.database.utils.DBUtils;
 
 import javafx.geometry.Insets;
@@ -49,7 +51,8 @@ public class newProwindow {
         projDir.setId("text");
         nP.add(projDir,0,1,2,1);
 
-        TextField textDir = new TextField();
+        String proDir= proDirectory.proDirectory();
+        TextField textDir = new TextField(proDir);
         nP.add(textDir,2,1,5,1);
 
         Button pDir = new Button("...");
@@ -66,6 +69,7 @@ public class newProwindow {
         dbDir.setId("text");
         nP.add(dbDir,0,2,2,1);
 
+        String dataDir= dbDirectory.databaseDirectory();
         TextField textDb = new TextField();
         nP.add(textDb,2,2,5,1);
 
@@ -84,13 +88,13 @@ public class newProwindow {
                 textDir.setText(projectDirectory.getAbsolutePath() + "\\" + proName.getText());
             }
             else{
-                textDir.setText(proName.getText());
+                textDir.setText(proDir + "\\" + proName.getText());
             }
             if(databaseDirectory != null) {
                 textDb.setText(databaseDirectory.getAbsolutePath() + "\\" + proName.getText());
             }
             else{
-                textDb.setText("Some_Default_Directory" + "\\" + proName.getText());
+                textDb.setText(dataDir + "\\" + proName.getText());
             }
             if (proName.getText().isEmpty())
                 textDb.setText("");
