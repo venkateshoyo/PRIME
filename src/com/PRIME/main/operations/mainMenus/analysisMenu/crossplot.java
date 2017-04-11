@@ -1,5 +1,8 @@
 package com.PRIME.main.operations.mainMenus.analysisMenu;
 
+//This class has separate Crossplot window after las file load to allow user 1 time select which parameter to be plotted.
+//This class is now(12th April'17) is replaced by "crossplotnew" file. Use new crosssplot file only
+
 import com.PRIME.main.functions.crossP.xyzcrossplot;
 import javafx.geometry.*;
 import javafx.scene.Scene;

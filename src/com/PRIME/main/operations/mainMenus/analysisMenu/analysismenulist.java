@@ -38,7 +38,7 @@ public class analysismenulist {
                     lasobject.loadlas(selectedlas);
                 }
                 catch (IOException el){
-                    System.out.println("Error in loading");
+                    el.printStackTrace();
                 }
             }
         });
