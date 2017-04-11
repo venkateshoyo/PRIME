@@ -20,27 +20,31 @@ public class setContent {
         // Editable
         table.setEditable(true);
 
-        TableColumn<Well, String> well = new TableColumn("Well");
-        TableColumn<Well, String> set = new TableColumn("Set");
-        TableColumn<Well, String> reference = new TableColumn("Reference");
-        TableColumn<Well, String> units = new TableColumn("Units");
-        TableColumn<Well, Boolean> select = new TableColumn("Select");
+        TableColumn<Well, String> well = new TableColumn<Well, String>("Well");
+        TableColumn<Well, String> set = new TableColumn<Well, String>("Set");
+        TableColumn<Well, String> reference = new TableColumn<Well, String>("Reference");
+        TableColumn<Well, String> units = new TableColumn<Well, String>("Units");
+        TableColumn<Well, Boolean> select = new TableColumn<Well, Boolean>("Select");
 
         well.setCellValueFactory( new PropertyValueFactory<Well, String>("well"));
         well.setCellFactory(TextFieldTableCell.<Well> forTableColumn());
         well.setMinWidth(100);
+        well.setSortable(false);
 
         set.setCellValueFactory( new PropertyValueFactory<Well, String>("set"));
         set.setCellFactory(TextFieldTableCell.<Well> forTableColumn());
         set.setMinWidth(100);
+        set.setSortable(false);
 
         reference.setCellValueFactory( new PropertyValueFactory<Well, String>("reference"));
         reference.setCellFactory(TextFieldTableCell.<Well> forTableColumn());
         reference.setMinWidth(100);
+        reference.setSortable(false);
 
         units.setCellValueFactory( new PropertyValueFactory<Well, String>("units"));
         units.setCellFactory(TextFieldTableCell.<Well> forTableColumn());
         units.setMinWidth(100);
+        units.setSortable(false);
 
         select.setCellValueFactory( new PropertyValueFactory<Well, Boolean>("select"));
         select.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Well, Boolean>, ObservableValue<Boolean>>() {
@@ -63,6 +67,7 @@ public class setContent {
             }
         });
         select.setMinWidth(100);
+        select.setSortable(false);
 
         select.setCellFactory(new Callback<TableColumn<Well, Boolean>, //
                 TableCell<Well, Boolean>>() {
