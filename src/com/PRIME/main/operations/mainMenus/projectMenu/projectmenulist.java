@@ -5,7 +5,7 @@ import javafx.scene.control.*;
 public class projectmenulist {
 
     public static Menu projectmenulist(){
-        //Project Menu
+        //Project Menu list
         Menu projectMenu = new Menu("_Project");
 
         //Project Sub Menu starts---------------------------------------------------------------------------------------
@@ -21,6 +21,8 @@ public class projectmenulist {
 
         MenuItem lastsaveproject = new MenuItem( "_Last Saved");
         lastsaveproject.setOnAction(e -> System.out.println(""));
+
+        //_______________________________________________________________________________
 
         Menu autosave = new Menu("Auto Save Duration");
 
@@ -45,11 +47,13 @@ public class projectmenulist {
         CustomMenuItem custom = new CustomMenuItem(manual);
         custom.setHideOnClick(false);
 
+        //________________________________________________________________________________
+
         autosave.getItems().addAll(none,onehourautosave,halfhourautosave,custom);
 
-        projectMenu.getItems().addAll(openproject,newproject,recentproject,lastsaveproject,autosave);
-
         //Project Sub Menu ends-----------------------------------------------------------------------------------------
+
+        projectMenu.getItems().addAll(openproject,newproject,recentproject,lastsaveproject,autosave);
 
         return projectMenu;
     }

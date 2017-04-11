@@ -15,8 +15,14 @@ public class recentProject {
 
         ResultSet rs = null;
         try{
+            //Collecting recent project results and stored in rs.
             rs = recentprojects.recentprojects();
+
             while (rs.next()){
+
+                //Adding all Recent projects to Menu as MenuItems.
+                //Remember project fetching is already being done in decreasing order
+
                 String title = rs.getString("Project Name");
                 MenuItem menu = new MenuItem(title);
                 menus.getItems().add(menu);
@@ -28,6 +34,8 @@ public class recentProject {
         finally {
             DBUtils.closeResultSet(rs);
         }
+
+        //returning recent menus list fetched from DB
         return menus;
     }
 }
