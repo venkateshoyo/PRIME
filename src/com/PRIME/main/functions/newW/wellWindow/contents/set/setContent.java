@@ -62,6 +62,7 @@ public class setContent {
                 return booleanProp;
             }
         });
+        select.setMinWidth(100);
 
         select.setCellFactory(new Callback<TableColumn<Well, Boolean>, //
                 TableCell<Well, Boolean>>() {
