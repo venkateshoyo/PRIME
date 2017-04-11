@@ -23,6 +23,8 @@ public class filemenulist {
         MenuItem openRecent = new MenuItem("Open _Recent File");
         openRecent.setOnAction(e -> System.out.println());
 
+        //___________________________________________________________________________
+
         SeparatorMenuItem fileseparater_1= new SeparatorMenuItem();
 
         MenuItem save = new MenuItem(    "_Save                   Ctrl+S");
@@ -30,6 +32,8 @@ public class filemenulist {
 
         MenuItem saveAs = new MenuItem("Save _As");
         saveAs.setOnAction(e -> System.out.println());
+
+        //___________________________________________________________________________
 
         SeparatorMenuItem fileseparater_2= new SeparatorMenuItem();
 
@@ -46,6 +50,8 @@ public class filemenulist {
 
         print.getItems().addAll(printscreen,printwindow,printplotter);
 
+        //___________________________________________________________________________
+
         SeparatorMenuItem fileseparater_3= new SeparatorMenuItem();
 
         MenuItem importFile = new MenuItem("_Import");
@@ -59,6 +65,8 @@ public class filemenulist {
         settings.setOnAction(e -> System.out.println());
 
         SeparatorMenuItem fileseparater_4= new SeparatorMenuItem();
+
+        //___________________________________________________________________________
 
         MenuItem closeFile = new MenuItem("_Close File");
         closeFile.setOnAction(e -> System.out.println());

@@ -27,7 +27,7 @@ public class datamenulist {
             if(selecteddiis == null){
                 System.out.println("LAS file not selected");
             }else{
-                loadlasfile diisobject = new loadlasfile();
+//                loadlasfile diisobject = new loadlasfile();
             }
         });
 
@@ -38,7 +38,7 @@ public class datamenulist {
             if(selectedseismic == null){
                 System.out.println("Seismic file not selected");
             }else{
-                loadlasfile seismicobject = new loadlasfile();
+//                loadlasfile seismicobject = new loadlasfile();
             }
         });
 
@@ -49,7 +49,7 @@ public class datamenulist {
             if(selectedascii == null){
                 System.out.println("ASCII file not selected");
             }else{
-                loadlasfile asciiobject = new loadlasfile();
+//                loadlasfile asciiobject = new loadlasfile();
             }
         });
 
@@ -60,7 +60,7 @@ public class datamenulist {
             if(selecteddirectional == null){
                 System.out.println("Directional file not selected");
             }else{
-                loadlasfile directionalobject = new loadlasfile();
+//                loadlasfile directionalobject = new loadlasfile();
             }
         });
 
@@ -71,7 +71,7 @@ public class datamenulist {
             if(selectedcheckshot == null){
                 System.out.println("CheckShot file not selected");
             }else{
-                loadlasfile checkshotobject = new loadlasfile();
+//                loadlasfile checkshotobject = new loadlasfile();
             }
         });
 
@@ -82,7 +82,7 @@ public class datamenulist {
             if(selectedimage == null){
                 System.out.println("Image file not selected");
             }else{
-                loadlasfile imageobject = new loadlasfile();
+//                loadlasfile imageobject = new loadlasfile();
             }
         });
 
@@ -93,7 +93,7 @@ public class datamenulist {
             if(selectedarray == null){
                 System.out.println("Array file not selected");
             }else{
-                loadlasfile arrayobject = new loadlasfile();
+//                loadlasfile arrayobject = new loadlasfile();
             }
         });
 

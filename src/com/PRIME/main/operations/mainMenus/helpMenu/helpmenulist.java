@@ -23,6 +23,8 @@ public class helpmenulist {
         MenuItem keymap = new MenuItem("_Keymap Reference");
         keymap.setOnAction(e -> System.out.println());
 
+        //___________________________________________________________________________
+
         SeparatorMenuItem helpseparater_1= new SeparatorMenuItem();
 
         MenuItem demos = new MenuItem("_Demos and Screencasts ");
@@ -33,6 +35,8 @@ public class helpmenulist {
 
         MenuItem whatsnew = new MenuItem("_Whats New in PNRPM");
         whatsnew.setOnAction(e -> System.out.println());
+
+        //___________________________________________________________________________
 
         SeparatorMenuItem helpseparater_2= new SeparatorMenuItem();
 
@@ -45,6 +49,8 @@ public class helpmenulist {
 
         MenuItem showlogs = new MenuItem("Show log in _Explorer");
         showlogs.setOnAction(e -> System.out.println());
+
+        //___________________________________________________________________________
 
         SeparatorMenuItem helpseparater_3= new SeparatorMenuItem();
 
