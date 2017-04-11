@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
--- Host: localhost    Database: pnrpm
+-- Host: localhost    Database: prime
 -- ------------------------------------------------------
 -- Server version	5.7.12-log
 
@@ -35,7 +35,7 @@ CREATE TABLE `defaults` (
 
 LOCK TABLES `defaults` WRITE;
 /*!40000 ALTER TABLE `defaults` DISABLE KEYS */;
-INSERT INTO `defaults` VALUES ('close check','1'),('well directory','C:\\Users\\submi\\Desktop\\ANN\\ann2017\\course projct?C:\\Users\\submi\\Desktop\\ANN\\ann2017\\?C:\\Appeti\\appetiweb\\src\\main\\webapp\\resources\\email-templates');
+INSERT INTO `defaults` VALUES ('close check','1'),('database directory','C:\\Users\\submi\\Desktop\\GUI shubham\\src\\com\\PRIME\\testingDirectory\\databaseDirectory'),('project directory','C:\\Users\\submi\\Desktop\\GUI shubham\\src\\com\\PRIME\\testingDirectory\\projectDirectory'),('well directory','C:\\Users\\submi\\Desktop\\GUI shubham\\src\\com\\PRIME\\testingDirectory\\databaseDirectory');
 /*!40000 ALTER TABLE `defaults` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +97,8 @@ DROP TABLE IF EXISTS `projects`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `projects` (
   `Project Name` varchar(500) NOT NULL,
-  PRIMARY KEY (`Project Name`)
+  `time` varchar(25) NOT NULL,
+  PRIMARY KEY (`time`,`Project Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -107,7 +108,7 @@ CREATE TABLE `projects` (
 
 LOCK TABLES `projects` WRITE;
 /*!40000 ALTER TABLE `projects` DISABLE KEYS */;
-INSERT INTO `projects` VALUES ('hello'),('Project A'),('Project B'),('Project C'),('Project D'),('testing latest project');
+INSERT INTO `projects` VALUES ('Proj A','2017-04-12 00:23:01.429'),('Proj C','2017-04-12 00:30:26.647'),('Proj B','2017-04-12 00:41:36.705'),('qwe','2017-04-12 00:44:05.07');
 /*!40000 ALTER TABLE `projects` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -120,4 +121,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-08 21:49:42
+-- Dump completed on 2017-04-12  1:00:12
