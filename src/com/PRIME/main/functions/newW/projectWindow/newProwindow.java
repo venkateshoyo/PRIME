@@ -60,7 +60,10 @@ public class newProwindow {
             projectDirectory = directoryChooser.showDialog(newWindow);
 
             if(projectDirectory != null){
-                textDir.setText(projectDirectory.getAbsolutePath()+"\\"+proName.getText());
+                if (projectDirectory.getAbsolutePath().length()==3)
+                    textDir.setText(projectDirectory.getAbsolutePath() + proName.getText());
+                else
+                    textDir.setText(projectDirectory.getAbsolutePath() + "\\" + proName.getText());
             }
         });
         nP.add(pDir,7,1,1,1);
@@ -78,20 +81,29 @@ public class newProwindow {
             databaseDirectory = directoryChooser.showDialog(newWindow);
 
             if(databaseDirectory != null){
-                textDb.setText(databaseDirectory.getAbsolutePath()+"\\"+proName.getText());
+                if (databaseDirectory.getAbsolutePath().length()==3)
+                    textDb.setText(databaseDirectory.getAbsolutePath() + proName.getText());
+                else
+                    textDb.setText(databaseDirectory.getAbsolutePath() + "\\" + proName.getText());
             }
         });
         nP.add(pDb,7,2,1,1);
 
         proName.textProperty().addListener((observable, oldValue, newValue) -> {
             if(projectDirectory != null) {
-                textDir.setText(projectDirectory.getAbsolutePath() + "\\" + proName.getText());
+                if (projectDirectory.getAbsolutePath().length()==3)
+                    textDir.setText(projectDirectory.getAbsolutePath() + proName.getText());
+                else
+                    textDir.setText(projectDirectory.getAbsolutePath() + "\\" + proName.getText());
             }
             else{
                 textDir.setText(proDir + "\\" + proName.getText());
             }
             if(databaseDirectory != null) {
-                textDb.setText(databaseDirectory.getAbsolutePath() + "\\" + proName.getText());
+                if (databaseDirectory.getAbsolutePath().length()==3)
+                    textDb.setText(databaseDirectory.getAbsolutePath() + proName.getText());
+                else
+                    textDb.setText(databaseDirectory.getAbsolutePath() + "\\" + proName.getText());
             }
             else{
                 textDb.setText(dataDir + "\\" + proName.getText());
