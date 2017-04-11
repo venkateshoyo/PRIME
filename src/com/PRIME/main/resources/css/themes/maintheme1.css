@@ -1,3 +1,7 @@
+//This is one of main CSS Themes to be used/ updated by UI/UX developer
+//All CSS related changes should be strictly done here.
+
+
 //defining Main Window theme Color variable
 * {
    -fx-mainWindowBackgroundColor: #2a2a2a;

@@ -7,8 +7,10 @@
    -fx-WhiteColor: white;
 }
 
+//for future reference, UI/UX deveoper should update color values to these(above) variables only
+
 .root{
-    -fx-background-color: -fx-mainWindowBackgroundColor;
+    -fx-background-color: -fx-mainWindowBackgroundColor;        //CSS variable concept used here.
 }
 
 #yes{
