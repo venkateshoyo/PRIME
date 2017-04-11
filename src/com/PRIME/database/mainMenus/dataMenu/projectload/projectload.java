@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
 public class projectload {
 
@@ -16,11 +17,12 @@ public class projectload {
         ResultSet rs = null;
 
         String TABNAME = "`prime`.`projects`";
-        String query = DBUtils.prepareInsertQuery(TABNAME, "`Project Name`", "?");
+        String query = DBUtils.prepareInsertQuery(TABNAME, "`Project Name`, `time`", "?, ?");
         try {
             con = DBUtils.getConnection();
             stmt = con.prepareStatement(query);
             stmt.setString(1,name);
+            stmt.setString(2,new Timestamp(System.currentTimeMillis())+"");
             stmt.executeUpdate();
         } catch (SQLException sql) {
             sql.printStackTrace();
