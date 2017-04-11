@@ -62,7 +62,7 @@ public class newWellwindow{
         ResultSet rs = null;
         try{
             rs = recentprojects.recentprojects();
-            rs.last();
+            rs.next();
             project = rs.getString("Project Name");
         }
         catch (SQLException e){

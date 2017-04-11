@@ -12,7 +12,7 @@ public class recentprojects {
         Statement stmt;
         ResultSet rs = null;
 
-        String query = "SELECT * from projects";
+        String query = "SELECT * from projects order by time desc";
         try{
             con = DBUtils.getConnection();
             stmt = con.createStatement();
