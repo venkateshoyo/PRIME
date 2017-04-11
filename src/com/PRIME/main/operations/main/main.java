@@ -26,6 +26,7 @@ public class main extends Application {
         window=primaryStage;
         window.setTitle(System.getProperty("user.dir")+"   PRIME ES IITR 2017.1.0");
 
+        //Confirming CLose window call, DB Checked.
         window.setOnCloseRequest(e -> {
             e.consume();
             closeconfirm.closeconfirm();
@@ -48,7 +49,6 @@ public class main extends Application {
         window.show();
 
         //creating shortcut class object
-        shortcuts sc= new shortcuts();
-        sc.shortcuts();
+        shortcuts.shortcuts();
     }
 }
