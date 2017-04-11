@@ -76,6 +76,9 @@ public class newWellwindow{
     }
 
     public static void fetchHeader(){
+
+        //function for adding HEader content to new Well Window
+
         VBox vbHeader = new VBox(10);
 
         BorderPane grid = new BorderPane();
@@ -106,6 +109,8 @@ public class newWellwindow{
         hbBrowse.getChildren().addAll(space,Browse);
         grid.setRight(hbBrowse);
 
+        //_________________________________________________________________
+
         HBox hbWellBy = new HBox(30);
         hbWellBy.setPadding(new Insets(0,15,0,0));
 
@@ -113,15 +118,22 @@ public class newWellwindow{
 
         HBox radioButton = new HBox(20);
         radioButton.setPadding(new Insets(0));
+
         final ToggleGroup group = new ToggleGroup();
+
         RadioButton rb1 = new RadioButton("Well Name");
         rb1.setToggleGroup(group);
         rb1.setSelected(true);
+
         RadioButton rb2 = new RadioButton("API ID");
         rb2.setToggleGroup(group);
+
         RadioButton rb3 = new RadioButton("Well ID");
         rb3.setToggleGroup(group);
+
         radioButton.getChildren().addAll(rb1,rb2,rb3);
+
+        //_________________________________________________________________
 
         Button wellImport = new Button("Import");
         wellImport.setOnAction(e->{
@@ -132,6 +144,7 @@ public class newWellwindow{
         hbWellBy.setAlignment(Pos.BASELINE_RIGHT);
 
         final Separator separator = new Separator();
+
         vbHeader.getChildren().addAll(grid,hbWellBy,separator);
 
         wellview.setTop(vbHeader);

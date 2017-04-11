@@ -17,6 +17,7 @@ public class setContent {
     public static TableView<Well> setContent(){
 
         TableView<Well> table = new TableView<>();
+
         // Editable
         table.setEditable(true);
 
@@ -66,11 +67,10 @@ public class setContent {
                 return booleanProp;
             }
         });
-        select.setMinWidth(100);
-        select.setSortable(false);
 
         select.setCellFactory(new Callback<TableColumn<Well, Boolean>, //
                 TableCell<Well, Boolean>>() {
+
             @Override
             public TableCell<Well, Boolean> call(TableColumn<Well, Boolean> p) {
                 CheckBoxTableCell<Well, Boolean> cell = new CheckBoxTableCell<Well, Boolean>();
@@ -78,6 +78,9 @@ public class setContent {
                 return cell;
             }
         });
+
+        select.setMinWidth(100);
+        select.setSortable(false);
 
         table.getColumns().addAll(well,set,reference,units,select);
 
