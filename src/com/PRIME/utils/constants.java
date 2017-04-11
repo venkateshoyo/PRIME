@@ -1,5 +1,11 @@
 package com.PRIME.utils;
 
+
+//This class contains all the constants that will be used for analysis and calculation
+//An changes required should be done here, it will automatically reflect other places
+
+//If any parameter need regular DB updates then make connections with DB for same. Confirm form Ravi Sharma sir
+
 public class constants {
 
     public static final class density{
