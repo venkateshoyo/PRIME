@@ -89,6 +89,8 @@ public class newProwindow {
         });
         nP.add(pDb,7,2,1,1);
 
+        //______________________________________________________________________________________________
+
         proName.textProperty().addListener((observable, oldValue, newValue) -> {
             if(projectDirectory != null) {
                 if (projectDirectory.getAbsolutePath().length()==3)
@@ -112,6 +114,8 @@ public class newProwindow {
                 textDb.setText("");
         });
 
+        //______________________________________________________________________________________________
+
         Button create = new Button("Create");
         create.setOnAction(e -> {
             if (proName.getText()!=null && !(proName.getText()).isEmpty()) {
@@ -128,6 +132,8 @@ public class newProwindow {
             e.consume();
             newWindow.close();
         });
+
+        //______________________________________________________________________________________________
 
         HBox hb = new HBox(20);
         hb.setAlignment(Pos.BASELINE_RIGHT);
