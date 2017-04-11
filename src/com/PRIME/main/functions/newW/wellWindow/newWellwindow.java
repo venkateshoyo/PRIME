@@ -125,7 +125,7 @@ public class newWellwindow{
 
         Button wellImport = new Button("Import");
         wellImport.setOnAction(e->{
-            data.add(new Well("A","B","C","D","E"));
+            data.add(new Well("A","B","C","D",true));
         });
 
         hbWellBy.getChildren().addAll(wellBy,radioButton,wellImport);

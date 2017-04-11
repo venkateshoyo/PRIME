@@ -1,55 +1,53 @@
 package com.PRIME.main.functions.newW.wellWindow.contents.set;
 
-import javafx.beans.property.SimpleStringProperty;
-
 public class Well {
-    public final SimpleStringProperty well;
-    public final SimpleStringProperty set;
-    public final SimpleStringProperty reference;
-    public final SimpleStringProperty units;
-    public final SimpleStringProperty select;
+    public String well;
+    public String set;
+    public String reference;
+    public String units;
+    public boolean select;
 
-    public Well(String wellName, String setType, String referenceName, String unitsName, String selectType) {
-        this.well = new SimpleStringProperty(wellName);
-        this.set = new SimpleStringProperty(setType);
-        this.reference = new SimpleStringProperty(referenceName);
-        this.units = new SimpleStringProperty(unitsName);
-        this.select = new SimpleStringProperty(selectType);
+    public Well(String well, String set, String reference, String units, boolean select) {
+        this.well = well;
+        this.set = set;
+        this.reference = reference;
+        this.units = units;
+        this.select = select;
     }
 
     public String getWell() {
-        return well.get();
+        return well;
     }
     public void setWell(String wellName) {
-        well.set(wellName);
+        this.well = well;
     }
 
     public String getSet() {
-        return set.get();
+        return set;
     }
     public void setSet(String setType) {
-        set.set(setType);
+        this.set = set;
     }
 
     public String getReference() {
-        return reference.get();
+        return reference;
     }
     public void setReference(String referenceName) {
-        reference.set(referenceName);
+        this.reference = reference;
     }
 
     public String getUnits() {
-        return units.get();
+        return units;
     }
     public void setUnits(String unitsName) {
-        units.set(unitsName);
+        this.units = units;
     }
 
-    public String getSelect() {
-        return select.get();
+    public boolean isSelect() {
+        return select;
     }
-    public void setSelect(String selectType) {
-        select.set(selectType);
+    public void setSelect(boolean selectType) {
+        this.select = select;
     }
 
 }
