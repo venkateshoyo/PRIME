@@ -10,6 +10,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.util.Callback;
 
 public class setContent {
@@ -32,10 +34,52 @@ public class setContent {
         well.setMinWidth(100);
         well.setSortable(false);
 
+        well.setCellFactory(new Callback<TableColumn<Well, String>, TableCell<Well, String>>() {
+
+            @Override
+            public TableCell<Well, String> call(TableColumn<Well, String> col) {
+                final TableCell<Well, String> cell = new TableCell<>();
+                final ContextMenu cellMenu = new ContextMenu();
+
+                MenuItem editItem = new MenuItem("Well Option 1");
+                MenuItem removeItem = new MenuItem("Well Option 2");
+                MenuItem emailMenuItem = new MenuItem("Well Option 3");
+
+                cellMenu.getItems().addAll(editItem,removeItem,emailMenuItem);
+
+                cell.setContextMenu(cellMenu);
+                cell.textProperty().bind(cell.itemProperty());
+                
+                return cell;
+            }
+
+        });
+
         set.setCellValueFactory( new PropertyValueFactory<Well, String>("set"));
         set.setCellFactory(TextFieldTableCell.<Well> forTableColumn());
         set.setMinWidth(100);
         set.setSortable(false);
+
+        set.setCellFactory(new Callback<TableColumn<Well, String>, TableCell<Well, String>>() {
+
+            @Override
+            public TableCell<Well, String> call(TableColumn<Well, String> col) {
+                final TableCell<Well, String> cell = new TableCell<>();
+                final ContextMenu cellMenu = new ContextMenu();
+
+                MenuItem editItem = new MenuItem("Set Option 1");
+                MenuItem removeItem = new MenuItem("Set Option 2");
+                MenuItem emailMenuItem = new MenuItem("Set Option 3");
+
+                cellMenu.getItems().addAll(editItem,removeItem,emailMenuItem);
+
+                cell.setContextMenu(cellMenu);
+                cell.textProperty().bind(cell.itemProperty());
+
+                return cell;
+            }
+
+        });
 
         reference.setCellValueFactory( new PropertyValueFactory<Well, String>("reference"));
         reference.setCellFactory(TextFieldTableCell.<Well> forTableColumn());
