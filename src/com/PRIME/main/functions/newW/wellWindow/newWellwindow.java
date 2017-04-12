@@ -18,9 +18,11 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -98,10 +100,17 @@ public class newWellwindow{
         Label space = new Label("");
         Button Browse = new Button("Browse");
         Browse.setOnAction(e -> {
-            directoryChooser.setInitialDirectory(new File("C:\\Program Files\\Common Files"));
-            projectDirectory = directoryChooser.showDialog(wellload);
-            if (projectDirectory!=null) {
-                combo.setValue(projectDirectory.getAbsolutePath());
+
+            FileChooser loadlasdirectory = new FileChooser();
+            loadlasdirectory.getExtensionFilters().add(new FileChooser.ExtensionFilter("LAS Files", "*.las"));
+            loadlasdirectory.setTitle("Load LAS file for crossplot ");
+            File selectedlas =  loadlasdirectory.showOpenDialog(wellload);
+
+            if(selectedlas == null){
+                System.out.println("LAS file not selected");
+            }else{
+                combo.setValue(selectedlas.getAbsolutePath());
+                data.add(new Well("A","B","C","D",true));
             }
         });
 
@@ -136,9 +145,6 @@ public class newWellwindow{
         //_________________________________________________________________
 
         Button wellImport = new Button("Import");
-        wellImport.setOnAction(e->{
-            data.add(new Well("A","B","C","D",true));
-        });
 
         hbWellBy.getChildren().addAll(wellBy,radioButton,wellImport);
         hbWellBy.setAlignment(Pos.BASELINE_RIGHT);
