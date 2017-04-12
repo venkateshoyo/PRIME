@@ -9,6 +9,7 @@ import com.PRIME.main.functions.newW.wellWindow.contents.set.Well;
 import com.PRIME.main.functions.newW.wellWindow.contents.set.setContent;
 import com.PRIME.database.mainMenus.dataMenu.wellload.fetchWellDir;
 
+import com.PRIME.main.functions.newW.wellWindow.contents.set.updateHeader;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -110,7 +111,7 @@ public class newWellwindow{
                 System.out.println("LAS file not selected");
             }else{
                 combo.setValue(selectedlas.getAbsolutePath());
-                data.add(new Well("A","B","C","D",true));
+                data.add( updateHeader.updateHeader(selectedlas));
             }
         });
 
