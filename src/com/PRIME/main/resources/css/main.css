@@ -12,6 +12,7 @@
 
 .root{
     -fx-background-color: -fx-mainWindowBackgroundColor;
+    -fx-cell-focus-inner-border: grey;
 }
 
 .menu-bar, .menu-bar .label,.context-menu, .menu-button{
@@ -25,4 +26,21 @@
 
 .menu:focused, .menu-item:hover, .menu-item:hover .label, .menu-item:focused, .menu-item:focused .label{
     -fx-background-color: -fx-menubarHoverColor;
+}
+
+.tree-cell {
+    -fx-background-color: -fx-mainWindowBackgroundColor ;
+    -fx-text-fill: -fx-menuTextColor;
+}
+
+.tree-cell > .tree-disclosure-node > .arrow  {
+    -fx-background-color: -fx-menuTextColor;
+}
+
+.tree-cell:expanded > .tree-disclosure-node > .arrow {
+    -fx-background-color: -fx-menuTextColor;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-padding: 0em;
 }
