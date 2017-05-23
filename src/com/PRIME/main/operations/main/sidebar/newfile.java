@@ -12,7 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class inputBox
+public class newfile
 {
 
     public static String nameInput = "";

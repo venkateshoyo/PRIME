@@ -1,4 +1,4 @@
-package com.PRIME.main.operations.sidebar;
+package com.PRIME.main.operations.main.sidebar;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,17 +6,13 @@ import java.nio.file.Path;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.geometry.Orientation;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
 import javafx.scene.layout.VBox;
 
@@ -77,44 +73,31 @@ public class TreeViewSample extends Application {
         };
     }
 
-
-
-
-
     @Override
     public void start(Stage stage) {
 
         stage.setTitle("Tree View Sample");
 
-//     Update the dir path want to show on side bar
+        //Update the dir path want to show on side bar
         TreeItem<File> root = createNode(new File("C:\\"));
-        TreeView<File> treeeView = new TreeView<File>(root);
+        TreeView<File> treeView = new TreeView<File>(root);
         root.setExpanded(true);
-        // FileChooser fileChooser = new FileChooser();
-        // fileChooser.setTitle("Open Resource File");
 
-        treeeView.setEditable(true);
-        treeeView.setCellFactory(new Callback<TreeView<File>,TreeCell<File>>(){
-            @Override
-            public TreeCell<File> call(TreeView<File> treeeView) {
-                return new TextFieldTreeCellImpl(stage);
-            }
-        });
+        treeView.setCellFactory(treeeView -> new TextFieldTreeCellImpl(stage));
         HBox contentRight = new HBox();
+
         //Layout
         SplitPane layout = new SplitPane();
         layout.setDividerPositions(0.3f);
         contentRight.setStyle("-fx-background-color: #778899;");
         layout.setOrientation(Orientation.HORIZONTAL);
-        layout.getItems().addAll(treeeView, contentRight);
+        layout.getItems().addAll(treeView, contentRight);
         VBox box = new VBox();
-
 
         final Scene scene = new Scene(layout, 1000, 1000);
         scene.setFill(Color.LIGHTGRAY);
         stage.setScene(scene);
         stage.show();
-
     }
 
     private final class TextFieldTreeCellImpl extends TreeCell<File> {
@@ -122,64 +105,42 @@ public class TreeViewSample extends Application {
         private TextField textField;
         private ContextMenu addMenu = new ContextMenu();
 
-
         public TextFieldTreeCellImpl(Stage stage ) {
 
-
-
-
-
-            MenuItem addMenuItem = new MenuItem("Add File");
-            MenuItem folder = new MenuItem ("Add Folder");
+            MenuItem addfile = new MenuItem("Add File");
+            MenuItem addfolder = new MenuItem ("Add Folder");
             MenuItem rename = new MenuItem("Rename");
 
-            addMenu.getItems().addAll(addMenuItem,folder,rename);
+            addMenu.getItems().addAll(addfile,addfolder,rename);
 
-            rename.setOnAction(new EventHandler() {
-                public void handle(Event t) {
-                    start();
+            rename.setOnAction(t -> start());
 
+            addfolder.setOnAction(t -> {
+                String name = newfolder.display();
+                if(!name.isEmpty()) {
+                    Path des = getItem().toPath();
+                    new File(des + "\\" + name).mkdir();
+                    TreeItem<File> root = createNode(new File(des + "\\" + name));
 
+                    getTreeItem().getChildren().add(root);
                 }
             });
+            addfile.setOnAction(t -> {
+                String name = newfile.display();
 
+                if(!name.isEmpty())
+                {
+                    Path des = getItem().toPath();
+                    File file = new File(des + "//" + name);
 
-            folder.setOnAction(new EventHandler() {
-
-                public void handle(Event t) {
-                    String name = newfolder.display();
-                    if(!name.isEmpty()) {
-                        Path des = getItem().toPath();
-                        new File(des + "\\" + name).mkdir();
-                        TreeItem<File> root = createNode(new File(des + "\\" + name));
-
-                        getTreeItem().getChildren().add(root);
+                    try {
+                        file.createNewFile();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                }
-            });
-            addMenuItem.setOnAction(new EventHandler() {
 
-                public void handle(Event t) {
-                    // File file = fileChooser.showOpenDialog(stage);
-                    String name = inputBox.display();
-
-                    if(!name.isEmpty())
-                    {
-
-                        Path des = getItem().toPath();
-                        File file = new File(des + "//" + name);
-
-                        try {
-                            file.createNewFile();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
-                        TreeItem<File> newFile = new TreeItem<File>(file);
-                        getTreeItem().getChildren().add(newFile);
-
-
-                    }
+                    TreeItem<File> newFile = new TreeItem<File>(file);
+                    getTreeItem().getChildren().add(newFile);
                 }
             });
         }
@@ -188,7 +149,6 @@ public class TreeViewSample extends Application {
 
         public void start() {
             super.startEdit();
-
             if (textField== null) {
                 createTextField();
             }
@@ -203,7 +163,6 @@ public class TreeViewSample extends Application {
             setText( getItem().toString());
             setGraphic(getTreeItem().getGraphic());
         }
-
 
         @Override
         public void updateItem(File item, boolean empty) {
@@ -222,9 +181,7 @@ public class TreeViewSample extends Application {
                 } else {
                     setText(getString());
                     setGraphic(getTreeItem().getGraphic());
-                    if (
-                            !getTreeItem().isLeaf()&&getTreeItem().getParent()!= null
-                            ){
+                    if (!getTreeItem().isLeaf()&&getTreeItem().getParent()!= null){
                         setContextMenu(addMenu);
                     }
                 }
@@ -235,22 +192,18 @@ public class TreeViewSample extends Application {
         private void createTextField() {
             textField = new TextField(getString());
 
-            textField.setOnKeyReleased(new EventHandler<KeyEvent>() {
+            textField.setOnKeyReleased(t->  {
+                if (t.getCode() == KeyCode.ENTER) {
+                    {
+                        File oldName = new File(getItem().getPath());
+                        File newName = new File(getItem().getParent()+"\\"+textField.getText());
+                        oldName.renameTo(newName);
+                        getTreeItem().setValue(newName);
+                        commitEdit(getItem());
 
-                @Override
-                public void handle(KeyEvent t) {
-                    if (t.getCode() == KeyCode.ENTER) {
-                        {
-                            File oldName = new File(getItem().getPath());
-                            File newName = new File(getItem().getParent()+"\\"+textField.getText());
-                            oldName.renameTo(newName);
-                            getTreeItem().setValue(newName);
-                            commitEdit(getItem());
-
-                        }
-                    } else if (t.getCode() == KeyCode.ESCAPE) {
-                        cancelEdit();
                     }
+                } else if (t.getCode() == KeyCode.ESCAPE) {
+                    cancelEdit();
                 }
             });
         }
@@ -259,12 +212,9 @@ public class TreeViewSample extends Application {
             String ret=getItem().getName();
 
             if(ret.length()==0)
-                ret=getItem().getPath().toString();
+                ret= getItem().getPath();
 
             return ret;
-
         }
     }
-
 }
-

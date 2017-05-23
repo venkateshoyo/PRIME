@@ -1,4 +1,4 @@
-package com.PRIME.main.operations.sidebar;
+package com.PRIME.main.operations.main.sidebar;
 
 
 import javafx.geometry.Insets;
@@ -9,7 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -21,9 +20,8 @@ public class newfolder
 
         //Block events to other windows
         window.initModality(Modality.APPLICATION_MODAL);
-        window.setTitle("Input Name");
+        window.setTitle("Folder Name");
         window.setMinWidth(250);
-
 
         TextField name = new TextField("");
 
@@ -35,8 +33,6 @@ public class newfolder
         named.getChildren().addAll(label,name);
         named.setHgrow(name, Priority.ALWAYS);
         name.setMaxWidth(Double.MAX_VALUE);
-
-
 
         HBox empty = new HBox(10);
         Button cancel = new Button("Cancel");
@@ -50,7 +46,6 @@ public class newfolder
         cancel.setAlignment(Pos.TOP_LEFT);
         input.setOnAction(e -> {
             nameInput[0] = name.getText();
-
             window.close();});
 
         cancel.setOnAction(e -> window.close());
