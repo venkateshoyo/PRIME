@@ -28,14 +28,27 @@
     -fx-background-color: -fx-menubarHoverColor;
 }
 
+
+.tree-view {
+    -fx-background-color: -fx-menubarBackgroundColor;
+    -fx-background-insets: 0, 0;
+    -fx-padding: 0em;
+}
+
 .tree-cell {
-    -fx-background-color: -fx-mainWindowBackgroundColor ;
+    -fx-background-color: -fx-menubarBackgroundColor ;
     -fx-text-fill: -fx-menuTextColor;
 }
 
 .tree-cell > .tree-disclosure-node > .arrow  {
     -fx-background-color: -fx-menuTextColor;
 }
+
+.tree-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-cell:focused {
+    -fx-background-color: -fx-menubarHoverColor;
+    -fx-background-insets: 0, 1, 3;
+}
+
 
 .tree-cell:expanded > .tree-disclosure-node > .arrow {
     -fx-background-color: -fx-menuTextColor;

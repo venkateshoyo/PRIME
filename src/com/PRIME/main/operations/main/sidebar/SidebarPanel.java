@@ -5,6 +5,7 @@ import javafx.scene.control.SplitPane;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -17,15 +18,19 @@ public class SidebarPanel {
         TreeView<File> treeView = new TreeView<>(root);
         root.setExpanded(true);
 
-        treeView.setCellFactory(treeeView -> new TextFieldTreeCellImpl());
+        treeView.setCellFactory(e -> new TextFieldTreeCellImpl());
+        StackPane leftPane = new StackPane(treeView);
+
         HBox contentRight = new HBox();
+        StackPane rightPane = new StackPane(contentRight);
 
         //Layout
         SplitPane layout = new SplitPane();
-        layout.setDividerPositions(0.3f);
-        contentRight.setStyle("-fx-background-color: #778899;");
-        layout.setOrientation(Orientation.HORIZONTAL);
-        layout.getItems().addAll(treeView, contentRight);
+        layout.setDividerPositions(0.25);
+        layout.getItems().addAll(leftPane, rightPane);
+
+        //Constrain size of left component:
+        rightPane.minWidthProperty().bind(layout.widthProperty().multiply(0.7));
 
         return layout;
     }
