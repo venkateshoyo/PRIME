@@ -1,6 +1,8 @@
 package com.PRIME.main.operations.main;
 
 import com.PRIME.main.operations.close.closeconfirm;
+import com.PRIME.main.operations.main.sidebar.SidebarPanel;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
@@ -38,6 +40,8 @@ public class main extends Application {
 
         layout = new BorderPane();
         layout.setTop(sample);
+
+        layout.setCenter(SidebarPanel.side(window));
 
         scene = new Scene(layout,600,500);
         window.setScene(scene);
