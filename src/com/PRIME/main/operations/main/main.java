@@ -41,7 +41,7 @@ public class main extends Application {
         layout = new BorderPane();
         layout.setTop(sample);
 
-        layout.setCenter(SidebarPanel.side(window));
+        layout.setCenter(SidebarPanel.side());
 
         scene = new Scene(layout,600,500);
         window.setScene(scene);

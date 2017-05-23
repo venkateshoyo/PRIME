@@ -10,14 +10,14 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class SidebarPanel {
-    public static SplitPane side(Stage stage){
+    public static SplitPane side(){
 
         //Update the dir path want to show on side bar
         TreeItem<File> root = createNode.createNode(new File("C:\\"));
         TreeView<File> treeView = new TreeView<>(root);
         root.setExpanded(true);
 
-        treeView.setCellFactory(treeeView -> new TextFieldTreeCellImpl(stage));
+        treeView.setCellFactory(treeeView -> new TextFieldTreeCellImpl());
         HBox contentRight = new HBox();
 
         //Layout

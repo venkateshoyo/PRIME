@@ -2,7 +2,6 @@ package com.PRIME.main.operations.main.sidebar;
 
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
-import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,7 +12,7 @@ class TextFieldTreeCellImpl extends TreeCell<File> {
     private TextField textField;
     private ContextMenu addMenu = new ContextMenu();
 
-    public TextFieldTreeCellImpl(Stage stage ) {
+    public TextFieldTreeCellImpl() {
 
         MenuItem addfile = new MenuItem("Add File");
         MenuItem addfolder = new MenuItem ("Add Folder");
@@ -47,13 +46,11 @@ class TextFieldTreeCellImpl extends TreeCell<File> {
                     e.printStackTrace();
                 }
 
-                TreeItem<File> newFile = new TreeItem<File>(file);
+                TreeItem<File> newFile = new TreeItem<>(file);
                 getTreeItem().getChildren().add(newFile);
             }
         });
     }
-
-
 
     public void start() {
         super.startEdit();
@@ -95,7 +92,6 @@ class TextFieldTreeCellImpl extends TreeCell<File> {
             }
         }
     }
-
 
     private void createTextField() {
         textField = new TextField(getString());

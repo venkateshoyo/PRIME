@@ -60,9 +60,7 @@ public class newfile
             nameIn = typein.getText();
             window.close();});
 
-        cancel.setOnAction(e ->
-
-                window.close());
+        cancel.setOnAction(e -> window.close());
 
         VBox layout = new VBox(20);
         layout.getChildren().addAll(named,typed,button);

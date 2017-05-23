@@ -46,7 +46,8 @@ public class newfolder
         cancel.setAlignment(Pos.TOP_LEFT);
         input.setOnAction(e -> {
             nameInput[0] = name.getText();
-            window.close();});
+            window.close();
+        });
 
         cancel.setOnAction(e -> window.close());
 
