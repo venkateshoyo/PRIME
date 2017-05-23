@@ -1,10 +1,8 @@
-package com.PRIME.testingDirectory;
+package com.PRIME.main.operations.sidebar;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,19 +11,16 @@ import javafx.event.EventHandler;
 import javafx.geometry.Orientation;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.Dragboard;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import javafx.scene.layout.VBox;
 
-public class test extends Application {
+public class TreeViewSample extends Application {
 
 
     public static void main(String[] args) {
@@ -92,17 +87,17 @@ public class test extends Application {
         stage.setTitle("Tree View Sample");
 
 //     Update the dir path want to show on side bar
-        TreeItem<File> root = createNode(new File("C://"));
+        TreeItem<File> root = createNode(new File("C:\\"));
         TreeView<File> treeeView = new TreeView<File>(root);
         root.setExpanded(true);
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open Resource File");
+        // FileChooser fileChooser = new FileChooser();
+        // fileChooser.setTitle("Open Resource File");
 
         treeeView.setEditable(true);
         treeeView.setCellFactory(new Callback<TreeView<File>,TreeCell<File>>(){
             @Override
             public TreeCell<File> call(TreeView<File> treeeView) {
-                return new TextFieldTreeCellImpl(stage,fileChooser);
+                return new TextFieldTreeCellImpl(stage);
             }
         });
         HBox contentRight = new HBox();
@@ -128,71 +123,73 @@ public class test extends Application {
         private ContextMenu addMenu = new ContextMenu();
 
 
-        public TextFieldTreeCellImpl(Stage stage,FileChooser fileChooser ) {
+        public TextFieldTreeCellImpl(Stage stage ) {
 
 
 
-            setOnDragDropped(new EventHandler <DragEvent>() {
-                @Override
-                public void handle(DragEvent event) {
-                /* data dropped */
-                /* if there is a string data on dragboard, read it and use it */
-                    System.out.println("dropped");
-                    Dragboard db = event.getDragboard();
-                    boolean success = false;
-                    if (db.hasFiles()) {
-                        String filePath = null;
-                        Path des = getItem().toPath();
-                        for (File file:db.getFiles()) {
-                            filePath = file.getAbsolutePath();
-                            File nfile = new File(des+"//"+file.getName());
 
-                            try {
-                                Files.copy(file.toPath(),nfile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                            TreeItem newFile =
-                                    new TreeItem<File>(file);
-                            getTreeItem().getChildren().add(newFile);
-                            success = true;
-                        }
-                    }
-                /* let the source know whether the string was successfully
-                 * transferred and used */
-                    event.setDropCompleted(success);
 
-                    event.consume();
+            MenuItem addMenuItem = new MenuItem("Add File");
+            MenuItem folder = new MenuItem ("Add Folder");
+            MenuItem rename = new MenuItem("Rename");
+
+            addMenu.getItems().addAll(addMenuItem,folder,rename);
+
+            rename.setOnAction(new EventHandler() {
+                public void handle(Event t) {
+                    start();
+
+
                 }
             });
 
-            MenuItem addMenuItem = new MenuItem("Add File");
-            addMenu.getItems().add(addMenuItem);
+
+            folder.setOnAction(new EventHandler() {
+
+                public void handle(Event t) {
+                    String name = newfolder.display();
+                    if(!name.isEmpty()) {
+                        Path des = getItem().toPath();
+                        new File(des + "\\" + name).mkdir();
+                        TreeItem<File> root = createNode(new File(des + "\\" + name));
+
+                        getTreeItem().getChildren().add(root);
+                    }
+                }
+            });
             addMenuItem.setOnAction(new EventHandler() {
 
                 public void handle(Event t) {
-                    File file = fileChooser.showOpenDialog(stage);
-                    Path des = getItem().toPath();
-                    File nfile = new File(des+"//"+file.getName());
+                    // File file = fileChooser.showOpenDialog(stage);
+                    String name = inputBox.display();
 
-                    try {
-                        Files.copy(file.toPath(),nfile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                    if(!name.isEmpty())
+                    {
+
+                        Path des = getItem().toPath();
+                        File file = new File(des + "//" + name);
+
+                        try {
+                            file.createNewFile();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                        TreeItem<File> newFile = new TreeItem<File>(file);
+                        getTreeItem().getChildren().add(newFile);
+
+
                     }
-                    TreeItem newFile =
-                            new TreeItem<File>(file);
-                    getTreeItem().getChildren().add(newFile);
                 }
             });
         }
 
 
-        @Override
-        public void startEdit() {
+
+        public void start() {
             super.startEdit();
 
-            if (textField == null) {
+            if (textField== null) {
                 createTextField();
             }
             setText(null);
@@ -206,6 +203,7 @@ public class test extends Application {
             setText( getItem().toString());
             setGraphic(getTreeItem().getGraphic());
         }
+
 
         @Override
         public void updateItem(File item, boolean empty) {
@@ -233,14 +231,23 @@ public class test extends Application {
             }
         }
 
+
         private void createTextField() {
             textField = new TextField(getString());
+
             textField.setOnKeyReleased(new EventHandler<KeyEvent>() {
 
                 @Override
                 public void handle(KeyEvent t) {
                     if (t.getCode() == KeyCode.ENTER) {
-                        commitEdit(getItem());
+                        {
+                            File oldName = new File(getItem().getPath());
+                            File newName = new File(getItem().getParent()+"\\"+textField.getText());
+                            oldName.renameTo(newName);
+                            getTreeItem().setValue(newName);
+                            commitEdit(getItem());
+
+                        }
                     } else if (t.getCode() == KeyCode.ESCAPE) {
                         cancelEdit();
                     }
@@ -249,9 +256,15 @@ public class test extends Application {
         }
 
         private String getString() {
-            return getItem() == null ? "" : getItem().getName();
+            String ret=getItem().getName();
+
+            if(ret.length()==0)
+                ret=getItem().getPath().toString();
+
+            return ret;
 
         }
     }
 
 }
+
