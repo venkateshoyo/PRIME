@@ -18,6 +18,11 @@ class TextFieldTreeCellImpl extends TreeCell<File> {
         MenuItem addfolder = new MenuItem ("Add Folder");
         MenuItem rename = new MenuItem("Rename");
 
+        String whiteText="-fx-text-fill: white";
+        addfile.setStyle(whiteText);
+        addfolder.setStyle(whiteText);
+        rename.setStyle(whiteText);
+
         addMenu.getItems().addAll(addfile,addfolder,rename);
 
         rename.setOnAction(t -> start());
