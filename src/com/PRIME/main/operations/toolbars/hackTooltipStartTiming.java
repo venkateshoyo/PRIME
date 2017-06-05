@@ -9,7 +9,7 @@ import java.lang.reflect.Field;
 
 public class hackTooltipStartTiming {
 
-    public static void hackTooltipStartTiming(Tooltip tooltip) {
+    public hackTooltipStartTiming(Tooltip tooltip) {
         try {
             Field fieldBehavior = tooltip.getClass().getDeclaredField("BEHAVIOR");
             fieldBehavior.setAccessible(true);

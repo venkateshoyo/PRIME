@@ -1,37 +1,25 @@
 package com.PRIME.main.operations.toolbars.fileMenu;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToolBar;
-import javafx.scene.control.Tooltip;
-import javafx.util.Duration;
 
-import java.lang.reflect.Field;
+import com.PRIME.main.operations.toolbars.toolbarButton;
 
+import static com.PRIME.main.operations.toolbars.fileMenu.constants.*;
 
 public class file {
 
-    private void createToolbar() {
-        //    ToolBar toolBar = new ToolBar();
-//
-//    Button openFileBtn = new Button();
-//    Button printBtn = new Button();
-//    Button snapshotBtn = new Button();
-//
-//        openFileBtn.setGraphic(new ImageView("http://icons.iconarchive.com/icons/capital18/ethereal-2/128/Toolbar-Browser-Search-icon.png"));
-//        printBtn.setGraphic(new ImageView("http://icons.iconarchive.com/icons/capital18/ethereal-2/128/Toolbar-Browser-Search-icon.png"));
-//        snapshotBtn.setGraphic(new ImageView("http://icons.iconarchive.com/icons/capital18/ethereal-2/128/Toolbar-Browser-Search-icon.png"));
-//
-//        toolBar.getItems().addAll(openFileBtn, printBtn, snapshotBtn);
+    public static ToolBar fileToolbar() {
+
         ToolBar toolbar = new ToolBar();
-        Button button = new Button("Move the slider around to freeze me.");
-        button.setOnAction(e-> {
-                    System.out.println("I am still active - I just don't look the way.");
-                }
-        );
-        Tooltip tp = new Tooltip("My tooltip is still fine!");
-        button.setTooltip(tp);
-        toolbar.getItems().add(button);
+
+        Button openFileBtn = toolbarButton.toolbarButton(openFileButtonText, openFileImageURL, openFileTooltipText);
+
+        Button printBtn = toolbarButton.toolbarButton(printButtonText, printImageURL, printTooltipText);
+
+        Button snapshotBtn = toolbarButton.toolbarButton(snapshotButtonText, snapshotImageURL, snapshotTooltipText);
+
+        toolbar.getItems().addAll(openFileBtn, printBtn, snapshotBtn);
+        return toolbar;
     }
 }
