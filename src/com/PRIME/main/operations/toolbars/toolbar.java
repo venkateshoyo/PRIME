@@ -12,11 +12,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-/**
- * This program will create a basic bare-bones stacked Main Menu and ToolBar.
- *
- * @author Nathan Howard.
- */
 public class toolbar extends Application {
 
     @Override
