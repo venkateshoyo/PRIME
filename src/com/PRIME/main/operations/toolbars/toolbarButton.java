@@ -19,7 +19,7 @@ public class toolbarButton {
         Tooltip tooltip;
         if (!tooltipText.isEmpty()){
             tooltip = new Tooltip(tooltipText);
-            new hackTooltipStartTiming(tooltip);
+            new hackTooltipStartTiming(tooltip); //use this tooltip function for 0 delay between hover and showing tooltip
             toolButton.setTooltip(tooltip);
         }
         return toolButton;

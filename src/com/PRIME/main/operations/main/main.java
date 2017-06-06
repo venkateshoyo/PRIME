@@ -39,14 +39,9 @@ public class main extends Application {
 
         //creating menubar class object
         menubar mb= new menubar();
-        MenuBar sample = mb.displayMenuBar();
-
-        ToolBar toolBar = file.fileToolbar();
-        VBox header = new VBox(10);
-        header.getChildren().addAll(sample,toolBar);
 
         layout = new BorderPane();
-        layout.setTop(header);
+        layout.setTop(mb.displayMenuBar());
 
         layout.setCenter(SidebarPanel.side());
 
