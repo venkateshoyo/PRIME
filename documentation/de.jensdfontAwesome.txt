@@ -1,0 +1,11 @@
+1) Go to file -> Project Structure -> Libraries -> "+" -> From Maven       Repository -> de.jensd:fontawesomefx:8.4 and click ok
+
+2) Go to fie -> Project Structure -> Modules -> Select       de.jensd:fontawesomefx:8.4 -> Compile
+
+OR
+
+1) Download from link         "http://repo1.maven.org/maven2/de/jensd/fontawesomefx/8.4/fontawesomefx-       8.4.jar"
+
+2) Go to file -> Project Structure -> Libraries -> "+" -> Java -> Select       Location of Downloaded file and click ok.
+
+3) Go to fie -> Project Structure -> Modules -> Select             de.jensd:fontawesomefx:8.4 -> Compile

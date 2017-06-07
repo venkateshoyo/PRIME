@@ -2,12 +2,15 @@ package com.PRIME.main.operations.main;
 
 import com.PRIME.main.operations.close.closeconfirm;
 import com.PRIME.main.operations.main.sidebar.SidebarPanel;
+import com.PRIME.main.operations.toolbars.fileMenu.file;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class main extends Application {
@@ -36,10 +39,9 @@ public class main extends Application {
 
         //creating menubar class object
         menubar mb= new menubar();
-        MenuBar sample = mb.displayMenuBar();
 
         layout = new BorderPane();
-        layout.setTop(sample);
+        layout.setTop(mb.displayMenuBar());
 
         layout.setCenter(SidebarPanel.side());
 
