@@ -9,10 +9,10 @@
 5. Goto File -> Project Structure -> Libraries and add all the libraries from
    downloaded ArcGIS Java sdk arcgis-runtime-sdk-java-100.0.0\libs.
 
-6. Goto File -> Project Syructure -> Modules -> Dependencies -> arcgis-java-     api and press left click and Select Edit and add browse to arcgis-            runtime-sdk-java-100.0.0\libs folder and select the arcgis-java-api-          javadoc.jar and Choose category of Selected File as Classes.
+6. Goto File -> Project Syructure -> Modules -> Dependencies -> arcgis-java- api and press left click and Select Edit and add browse to arcgis-runtime-sdk-java-100.0.0\libs folder and select the arcgis-java-api-javadoc.jar and Choose category of Selected File as Classes.
 
 7. Select arcgis-java-api and compile. 
 
-8. Using a file browser, drag and drop the unziped 'jniLibs' and 'resources'     folders from the arcgis-runtime-sdk-java-100.0.0 directory into the top       level of your project folder 
+8. Using a file browser, drag and drop the unziped 'jniLibs' and 'resources' folders from the arcgis-runtime-sdk-java-100.0.0 directory into the top level of your project folder
 
-9. Open PRIME-harsh -> src -> com.PRIME -> arcGIS -> view.java in IntelliJ       and build this by going to Edit Configuration and change Main Class name      to "com.PRIME.arcGIS.view" and run compile.
+9. Open PRIME-harsh -> src -> com.PRIME -> arcGIS -> view.java in IntelliJ and build this by going to Edit Configuration and change Main Class name to "com.PRIME.arcGIS.view" and run compile.
