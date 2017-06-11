@@ -6,6 +6,7 @@ import com.PRIME.main.operations.toolbars.fileMenu.file;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
@@ -41,7 +42,14 @@ public class main extends Application {
         menubar mb= new menubar();
 
         layout = new BorderPane();
-        layout.setTop(mb.displayMenuBar());
+
+        MenuBar menus = mb.displayMenuBar();
+        ToolBar tools = file.fileToolbar();
+
+        VBox header = new VBox(0);
+        header.getChildren().addAll(menus,tools);
+
+        layout.setTop(header);
 
         layout.setCenter(SidebarPanel.side());
 
