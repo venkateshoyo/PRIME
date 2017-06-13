@@ -15,7 +15,6 @@ import javafx.scene.shape.*;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 
-import javax.media.j3d.Background;
 import java.io.IOException;
 import java.util.List;
 
