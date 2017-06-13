@@ -1,27 +1,31 @@
 package com.PRIME.javafx3D;
 
 import javafx.geometry.Point3D;
+import javafx.util.Pair;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.*;
+import java.util.List;
+
 import static java.awt.image.ImageObserver.HEIGHT;
 import static java.awt.image.ImageObserver.WIDTH;
 
 
 
-public class convert {
+/*public class convert {
     public static Point3D[] method() {
         final int EARTH_RADIUS = 100;
         final double FOCAL_LENGTH = 50;
 
 
-        BufferedImage bi = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
-        Graphics2D g = bi.createGraphics();
-        Coordinates[] coordinates = Coordinates.transfer();
-        Point3D [] temp=new Point3D[coordinates.length];
-        int i=0;
-        for (Coordinates coordinate : coordinates) {
-            double latitude = Double.valueOf(coordinate.getLatitude());
-            double longitude = Double.valueOf(coordinate.getLongitude());
+       List<Pair<Double,Double>> coordinates = Coordinates.transfer();
+        System.out.print(coordinates.size());
+        Point3D [] temp=new Point3D[coordinates.size()];
+        Integer i=0;
+        for (Pair<Double,Double> coordinate : coordinates) {
+            double latitude = Double.valueOf(coordinate.getKey());
+            double longitude = Double.valueOf(coordinate.getValue());
 
             latitude = latitude * Math.PI / 180;
             longitude = longitude * Math.PI / 180;
@@ -42,4 +46,4 @@ public class convert {
             return temp;
         }
     }
-
+*/
