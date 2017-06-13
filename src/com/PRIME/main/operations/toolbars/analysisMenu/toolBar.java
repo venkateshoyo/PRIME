@@ -24,7 +24,7 @@ public class toolBar extends Application {
         BorderPane borderPane = new BorderPane();
         ToolBar toolBar = new ToolBar();
 
-        Button Menu = GlyphsDude.createIconButton(FontAwesomeIcon.BARS,"Menu");
+        Button Menu = GlyphsDude.createIconButton(FontAwesomeIcon.LOCATION_ARROW,"Menu");
         Button Menu2 = GlyphsDude.createIconButton(FontAwesomeIcon.ARROW_DOWN,"DOWN");
         Button Menu3 = GlyphsDude.createIconButton(FontAwesomeIcon.ARROW_UP,"UP");
         toolBar.getItems().addAll(Menu,Menu2,Menu3);

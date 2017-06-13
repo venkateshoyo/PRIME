@@ -2,20 +2,41 @@ package com.PRIME.javafx3D;
 
 // run this file
 
+import com.PRIME.main.operations.toolbars.hackTooltipStartTiming;
+import com.sun.image.codec.jpeg.JPEGCodec;
+import com.sun.image.codec.jpeg.JPEGImageEncoder;
+import de.jensd.fx.glyphs.GlyphsDude;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.application.Application;
 import javafx.event.EventHandler;
-import javafx.geometry.Point3D;
 import javafx.scene.*;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Pair;
+import org.apache.batik.anim.dom.SVGDOMImplementation;
+import org.apache.batik.transcoder.TranscoderException;
+import org.apache.batik.transcoder.TranscoderInput;
+import org.apache.batik.transcoder.TranscodingHints;
+import org.apache.batik.transcoder.image.ImageTranscoder;
+import org.apache.batik.util.SVGConstants;
 
-import java.io.IOException;
+
+import javax.xml.bind.annotation.XmlType;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 import java.util.List;
 
 public class loadvalue extends Application {
@@ -50,33 +71,75 @@ public class loadvalue extends Application {
     @Override
     public void start(Stage primaryStage) {
 
+        String temp ="\\src\\com\\PRIME\\javafx3D\\World_map_blank_without_borders.svg";
+        String temp3=(System.getProperty("user.dir")+temp);
+         temp3 =temp3.replaceAll("/","\\\\\\\\");
+
+
+        MyTranscoder transcoder = new MyTranscoder();
+        TranscodingHints hints = new TranscodingHints();
+        hints.put(ImageTranscoder.KEY_WIDTH, 900f); //your image width
+        hints.put(ImageTranscoder.KEY_HEIGHT, 500f); //your image height
+        hints.put(ImageTranscoder.KEY_DOM_IMPLEMENTATION,    SVGDOMImplementation.getDOMImplementation());
+        hints.put(ImageTranscoder.KEY_DOCUMENT_ELEMENT_NAMESPACE_URI, SVGConstants.SVG_NAMESPACE_URI);
+        hints.put(ImageTranscoder.KEY_DOCUMENT_ELEMENT, SVGConstants.SVG_SVG_TAG);
+        hints.put(ImageTranscoder.KEY_XML_PARSER_VALIDATING, false);
+
+        transcoder.setTranscodingHints(hints);
+        TranscoderInput input = null;
+
+        try {
+            input = new TranscoderInput(new FileReader(new File(temp3)));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            transcoder.transcode(input, null);
+        } catch (TranscoderException e) {
+            e.printStackTrace();
+        }
+        BufferedImage bufferedImage = transcoder.getImage();
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+        JPEGImageEncoder imageEncoder = JPEGCodec.createJPEGEncoder(outputStream);
+        try {
+            imageEncoder.encode(bufferedImage);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        byte[] bytes = outputStream.toByteArray();
+        InputStream inputStream = new ByteArrayInputStream(bytes);
+
+//javafx.scene.image.Image
+        Image image = new Image(inputStream);
         List<Pair<Double,Double>> coordinates = Coordinates.transfer();
         //Point3D [] temp = convert.method();
-        Group root2= new Group();
         Sphere testBox = new Sphere(EARTH_RADIUS);
         testBox.setTranslateX(0);
         testBox.setTranslateY(0);
         testBox.setTranslateZ(0);
-        testBox.setCullFace(CullFace.NONE);
         PhongMaterial material = new PhongMaterial();
-        material.setDiffuseMap(new Image(getClass().getResource("map.jpg").toExternalForm()));
+        material.setDiffuseMap(image);
         testBox.setMaterial(material);
-        //testBox.setMaterial(new PhongMaterial(Color.WHITE));
-        // testBox.setDrawMode(DrawMode.LINE);
-        // testBox.setCullFace(CullFace.BACK);
         world.getChildren().add(testBox);
        // for(Integer i=0;i<temp.length;i++) {
         for (Pair<Double,Double> coordinate : coordinates){
             //Drawing Sphere1
-            System.out.println(coordinate.getKey()+" " +coordinate.getValue());
-            Cylinder sphere1 = new Cylinder();
-            //Setting the radius of the Sphere
-            sphere1.setRadius(0.1);
 
-            sphere1.setHeight(4);
-            sphere1.setMaterial(new PhongMaterial(Color.RED));
+         Text sphere1 = GlyphsDude.createIcon(FontAwesomeIcon.MAP_MARKER,"1");
+
+            //sphere1.setMaterial(new PhongMaterial(Color.RED));
             double latitude = coordinate.getKey();
             double longitude = coordinate.getValue();
+
+            String tooltipText = latitude+" "+longitude;
+            Tooltip tooltip = new Tooltip(tooltipText);
+            tooltip.setFont(Font.font("", 10));
+            new hackTooltipStartTiming(tooltip); //use this tooltip function for 0 delay between hover and showing tooltip
+            Tooltip.install(sphere1,tooltip);
 
             latitude = latitude * Math.PI / 180;
             longitude = longitude * Math.PI / 180;
@@ -97,7 +160,6 @@ public class loadvalue extends Application {
         root.setDepthTest(DepthTest.ENABLE);
         // buildScene();
         buildCamera();
-
         //camera.setFieldOfView();
         Scene scene = new Scene(root, 1024, 768, true,SceneAntialiasing.BALANCED);
         scene.setFill(Color.GREY);
@@ -207,4 +269,8 @@ public class loadvalue extends Application {
 
         launch(args);
     }
+
 }
+
+
+

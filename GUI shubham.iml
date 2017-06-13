@@ -7,7 +7,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.41-bin" level="project" />
-    <orderEntry type="library" name="de.jensd:fontawesomefx:8.4" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-5.1.41-bin" level="project" />
+    <orderEntry type="library" exported="" name="batik-1.92" level="project" />
+    <orderEntry type="library" exported="" name="extensions2" level="project" />
+    <orderEntry type="library" exported="" name="batik-rasterizer-1.9" level="project" />
+    <orderEntry type="library" exported="" name="lib2" level="project" />
   </component>
 </module>
