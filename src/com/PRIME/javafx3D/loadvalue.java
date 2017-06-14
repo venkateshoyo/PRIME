@@ -2,6 +2,7 @@ package com.PRIME.javafx3D;
 
 // run this file
 
+
 import com.PRIME.main.operations.toolbars.hackTooltipStartTiming;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
@@ -34,6 +35,7 @@ import org.fxyz3d.shapes.Cone;
 
 
 import javax.xml.bind.annotation.XmlType;
+import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.MalformedURLException;
@@ -50,8 +52,8 @@ public class loadvalue extends Application {
     final Xform cameraXform = new Xform();
     final Xform cameraXform2 = new Xform();
     final Xform cameraXform3 = new Xform();
-    private static final double CAMERA_INITIAL_DISTANCE = -3000;
-    private static final double CAMERA_INITIAL_X_ANGLE = 70.0;
+    private static final double CAMERA_INITIAL_DISTANCE = -5000;
+    private static final double CAMERA_INITIAL_X_ANGLE = 0.0;
     private static final double CAMERA_INITIAL_Y_ANGLE = 320.0;
     private static final double CAMERA_NEAR_CLIP = 0.1;
     private static final double CAMERA_FAR_CLIP = 10000.0;
@@ -60,7 +62,7 @@ public class loadvalue extends Application {
     private static final double MOUSE_SPEED = 0.1;
     private static final double ROTATION_SPEED = 2.0;
     private static final double TRACK_SPEED = 0.3;
-    final int EARTH_RADIUS = 500;
+    final int EARTH_RADIUS = 150;
 
     double mousePosX;
     double mousePosY;
@@ -121,16 +123,19 @@ public class loadvalue extends Application {
         */
       // List<Pair<Double,Double>> coordinates = Coordinates.transfer();
         //Point3D [] temp = convert.method();
-        Sphere testBox = new Sphere(EARTH_RADIUS);
+        double width =1000;
+        double height = 1000;
+        double depths =10;
+        double translate = 1000;
+        Box testBox = new Box(width,depths,height);
         testBox.setTranslateX(0);
-        testBox.setTranslateY(0);
+        testBox.setTranslateY(translate);
         testBox.setTranslateZ(0);
         PhongMaterial material = new PhongMaterial();
         //material.setDiffuseMap(img);
         //testBox.setMaterial(material);
         testBox.setDrawMode(DrawMode.LINE);
         world.getChildren().add(testBox);
-
         BufferedReader bufferedReader;
         try {
             //BufferedReader fot  file input
@@ -141,12 +146,13 @@ public class loadvalue extends Application {
             bufferedReader.readLine();
             String text;
             Integer count=0;
-            Sphere sphere1 = new Sphere(3);
             //Reading each line and storing each parameter value to temporary matrix
             while ((text = bufferedReader.readLine()) != null && text.length() > 0) {
 
+
                 //Checking for empty lines
-                if (text.length() > 0) {
+                //count<5000)||(count<1006000&&count>1001000
+                if ((count<200000)) {
                     String text2 = text.replaceAll(",", " ");
                     int textindex = 0;
 
@@ -169,34 +175,31 @@ public class loadvalue extends Application {
                     latitude = latitude * Math.PI / 180;
                     longitude = longitude * Math.PI / 180;
 
+
                     double x = EARTH_RADIUS * Math.sin(latitude) * Math.cos(longitude);
                     double y = EARTH_RADIUS * Math.sin(latitude) * Math.sin(longitude);
-                    double z = (EARTH_RADIUS * Math.cos(latitude))-depth;
-                    if(x>500 )
-                    {
-                        x=0;
-                    }
-                    if(y>500 )
-                    {
-                        y=0;
-                    }
-                    if(z>500 )
-                    {
-                        z=0;
-                    }
+                   // double z = (EARTH_RADIUS * Math.cos(latitude))+depth;
+                    double z = (translate)-depth;
+
+
                     //dataX.add(longitude);
                     //dataY.add(latitude);
                     //dataZ.add(depth);
-                    count++;
 
+                    Sphere sphere1 = new Sphere(3);
                     sphere1.setTranslateX(x);
-                    sphere1.setTranslateY(y);
-                    sphere1.setTranslateZ(z);
-                    world.getChildren().add(sphere1);
+                    sphere1.setTranslateY(z);
+                    sphere1.setTranslateZ(y);
+                    root.getChildren().add(sphere1);
+                    sphere1= null;
+                    System.out.println(count);
 
                 }
+                if(count%500000==0)System.gc();
+
+                count++;
             }
-            System.out.println(count);
+
         } catch (FileNotFoundException ex) {
         } catch (IOException ex) {
         } finally {
