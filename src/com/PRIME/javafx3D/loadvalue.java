@@ -21,6 +21,7 @@ import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 import org.apache.batik.anim.dom.SVGDOMImplementation;
@@ -29,6 +30,7 @@ import org.apache.batik.transcoder.TranscoderInput;
 import org.apache.batik.transcoder.TranscodingHints;
 import org.apache.batik.transcoder.image.ImageTranscoder;
 import org.apache.batik.util.SVGConstants;
+import org.fxyz3d.shapes.Cone;
 
 
 import javax.xml.bind.annotation.XmlType;
@@ -48,7 +50,7 @@ public class loadvalue extends Application {
     final Xform cameraXform = new Xform();
     final Xform cameraXform2 = new Xform();
     final Xform cameraXform3 = new Xform();
-    private static final double CAMERA_INITIAL_DISTANCE = -450;
+    private static final double CAMERA_INITIAL_DISTANCE = -3000;
     private static final double CAMERA_INITIAL_X_ANGLE = 70.0;
     private static final double CAMERA_INITIAL_Y_ANGLE = 320.0;
     private static final double CAMERA_NEAR_CLIP = 0.1;
@@ -58,7 +60,7 @@ public class loadvalue extends Application {
     private static final double MOUSE_SPEED = 0.1;
     private static final double ROTATION_SPEED = 2.0;
     private static final double TRACK_SPEED = 0.3;
-    final int EARTH_RADIUS = 100;
+    final int EARTH_RADIUS = 500;
 
     double mousePosX;
     double mousePosY;
@@ -71,7 +73,7 @@ public class loadvalue extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-        String temp ="\\src\\com\\PRIME\\javafx3D\\World_map_blank_without_borders.svg";
+      /*  String temp ="\\src\\com\\PRIME\\javafx3D\\World_map_blank_without_borders.svg";
         String temp3=(System.getProperty("user.dir")+temp);
          temp3 =temp3.replaceAll("/","\\\\\\\\");
 
@@ -115,21 +117,95 @@ public class loadvalue extends Application {
 
 //javafx.scene.image.Image
         Image image = new Image(inputStream);
-        List<Pair<Double,Double>> coordinates = Coordinates.transfer();
+        //Coordinates.transfer();
+        */
+      // List<Pair<Double,Double>> coordinates = Coordinates.transfer();
         //Point3D [] temp = convert.method();
         Sphere testBox = new Sphere(EARTH_RADIUS);
         testBox.setTranslateX(0);
         testBox.setTranslateY(0);
         testBox.setTranslateZ(0);
         PhongMaterial material = new PhongMaterial();
-        material.setDiffuseMap(image);
-        testBox.setMaterial(material);
+        //material.setDiffuseMap(img);
+        //testBox.setMaterial(material);
+        testBox.setDrawMode(DrawMode.LINE);
         world.getChildren().add(testBox);
+
+        BufferedReader bufferedReader;
+        try {
+            //BufferedReader fot  file input
+            Stage stage= new Stage();
+            final FileChooser fileChooser = new FileChooser();
+            File file = fileChooser.showOpenDialog(stage);
+            bufferedReader = new BufferedReader(new FileReader(file));
+            bufferedReader.readLine();
+            String text;
+            Integer count=0;
+            Sphere sphere1 = new Sphere(3);
+            //Reading each line and storing each parameter value to temporary matrix
+            while ((text = bufferedReader.readLine()) != null && text.length() > 0) {
+
+                //Checking for empty lines
+                if (text.length() > 0) {
+                    String text2 = text.replaceAll(",", " ");
+                    int textindex = 0;
+
+                    Double longitude = Double.parseDouble(text.substring(textindex, text2.indexOf(" ", textindex)));
+
+                    //      System.out.print(text.substring(textindex, text2.indexOf(" ", textindex))+" ");
+                    textindex = text2.indexOf(" ", textindex) + 1;
+                    Double latitude = Double.parseDouble(text.substring(textindex, text2.indexOf(" ", textindex)));
+
+                    //System.out.print(text.substring(textindex, text2.indexOf(" ", textindex))+" ");
+                    textindex = text2.indexOf(" ", textindex) + 1;
+                    Double depth = Double.parseDouble(text.substring(textindex, text2.indexOf(" ", textindex)));
+
+                    //System.out.print(text.substring(textindex, text2.indexOf(" ", textindex))+" ");
+                    textindex = text2.indexOf(" ", textindex) + 1;
+                    Double value = Double.parseDouble(text.substring(textindex, text2.length()));
+                    //Intensity.add(value);
+                    // System.out.println(text.substring(textindex, text2.length()));
+
+                    latitude = latitude * Math.PI / 180;
+                    longitude = longitude * Math.PI / 180;
+
+                    double x = EARTH_RADIUS * Math.sin(latitude) * Math.cos(longitude);
+                    double y = EARTH_RADIUS * Math.sin(latitude) * Math.sin(longitude);
+                    double z = (EARTH_RADIUS * Math.cos(latitude))-depth;
+                    if(x>500 )
+                    {
+                        x=0;
+                    }
+                    if(y>500 )
+                    {
+                        y=0;
+                    }
+                    if(z>500 )
+                    {
+                        z=0;
+                    }
+                    //dataX.add(longitude);
+                    //dataY.add(latitude);
+                    //dataZ.add(depth);
+                    count++;
+
+                    sphere1.setTranslateX(x);
+                    sphere1.setTranslateY(y);
+                    sphere1.setTranslateZ(z);
+                    world.getChildren().add(sphere1);
+
+                }
+            }
+            System.out.println(count);
+        } catch (FileNotFoundException ex) {
+        } catch (IOException ex) {
+        } finally {
+        }
        // for(Integer i=0;i<temp.length;i++) {
-        for (Pair<Double,Double> coordinate : coordinates){
+      /*  for (Pair<Double,Double> coordinate : coordinates){
             //Drawing Sphere1
 
-         Text sphere1 = GlyphsDude.createIcon(FontAwesomeIcon.MAP_MARKER,"1");
+         Cone sphere1 = new Cone(34,2,20,Color.GREEN);
 
             //sphere1.setMaterial(new PhongMaterial(Color.RED));
             double latitude = coordinate.getKey();
@@ -154,7 +230,7 @@ public class loadvalue extends Application {
             sphere1.setTranslateZ(z);
             world.getChildren().add(sphere1);
         }
-
+*/
         root.getChildren().add(world);
         root.getChildren().add(new AmbientLight(Color.WHITE));
         root.setDepthTest(DepthTest.ENABLE);
