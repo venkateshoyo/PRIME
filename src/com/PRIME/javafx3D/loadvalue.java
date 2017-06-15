@@ -52,7 +52,7 @@ public class loadvalue extends Application {
     final Xform cameraXform = new Xform();
     final Xform cameraXform2 = new Xform();
     final Xform cameraXform3 = new Xform();
-    private static final double CAMERA_INITIAL_DISTANCE = -5000;
+    private static final double CAMERA_INITIAL_DISTANCE = -9000;
     private static final double CAMERA_INITIAL_X_ANGLE = 0.0;
     private static final double CAMERA_INITIAL_Y_ANGLE = 320.0;
     private static final double CAMERA_NEAR_CLIP = 0.1;
@@ -123,13 +123,13 @@ public class loadvalue extends Application {
         */
       // List<Pair<Double,Double>> coordinates = Coordinates.transfer();
         //Point3D [] temp = convert.method();
-        double width =1000;
-        double height = 1000;
-        double depths =10;
-        double translate = 1000;
+        double width =3000;
+        double height = 3000;
+        double depths =3000;
+       // double translate = 3000;
         Box testBox = new Box(width,depths,height);
         testBox.setTranslateX(0);
-        testBox.setTranslateY(translate);
+        testBox.setTranslateY(0);
         testBox.setTranslateZ(0);
         PhongMaterial material = new PhongMaterial();
         //material.setDiffuseMap(img);
@@ -151,8 +151,8 @@ public class loadvalue extends Application {
 
 
                 //Checking for empty lines
-                //count<5000)||(count<1006000&&count>1001000
-                if ((count<200000)) {
+                // if ((count<5000)||(count<1006000&&count>1001000))
+                 if((count<25000)||(count>1000000&&count<1025000)){
                     String text2 = text.replaceAll(",", " ");
                     int textindex = 0;
 
@@ -179,7 +179,7 @@ public class loadvalue extends Application {
                     double x = EARTH_RADIUS * Math.sin(latitude) * Math.cos(longitude);
                     double y = EARTH_RADIUS * Math.sin(latitude) * Math.sin(longitude);
                    // double z = (EARTH_RADIUS * Math.cos(latitude))+depth;
-                    double z = (translate)-depth;
+                    double z = (1500)-depth;
 
 
                     //dataX.add(longitude);
@@ -190,12 +190,12 @@ public class loadvalue extends Application {
                     sphere1.setTranslateX(x);
                     sphere1.setTranslateY(z);
                     sphere1.setTranslateZ(y);
-                    root.getChildren().add(sphere1);
+                    world.getChildren().add(sphere1);
                     sphere1= null;
                     System.out.println(count);
-
+                    if(count%10000==0)System.gc();
                 }
-                if(count%500000==0)System.gc();
+
 
                 count++;
             }
@@ -233,7 +233,7 @@ public class loadvalue extends Application {
             sphere1.setTranslateZ(z);
             world.getChildren().add(sphere1);
         }
-*/
+*/        System.gc();
         root.getChildren().add(world);
         root.getChildren().add(new AmbientLight(Color.WHITE));
         root.setDepthTest(DepthTest.ENABLE);
