@@ -2,9 +2,14 @@ package com.PRIME.javafx3D;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
+
 import javafx.scene.*;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.fxyz.geometry.Point3D;
+
 
 
 /**
@@ -17,6 +22,7 @@ public class loadwell {
     public static Group meshView() {
         final int EARTH_RADIUS = 500;
         Group meshView = new Group();
+         ArrayList<Point3D> points =new ArrayList<>();;
         ArrayList<Double> dataX = new ArrayList<>();
         ArrayList<Double> dataY = new ArrayList<>();
         ArrayList<Double> dataZ = new ArrayList<>();
@@ -36,7 +42,7 @@ public class loadwell {
 
 
                 //Checking for empty lines
-                if (count<1000) {
+                if (count<500000) {
                     String text2 = text.replaceAll(",", " ");
                     int textindex = 0;
 
@@ -65,6 +71,7 @@ public class loadwell {
                     // double z = (EARTH_RADIUS * Math.cos(latitude))+depth;
                     double z = 1500 - depth;
 
+                    points.add(new Point3D((float)x,(float)z,(float)y));
 
                     dataX.add(x);
                     dataY.add(z);
@@ -80,9 +87,11 @@ public class loadwell {
 
 
             }
-            ScatterPlotMesh scatterPlotMesh = new ScatterPlotMesh(100, 1, true);
-            scatterPlotMesh.setXYZData(dataX, dataY, dataZ);
-            meshView.getChildren().add(scatterPlotMesh);
+            //ScatterPlotMesh scatterPlotMesh = new ScatterPlotMesh(100, 1, true);
+            //scatterPlotMesh.setXYZData(dataX, dataY, dataZ);
+           // meshView.getChildren().add(scatterPlotMesh);
+           PolyLine3DMesh surface = new PolyLine3DMesh(points,10, Color.STEELBLUE);
+            meshView.getChildren().addAll(surface);
 
         } catch (FileNotFoundException ex) {
         } catch (IOException ex) {
