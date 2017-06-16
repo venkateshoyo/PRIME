@@ -32,11 +32,11 @@ public class test extends Application {
 
                 {
 
-                        50, 0, 0,
+                        0,0,0,
 
-                        45, 10, 0,
+                        10,0,0,
 
-                        55, 10, 0
+                        0,10,0
 
                 };
 
@@ -44,13 +44,14 @@ public class test extends Application {
         float[] texCoords =
 
                 {
+                    0,0
 
-                        0, 0,
                 };
 
         int[] faces =
                 {
-                    0,0,1,1,0,0,
+                        0,0,1,0,2,0
+
 
                 };
         TriangleMesh mesh = new TriangleMesh();
@@ -66,11 +67,11 @@ public class test extends Application {
         MeshView meshView = new MeshView();
 
         meshView.setMesh(mesh);
-        meshView.setTranslateX(250);
+       // meshView.setTranslateX(250);
 
-        meshView.setTranslateY(100);
+       // meshView.setTranslateY(100);
 
-        meshView.setTranslateZ(400);
+        //meshView.setTranslateZ(400);
 
         // Scale the Meshview to make it look bigger
 
@@ -84,11 +85,11 @@ public class test extends Application {
 
         PerspectiveCamera camera = new PerspectiveCamera(false);
 
-        camera.setTranslateX(100);
+       // camera.setTranslateX(100);
 
-        camera.setTranslateY(-50);
+        //camera.setTranslateY(-50);
 
-        camera.setTranslateZ(300);
+        //camera.setTranslateZ(300);
 
         // Add a Rotation Animation to the Camera
 

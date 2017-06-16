@@ -1,21 +1,22 @@
 package com.PRIME.javafx3D;
 
-import javafx.scene.shape.Sphere;
+import java.io.*;
+import java.util.ArrayList;
+import javafx.scene.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.io.*;
-import java.util.ArrayList;
 
 /**
- * Created by hkban on 6/15/2017.
+ *
+ * @author Sean
  */
-public class input {
+public class loadwell {
 
 
-    public static  ArrayList<Double> inputmethod() {
-        final int EARTH_RADIUS = 250;
-
+    public static Group meshView() {
+        final int EARTH_RADIUS = 500;
+        Group meshView = new Group();
         ArrayList<Double> dataX = new ArrayList<>();
         ArrayList<Double> dataY = new ArrayList<>();
         ArrayList<Double> dataZ = new ArrayList<>();
@@ -35,7 +36,7 @@ public class input {
 
 
                 //Checking for empty lines
-                if ((count < 512) ) {
+                if (count<1000) {
                     String text2 = text.replaceAll(",", " ");
                     int textindex = 0;
 
@@ -62,21 +63,33 @@ public class input {
                     double x = EARTH_RADIUS * Math.sin(latitude) * Math.cos(longitude);
                     double y = EARTH_RADIUS * Math.sin(latitude) * Math.sin(longitude);
                     // double z = (EARTH_RADIUS * Math.cos(latitude))+depth;
-                    double z =   depth;
+                    double z = 1500 - depth;
 
 
                     dataX.add(x);
-                    dataY.add(y);
                     dataY.add(z);
-
+                    dataZ.add(y);
+                  /*  Sphere sphere1 = new Sphere(3);
+                    sphere1.setTranslateX(x);
+                    sphere1.setTranslateY(z);
+                    sphere1.setTranslateZ(y);
+                    meshView.getChildren().add(sphere1);*/
+                    // System.out.println(count);
                 }
                 count++;
+
+
             }
+            ScatterPlotMesh scatterPlotMesh = new ScatterPlotMesh(100, 1, true);
+            scatterPlotMesh.setXYZData(dataX, dataY, dataZ);
+            meshView.getChildren().add(scatterPlotMesh);
 
         } catch (FileNotFoundException ex) {
         } catch (IOException ex) {
         } finally {
         }
-        return dataX;
+
+        return meshView;
+
     }
 }
