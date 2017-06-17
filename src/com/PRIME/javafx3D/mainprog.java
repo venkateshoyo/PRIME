@@ -1,11 +1,13 @@
 package com.PRIME.javafx3D;
 
 
+import com.PRIME.main.operations.toolbars.hackTooltipStartTiming;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.SplitPane;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -18,8 +20,11 @@ import javafx.scene.shape.Box;
 import javafx.scene.shape.DrawMode;
 import javafx.scene.shape.MeshView;
 import javafx.scene.shape.Sphere;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Pair;
+
+import javax.swing.*;
 
 
 /**
@@ -76,26 +81,27 @@ public class mainprog extends Application {
             MeshView Cone = new MeshView();
           Cone.setMesh(ConeMesh.createCone(32,10f,20f));
            PhongMaterial material1= new PhongMaterial();
-           material1.setDiffuseColor(Color.YELLOW);
+           material1.setSpecularColor(Color.YELLOW);
           Cone.setMaterial(material);
           window sh = new window();
             Pair<Double,Double> coordinates = sh.coordinates();
              double latitude=coordinates.getKey();
              double longitude=coordinates.getValue();
+            Tooltip tooltip = new Tooltip(latitude+","+longitude);
+            tooltip.setFont(Font.font("", 20));
+            new hackTooltipStartTiming(tooltip);
             latitude = latitude * Math.PI / 180;
             longitude = longitude * Math.PI / 180;
 
             double x = earth_radius * Math.sin(latitude) * Math.cos(longitude);
             double y = earth_radius * Math.sin(latitude) * Math.sin(longitude);
             double z = earth_radius * Math.cos(latitude);
-            System.out.println(x);
-            System.out.println(y);
-            System.out.println(z);
 
 
             Cone.setTranslateX(x);
             Cone.setTranslateY(z);
             Cone.setTranslateZ(y);
+            Tooltip.install(Cone,tooltip);
              value.getChildren().add(Cone);
 
         });
