@@ -101,7 +101,7 @@ public class cube {
 
             // grid
             double zTranslate = 0;
-            double lineWidth = 1.0;
+            double lineWidth = 0.1;
             Color gridColor = Color.RED;
 
             for (int y = 0; y <= size; y += size / 10) {
