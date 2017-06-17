@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.SplitPane;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
@@ -33,7 +34,7 @@ public class mainprog extends Application {
     final Xform cameraXform = new Xform();
     final Xform cameraXform2 = new Xform();
     final Xform cameraXform3 = new Xform();
-    private static final double CAMERA_INITIAL_DISTANCE = -9000;
+    private static final double CAMERA_INITIAL_DISTANCE = -1500;
     private static final double CAMERA_INITIAL_X_ANGLE = 0.0;
     private static final double CAMERA_INITIAL_Y_ANGLE = 320.0;
     private static final double CAMERA_NEAR_CLIP = 0.1;
@@ -59,36 +60,19 @@ public class mainprog extends Application {
         double width =3000;
         double height = 3000;
         double depths =3000;
-        Box testBox = new Box(width,depths,height);
-        testBox.setTranslateX(0);
-        testBox.setTranslateY(0);
-        testBox.setTranslateZ(0);
-
-        PhongMaterial material = new PhongMaterial();
-        //material.setDiffuseMap(img);
-        //testBox.setMaterial(material);
-        testBox.setDrawMode(DrawMode.LINE);
-        subroot.getChildren().add(testBox);
+        Group testBox = cube.createCube(400);
         Button button = new Button("load well");
-
         button.setOnAction(e->{
-             subroot.getChildren().add(loadwell.meshView());
+             testBox.getChildren().add(loadwell.meshView());
         });
-        SubScene subscene = new SubScene(subroot, 1024, 768, true, SceneAntialiasing.BALANCED);
-
-        //camera.setFieldOfView();
+        SubScene subscene = new SubScene(testBox, 1024, 768, true, SceneAntialiasing.BALANCED);
         buildCamera();
-        subscene.setFill(Color.AQUA);
         subscene.setCamera(camera);
         //handleKeyboard(scene, world);
         handleMouse(subscene, world);
-        VBox vbox = new VBox(20, button,subscene);
+        SplitPane sp = new SplitPane(button,subscene);
         makeZoomable(subscene);
-        root.getChildren().add(vbox);
-        root.getChildren().add(new AmbientLight(Color.BROWN));
-        root.setDepthTest(DepthTest.ENABLE);
-
-        Scene scene = new Scene(root, 1024, 768, true,SceneAntialiasing.BALANCED);
+        Scene scene = new Scene(sp, 1024, 768, true,SceneAntialiasing.BALANCED);
         scene.setFill(Color.GREY);
         primaryStage.setTitle("Molecule Sample Application");
         primaryStage.setScene(scene);
