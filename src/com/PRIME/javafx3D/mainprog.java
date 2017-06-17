@@ -7,6 +7,8 @@ import javafx.scene.*;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
@@ -81,7 +83,7 @@ public class mainprog extends Application {
         //handleKeyboard(scene, world);
         handleMouse(subscene, world);
         VBox vbox = new VBox(20, button,subscene);
-
+        makeZoomable(subscene);
         root.getChildren().add(vbox);
         root.getChildren().add(new AmbientLight(Color.BROWN));
         root.setDepthTest(DepthTest.ENABLE);
@@ -116,6 +118,49 @@ public class mainprog extends Application {
     }
 
 
+    public void makeZoomable(SubScene control) {
+
+        final double MAX_SCALE = 20.0;
+        final double MIN_SCALE = 0.1;
+
+        control.addEventFilter(ScrollEvent.ANY, new EventHandler<ScrollEvent>() {
+
+            @Override
+            public void handle(ScrollEvent event) {
+
+                double delta = 1.2;
+
+                double scale = control.getScaleX();
+
+                if (event.getDeltaY() < 0) {
+                    scale /= delta;
+                } else {
+                    scale *= delta;
+                }
+
+                scale = clamp(scale, MIN_SCALE, MAX_SCALE);
+
+                control.setScaleX(scale);
+                control.setScaleY(scale);
+
+                event.consume();
+
+            }
+
+        });
+
+    }
+
+    public static double clamp(double value, double min, double max) {
+
+        if (Double.compare(value, min) < 0)
+            return min;
+
+        if (Double.compare(value, max) > 0)
+            return max;
+
+        return value;
+    }
     private void handleMouse(SubScene scene, final Node root) {
 
         scene.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -127,6 +172,7 @@ public class mainprog extends Application {
                 mouseOldY = me.getSceneY();
             }
         });
+
         scene.setOnMouseDragged(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent me) {
@@ -142,9 +188,9 @@ public class mainprog extends Application {
                 if (me.isControlDown()) {
                     modifier = CONTROL_MULTIPLIER;
                 }
-                if (me.isShiftDown()) {
+               if (me.isShiftDown()) {
                     modifier = SHIFT_MULTIPLIER;
-                }
+               }
                 if (me.isPrimaryButtonDown()) {
                     cameraXform.ry.setAngle(cameraXform.ry.getAngle() -
                             mouseDeltaX * modifier * ROTATION_SPEED);  //
@@ -154,11 +200,14 @@ public class mainprog extends Application {
                     double z = camera.getTranslateZ();
                     double newZ = z + mouseDeltaX * MOUSE_SPEED * modifier;
                     camera.setTranslateZ(newZ);
+
+
                 } else if (me.isMiddleButtonDown()) {
                     cameraXform2.t.setX(cameraXform2.t.getX() +
                             mouseDeltaX * MOUSE_SPEED * modifier * TRACK_SPEED);  // -
                     cameraXform2.t.setY(cameraXform2.t.getY() +
                             mouseDeltaY * MOUSE_SPEED * modifier * TRACK_SPEED);  // -
+
                 }
             }
         }); // setOnMouseDragged

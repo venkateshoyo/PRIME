@@ -20,6 +20,7 @@ import static java.awt.image.ImageObserver.WIDTH;
 
 
        List<Pair<Double,Double>> coordinates = Coordinates.transfer();
+
         System.out.print(coordinates.size());
         Point3D [] temp=new Point3D[coordinates.size()];
         Integer i=0;
