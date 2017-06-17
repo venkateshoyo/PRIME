@@ -90,7 +90,7 @@ public class loadwell {
             //ScatterPlotMesh scatterPlotMesh = new ScatterPlotMesh(100, 1, true);
             //scatterPlotMesh.setXYZData(dataX, dataY, dataZ);
            // meshView.getChildren().add(scatterPlotMesh);
-           PolyLine3DMesh surface = new PolyLine3DMesh(points,10, Color.STEELBLUE);
+           PolyLine3DMesh surface = new PolyLine3DMesh(points,1, Color.STEELBLUE);
             meshView.getChildren().addAll(surface);
 
         } catch (FileNotFoundException ex) {

@@ -34,7 +34,8 @@ import java.util.ArrayList;
         import javafx.scene.shape.MeshView;
         import javafx.scene.shape.Rectangle;
         import javafx.scene.shape.TriangleMesh;
-        import javafx.scene.transform.Rotate;
+import javafx.scene.text.Text;
+import javafx.scene.transform.Rotate;
         import javafx.stage.Stage;
 
 public class test3 extends Application {
@@ -72,7 +73,11 @@ public class test3 extends Application {
 
         for (int x = 0; x < size; x++) {
             for (int z = 0; z < size; z++) {
-                mesh.getPoints().addAll(x, noiseArray[x][z] * amplification, z);
+                if(z%2==0)
+                mesh.getPoints().addAll(x, 5, z);
+                else
+                    mesh.getPoints().addAll(x, 50, z);
+
             }
         }
 
@@ -119,30 +124,30 @@ public class test3 extends Application {
 
 
         // material
-        Image diffuseMap = createImage(size, noiseArray);
+        //Image diffuseMap = createImage(size, noiseArray);
 
-        PhongMaterial material = new PhongMaterial();
-        material.setDiffuseMap(diffuseMap);
-        material.setSpecularColor(Color.WHITE);
+       // PhongMaterial material = new PhongMaterial();
+      //  material.setDiffuseMap(diffuseMap);
+       // material.setSpecularColor(Color.WHITE);
 
         // mesh view
         MeshView meshView = new MeshView(mesh);
         meshView.setTranslateX(-0.5 * size);
         meshView.setTranslateZ(-0.5 * size);
-        meshView.setMaterial(material);
-        meshView.setCullFace(CullFace.NONE);
-        meshView.setDrawMode(DrawMode.FILL);
-        meshView.setDepthTest(DepthTest.ENABLE);
+      //  meshView.setMaterial(material);
+      //  meshView.setCullFace(CullFace.NONE);
+        meshView.setDrawMode(DrawMode.LINE);
+       // meshView.setDepthTest(DepthTest.ENABLE);
 
         cube.getChildren().addAll(meshView);
 
         // testing / debugging stuff: show diffuse map on chart
-        ImageView iv = new ImageView(diffuseMap);
-        iv.setTranslateX(-0.5 * size);
-        iv.setTranslateY(-0.10 * size);
-        iv.setRotate(90);
-        iv.setRotationAxis(new Point3D(1, 0, 0));
-        cube.getChildren().add(iv);
+      //  ImageView iv = new ImageView(diffuseMap);
+        //iv.setTranslateX(-0.5 * size);
+        //iv.setTranslateY(-0.10 * size);
+        //iv.setRotate(90);
+        //iv.setRotationAxis(new Point3D(1, 0, 0));
+       // cube.getChildren().add(iv);
 
         // scene
         Scene scene = new Scene(root, 1600, 900, true, SceneAntialiasing.BALANCED);
@@ -216,13 +221,13 @@ public class test3 extends Application {
             // wall
             // first the wall, then the lines => overlapping of lines over walls
             // works
-            wall = new Rectangle(size, size);
-            getChildren().add(wall);
+           // wall = new Rectangle(size, size);
+            //getChildren().add(wall);
 
             // grid
             double zTranslate = 0;
             double lineWidth = 1.0;
-            Color gridColor = Color.WHITE;
+            Color gridColor = Color.RED;
 
             for (int y = 0; y <= size; y += size / 10) {
 
@@ -252,22 +257,22 @@ public class test3 extends Application {
 
             // labels
             // TODO: for some reason the text makes the wall have an offset
-            // for( int y=0; y <= size; y+=size/10) {
-            //
-            // Text text = new Text( ""+y);
-            // text.setTranslateX(size + 10);
-            //
-            // text.setTranslateY(y);
-            // text.setTranslateZ(zTranslate);
-            //
-            // getChildren().addAll(text);
-            //
-            // }
+             for( int y=0; y <= size; y+=size/10) {
+
+             Text text = new Text( ""+y);
+             text.setTranslateX(size + 10+10);
+
+             text.setTranslateY(y+20);
+             text.setTranslateZ(zTranslate+20);
+
+             getChildren().addAll(text);
+
+             }
 
         }
 
         public void setFill(Paint paint) {
-            wall.setFill(paint);
+//            wall.setFill(paint);
         }
 
     }
@@ -322,7 +327,7 @@ public class test3 extends Application {
 
         // back face
         r = new Axis(size);
-        r.setFill(color.deriveColor(0.0, 1.0, (1 - 0.5 * 1), 1.0));
+//        r.setFill(color.deriveColor(0.0, 1.0, (1 - 0.5 * 1), 1.0));
         r.setTranslateX(-0.5 * size);
         r.setTranslateY(-0.5 * size);
         r.setTranslateZ(0.5 * size);
@@ -331,7 +336,7 @@ public class test3 extends Application {
 
         // bottom face
         r = new Axis(size);
-        r.setFill(color.deriveColor(0.0, 1.0, (1 - 0.4 * 1), 1.0));
+       // r.setFill(color.deriveColor(0.0, 1.0, (1 - 0.4 * 1), 1.0));
         r.setTranslateX(-0.5 * size);
         r.setTranslateY(0);
         r.setRotationAxis(Rotate.X_AXIS);
@@ -341,17 +346,17 @@ public class test3 extends Application {
 
         // right face
         r = new Axis(size);
-        r.setFill(color.deriveColor(0.0, 1.0, (1 - 0.3 * 1), 1.0));
+      //  r.setFill(color.deriveColor(0.0, 1.0, (1 - 0.3 * 1), 1.0));
         r.setTranslateX(-1 * size);
         r.setTranslateY(-0.5 * size);
         r.setRotationAxis(Rotate.Y_AXIS);
         r.setRotate(90);
 
-        // cubeFaces.add( r);
+         cubeFaces.add( r);
 
         // left face
         r = new Axis(size);
-        r.setFill(color.deriveColor(0.0, 1.0, (1 - 0.2 * 1), 1.0));
+      //  r.setFill(color.deriveColor(0.0, 1.0, (1 - 0.2 * 1), 1.0));
         r.setTranslateX(0);
         r.setTranslateY(-0.5 * size);
         r.setRotationAxis(Rotate.Y_AXIS);
@@ -361,22 +366,22 @@ public class test3 extends Application {
 
         // top face
         r = new Axis(size);
-        r.setFill(color.deriveColor(0.0, 1.0, (1 - 0.1 * 1), 1.0));
+     //   r.setFill(color.deriveColor(0.0, 1.0, (1 - 0.1 * 1), 1.0));
         r.setTranslateX(-0.5 * size);
         r.setTranslateY(-1 * size);
         r.setRotationAxis(Rotate.X_AXIS);
         r.setRotate(90);
 
-        // cubeFaces.add( r);
+         cubeFaces.add( r);
 
         // front face
         r = new Axis(size);
-        r.setFill(color.deriveColor(0.0, 1.0, (1 - 0.1 * 1), 1.0));
+       // r.setFill(color.deriveColor(0.0, 0.0, (1 - 0.1 * 1), 1.0));
         r.setTranslateX(-0.5 * size);
         r.setTranslateY(-0.5 * size);
         r.setTranslateZ(-0.5 * size);
 
-        // cubeFaces.add( r);
+         cubeFaces.add( r);
 
         cube.getChildren().addAll(cubeFaces);
 
