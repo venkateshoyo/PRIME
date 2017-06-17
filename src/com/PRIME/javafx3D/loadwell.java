@@ -20,7 +20,7 @@ public class loadwell {
 
 
     public static Group meshView() {
-        final int EARTH_RADIUS = 500;
+        final int EARTH_RADIUS = 50000;
         Group meshView = new Group();
          ArrayList<Point3D> points =new ArrayList<>();;
         ArrayList<Double> dataX = new ArrayList<>();
@@ -36,6 +36,8 @@ public class loadwell {
             bufferedReader.readLine();
             String text;
             Integer count = 0;
+          //  double max = 0;
+           // double min = (int) 0.0;
 
             //Reading each line and storing each parameter value to temporary matrix
             while ((text = bufferedReader.readLine()) != null && text.length() > 0) {
@@ -90,7 +92,7 @@ public class loadwell {
             //ScatterPlotMesh scatterPlotMesh = new ScatterPlotMesh(100, 1, true);
             //scatterPlotMesh.setXYZData(dataX, dataY, dataZ);
            // meshView.getChildren().add(scatterPlotMesh);
-           PolyLine3DMesh surface = new PolyLine3DMesh(points,1, Color.STEELBLUE);
+           cuboid surface = new cuboid(points,10, Color.STEELBLUE);
             meshView.getChildren().addAll(surface);
 
         } catch (FileNotFoundException ex) {
