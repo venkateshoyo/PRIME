@@ -2,13 +2,86 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39cb9512-137a-457e-9db7-589bb4fc901e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/PRIME/javafx3D/MyTranscoder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/PRIME/javafx3D/World_map_blank_without_borders.svg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/fontawesomefx-8.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/PRIME/javafx3D/Coordinates.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/PRIME/javafx3D/MyTranscoder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/PRIME/javafx3D/PolyLine3DMesh.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/PRIME/javafx3D/convert.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/PRIME/javafx3D/energon.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/PRIME/javafx3D/loadvalue.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/PRIME/javafx3D/loadwell.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/controlsfx-8.40.11.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/extfxyz-0.4-sources.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/extfxyz-0.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/fontawesomefx-8.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/fontawesomefx-commons-8.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/fontawesomefx-controls-8.15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/fontawesomefx-emojione-2.2.7-2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/fontawesomefx-fontawesome-4.7.0-5.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/fontawesomefx-glyphsbrowser-1.3.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/fontawesomefx-icons525-3.0.0-4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/fontawesomefx-materialdesignfont-1.7.22-4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/fontawesomefx-materialicons-2.2.0-5.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/fontawesomefx-octicons-4.3.0-5.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/fontawesomefx-weathericons-2.0.10-5.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/fxyz3d-0.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/jcsg-0.4.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/mysql-connector-java-5.1.41-bin.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/poly2tri-core-0.1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/slf4j-api-1.6.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/slf4j-simple-1.6.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/LICENSE.dom-documentation.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/LICENSE.dom-software.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/LICENSE.fop-transcoder-allinone-2.2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/LICENSE.js.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/LICENSE.sax.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/LICENSE.xalan-2.7.0.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/LICENSE.xerces_2_5_0.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/LICENSE.xmlgraphics-commons-2.2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/README.fop-transcoder-allinone-2.2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/README.js.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/README.xalan-2.7.0.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/README.xerces_2_5_0.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/README.xml-apis-1.3.04.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/README.xml-apis-ext-1.3.04.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/Squiggle.icns" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-all-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-anim-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-awt-util-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-bridge-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-codec-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-css-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-dom-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-ext-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-extension-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-gui-util-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-gvt-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-parser-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-rasterizer-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-script-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-slideshow-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-squiggle-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-svg-dom-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-svggen-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-svgpp-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-swing-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-transcoder-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-ttf2svg-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-util-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/batik-xml-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/fop-transcoder-allinone-2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/js.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/serializer-2.7.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/xalan-2.7.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/xercesImpl-2.9.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/xml-apis-1.3.04.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/xml-apis-ext-1.3.04.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/svg lib/xmlgraphics-commons-2.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/vecmath-1.3.1.jar" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_41_bin.xml" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_41_bin.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUI shubham.iml" afterPath="$PROJECT_DIR$/GUI shubham.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/PRIME/javafx3D/loadvalue.java" afterPath="$PROJECT_DIR$/src/com/PRIME/javafx3D/loadvalue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/PRIME/main/operations/toolbars/analysisMenu/toolBar.java" afterPath="$PROJECT_DIR$/src/com/PRIME/main/operations/toolbars/analysisMenu/toolBar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/PRIME/javafx3D/mainprog.java" afterPath="$PROJECT_DIR$/src/com/PRIME/javafx3D/mainprog.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,7 +103,7 @@
       <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/main/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="697">
               <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -42,19 +115,23 @@
       <file leaf-file-name="menubar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/main/menubar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="220">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loadvalue.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/PRIME/javafx3D/loadvalue.java">
+      <file leaf-file-name="mainprog.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/PRIME/javafx3D/mainprog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="1512">
+              <caret line="146" column="17" lean-forward="true" selection-start-line="146" selection-start-column="17" selection-end-line="146" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,7 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/ControllerType.java" />
         <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/AbstractController.java" />
         <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/IViewIsVerticalEventListener.java" />
         <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/events/ControllerEvent.java" />
@@ -149,6 +225,7 @@
         <option value="$PROJECT_DIR$/src/com/PRIME/main/operations/main/main.java" />
         <option value="$PROJECT_DIR$/src/com/PRIME/main/operations/main/menubar.java" />
         <option value="$PROJECT_DIR$/src/com/PRIME/javafx3D/loadvalue.java" />
+        <option value="$PROJECT_DIR$/src/com/PRIME/javafx3D/mainprog.java" />
       </list>
     </option>
   </component>
@@ -199,8 +276,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -226,22 +301,8 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PRIME" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -256,14 +317,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PRIME" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testingDirectory" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -282,186 +335,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="PRIME" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PRIME" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PRIME" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="operations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="toolbars" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PRIME" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="operations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="toolbars" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fileMenu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PRIME" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="operations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PRIME" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="operations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PRIME" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -489,12 +362,14 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/lib/fontawesome" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -819,13 +694,14 @@
       <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3420622" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3420622" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25567323" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25945538" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Running Info" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -835,7 +711,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -894,8 +769,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/bridge/awt/SimpleBufferedPanelAWT.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/bridge/BufferedPanel.java" />
     <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/bridge/IFrame.java" />
     <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/camera/AbstractCameraController.java" />
     <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/keyboard/lights/AWTLightKeyController.java" />
@@ -940,9 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -993,7 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1042,14 +911,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/main/menubar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/main/main.java.rej" />
     <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/toolbars/hackTooltipStartTiming.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1061,7 +922,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/main/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="697">
           <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1071,9 +932,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/PRIME/javafx3D/loadvalue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="23" />
+        <state relative-caret-position="340">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/PRIME/javafx3D/MyTranscoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-69">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/main/menubar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/PRIME/javafx3D/mainprog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="146" column="17" lean-forward="true" selection-start-line="146" selection-start-column="17" selection-end-line="146" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1153,7 +1042,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>mysql-connector-java-5.1.41-bin</last-edited>
+          <last-edited>fontawesome</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

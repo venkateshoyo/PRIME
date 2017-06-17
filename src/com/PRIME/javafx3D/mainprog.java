@@ -70,7 +70,7 @@ public class mainprog extends Application {
         Button button = new Button("load well");
 
         button.setOnAction(e->{
-             subroot.getChildren().add(loadwell.meshView());
+//             subroot.getChildren().add(loadwell.meshView());
         });
         SubScene subscene = new SubScene(subroot, 1024, 768, true, SceneAntialiasing.BALANCED);
 
