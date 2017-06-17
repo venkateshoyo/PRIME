@@ -12,6 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
 import javafx.scene.shape.DrawMode;
+import javafx.scene.shape.Sphere;
 import javafx.stage.Stage;
 
 
@@ -54,19 +55,16 @@ public class mainprog extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        double width =3000;
-        double height = 3000;
-        double depths =3000;
-        Box testBox = new Box(width,depths,height);
-        testBox.setTranslateX(0);
-        testBox.setTranslateY(0);
-        testBox.setTranslateZ(0);
+       double earth_radius= 2000;
+        Sphere earth = new Sphere(earth_radius);
+        earth.setTranslateX(0);
+        earth.setTranslateY(0);
+        earth.setTranslateZ(0);
 
         PhongMaterial material = new PhongMaterial();
         //material.setDiffuseMap(img);
         //testBox.setMaterial(material);
-        testBox.setDrawMode(DrawMode.LINE);
-        subroot.getChildren().add(testBox);
+        subroot.getChildren().add(earth);
         Button button = new Button("load well");
 
         button.setOnAction(e->{
