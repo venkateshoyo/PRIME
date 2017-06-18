@@ -13,7 +13,10 @@ import com.lynden.gmapsfx.zoom.MaxZoomResult;
 import com.lynden.gmapsfx.zoom.MaxZoomService;
 import com.lynden.gmapsfx.zoom.MaxZoomServiceCallback;
 import javafx.geometry.Point2D;
+
+import javafx.scene.Camera;
 import javafx.scene.Node;
+import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -36,6 +39,8 @@ public class projectViewer  implements MapComponentInitializedListener {
 
     public void project() throws Exception {
         Stage stage = new Stage();
+        Camera camera = new PerspectiveCamera();
+       camera.setTranslateZ(150);
         this.mapComponent = new GoogleMapView();
         this.mapComponent.addMapInializedListener(this);
         BorderPane bp = new BorderPane();
@@ -66,6 +71,8 @@ public class projectViewer  implements MapComponentInitializedListener {
 //        bp.setTop(tb);
         bp.setCenter(this.mapComponent);
         Scene scene = new Scene(bp);
+
+        scene.setCamera(camera);
         stage.setScene(scene);
         stage.show();
     }
