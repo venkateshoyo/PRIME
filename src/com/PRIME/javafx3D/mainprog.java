@@ -41,9 +41,7 @@ public class mainprog extends Application {
     final Xform cameraXform = new Xform();
     final Xform cameraXform2 = new Xform();
     final Xform cameraXform3 = new Xform();
-    private static final double CAMERA_INITIAL_DISTANCE = -1500;
-    private static final double CAMERA_INITIAL_X_ANGLE = 0.0;
-    private static final double CAMERA_INITIAL_Y_ANGLE = 320.0;
+    private static final double CAMERA_INITIAL_DISTANCE = -1800;
     private static final double CAMERA_NEAR_CLIP = 0.1;
     private static final double CAMERA_FAR_CLIP = 10000.0;
     private static final double CONTROL_MULTIPLIER = 0.1;
@@ -63,56 +61,93 @@ public class mainprog extends Application {
     double mouseDeltaY;
 
 
+
     @Override
     public void start(Stage primaryStage) {
-        double earth_radius =300;
-        Sphere earth = new Sphere(earth_radius);
+        final double EARTH_RADIUS  = 400;
+        Sphere earth = new Sphere(EARTH_RADIUS);
         Group value = new Group();
         value.getChildren().add(earth);
-        Image img= new Image(getClass()
-                .getResourceAsStream("world.jpg"));
-        PhongMaterial material = new PhongMaterial();
-        material.setDiffuseMap(img);
-        earth.setMaterial(material);
-       // earth.setDrawMode(DrawMode.LINE);
 
+        final double VIEWPORT_SIZE = 800;
+
+        final double MAP_WIDTH  = 8192 / 2d;
+        final double MAP_HEIGHT = 4092 / 2d;
+
+        PhongMaterial earthMaterial = new PhongMaterial();
+        earthMaterial.setDiffuseMap(
+                new Image(
+                        getClass().getResourceAsStream("diffue_world_map.jpg"),
+                        MAP_WIDTH,
+                        MAP_HEIGHT,
+                        true,
+                        true
+                )
+        );
+        earthMaterial.setBumpMap(
+                new Image(
+                        getClass().getResourceAsStream("normal_worldmap.jpg"),
+                        MAP_WIDTH,
+                        MAP_HEIGHT,
+                        true,
+                        true
+                )
+        );
+        earthMaterial.setSpecularMap(
+                new Image(
+                        getClass().getResourceAsStream("specular_worldmap.jpg"),
+                        MAP_WIDTH,
+                        MAP_HEIGHT,
+                        true,
+                        true
+                )
+        );
+
+        earth.setMaterial(
+                earthMaterial
+        );
+
+        buildCamera();
         Button button = new Button("load well points");
         button.setOnAction(e->{
             MeshView Cone = new MeshView();
-          Cone.setMesh(ConeMesh.createCone(32,10f,20f));
-           PhongMaterial material1= new PhongMaterial();
-           material1.setSpecularColor(Color.YELLOW);
-          Cone.setMaterial(material);
-          window sh = new window();
+            Cone.setMesh(ConeMesh.createCone(32,10f,20f));
+            PhongMaterial material1= new PhongMaterial();
+            material1.setDiffuseColor(Color.RED);
+            Cone.setMaterial(material1);
+            window sh = new window();
             Pair<Double,Double> coordinates = sh.coordinates();
-             double latitude=coordinates.getKey();
-             double longitude=coordinates.getValue();
+            double latitude=coordinates.getKey();
+            double longitude=coordinates.getValue();
             Tooltip tooltip = new Tooltip(latitude+","+longitude);
             tooltip.setFont(Font.font("", 20));
             new hackTooltipStartTiming(tooltip);
+
             latitude = latitude * Math.PI / 180;
             longitude = longitude * Math.PI / 180;
 
-            double x = earth_radius * Math.sin(latitude) * Math.cos(longitude);
-            double y = earth_radius * Math.sin(latitude) * Math.sin(longitude);
-            double z = earth_radius * Math.cos(latitude);
+
+            double x = EARTH_RADIUS * Math.sin(latitude) * Math.cos(longitude);
+            double y = EARTH_RADIUS * Math.sin(latitude) * Math.sin(longitude);
+            double z = EARTH_RADIUS * Math.cos(latitude);
 
 
             Cone.setTranslateX(x);
-            Cone.setTranslateY(z);
-            Cone.setTranslateZ(y);
+            Cone.setTranslateY(y);
+            Cone.setTranslateZ(z);
             Tooltip.install(Cone,tooltip);
              value.getChildren().add(Cone);
 
         });
-        SubScene subscene = new SubScene(value, 900, 768, true, SceneAntialiasing.BALANCED);
-        buildCamera();
+        SubScene subscene = new SubScene(value, 1300, VIEWPORT_SIZE, true, SceneAntialiasing.BALANCED);
+        subscene.setFill(Color.rgb(10, 10, 40));
+
         subscene.setCamera(camera);
         //handleKeyboard(scene, world);
         handleMouse(subscene, world);
         SplitPane sp = new SplitPane(button,subscene);
         makeZoomable(subscene);
-        Scene scene = new Scene(sp, 1024, 768, true,SceneAntialiasing.BALANCED);
+        Scene scene = new Scene(sp, 1500, 1500, true,SceneAntialiasing.BALANCED);
         scene.setFill(Color.GREY);
         primaryStage.setTitle("Molecule Sample Application");
         primaryStage.setScene(scene);
@@ -134,19 +169,18 @@ public class mainprog extends Application {
         cameraXform.getChildren().add(cameraXform2);
         cameraXform2.getChildren().add(cameraXform3);
         cameraXform3.getChildren().add(camera);
-        cameraXform.setRotateZ(180.0);
+
 
         camera.setNearClip(CAMERA_NEAR_CLIP);
         camera.setFarClip(CAMERA_FAR_CLIP);
         camera.setTranslateZ(CAMERA_INITIAL_DISTANCE);
-        cameraXform.ry.setAngle(CAMERA_INITIAL_Y_ANGLE);
-        cameraXform.rx.setAngle(CAMERA_INITIAL_X_ANGLE);
+
     }
 
 
     public void makeZoomable(SubScene control) {
 
-        final double MAX_SCALE = 20.0;
+        final double MAX_SCALE = 15.0;
         final double MIN_SCALE = 0.1;
 
         control.addEventFilter(ScrollEvent.ANY, new EventHandler<ScrollEvent>() {
@@ -248,8 +282,7 @@ public class mainprog extends Application {
                     case Z:
                         cameraXform2.t.setX(0.0);
                         cameraXform2.t.setY(0.0);
-                        cameraXform.ry.setAngle(CAMERA_INITIAL_Y_ANGLE);
-                        cameraXform.rx.setAngle(CAMERA_INITIAL_X_ANGLE);
+
                         break;
                    /* case X:
                         axisGroup.setVisible(!axisGroup.isVisible());
