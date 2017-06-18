@@ -1,42 +1,17 @@
-package com.PRIME.testingDirectory;
+package com.PRIME.main.operations.mainMenus.projectMenu;
 
 
 import com.lynden.gmapsfx.GoogleMapView;
 import com.lynden.gmapsfx.MapComponentInitializedListener;
-import com.lynden.gmapsfx.elevation.ElevationResult;
-import com.lynden.gmapsfx.elevation.ElevationService;
-import com.lynden.gmapsfx.elevation.ElevationServiceCallback;
-import com.lynden.gmapsfx.elevation.ElevationStatus;
-import com.lynden.gmapsfx.elevation.LocationElevationRequest;
-import com.lynden.gmapsfx.elevation.PathElevationRequest;
-import com.lynden.gmapsfx.javascript.event.UIEventHandler;
+import com.lynden.gmapsfx.elevation.*;
 import com.lynden.gmapsfx.javascript.event.UIEventType;
-import com.lynden.gmapsfx.javascript.object.Animation;
-import com.lynden.gmapsfx.javascript.object.GoogleMap;
-import com.lynden.gmapsfx.javascript.object.InfoWindow;
-import com.lynden.gmapsfx.javascript.object.InfoWindowOptions;
-import com.lynden.gmapsfx.javascript.object.LatLong;
-import com.lynden.gmapsfx.javascript.object.LatLongBounds;
-import com.lynden.gmapsfx.javascript.object.MVCArray;
-import com.lynden.gmapsfx.javascript.object.MapOptions;
-import com.lynden.gmapsfx.javascript.object.MapTypeIdEnum;
-import com.lynden.gmapsfx.javascript.object.Marker;
-import com.lynden.gmapsfx.javascript.object.MarkerOptions;
-import com.lynden.gmapsfx.shapes.ArcBuilder;
-import com.lynden.gmapsfx.shapes.Circle;
-import com.lynden.gmapsfx.shapes.CircleOptions;
-import com.lynden.gmapsfx.shapes.Polygon;
-import com.lynden.gmapsfx.shapes.PolygonOptions;
+import com.lynden.gmapsfx.javascript.object.*;
+import com.lynden.gmapsfx.shapes.*;
 import com.lynden.gmapsfx.shapes.Polyline;
 import com.lynden.gmapsfx.shapes.PolylineOptions;
-import com.lynden.gmapsfx.shapes.Rectangle;
-import com.lynden.gmapsfx.shapes.RectangleOptions;
 import com.lynden.gmapsfx.zoom.MaxZoomResult;
 import com.lynden.gmapsfx.zoom.MaxZoomService;
 import com.lynden.gmapsfx.zoom.MaxZoomServiceCallback;
-import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.event.EventHandler;
 import javafx.geometry.Point2D;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -48,7 +23,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import netscape.javascript.JSObject;
 
-public class test  implements MapComponentInitializedListener {
+public class projectViewer  implements MapComponentInitializedListener {
 
     protected GoogleMapView mapComponent;
     protected GoogleMap map;
@@ -58,8 +33,7 @@ public class test  implements MapComponentInitializedListener {
     private Label lblCenter;
     private Label lblClick;
     private ComboBox<MapTypeIdEnum> mapTypeCombo;
-    public test() {
-    }
+
     public void project() throws Exception {
         Stage stage = new Stage();
         this.mapComponent = new GoogleMapView();
@@ -89,7 +63,7 @@ public class test  implements MapComponentInitializedListener {
             this.map.setMapType(MapTypeIdEnum.HYBRID);
         });
         tb.getItems().addAll(new Node[]{this.btnZoomIn, this.btnZoomOut, this.mapTypeCombo, new Label("Zoom: "), this.lblZoom, new Label("Center: "), this.lblCenter, new Label("Click: "), this.lblClick});
-        bp.setTop(tb);
+//        bp.setTop(tb);
         bp.setCenter(this.mapComponent);
         Scene scene = new Scene(bp);
         stage.setScene(scene);

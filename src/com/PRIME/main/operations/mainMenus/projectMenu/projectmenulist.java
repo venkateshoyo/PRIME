@@ -1,6 +1,5 @@
 package com.PRIME.main.operations.mainMenus.projectMenu;
 
-import com.PRIME.testingDirectory.test;
 import javafx.scene.control.*;
 
 public class projectmenulist {
@@ -38,7 +37,7 @@ public class projectmenulist {
 
         MenuItem projectViewer = new MenuItem( "Project Viewer");
         projectViewer.setOnAction(e -> {
-            test Test = new test();
+            projectViewer Test = new projectViewer();
             try {
                 Test.project();
             } catch (Exception e1) {
