@@ -110,8 +110,7 @@ public class mainprog extends Application {
         buildCamera();
         Button button = new Button("load well points");
         button.setOnAction(e->{
-            MeshView Cone = new MeshView();
-            Cone.setMesh(ConeMesh.createCone(32,10f,20f));
+            Sphere Cone = new Sphere(10);
             PhongMaterial material1= new PhongMaterial();
             material1.setDiffuseColor(Color.RED);
             Cone.setMaterial(material1);
@@ -119,22 +118,25 @@ public class mainprog extends Application {
             Pair<Double,Double> coordinates = sh.coordinates();
             double latitude=coordinates.getKey();
             double longitude=coordinates.getValue();
-            Tooltip tooltip = new Tooltip(latitude+","+longitude);
-            tooltip.setFont(Font.font("", 20));
-            new hackTooltipStartTiming(tooltip);
 
-            latitude = latitude * Math.PI / 180;
-            longitude = longitude * Math.PI / 180;
+            double latitude1 =latitude;
+            double  longitude1 = longitude;
+             latitude1 = latitude1 * Math.PI / 180;
+            longitude1 = longitude1 * Math.PI / 180;
 
 
-            double x = EARTH_RADIUS * Math.sin(latitude) * Math.cos(longitude);
-            double y = EARTH_RADIUS * Math.sin(latitude) * Math.sin(longitude);
-            double z = EARTH_RADIUS * Math.cos(latitude);
+
+            double x = EARTH_RADIUS * Math.cos(latitude1)*Math.sin(longitude1) ;
+            double y = EARTH_RADIUS * Math.sin(latitude1);
+            double z = EARTH_RADIUS * Math.cos(latitude1)*Math.cos(longitude1);
 
 
             Cone.setTranslateX(x);
-            Cone.setTranslateY(y);
-            Cone.setTranslateZ(z);
+            Cone.setTranslateY(-y);
+            Cone.setTranslateZ(-z);
+            Tooltip tooltip = new Tooltip("lat:"+latitude+",long:"+longitude+",x:"+x+",y:"+y+"z:"+z);
+            tooltip.setFont(Font.font("", 10));
+            new hackTooltipStartTiming(tooltip);
             Tooltip.install(Cone,tooltip);
              value.getChildren().add(Cone);
 
@@ -252,9 +254,9 @@ public class mainprog extends Application {
                     modifier = SHIFT_MULTIPLIER;
                }
                 if (me.isPrimaryButtonDown()) {
-                    cameraXform.ry.setAngle(cameraXform.ry.getAngle() -
+                    cameraXform.ry.setAngle(cameraXform.ry.getAngle() +
                             mouseDeltaX * modifier * ROTATION_SPEED);  //
-                    cameraXform.rx.setAngle(cameraXform.rx.getAngle() +
+                    cameraXform.rx.setAngle(cameraXform.rx.getAngle() -
                             mouseDeltaY * modifier * ROTATION_SPEED);  // -
                 } else if (me.isSecondaryButtonDown()) {
                     double z = camera.getTranslateZ();
