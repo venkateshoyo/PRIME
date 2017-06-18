@@ -1,5 +1,6 @@
 package com.PRIME.main.operations.mainMenus.projectMenu;
 
+import com.PRIME.testingDirectory.test;
 import javafx.scene.control.*;
 
 public class projectmenulist {
@@ -35,6 +36,16 @@ public class projectmenulist {
         RadioMenuItem onehourautosave = new RadioMenuItem("1 hour");
         onehourautosave.setOnAction(e -> System.out.println(""));
 
+        MenuItem projectViewer = new MenuItem( "Project Viewer");
+        projectViewer.setOnAction(e -> {
+            test Test = new test();
+            try {
+                Test.project();
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        });
+
         ToggleGroup toggle = new ToggleGroup();
 
         none.setToggleGroup(toggle);
@@ -53,7 +64,7 @@ public class projectmenulist {
 
         //Project Sub Menu ends-----------------------------------------------------------------------------------------
 
-        projectMenu.getItems().addAll(openproject,newproject,recentproject,lastsaveproject,autosave);
+        projectMenu.getItems().addAll(openproject,newproject,recentproject,lastsaveproject,autosave,projectViewer);
 
         return projectMenu;
     }

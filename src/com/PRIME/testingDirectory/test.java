@@ -48,7 +48,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import netscape.javascript.JSObject;
 
-public class test extends Application implements MapComponentInitializedListener {
+public class test  implements MapComponentInitializedListener {
+
     protected GoogleMapView mapComponent;
     protected GoogleMap map;
     private Button btnZoomIn;
@@ -59,7 +60,8 @@ public class test extends Application implements MapComponentInitializedListener
     private ComboBox<MapTypeIdEnum> mapTypeCombo;
     public test() {
     }
-    public void start(Stage stage) throws Exception {
+    public void project() throws Exception {
+        Stage stage = new Stage();
         this.mapComponent = new GoogleMapView();
         this.mapComponent.addMapInializedListener(this);
         BorderPane bp = new BorderPane();
@@ -216,8 +218,5 @@ public class test extends Application implements MapComponentInitializedListener
         System.out.println("Testing fromLatLngToPoint result: " + p);
         System.out.println("Testing fromLatLngToPoint expected: " + this.mapComponent.getWidth() / 2.0D + ", " + this.mapComponent.getHeight() / 2.0D);
     }
-    public static void main(String[] args) {
-        System.setProperty("java.net.useSystemProxies", "true");
-        launch(args);
-    }
+
 }
