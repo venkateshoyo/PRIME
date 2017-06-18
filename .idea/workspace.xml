@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="39cb9512-137a-457e-9db7-589bb4fc901e" name="Default" comment="testing commit using IDE">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUI shubham.iml" afterPath="$PROJECT_DIR$/GUI shubham.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/PRIME/testingDirectory/test.java" afterPath="$PROJECT_DIR$/src/com/PRIME/testingDirectory/test.java" />
-    </list>
+    <list default="true" id="39cb9512-137a-457e-9db7-589bb4fc901e" name="Default" comment="testing commit using IDE" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
