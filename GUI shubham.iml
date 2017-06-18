@@ -11,5 +11,6 @@
     <orderEntry type="library" exported="" name="org.fxyz3d:fxyz3d:0.1.1" level="project" />
     <orderEntry type="library" name="fontawesome" level="project" />
     <orderEntry type="library" name="sql" level="project" />
+    <orderEntry type="library" name="GMapFX" level="project" />
   </component>
 </module>
