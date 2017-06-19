@@ -43,11 +43,11 @@ public class main extends Application {
 
         layout = new BorderPane();
 
-        MenuBar menus = mb.displayMenuBar();
-        ToolBar tools = file.fileToolbar();
+       // MenuBar menus = mb.displayMenuBar();
+        //ToolBar tools = file.fileToolbar();
 
         VBox header = new VBox(0);
-        header.getChildren().addAll(menus,tools);
+        header.getChildren().add(mb.displayMenuBar());
 
         layout.setTop(header);
 

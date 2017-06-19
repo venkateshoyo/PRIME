@@ -4,9 +4,8 @@ import com.PRIME.main.operations.toolbars.toolbarButton;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToolBar;
 
-import static com.PRIME.main.operations.toolbars.fileMenu.constants.*;
-import static com.PRIME.main.operations.toolbars.fileMenu.constants.snapshotImageURL;
-import static com.PRIME.main.operations.toolbars.fileMenu.constants.snapshotTooltipText;
+import static com.PRIME.main.operations.toolbars.dataMenu.constants.*;
+
 
 public class lasload {
     public static ToolBar lasloadToolbar() {

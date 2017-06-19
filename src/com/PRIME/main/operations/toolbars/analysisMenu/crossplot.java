@@ -4,9 +4,7 @@ import com.PRIME.main.operations.toolbars.toolbarButton;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToolBar;
 
-import static com.PRIME.main.operations.toolbars.fileMenu.constants.*;
-import static com.PRIME.main.operations.toolbars.fileMenu.constants.snapshotImageURL;
-import static com.PRIME.main.operations.toolbars.fileMenu.constants.snapshotTooltipText;
+import static com.PRIME.main.operations.toolbars.analysisMenu.constants.*;
 
 public class crossplot {
     public static ToolBar crossplotToolbar() {
