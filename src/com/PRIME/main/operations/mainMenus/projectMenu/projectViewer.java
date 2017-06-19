@@ -72,15 +72,15 @@ public class projectViewer  implements MapComponentInitializedListener {
                 infoOptions.content(coordinates.getValue()).position(markerLatLong);
                 InfoWindow window = new InfoWindow(infoOptions);
                 window.open(this.map, myMarker);
-                ary.add(markerLatLong);
-                LatLong names[] = ary.toArray(new LatLong[ary.size()]);
-                MVCArray mvc = new MVCArray(names);
-                PolylineOptions polyOpts = (PolylineOptions) ((PolylineOptions) (new PolylineOptions()).path(mvc).strokeColor("red")).strokeWeight(2.0D);
-                Polyline poly = new Polyline(polyOpts);
-                this.map.addMapShape(poly);
-                this.map.addUIEventHandler(poly, UIEventType.click, (obj) -> {
-                    poly.setEditable(!poly.getEditable());
-                });
+               // ary.add(markerLatLong);
+               // LatLong names[] = ary.toArray(new LatLong[ary.size()]);
+                //MVCArray mvc = new MVCArray(names);
+                //PolylineOptions polyOpts = (PolylineOptions) ((PolylineOptions) (new PolylineOptions()).path(mvc).strokeColor("red")).strokeWeight(2.0D);
+                //Polyline poly = new Polyline(polyOpts);
+                //this.map.addMapShape(poly);
+                //this.map.addUIEventHandler(poly, UIEventType.click, (obj) -> {
+                  //  poly.setEditable(!poly.getEditable());
+               // });
             }
         });
         this.btnZoomIn.setDisable(true);
