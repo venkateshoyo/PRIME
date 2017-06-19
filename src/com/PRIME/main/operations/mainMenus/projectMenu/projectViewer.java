@@ -14,33 +14,37 @@ import com.lynden.gmapsfx.zoom.MaxZoomService;
 import com.lynden.gmapsfx.zoom.MaxZoomServiceCallback;
 import javafx.geometry.Point2D;
 
-import javafx.scene.Camera;
-import javafx.scene.Node;
-import javafx.scene.PerspectiveCamera;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ToolBar;
+import javafx.scene.*;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 import netscape.javascript.JSObject;
+
+import java.util.ArrayList;
 
 public class projectViewer  implements MapComponentInitializedListener {
 
     protected GoogleMapView mapComponent;
     protected GoogleMap map;
+    public Button setMarker;
     private Button btnZoomIn;
     private Button btnZoomOut;
     private Label lblZoom;
     private Label lblCenter;
     private Label lblClick;
     private ComboBox<MapTypeIdEnum> mapTypeCombo;
+    public Pair<Pair<Double, Double>,String> coordinates;
+    public ArrayList<LatLong> ary = new ArrayList<>();
 
     public void project() throws Exception {
+
+
+
         Stage stage = new Stage();
         Camera camera = new PerspectiveCamera();
-       camera.setTranslateZ(150);
+       camera.setTranslateZ(180);
         this.mapComponent = new GoogleMapView();
         this.mapComponent.addMapInializedListener(this);
         BorderPane bp = new BorderPane();
@@ -48,6 +52,30 @@ public class projectViewer  implements MapComponentInitializedListener {
         this.btnZoomIn = new Button("Zoom In");
         this.btnZoomIn.setOnAction((e) -> {
             this.map.zoomProperty().set(this.map.getZoom() + 1);
+        });
+        this.setMarker = new Button("setMarker");
+        setMarker.setOnAction(e->{
+            window w = new window();
+            this.coordinates = w.coordinates();
+            MarkerOptions markerOptions = new MarkerOptions();
+            LatLong markerLatLong = new LatLong(coordinates.getKey().getKey(), coordinates.getKey().getValue());
+
+            markerOptions.position(markerLatLong).title(coordinates.getKey().getKey()+","+coordinates.getKey().getValue()).animation(Animation.DROP).visible(Boolean.valueOf(true));
+            Marker myMarker = new Marker(markerOptions);
+            this.map.addMarker(myMarker);
+            InfoWindowOptions infoOptions = new InfoWindowOptions();
+            infoOptions.content(coordinates.getValue()).position(markerLatLong);
+            InfoWindow window = new InfoWindow(infoOptions);
+            window.open(this.map, myMarker);
+            ary.add(markerLatLong);
+            LatLong names[]=ary.toArray(new LatLong[ary.size()]);
+            MVCArray mvc = new MVCArray(names);
+            PolylineOptions polyOpts = (PolylineOptions)((PolylineOptions)(new PolylineOptions()).path(mvc).strokeColor("red")).strokeWeight(2.0D);
+            Polyline poly = new Polyline(polyOpts);
+            this.map.addMapShape(poly);
+            this.map.addUIEventHandler(poly, UIEventType.click, (obj) -> {
+                poly.setEditable(!poly.getEditable());
+            });
         });
         this.btnZoomIn.setDisable(true);
         this.btnZoomOut = new Button("Zoom Out");
@@ -59,6 +87,7 @@ public class projectViewer  implements MapComponentInitializedListener {
         this.lblCenter = new Label();
         this.lblClick = new Label();
         this.mapTypeCombo = new ComboBox();
+
         this.mapTypeCombo.setOnAction((e) -> {
             this.map.setMapType((MapTypeIdEnum)this.mapTypeCombo.getSelectionModel().getSelectedItem());
         });
@@ -68,36 +97,45 @@ public class projectViewer  implements MapComponentInitializedListener {
             this.map.setMapType(MapTypeIdEnum.HYBRID);
         });
         tb.getItems().addAll(new Node[]{this.btnZoomIn, this.btnZoomOut, this.mapTypeCombo, new Label("Zoom: "), this.lblZoom, new Label("Center: "), this.lblCenter, new Label("Click: "), this.lblClick});
-//        bp.setTop(tb);
+       // bp.setTop(tb);
         bp.setCenter(this.mapComponent);
-        Scene scene = new Scene(bp);
 
-        scene.setCamera(camera);
+        SubScene subscene = new SubScene(bp,1300,800);
+        subscene.setCamera(camera);
+        BorderPane vbox = new BorderPane();
+        vbox.setTop(setMarker);
+        vbox.setCenter(subscene);
+        //vbox.getChildren().addAll(setMarker,subscene);
+        Scene scene = new Scene(vbox,800,800);
+        stage.getMaxHeight();
+
         stage.setScene(scene);
         stage.show();
+
     }
     public void mapInitialized() {
-        LatLong center = new LatLong(47.606189D, -122.335842D);
+
+        LatLong center = new LatLong(28.6139, 77.2090);
         this.mapComponent.addMapReadyListener(() -> {
             this.checkCenter(center);
         });
         MapOptions options = new MapOptions();
-        options.center(center).mapMarker(true).zoom(9).overviewMapControl(false).panControl(false).rotateControl(false).scaleControl(false).streetViewControl(false).zoomControl(false).mapType(MapTypeIdEnum.TERRAIN);
+        options.center(center).mapMarker(true).zoom(4).overviewMapControl(false).panControl(false).rotateControl(false).scaleControl(false).streetViewControl(false).zoomControl(false).mapType(MapTypeIdEnum.TERRAIN);
         this.map = this.mapComponent.createMap(options);
-        MarkerOptions markerOptions = new MarkerOptions();
-        LatLong markerLatLong = new LatLong(47.606189D, -122.335842D);
-        markerOptions.position(markerLatLong).title("My new Marker").animation(Animation.DROP).visible(Boolean.valueOf(true));
-        Marker myMarker = new Marker(markerOptions);
-        MarkerOptions markerOptions2 = new MarkerOptions();
-        LatLong markerLatLong2 = new LatLong(47.906189D, -122.335842D);
-        markerOptions2.position(markerLatLong2).title("My new Marker").visible(Boolean.valueOf(true));
-        Marker myMarker2 = new Marker(markerOptions2);
-        this.map.addMarker(myMarker);
-        this.map.addMarker(myMarker2);
-        InfoWindowOptions infoOptions = new InfoWindowOptions();
-        infoOptions.content("<h2>Here's an info window</h2><h3>with some info</h3>").position(center);
-        InfoWindow window = new InfoWindow(infoOptions);
-        window.open(this.map, myMarker);
+       // MarkerOptions markerOptions = new MarkerOptions();
+        //LatLong markerLatLong = new LatLong(47.606189D, -122.335842D);
+        //markerOptions.position(markerLatLong).title("My new Marker").animation(Animation.DROP).visible(Boolean.valueOf(true));
+        //Marker myMarker = new Marker(markerOptions);
+        //MarkerOptions markerOptions2 = new MarkerOptions();
+        //LatLong markerLatLong2 = new LatLong(47.906189D, -122.335842D);
+        //markerOptions2.position(markerLatLong2).title("My new Marker").visible(Boolean.valueOf(true));
+       // Marker myMarker2 = new Marker(markerOptions2);
+       // this.map.addMarker(myMarker);
+       // this.map.addMarker(myMarker2);
+      //  InfoWindowOptions infoOptions = new InfoWindowOptions();
+       // infoOptions.content("<h2>Here's an info window</h2><h3>with some info</h3>").position(center);
+       // InfoWindow window = new InfoWindow(infoOptions);
+       // window.open(this.map, myMarker);
         this.lblCenter.setText(this.map.getCenter().toString());
         this.map.centerProperty().addListener((obs, o, n) -> {
             this.lblCenter.setText(n.toString());
@@ -114,15 +152,13 @@ public class projectViewer  implements MapComponentInitializedListener {
         this.btnZoomOut.setDisable(false);
         this.mapTypeCombo.setDisable(false);
         this.mapTypeCombo.getItems().addAll(MapTypeIdEnum.ALL);
-        LatLong[] ary = new LatLong[]{markerLatLong, markerLatLong2};
-        MVCArray mvc = new MVCArray(ary);
-        PolylineOptions polyOpts = (PolylineOptions)((PolylineOptions)(new PolylineOptions()).path(mvc).strokeColor("red")).strokeWeight(2.0D);
-        Polyline poly = new Polyline(polyOpts);
-        this.map.addMapShape(poly);
-        this.map.addUIEventHandler(poly, UIEventType.click, (obj) -> {
+       // LatLong[] ary = new LatLong[]{markerLatLong, markerLatLong2};
+
+
+        /*this.map.addUIEventHandler(poly, UIEventType.click, (obj) -> {
             LatLong ll = new LatLong((JSObject)obj.getMember("latLng"));
             System.out.println("You clicked the line at LatLong: lat: " + ll.getLatitude() + " lng: " + ll.getLongitude());
-        });
+        });*/
         LatLong poly1 = new LatLong(47.429945D, -122.84363D);
         LatLong poly2 = new LatLong(47.361153D, -123.0304D);
         LatLong poly3 = new LatLong(47.387193D, -123.11554D);
@@ -130,11 +166,7 @@ public class projectViewer  implements MapComponentInitializedListener {
         LatLong[] pAry = new LatLong[]{poly1, poly2, poly3, poly4};
         MVCArray pmvc = new MVCArray(pAry);
         PolygonOptions polygOpts = (PolygonOptions)((PolygonOptions)((PolygonOptions)((PolygonOptions)((PolygonOptions)(new PolygonOptions()).paths(pmvc).strokeColor("blue")).strokeWeight(2.0D)).editable(false)).fillColor("lightBlue")).fillOpacity(0.5D);
-        Polygon pg = new Polygon(polygOpts);
-        this.map.addMapShape(pg);
-        this.map.addUIEventHandler(pg, UIEventType.click, (obj) -> {
-            pg.setEditable(!pg.getEditable());
-        });
+
         LatLong centreC = new LatLong(47.545481D, -121.87384D);
         CircleOptions cOpts = (CircleOptions)((CircleOptions)((CircleOptions)((CircleOptions)(new CircleOptions()).center(centreC).radius(5000.0D).strokeColor("green")).strokeWeight(2.0D)).fillColor("orange")).fillOpacity(0.3D);
         Circle c = new Circle(cOpts);
