@@ -15,8 +15,8 @@ import javafx.util.Pair;
  * Created by hkban on 6/18/2017.
  */
 public class window {
-    static double latid = 90;
-    static double longit = 45;
+    static double latid = 0;
+    static double longit = 0;
     static String TextIn ="";
 
     public Pair< Pair<Double, Double>,String> coordinates()
@@ -57,7 +57,10 @@ public class window {
             primaryStage.close();
         });
 
-
+        primaryStage.setOnCloseRequest(e->{
+            TextIn = "empty";
+           // primaryStage.close();
+        });
 
         primaryStage.showAndWait();
         return new Pair< Pair<Double, Double>,String>(new Pair<Double, Double>(latid,longit),TextIn);

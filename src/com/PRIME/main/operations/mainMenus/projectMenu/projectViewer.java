@@ -22,6 +22,7 @@ import javafx.stage.Stage;
 import javafx.util.Pair;
 import netscape.javascript.JSObject;
 
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 public class projectViewer  implements MapComponentInitializedListener {
@@ -53,29 +54,34 @@ public class projectViewer  implements MapComponentInitializedListener {
         this.btnZoomIn.setOnAction((e) -> {
             this.map.zoomProperty().set(this.map.getZoom() + 1);
         });
+
+
         this.setMarker = new Button("setMarker");
         setMarker.setOnAction(e->{
             window w = new window();
             this.coordinates = w.coordinates();
-            MarkerOptions markerOptions = new MarkerOptions();
-            LatLong markerLatLong = new LatLong(coordinates.getKey().getKey(), coordinates.getKey().getValue());
-
-            markerOptions.position(markerLatLong).title(coordinates.getKey().getKey()+","+coordinates.getKey().getValue()).animation(Animation.DROP).visible(Boolean.valueOf(true));
-            Marker myMarker = new Marker(markerOptions);
-            this.map.addMarker(myMarker);
-            InfoWindowOptions infoOptions = new InfoWindowOptions();
-            infoOptions.content(coordinates.getValue()).position(markerLatLong);
-            InfoWindow window = new InfoWindow(infoOptions);
-            window.open(this.map, myMarker);
-            ary.add(markerLatLong);
-            LatLong names[]=ary.toArray(new LatLong[ary.size()]);
-            MVCArray mvc = new MVCArray(names);
-            PolylineOptions polyOpts = (PolylineOptions)((PolylineOptions)(new PolylineOptions()).path(mvc).strokeColor("red")).strokeWeight(2.0D);
-            Polyline poly = new Polyline(polyOpts);
-            this.map.addMapShape(poly);
-            this.map.addUIEventHandler(poly, UIEventType.click, (obj) -> {
-                poly.setEditable(!poly.getEditable());
-            });
+            if(coordinates.getValue()!="empty") {
+                MarkerOptions markerOptions = new MarkerOptions();
+                LatLong markerLatLong = new LatLong(coordinates.getKey().getKey(), coordinates.getKey().getValue());
+                // options.center(center).mapMarker(true).zoom(4).overviewMapControl(false).panControl(false).rotateControl(false).scaleControl(false).streetViewControl(false).zoomControl(false).mapType(MapTypeIdEnum.TERRAIN);
+                map.centerProperty();
+                markerOptions.position(markerLatLong).title(coordinates.getKey().getKey() + "," + coordinates.getKey().getValue()).animation(Animation.DROP).visible(Boolean.valueOf(true));
+                Marker myMarker = new Marker(markerOptions);
+                this.map.addMarker(myMarker);
+                InfoWindowOptions infoOptions = new InfoWindowOptions();
+                infoOptions.content(coordinates.getValue()).position(markerLatLong);
+                InfoWindow window = new InfoWindow(infoOptions);
+                window.open(this.map, myMarker);
+                ary.add(markerLatLong);
+                LatLong names[] = ary.toArray(new LatLong[ary.size()]);
+                MVCArray mvc = new MVCArray(names);
+                PolylineOptions polyOpts = (PolylineOptions) ((PolylineOptions) (new PolylineOptions()).path(mvc).strokeColor("red")).strokeWeight(2.0D);
+                Polyline poly = new Polyline(polyOpts);
+                this.map.addMapShape(poly);
+                this.map.addUIEventHandler(poly, UIEventType.click, (obj) -> {
+                    poly.setEditable(!poly.getEditable());
+                });
+            }
         });
         this.btnZoomIn.setDisable(true);
         this.btnZoomOut = new Button("Zoom Out");
@@ -100,7 +106,7 @@ public class projectViewer  implements MapComponentInitializedListener {
        // bp.setTop(tb);
         bp.setCenter(this.mapComponent);
 
-        SubScene subscene = new SubScene(bp,1300,800);
+        SubScene subscene = new SubScene(bp,800,800);
         subscene.setCamera(camera);
         BorderPane vbox = new BorderPane();
         vbox.setTop(setMarker);
