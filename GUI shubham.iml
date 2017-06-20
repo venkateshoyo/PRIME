@@ -9,5 +9,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="com.itextpdf:itextpdf:5.5.11" level="project" />
     <orderEntry type="library" exported="" name="fontawesome" level="project" />
+    <orderEntry type="library" name="pdfread" level="project" />
+    <orderEntry type="library" name="GMapFX" level="project" />
+    <orderEntry type="library" name="sql" level="project" />
   </component>
 </module>
