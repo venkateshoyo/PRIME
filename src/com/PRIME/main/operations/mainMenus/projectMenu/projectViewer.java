@@ -114,16 +114,17 @@ public class projectViewer  implements MapComponentInitializedListener {
 
        options.center(center).mapMarker(true).zoom(5).overviewMapControl(true).panControl(false).rotateControl(false).scaleControl(false).streetViewControl(false).zoomControl(true).mapType(MapTypeIdEnum.HYBRID);
         this.map = this.mapComponent.createMap(options);
-//        map.addStateEventHandler(MapStateEventType.bounds_changed, () -> {
-//            double lati = map.getCenter().getLatitude();
-//            double longi = map.getCenter().getLongitude();
-//            if(map.getCenter().getLatitude()>82)
-//            { mapComponent.setCenter(28.6139, 77.2090);}
-//            System.out.println("center_changed: " + map.getCenter().getLatitude()+" "+map.getCenter().getLongitude());
-//		});
-//        map.addUIEventHandler(UIEventType.click, (JSObject obj) -> {
-//
-//        });
+      map.addStateEventHandler(MapStateEventType.bounds_changed, () -> {
+         double lati = map.getCenter().getLatitude();
+           double longi = map.getCenter().getLongitude();
+          if(map.getCenter().getLatitude()>83)
+           { mapComponent.setCenter(83,longi);}
+           if(map.getCenter().getLatitude()<-83)
+           { mapComponent.setCenter(-83,longi);};
+		});
+        map.addUIEventHandler(UIEventType.click, (JSObject obj) -> {
+
+        });
 
     }
 }
