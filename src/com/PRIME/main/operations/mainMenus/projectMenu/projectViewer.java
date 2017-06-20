@@ -4,31 +4,30 @@ package com.PRIME.main.operations.mainMenus.projectMenu;
 import com.lynden.gmapsfx.GoogleMapView;
 import com.lynden.gmapsfx.MapComponentInitializedListener;
 
+import com.lynden.gmapsfx.javascript.event.MapStateEventType;
+import com.lynden.gmapsfx.javascript.event.UIEventType;
 import com.lynden.gmapsfx.javascript.object.*;
 
 
-
-
+import com.lynden.gmapsfx.shapes.Rectangle;
+import com.lynden.gmapsfx.shapes.RectangleOptions;
 import javafx.event.EventHandler;
 
 
 import javafx.scene.*;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.BorderPane;
-
 import javafx.stage.Stage;
 import javafx.util.Pair;
+import netscape.javascript.JSObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class projectViewer  implements MapComponentInitializedListener {
-    double mousePosX;
-    double mousePosY;
-    double mouseOldX;
-    double mouseOldY;
-    double mouseDeltaX;
-    double mouseDeltaY;
 
     protected GoogleMapView mapComponent;
     protected GoogleMap map;
@@ -41,14 +40,19 @@ public class projectViewer  implements MapComponentInitializedListener {
         Stage stage = new Stage();
         this.mapComponent = new GoogleMapView();
         this.mapComponent.addMapInializedListener(this);
+        mapComponent.autosize();
 
 
         BorderPane bp = new BorderPane();
 
-        this.setMarker = new Button("setMarker");
+        this.setMarker = new Button("Load Las File");
         setMarker.setOnAction(e -> {
-            window w = new window();
-            this.coordinates = w.coordinates();
+
+            try {
+                this.coordinates = loadfile.coordinates();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
             if (coordinates.getValue() != "empty") {
                 MarkerOptions markerOptions = new MarkerOptions();
                 LatLong markerLatLong = new LatLong(coordinates.getKey().getKey(), coordinates.getKey().getValue());
@@ -79,20 +83,26 @@ public class projectViewer  implements MapComponentInitializedListener {
             }
 
         });
-//        subscene.addEventFilter(MouseEvent.MOUSE_ENTERED_TARGET, new EventHandler<MouseEvent>() {
-//            @Override
-//            public void handle(MouseEvent event) {
-//                System.out.println("");
-//            }
-//        });
+        Label harsh = new Label();
+
+
+
+        mapComponent.addEventFilter(MouseEvent.MOUSE_EXITED_TARGET, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+               // mapComponent.setCenter(28.6139, 77.2090);
+               // System.out.println("harsh");
+            }
+        });
+
+
 
         BorderPane vbox = new BorderPane();
         vbox.setTop(setMarker);
+        vbox.setBottom(harsh);
         vbox.setCenter(subscene);
 
         Scene scene = new Scene(vbox,1024,800);
-        //scene.getX();
-        //scene.set
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
@@ -102,8 +112,18 @@ public class projectViewer  implements MapComponentInitializedListener {
         LatLong center = new LatLong(28.6139, 77.2090);
         MapOptions options = new MapOptions();
 
-        options.center(center).mapMarker(true).zoom(3).overviewMapControl(true).panControl(false).rotateControl(false).scaleControl(false).streetViewControl(false).zoomControl(true).mapType(MapTypeIdEnum.HYBRID);
+       options.center(center).mapMarker(true).zoom(5).overviewMapControl(true).panControl(false).rotateControl(false).scaleControl(false).streetViewControl(false).zoomControl(true).mapType(MapTypeIdEnum.HYBRID);
         this.map = this.mapComponent.createMap(options);
+//        map.addStateEventHandler(MapStateEventType.bounds_changed, () -> {
+//            double lati = map.getCenter().getLatitude();
+//            double longi = map.getCenter().getLongitude();
+//            if(map.getCenter().getLatitude()>82)
+//            { mapComponent.setCenter(28.6139, 77.2090);}
+//            System.out.println("center_changed: " + map.getCenter().getLatitude()+" "+map.getCenter().getLongitude());
+//		});
+//        map.addUIEventHandler(UIEventType.click, (JSObject obj) -> {
+//
+//        });
 
     }
 }
