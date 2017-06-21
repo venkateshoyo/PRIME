@@ -2,10 +2,12 @@ package com.PRIME.main.operations.main.pdfreader;
 
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.parser.PdfTextExtractor;
+import javafx.geometry.Orientation;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.SplitPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -32,6 +34,8 @@ public class ParsePdfFiles {
         PdfReader reader;
         File folder = new File(folderpath);
         File[] listOfFiles = folder.listFiles();
+        SplitPane pane =new SplitPane();
+        pane.setOrientation(Orientation.VERTICAL);
         try {
             for (File file : listOfFiles) {
                 if (file.isFile()) {
@@ -55,10 +59,9 @@ public class ParsePdfFiles {
 
                                 String location= "Found in "+filename+" at page no. "+i;
 
-                                Button tx = new Button(location+"\n\n"+matched);
-                                tx.setPrefWidth(500);
-                                vb.getChildren().add(tx);
-
+                                Text tx = new Text(location+"\n\n"+matched);
+                                ScrollPane sp = new ScrollPane(tx);
+                                pane.getItems().add(sp);
                                 //matches.add(mat.start());
                             }
                             catch (StringIndexOutOfBoundsException exception)  {}
@@ -67,7 +70,6 @@ public class ParsePdfFiles {
                     reader.close();
                 }
             }
-            ScrollPane pane = new ScrollPane(vb);
             Scene screen = new Scene(pane);
             Stage stage = new Stage();
             stage.show();
