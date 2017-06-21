@@ -65,8 +65,10 @@ public class ParsePdfFiles {
                                 Text tx = new Text(location+"\n\n"+matched);
                                 ScrollPane sp = new ScrollPane(tx);
                                 pane.getItems().add(sp);
+
                                 pane.setDividerPosition(count,0.25*(count+1));
                                 count++;
+
                                 //matches.add(mat.start());
                             }
                             catch (StringIndexOutOfBoundsException exception)  {}
