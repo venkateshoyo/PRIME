@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39cb9512-137a-457e-9db7-589bb4fc901e" name="Default" comment="testing commit using IDE">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/PRIME/testingDirectory/test.java" afterPath="$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/projectMenu/projectViewer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/PRIME/main/operations/main/pdfreader/FolderPdf/Chapter 2.PDF" afterPath="$PROJECT_DIR$/src/com/PRIME/main/resources/pdfs/Chapter 2.PDF" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/PRIME/main/operations/main/pdfreader/ParsePdfFiles.java" afterPath="$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/displayMenu/pdfreader/ParsePdfFiles.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/projectMenu/projectmenulist.java" afterPath="$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/projectMenu/projectmenulist.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/displayMenu/displaymenulist.java" afterPath="$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/displayMenu/displaymenulist.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,36 +24,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="projectViewer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/projectMenu/projectViewer.java">
+      <file leaf-file-name="ParsePdfFiles.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/displayMenu/pdfreader/ParsePdfFiles.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="84" column="43" lean-forward="true" selection-start-line="84" selection-start-column="43" selection-end-line="84" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projectmenulist.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/projectMenu/projectmenulist.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+            <state relative-caret-position="221">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loadlasfile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/dataMenu/loadlasfile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -89,7 +66,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/mouse/camera/AWTCameraMouseController.java" />
         <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/AbstractCameraController.java" />
         <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/camera/AbstractCameraController.java" />
         <option value="$PROJECT_DIR$/src/com/PNRPM/main/resources/libs/jzy3d/chart/controllers/camera/AWTCameraKeyController.java" />
@@ -140,6 +116,7 @@
         <option value="$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/projectMenu/test.java" />
         <option value="$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/projectMenu/projectmenulist.java" />
         <option value="$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/projectMenu/projectViewer.java" />
+        <option value="$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/displayMenu/pdfreader/ParsePdfFiles.java" />
       </list>
     </option>
   </component>
@@ -189,7 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
@@ -279,30 +255,12 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUI shubham" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PRIME" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="operations" />
+              <option name="myItemId" value="pdfs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -328,15 +286,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="operations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mainMenus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projectMenu" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -359,19 +309,12 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="operations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mainMenus" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -385,8 +328,9 @@
     <property name="Repository.Attach.Sources" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\submi\Desktop\GUI shubham\src\com\PRIME\main\resources\images\toolbar" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.PNRPM.main.resources.libs.jzy3d.maths" />
+      <recent name="com.PNRPM.main.libs.jzy3d.colors" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\submi\Desktop\GUI shubham\src\lib\GMapFX" />
@@ -402,9 +346,9 @@
       <recent name="com.PNRPM.main.resources.libs.jzy3d.chart.controllers" />
       <recent name="com.PNRPM.main.resources.libs.jzy3d.colors" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.PNRPM.main.resources.libs.jzy3d.maths" />
-      <recent name="com.PNRPM.main.libs.jzy3d.colors" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\submi\Desktop\GUI shubham\src\com\PRIME\main\resources\pdfs" />
+      <recent name="C:\Users\submi\Desktop\GUI shubham\src\com\PRIME\main\resources\images\toolbar" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -696,8 +640,8 @@
     </configuration>
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.main" />
-      <item index="1" class="java.lang.String" itemvalue="Application.test" />
-      <item index="2" class="java.lang.String" itemvalue="MaxCompute SQL.ArrayTester.java" />
+      <item index="1" class="java.lang.String" itemvalue="MaxCompute SQL.ArrayTester.java" />
+      <item index="2" class="java.lang.String" itemvalue="Application.test" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -762,7 +706,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3420622" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2700454" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27155825" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Running Info" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -832,7 +776,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/operations/displayMenu/crossplot.java" />
     <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/functions/closewindow.java" />
     <entry file="file://$PROJECT_DIR$/src/com/PNRPM/main/functions/xyzcrossplot.java" />
     <entry file="file://$PROJECT_DIR$/documentation/codeSetupForIntelliJ">
@@ -972,50 +915,16 @@
     <entry file="file://$PROJECT_DIR$/src/com/PRIME/GMapsFX/GMapsFX/pom.xml" />
     <entry file="file://$PROJECT_DIR$/src/com/PRIME/javafx3D/mainprog.java" />
     <entry file="file://$PROJECT_DIR$/src/com/PRIME/GMapsFX/GMapsFX/src/main/java/com/lynden/gmapsfx/MainApp.java" />
-    <entry file="file://$PROJECT_DIR$/src/javafx3D/ConeMesh.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javafx3D/EarthViewer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javafx3D/window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/javafx3D/Xform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javafx3D/ConeMesh.java" />
+    <entry file="file://$PROJECT_DIR$/src/javafx3D/EarthViewer.java" />
+    <entry file="file://$PROJECT_DIR$/src/javafx3D/window.java" />
+    <entry file="file://$PROJECT_DIR$/src/javafx3D/Xform.java" />
     <entry file="file://$PROJECT_DIR$/src/GMapsFX/GMapsFX/src/main/java/com/lynden/gmapsfx/service/directions/DirectionsRequest.java" />
-    <entry file="file://$PROJECT_DIR$/src/javafx3D/mainprog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="38" column="36" lean-forward="false" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javafx3D/mainprog.java" />
     <entry file="jar://$PROJECT_DIR$/src/lib/GMapFX/GMapsFX-1.1.1.jar!/com/lynden/gmapsfx/ArrayTester.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,14 +932,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="47" column="59" lean-forward="true" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/dataMenu/loadlasfile.java">
+    <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/projectMenu/projectViewer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        <state relative-caret-position="1513">
+          <caret line="89" column="54" lean-forward="false" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1045,13 +953,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/projectMenu/projectViewer.java">
+    <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/dataMenu/loadlasfile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="84" column="43" lean-forward="true" selection-start-line="84" selection-start-column="43" selection-end-line="84" selection-end-column="43" />
+        <state relative-caret-position="272">
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/PRIME/main/operations/mainMenus/displayMenu/pdfreader/ParsePdfFiles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,4 +1,4 @@
-package com.PRIME.main.operations.main.pdfreader;
+package com.PRIME.main.operations.mainMenus.displayMenu.pdfreader;
 
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.parser.PdfTextExtractor;
@@ -8,21 +8,14 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -33,7 +26,7 @@ public class ParsePdfFiles {
 
     public static void method() {
 
-         String folderpath = "\\src\\com\\PRIME\\main\\operations\\main\\pdfreader\\FolderPdf\\";
+        String folderpath = "\\src\\com\\PRIME\\main\\resources\\pdfs\\";
         VBox sp = new VBox(20);
 
         folderpath = System.getProperty("user.dir") + folderpath;

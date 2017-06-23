@@ -1,6 +1,6 @@
 package com.PRIME.main.operations.mainMenus.displayMenu;
 
-import com.PRIME.main.operations.main.pdfreader.ParsePdfFiles;
+import com.PRIME.main.operations.mainMenus.displayMenu.pdfreader.ParsePdfFiles;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 
