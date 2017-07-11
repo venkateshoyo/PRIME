@@ -7,8 +7,13 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="fontawesome" level="project" />
-    <orderEntry type="library" name="GMapFX" level="project" />
-    <orderEntry type="library" name="sql" level="project" />
+    <orderEntry type="library" exported="" name="GMapFX" level="project" />
+    <orderEntry type="library" exported="" name="fontawesome" level="project" />
+    <orderEntry type="library" exported="" name="sql" level="project" />
+    <orderEntry type="library" exported="" name="lib" level="project" />
+    <orderEntry type="library" exported="" name="gluegen-rt" level="project" />
+    <orderEntry type="library" exported="" name="libsvm" level="project" />
+    <orderEntry type="library" name="gluegen-rt-natives-windows-amd64" level="project" />
+    <orderEntry type="library" name="jogl-all-natives-windows-amd64" level="project" />
   </component>
 </module>

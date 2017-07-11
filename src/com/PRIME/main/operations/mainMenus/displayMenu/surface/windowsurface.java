@@ -1,0 +1,103 @@
+package com.PRIME.main.operations.mainMenus.displayMenu.surface;
+
+import javafx.geometry.Point3D;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import org.jzy3d.plot3d.primitives.Scatter;
+import org.jzy3d.plot3d.primitives.Shape;
+import org.renjin.sexp.ListVector;
+import com.PRIME.main.operations.mainMenus.displayMenu.surface.Surface;
+import com.PRIME.main.operations.mainMenus.displayMenu.surface.Surfaceplot;
+
+import javax.script.ScriptException;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by hkban on 7/9/2017.
+ */
+public class windowsurface {
+
+    Stage primaryStage = new Stage();
+    static String name ="";
+    List<Point3D> uppersurface= new ArrayList<>();
+    Shape surface = null;
+
+    GridPane gp = new GridPane();
+    public Shape coordinates(List<String> wellnames) throws IOException, ScriptException {
+        TextField xval[]= new TextField[wellnames.size()];
+        TextField yval[]= new TextField[wellnames.size()];
+        TextField zval[]= new TextField[wellnames.size()];
+        Label name[] = new Label[wellnames.size()];
+        RadioButton[] addbutton = new RadioButton[wellnames.size()];
+        int row =0;
+        int column =0;
+        Label wellname = new Label("WELL NAME");
+        gp.add(wellname,0,0);
+        Label xcoordi = new Label("xcoordi");
+        gp.add(xcoordi,1,0);
+        Label ycoordi = new Label("ycoordi");
+        gp.add(ycoordi,2,0);
+        Label zcoordi = new Label("zcoordi");
+        gp.add(zcoordi,3,0);
+        Label Add = new Label("ADDWELL");
+        gp.add(Add,4,0);
+        for(int i=0;i<wellnames.size();i++)
+        {
+            row++;
+             name[i] = new Label(wellnames.get(i));
+            gp.add(name[i],0,row);
+             xval[i] =new TextField();
+            gp.add(xval[i],1,row);
+            yval[i] =new TextField();
+            gp.add(yval[i],2,row);
+             zval[i] =new TextField();
+            gp.add(zval[i],3,row);
+            addbutton[i]= new RadioButton();
+            gp.add(addbutton[i],4,row);
+        }
+Button show = new Button("SHOW SURFACE");
+        gp.add(show,5,++row);
+
+
+
+        show.setOnAction(e->{
+            for(int i=0;i<wellnames.size();i++)
+            {
+                if(addbutton[i].isSelected()) {
+                    Point3D point = new Point3D(Double.parseDouble(xval[i].getText()), Double.parseDouble(yval[i].getText()), Double.parseDouble(zval[i].getText()));
+                    uppersurface.add(point);
+                }
+            }
+            Surfaceplot plot  = new Surfaceplot();
+            ListVector list = null;
+            try {
+                list = Surface.method(uppersurface);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            } catch (ScriptException e1) {
+                e1.printStackTrace();
+            }
+            try {
+                surface = plot.Surfaceplot(list);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        primaryStage.close();
+        });
+        gp.setHgap(10);
+        gp.setVgap(10);
+        Scene scene = new Scene(gp, 1000, 300);
+        scene.setFill(Color.GREY);
+        primaryStage.setTitle("Molecule Sample Application");
+        primaryStage.setScene(scene);
+        primaryStage.showAndWait();
+        return surface;
+    }
+}
