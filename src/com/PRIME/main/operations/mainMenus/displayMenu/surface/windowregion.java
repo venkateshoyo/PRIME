@@ -105,8 +105,10 @@ public class windowregion {
                 e1.printStackTrace();
             }
             try {
-                surface = plot.Regionplot(list1,list2);
+                surface = plot.Regionplot(list1,list2,wellnames);
             } catch (IOException e1) {
+                e1.printStackTrace();
+            } catch (ScriptException e1) {
                 e1.printStackTrace();
             }
             primaryStage.close();

@@ -10,6 +10,7 @@ import org.jzy3d.plot3d.primitives.Shape;
 import org.renjin.sexp.DoubleVector;
 import org.renjin.sexp.ListVector;
 
+import javax.script.ScriptException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,19 +20,21 @@ import java.util.List;
  */
 public class Surfaceplot {
 
-    public Shape Surfaceplot(ListVector vect)throws IOException {
+    public Shape Surfaceplot(ListVector vect,List<String> wellnames) throws IOException, ScriptException {
 
 
         DoubleVector pointsX = (DoubleVector)(vect.get(0));
         DoubleVector pointsY = (DoubleVector)(vect.get(1));
         DoubleVector pointsZ =(DoubleVector)(vect.get(2));
+        interpolate values = new interpolate(wellnames);
 
+        List<Double> intensity =values.interpolatesurface(vect,"NEUT");
 
 
 
         List<Polygon> polygons = new ArrayList<Polygon>();
         int size = (int)Math.sqrt(pointsX.length());
-        ColorMapper rainbowMap1 = new ColorMapper(new ColorMapRainbow(), 0, pointsX.length());
+        ColorMapper rainbowMap1 = new ColorMapper(new ColorMapRainbow(), 0,5000);
 
         for (int i = 0; i < size-1; i++) {
             for (int j = 0; j < size-1; j++) {
@@ -41,7 +44,10 @@ public class Surfaceplot {
                 polygon.add(new Point(new Coord3d((double) (pointsX.get((i * size) + j + 1)), (double) (pointsY.get((i * size) + j + 1)), (double) (pointsZ.get((i * size) + j + 1)))));
                 polygon.add(new Point(new Coord3d((double) (pointsX.get(((i + 1) * size) + j + 1)), (double) (pointsY.get(((i + 1) * size) + j + 1)), (double) (pointsZ.get(((i + 1) * size) + j + 1)))));
                 polygon.add(new Point(new Coord3d((double) (pointsX.get(((i + 1) * size) + j)), (double) (pointsY.get(((i + 1) * size) + j)), (double) (pointsZ.get(((i + 1) * size) + j)))));
-                polygon.setColor(rainbowMap1.getColor(i*size+j));
+               Double col =intensity.get(i*size+j)*10000;
+               System.out.println(col);
+               System.out.println(intensity.size());
+                polygon.setColor(rainbowMap1.getColor(col.intValue()));
                 polygons.add(polygon);
             }
         }

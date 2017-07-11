@@ -35,8 +35,8 @@ public class ColorWaveDemo {
     public BorderPane method() throws IOException {
 
 
-        Chart chart1 = new Chart(Quality.Advanced, "swing");
-        Chart chart = new Chart(Quality.Advanced, "swing"); // Use "swing" canvas
+        Chart chart1 = new Chart(Quality.Fastest, "swing");
+        Chart chart = new Chart(Quality.Fastest, "swing"); // Use "swing" canvas
 
         chart.addController(new CameraMouseController(chart));
         final SwingNode swingNode = new SwingNode();
@@ -110,23 +110,9 @@ public class ColorWaveDemo {
             chart.getView().setSquared(true);
             chart.getView().setMaximized(false);
         });
-//        Coord3d[] coord3ds= new Coord3d[6];
-//        coord3ds[0]= new Coord3d(-39.43171,174.18095,3565.55040);
-//        coord3ds[1]= new Coord3d(-39.47241,174.17548,5000.02440);
-//        coord3ds[2]= new Coord3d(-39.49464,174.18576,3000.09760);
-//        coord3ds[3]= new Coord3d(-39.45,174.183,5000);
-//        coord3ds[4]= new Coord3d(-39.44,174.181,5400);
-//        coord3ds[5]= new Coord3d(-39.48,174.185,5800);
-//       // coord3ds[6]= new Coord3d(-39.46,174.173,900);
-//        Scatter poi = new Scatter();
-//        poi.setData(coord3ds);
-//        poi.setWidth(10f);
-//        poi.setColor(Color.BLACK);
-//        chart1.getScene().add(poi);
-//         chart.getScene().add(poi);
-//        chart.getView().setAxe(new AxeBox(chart1.getView().getBounds()));
+
         Shape polygon = new Shape();
-        ColorMapper rainbowMap = new ColorMapper(new ColorMapRainbow(), 0, 200000);
+        ColorMapper rainbowMap = new ColorMapper(new ColorMapRainbow(), 0, 1);
         polygon.setColorMapper(rainbowMap);
         ColorbarLegend cbar = new ColorbarLegend(polygon, chart1.getView().getAxe().getLayout());
         chart.getScene().add(polygon);
@@ -136,10 +122,6 @@ public class ColorWaveDemo {
         polygon.setLegend(cbar);
         polygon.setLegendDisplayed(true);
         swingNode.setContent((JComponent) chart.getCanvas());
-
-
-
-
         layout.setCenter(swingNode);
         HBox hbox = new HBox(addwell,addsurface,region);
         hbox.setSpacing(10);

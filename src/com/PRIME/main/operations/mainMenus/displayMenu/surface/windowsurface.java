@@ -85,11 +85,13 @@ Button show = new Button("SHOW SURFACE");
                 e1.printStackTrace();
             }
             try {
-                surface = plot.Surfaceplot(list);
+                surface = plot.Surfaceplot(list,wellnames);
             } catch (IOException e1) {
                 e1.printStackTrace();
+            } catch (ScriptException e1) {
+                e1.printStackTrace();
             }
-        primaryStage.close();
+            primaryStage.close();
         });
         gp.setHgap(10);
         gp.setVgap(10);

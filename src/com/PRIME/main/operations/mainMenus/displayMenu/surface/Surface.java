@@ -24,21 +24,21 @@ import java.util.List;
  * Created by HP on 7/7/2017.
  */
 public class Surface {
-    public static ListVector method (List<Point3D> uppersurfac) throws IOException, ScriptException {
+    public static ListVector method (List<Point3D> uppersurface) throws IOException, ScriptException {
         //Process r = Runtime.getRuntime().exec("C:\\Program Files\\R\\R-3.4.0\\bin\\Rscript.exe Script1.R");
 
     //    MinLati, MaxLati, MinLong, MaxLong from loadlasfile.java
         loadlasfil file = new loadlasfil();
-       // double MinLati = file.MinLati;double MaxLati =file.MaxLati;double MinLong = file.MinLong;double MaxLong = file.MaxLong;
-       double MinLati = -39.49464;double MaxLati = -39.43171;double MinLong = 174.17548;double MaxLong = 174.18576;
+        double MinLati = file.MinLati;double MaxLati =file.MaxLati;double MinLong = file.MinLong;double MaxLong = file.MaxLong;
+       //double MinLati = -39.49464;double MaxLati = -39.43171;double MinLong = 174.17548;double MaxLong = 174.18576;
         ScriptEngineManager factory = new ScriptEngineManager();
         ScriptEngine engine = factory.getEngineByName("Renjin");
 
-      List<Point3D> uppersurface = new ArrayList<Point3D>();
-        uppersurface.add(new Point3D(-39.43171,174.18095,3565.55040));
-      uppersurface.add(new Point3D(-39.47241,174.17548,5000.02440));
-//
-      uppersurface.add(new Point3D(-39.49464,174.18576,3000.09760));
+//      List<Point3D> uppersurface = new ArrayList<Point3D>();
+//        uppersurface.add(new Point3D(-39.43171,174.18095,3565.55040));
+//      uppersurface.add(new Point3D(-39.47241,174.17548,5000.02440));
+////
+//      uppersurface.add(new Point3D(-39.49464,174.18576,3000.09760));
 //        uppersurface.add(new Point3D(-39.44,174.181,5400));
 //        uppersurface.add(new Point3D(-39.48,174.185,5800));
 //       // uppersurfac.add(new Point3D(-39.45,174.183,5000));

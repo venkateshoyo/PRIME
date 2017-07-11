@@ -29,10 +29,12 @@ public class loadlasfil {
     double lati = 0;
     double longi = 0;
     String Text = "";
-    public static Double MaxLati = -2000D;
+    public static Double MaxLati = -Double.MAX_VALUE;
     public static Double MinLati = Double.MAX_VALUE;
-    public static Double MaxLong = -2000D;
+    public static Double MaxLong = -Double.MAX_VALUE;
     public static Double MinLong = Double.MAX_VALUE;
+    public static Double MaxDepth=-Double.MAX_VALUE;
+    public static Double MinDepth =Double.MAX_VALUE;
     public static HashMap<String,ListVector > allwell = new HashMap<>();
 
 
@@ -96,7 +98,10 @@ public class loadlasfil {
                     //Checking for Start Depth Data and working accordingly
                     Matcher matcher = regex.matcher(text);
                     while (matcher.find()) {
-                        datas -= Double.parseDouble(matcher.group(1));
+                        double depth =Double.parseDouble(matcher.group(1));
+                        datas -= depth;
+                        MinDepth = Math.min(MinDepth,depth);
+
 
                     }
                 } else if (text.length() > 4 && (text.substring(0, 4).equalsIgnoreCase("STOP"))) {
@@ -104,8 +109,9 @@ public class loadlasfil {
                     //Checking for End Depth Data and working accordingly
                     Matcher matcher = regex.matcher(text);
                     while (matcher.find()) {
-                        datas += Double.parseDouble(matcher.group(1));
-                        System.out.println(datas);
+                        double depth = Double.parseDouble(matcher.group(1));
+                        datas += depth;
+                        MaxDepth = Math.max(MaxDepth, depth);
                     }
                 } else if (text.length() > 4 && (text.substring(0, 4).equalsIgnoreCase("STEP"))) {
 
@@ -134,7 +140,7 @@ public class loadlasfil {
 
                 } else if (text.length() > 4 && (text.substring(0, 2).equalsIgnoreCase("~A"))) {
 
-                    //Once Data is confirmed initialize values matrix for reading las/ASCII file values
+                    //Once Data is confirmed initialize values matrix for reading las/ASCII file v       alues
                     Isdata = true;
                     values = new double[(int) (datas+0.5) + 1][noOfParameter + 1];
                     range= new double[2][noOfParameter + 1];
@@ -212,9 +218,10 @@ public class loadlasfil {
         ListVector list = (ListVector)engine.eval("newdf1");
         String path = System.getProperty("user.dir");
         engine.eval(new FileReader(path+"/src/com/PRIME/main/operations/mainMenus/displayMenu/surface/PorandSat.R"));
-
-
-        ListVector list1 = (ListVector)engine.eval("newdf");
+        engine.put("LATITUDE",lati);engine.put("LONGITUDE",longi);
+        engine.eval("newdf$LATI = LATITUDE;newdf$LONG = LONGITUDE;");
+        engine.eval("DATA = newdf[,c('LATI','LONG','DEPTH','NEUT','Saturation')]");
+        ListVector list1 = (ListVector)engine.eval("DATA");
         allwell.put(name,list1);
         //System.out.println(allwell.size());
 
