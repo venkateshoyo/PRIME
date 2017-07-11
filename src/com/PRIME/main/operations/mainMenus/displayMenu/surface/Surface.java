@@ -56,7 +56,7 @@ public class Surface {
         engine.eval("Latitudes = seq(MinLati,MaxLati,StepLati);Longitudes = seq(MinLong,MaxLong,StepLong);");
         engine.eval("grids = length(Latitudes)");
         //engine.eval("n = length(Latitudes)*length(Longitudes)");
-        engine.eval("testdf = data.frame(Lati = 1:grids*grids,Long = 1:grids*grids,Depth = 1:grids*grids)");
+        engine.eval("testdf = data.frame(Lati = 1:grids*grids,Long = 1:grids*grids,DEPTH = 1:grids*grids)");
         engine.eval("for (i in 1:grids){ for (j in 1:grids){testdf[j + grids*(i-1),1] = Latitudes[i];testdf[j + grids*(i-1),2] = Longitudes[j];}}");
 
         //engine.eval("testdf = data.frame(Lati = Latitudes,Long = Longitudes)");
@@ -91,7 +91,7 @@ public class Surface {
             predictions[i] = svm.svm_predict(model,testexample);
         }
         engine.put("pred",predictions);
-        engine.eval("testdf$Depth = pred");
+        engine.eval("testdf$DEPTH = pred");
         ListVector points = (ListVector)engine.eval("testdf");
 
 //        System.out.println(predictions[100]);

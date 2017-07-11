@@ -23,8 +23,15 @@ import java.util.List;
  */
 public class RegionPlot {
 
-    public Shape Regionplot(ListVector vect1, ListVector vect2, List<String> wellnames) throws IOException, ScriptException {
+    public  List<String> wellnames = new ArrayList<>();
+    public interpolate values;
 
+    public RegionPlot() throws ScriptException {
+    }
+
+    public Shape Regionplot(ListVector vect1, ListVector vect2, List<String> wellnames) throws IOException, ScriptException {
+    this.wellnames = wellnames;
+        values =new interpolate(wellnames);
         DoubleVector pointsX = (DoubleVector) (vect1.get(0));
         DoubleVector pointsY = (DoubleVector) (vect1.get(1));
         DoubleVector pointsZ = (DoubleVector) (vect1.get(2));
@@ -33,15 +40,20 @@ public class RegionPlot {
         DoubleVector pointsZ1 = (DoubleVector) (vect2.get(2));
 
         int size1 = Math.abs((int) (pointsZ1.get(0) - pointsZ.get(0)));
+        ListVector temp;
+        if((pointsZ1.get(0) >= pointsZ.get(0)))
+        { temp =vect2;   }
+        else
+        { temp =vect1;   }
         ScriptEngineManager factory = new ScriptEngineManager();
         ScriptEngine engine = factory.getEngineByName("Renjin");
         List<Polygon> polygons = new ArrayList<Polygon>();
-        int step = size1 / 1000;
-        engine.put("Surf", vect1);
+        int step = size1 / 10;
+        engine.put("Surf", temp);
         engine.put("step", step);
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 10; i++) {
             engine.put("i", i);
-            engine.eval("Surf$DEPTH = Surf$DEPTH - i*step");
+            engine.eval("Surf$DEPTH = Surf$DEPTH - step");
             ListVector NewSurface = (ListVector) engine.eval("Surf");
              polygons.addAll(Surfaceplot(NewSurface, wellnames));
         }
@@ -58,7 +70,7 @@ public class RegionPlot {
                 polygon.add(new Point(new Coord3d((double) (pointsX.get((i * size) + j + 1)), (double) (pointsY.get((i * size) + j + 1)), (double) (pointsZ.get((i * size) + j + 1)))));
                 polygon.add(new Point(new Coord3d((double) (pointsX.get(((i + 1) * size) + j + 1)), (double) (pointsY.get(((i + 1) * size) + j + 1)), (double) (pointsZ.get(((i + 1) * size) + j + 1)))));
                 polygon.add(new Point(new Coord3d((double) (pointsX.get(((i + 1) * size) + j)), (double) (pointsY.get(((i + 1) * size) + j)), (double) (pointsZ.get(((i + 1) * size) + j)))));
-                // polygon.setColor(new Color(0,0,258,0.2f));
+                 polygon.setColor(new Color(0,0,258,0.2f));
                 polygons.add(polygon);
             }
         }
@@ -73,7 +85,7 @@ public class RegionPlot {
                 polygon.add(new Point(new Coord3d((double) (pointsX1.get(((i + 1) * size) + j + 1)), (double) (pointsY1.get(((i + 1) * size) + j + 1)), (double) (pointsZ1.get(((i + 1) * size) + j + 1)))));
                 polygon.add(new Point(new Coord3d((double) (pointsX1.get(((i + 1) * size) + j)), (double) (pointsY1.get(((i + 1) * size) + j)), (double) (pointsZ1.get(((i + 1) * size) + j)))));
                 polygon.setColor(rainbowMap1.getColor(i * size + j).alphaSelf((float) 0));
-                // polygon.setColor(new Color(0,258,0,0.2f));
+                 polygon.setColor(new Color(0,258,0,0.2f));
                 polygons.add(polygon);
 
             }
@@ -88,7 +100,7 @@ public class RegionPlot {
                 polygond1.add(new Point(new Coord3d((double) (pointsX.get((i * val) + j + 1)), (double) (pointsY.get((i * val) + j + 1)), (double) (pointsZ.get((i * val) + j + 1) + diff))));
                 polygond1.add(new Point(new Coord3d((double) (pointsX1.get(((i) * val) + j + 1)), (double) (pointsY1.get(((i) * val) + j + 1)), (double) (pointsZ1.get(((i) * val) + j + 1) + diff))));
                 polygond1.add(new Point(new Coord3d((double) (pointsX1.get(((i) * val) + j)), (double) (pointsY1.get(((i) * val) + j)), (double) (pointsZ1.get(((i) * val) + j) + diff))));
-                // polygond1.setColor(new Color(258,0,0,0.2f));
+                 polygond1.setColor(new Color(258,0,0,0.2f));
                 polygons.add(polygond1);
             }
         }
@@ -101,13 +113,13 @@ public class RegionPlot {
                 polygond1.add(new Point(new Coord3d((double) (pointsX.get(((i + 1) * size) + j * (size - 1))), (double) (pointsY.get(((i + 1) * size) + j * (size - 1))), (double) (pointsZ.get(((i + 1) * size) + j * (size - 1)) + diff))));
                 polygond1.add(new Point(new Coord3d((double) (pointsX1.get(((i + 1) * size) + j * (size - 1))), (double) (pointsY1.get(((i + 1) * size) + j * (size - 1))), (double) (pointsZ1.get(((i + 1) * size) + j * (size - 1)) + diff))));
                 polygond1.add(new Point(new Coord3d((double) (pointsX1.get(((i) * size) + j * (size - 1))), (double) (pointsY1.get(((i) * size) + j * (size - 1))), (double) (pointsZ1.get(((i) * size) + j * (size - 1)) + diff))));
-                // polygond1.setColor(new Color(258,0,0,0.2f));
+                 polygond1.setColor(new Color(258,0,0,0.2f));
                 polygons.add(polygond1);
             }
         }
 
         Shape surface = new Shape(polygons);
-        surface.setColor(new Color(258, 0, 0, 0.2f));
+       // surface.setColor(new Color(258, 0, 0, 0.2f));
         // Creates the 3d object
 
         surface.setWireframeDisplayed(false);
@@ -125,7 +137,7 @@ public class RegionPlot {
         DoubleVector pointsX = (DoubleVector) (vect.get(0));
         DoubleVector pointsY = (DoubleVector) (vect.get(1));
         DoubleVector pointsZ = (DoubleVector) (vect.get(2));
-        interpolate values = new interpolate(wellnames);
+
 
         List<Double> intensity = values.interpolatesurface(vect, "NEUT");
 
