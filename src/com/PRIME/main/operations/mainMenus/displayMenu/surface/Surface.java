@@ -94,12 +94,6 @@ public class Surface {
         engine.eval("testdf$DEPTH = pred");
         ListVector points = (ListVector)engine.eval("testdf");
 
-//        System.out.println(predictions[100]);
-//        System.out.println(predictions[3535]);
-//        System.out.println(predictions[10153]);
-//        System.out.println(predictions.length);
-//        System.out.println(file.MinLati+" "+file.MaxLati+" "+file.MinLong+" "+file.MaxLong);
-      //  engine.eval("write.csv(testdf,'C:/Users/HP/IdeaProjects/Testing/Result.csv',row.names=F)");
         return points;
     }
 }

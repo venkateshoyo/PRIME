@@ -83,31 +83,8 @@ public class interpolate {
         for (int i=0;i<lati.length();i++){
             intensity.add(rf.predict(new double[] {lati.get(i),longi.get(i),depths.get(i)}));
         }
-//        loadlasfil data = new loadlasfil();
-//        double Mindepth = data.MinDepth;
-//        double Maxdepth =data.MaxDepth;
-//        double MinLati = data.MinLati;double MaxLati =data.MaxLati;double MinLong = data.MinLong;double MaxLong = data.MaxLong;
-//        DoubleVector depths= (DoubleVector)list1.get(2);
-//        ScriptEngineManager factory = new ScriptEngineManager();
-//        ScriptEngine engine = factory.getEngineByName("Renjin");
-//        engine.put("MinLati",MinLati);engine.put("MaxLati",MaxLati);engine.put("MinLong",MinLong);engine.put("MaxLong",MaxLong);//engine.put("MaxDepth",Maxdepth);engine.put("MinDepth",Mindepth);
-//        engine.eval("StepLati = (MaxLati - MinLati)/100;StepLong = (MaxLong - MinLong)/100;");
-//        engine.eval("Latitudes = seq(MinLati,MaxLati,StepLati);Longitudes = seq(MinLong,MaxLong,StepLong);");
 
        return intensity;
     }
 
-//    public ListVector interpolateregion( ListVector list1,ListVector list2,String Parameter)
-//    {
-//        RandomForest rf;
-//        if(Parameter =="Saturation")
-//        {
-//            rf=rf1;
-//        }
-//        else if(Parameter =="NEUT")
-//        {
-//            rf=rf2;
-//        }
-//
-//    }
 }

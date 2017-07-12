@@ -54,7 +54,7 @@ public class Surfaceplot {
         Shape surface = new Shape(polygons);
         surface.setWireframeDisplayed(false);
         surface.setFaceDisplayed(true);
-        // surface.setColor(new Color(0,258,0,0.1f));
+
         surface.setWireframeColor(Color.RED);
 
 

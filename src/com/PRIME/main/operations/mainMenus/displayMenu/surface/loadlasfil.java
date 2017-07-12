@@ -181,11 +181,6 @@ public class loadlasfil {
             range[0][0] = values[0][0];
             range[1][0] = values[(int) datas][0];
 
-//           verticalplots vplotsobject = new verticalplots();
-//           vplotsobject.displayplots(values,range,parameter);
-
-//            xyzcrossplot crosplot = new xyzcrossplot();
-//            crosplot.crossplotdisplay(2,4,0,values,range,parameter);
 
 
         }

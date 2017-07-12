@@ -84,23 +84,23 @@ public class windowregion {
 
 
         show.setOnAction(e->{
-            uppersurface.add(new Point3D(-39.43171,174.18095,3565.55040));
-            uppersurface.add(new Point3D(-39.47241,174.17548,5000.02440));
-            uppersurface.add(new Point3D(-39.49464,174.18576,3000.09760));
-            lowersurface.add(new Point3D(-39.43171,174.18095,2565.55040));
-            lowersurface.add(new Point3D(-39.47241,174.17548,4000.02440));
-            lowersurface.add(new Point3D(-39.49464,174.18576,2000.09760));
-//            for(int i=0;i<wellnames.size();i++)
-//            {
-//                if(addbutton[i].isSelected()) {
-//
-//
-//                    Point3D point1 = new Point3D(Double.parseDouble(xval1[i].getText()), Double.parseDouble(yval1[i].getText()), Double.parseDouble(zval1[i].getText()));
-//                    Point3D point2 = new Point3D(Double.parseDouble(xval2[i].getText()), Double.parseDouble(yval2[i].getText()), Double.parseDouble(zval2[i].getText()));
-//                    uppersurface.add(point1);
-//                    lowersurface.add(point2);
-//                }
-//            }
+//            uppersurface.add(new Point3D(-39.43171,174.18095,3565.55040));
+//            uppersurface.add(new Point3D(-39.47241,174.17548,5000.02440));
+//            uppersurface.add(new Point3D(-39.49464,174.18576,3000.09760));
+//            lowersurface.add(new Point3D(-39.43171,174.18095,2565.55040));
+//            lowersurface.add(new Point3D(-39.47241,174.17548,4000.02440));
+//            lowersurface.add(new Point3D(-39.49464,174.18576,2000.09760));
+            for(int i=0;i<wellnames.size();i++)
+            {
+                if(addbutton[i].isSelected()) {
+
+
+                    Point3D point1 = new Point3D(Double.parseDouble(xval1[i].getText()), Double.parseDouble(yval1[i].getText()), Double.parseDouble(zval1[i].getText()));
+                    Point3D point2 = new Point3D(Double.parseDouble(xval2[i].getText()), Double.parseDouble(yval2[i].getText()), Double.parseDouble(zval2[i].getText()));
+                    uppersurface.add(point1);
+                    lowersurface.add(point2);
+                }
+            }
             RegionPlot plot  = null;
             try {
                 plot = new RegionPlot();
