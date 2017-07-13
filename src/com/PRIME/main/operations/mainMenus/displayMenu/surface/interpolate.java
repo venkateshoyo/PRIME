@@ -34,8 +34,7 @@ public class interpolate {
         for(int i=0;i<wellnames.size();i++)
         {
            engine.put("TempWell",welldata.get(wellnames.get(i)));
-          // System.out.println("HVJHVK");
-           //engine.eval("print(names(TempWell))");
+
            engine.eval("CombinedData = rbind(CombinedData,TempWell)");
         }
         ListVector Combined = (ListVector)engine.eval("CombinedData");
@@ -57,13 +56,13 @@ public class interpolate {
 
             y1[i]=Saturation.get(i);
             y2[i]=Neut.get(i);
-            //System.out.println(X[i][0]);
+
         }
 
         rf1 = new RandomForest(X,y1,20,100000,5,3);
 
          rf2 = new RandomForest(X,y2,20,100000,5,3);
-        //System.out.println(rf2.error()+"error of rf1");
+
     }
 
     public List interpolatesurface( ListVector list1,String Parameter) throws ScriptException {

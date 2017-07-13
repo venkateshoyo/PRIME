@@ -52,9 +52,9 @@ public class RegionPlot {
         }
 
         int xlength = pointsX.length();
-        System.out.println(xlength);
+
         int ylength = pointsY.length();
-        System.out.println(ylength);
+
 
         ListVector temp;
         if ((pointsZ1.get(0) >= pointsZ.get(0))) {
@@ -82,9 +82,9 @@ public class RegionPlot {
         }
         if (plotvalue == "ScatterPlots") {
             Coord3d points[] = new Coord3d[sizevalue];
-            System.out.println(sizevalue);
+
             Color[] colors = new Color[sizevalue];
-            System.out.println("RegionPlot");
+
             for (int i = 0; i < zlength + 2; i++) {
                 engine.put("i", i);
                 if (i == 0) {
@@ -99,12 +99,12 @@ public class RegionPlot {
                 List<Double> intensity = values.interpolatesurface(NewSurface, parameter);
 
                 int length = pointsXu.length();
-                System.out.println(length);
+
                 for (int j = 0; j < length; j++) {
                     points[(i * (length)) + j] = new Coord3d(pointsXu.get(j), pointsYu.get(j), pointsZu.get(j));
 
                     Double col = intensity.get(j)*10000;
-                    System.out.println(col);
+
                     colors[(i * length) + j] = rainbowMap1.getColor(col.intValue());
                 }
             }

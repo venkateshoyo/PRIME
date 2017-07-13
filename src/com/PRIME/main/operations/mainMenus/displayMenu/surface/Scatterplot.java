@@ -24,7 +24,7 @@ public class Scatterplot {
 
         for (int i = 0; i < size; i++) {
             points[i] = new Coord3d(pointsX.get(i), pointsY.get(i), pointsZ.get(i));
-            //System.out.println(scatterpoints[i].x+" "+scatterpoints[i].y+" "+scatterpoints[i].z);
+
         }
         Scatter scatter = new Scatter(points);
 

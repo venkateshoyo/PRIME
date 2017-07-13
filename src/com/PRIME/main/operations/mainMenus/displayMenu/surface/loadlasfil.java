@@ -67,7 +67,7 @@ public class loadlasfil {
                     while (text.indexOf(" ", textindex) > 0) {
                         if (++parameterindex == 0) {
                             values[index][parameterindex] =  Double.parseDouble(text.substring(textindex, text.indexOf(" ", textindex)));
-                            //System.out.println(text.substring(textindex, text.indexOf(" ", textindex)));
+
 
 
                         }
@@ -119,9 +119,9 @@ public class loadlasfil {
                     Matcher matcher = regex.matcher(text);
                     while (matcher.find()) {
                         increment = Double.parseDouble(matcher.group(1));
-                        //System.out.println(increment);
+
                         datas /= increment;
-                        //System.out.println(datas);
+
                     }
                 } else if (text.length() > 5 && (text.substring(0, 5).equalsIgnoreCase("DEPTH"))) {
 
@@ -156,7 +156,7 @@ public class loadlasfil {
                         MaxLati = Math.max(MaxLati, lati);
 
 
-                        // System.out.println(lati);
+
                     }
                 } else if (text.length() > 4 && (text.substring(0, 4).equalsIgnoreCase("LONG"))) {
 
@@ -167,7 +167,7 @@ public class loadlasfil {
                         longi = Double.parseDouble(matcher.group(1));
                         MinLong = Math.min(MinLong,longi);
                         MaxLong = Math.max(MaxLong, longi);
-                        //  System.out.println(lati);
+
                     }
                 } else if (text.length() > 4 && (text.substring(0, 4).equalsIgnoreCase("WELL"))) {
 
@@ -188,7 +188,7 @@ public class loadlasfil {
         catch (IOException ex) {}
         finally {}
 
-        System.out.println(values.length+ "  " + noOfParameter +"  "+ datas);
+
         noOfParameter++;
         double transpose[][] = new double[noOfParameter][values.length];
         for (int c = 0 ; c < noOfParameter ; c++ )
@@ -216,9 +216,9 @@ public class loadlasfil {
         engine.eval("DATA = newdf[,c('LATI','LONG','DEPTH','NEUT','Saturation')]");
         ListVector list1 = (ListVector)engine.eval("DATA");
         allwell.put(name,list1);
-        //System.out.println(allwell.size());
 
-        //System.out.println(dfvgf.get(0));
+
+
 //        try {
 //            engine.eval(new FileReader("C:/Users/Admin/Desktop/PorandSat.R"));
 //        } catch (ScriptException e) {

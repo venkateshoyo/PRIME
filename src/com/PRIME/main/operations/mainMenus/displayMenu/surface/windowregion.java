@@ -161,7 +161,7 @@ public class windowregion {
 
             if(plotval=="ScatterPlots")
             {
-                System.out.println("window region");
+
                 try {
                      scatter = plot.Scatterplot();
                 } catch (IOException e1) {

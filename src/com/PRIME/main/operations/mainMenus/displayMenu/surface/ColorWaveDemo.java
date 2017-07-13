@@ -105,7 +105,7 @@ public class ColorWaveDemo {
             }
             if(window.flag == true)
             {
-                System.out.println("Colorwavedemo");
+
                 Scatter scattersh= window.Discrete();
                 chart.getScene().add(scattersh);
                 chart1.getScene().add(scattersh);

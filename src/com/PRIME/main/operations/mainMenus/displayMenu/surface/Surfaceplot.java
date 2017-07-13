@@ -45,8 +45,7 @@ public class Surfaceplot {
                 polygon.add(new Point(new Coord3d((double) (pointsX.get(((i + 1) * size) + j + 1)), (double) (pointsY.get(((i + 1) * size) + j + 1)), (double) (pointsZ.get(((i + 1) * size) + j + 1)))));
                 polygon.add(new Point(new Coord3d((double) (pointsX.get(((i + 1) * size) + j)), (double) (pointsY.get(((i + 1) * size) + j)), (double) (pointsZ.get(((i + 1) * size) + j)))));
                Double col =intensity.get(i*size+j)*10000;
-               System.out.println(col);
-               System.out.println(intensity.size());
+
                 polygon.setColor(rainbowMap1.getColor(col.intValue()));
                 polygons.add(polygon);
             }
