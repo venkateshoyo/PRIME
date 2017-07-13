@@ -26,7 +26,7 @@ public class RegionPlot {
     public Scatter scatter= null;
     public interpolate values;
 
-    ColorMapper rainbowMap1 = new ColorMapper(new ColorMapRainbow(), 0, 3000);
+    ColorMapper rainbowMap1 = new ColorMapper(new ColorMapRainbow(), 0, 10000);
 
 
 
