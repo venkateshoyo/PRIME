@@ -68,6 +68,7 @@ public class interpolate {
 
     public List interpolatesurface( ListVector list1,String Parameter) throws ScriptException {
         RandomForest rf = null;
+        RandomForest rfu = null;
         if(Parameter =="Saturation")
         {
             rf=rf1;
@@ -75,6 +76,12 @@ public class interpolate {
         else if(Parameter =="NEUT")
         {
             rf=rf2;
+        }
+        else if(Parameter =="OOIP")
+        {
+
+            rf=rf1;
+            rfu=rf2;
         }
         DoubleVector lati= (DoubleVector)list1.get(0);
         DoubleVector longi= (DoubleVector)list1.get(1);
@@ -85,6 +92,30 @@ public class interpolate {
         }
 
        return intensity;
+    }
+
+    public List interpolateOOIP( ListVector list1) throws ScriptException {
+        RandomForest rf = null;
+        RandomForest rfu = null;
+            rf=rf1;
+            rfu=rf2;
+        DoubleVector lati= (DoubleVector)list1.get(0);
+        DoubleVector longi= (DoubleVector)list1.get(1);
+        DoubleVector depths= (DoubleVector)list1.get(2);
+        List<Double> intensity = new ArrayList<>();
+        for (int i=0;i<lati.length();i++){
+            intensity.add(rf.predict(new double[] {lati.get(i),longi.get(i),depths.get(i)}));
+        }
+
+        DoubleVector latiu= (DoubleVector)list1.get(0);
+        DoubleVector longiu= (DoubleVector)list1.get(1);
+        DoubleVector depthsu= (DoubleVector)list1.get(2);
+        List<Double> intensityu = new ArrayList<>();
+        for (int i=0;i<lati.length();i++){
+            intensityu.add(rf.predict(new double[] {lati.get(i),longi.get(i),depths.get(i)}));
+        }
+
+        return
     }
 
 }
