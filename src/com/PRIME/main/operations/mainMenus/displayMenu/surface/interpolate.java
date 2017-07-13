@@ -60,9 +60,9 @@ public class interpolate {
             //System.out.println(X[i][0]);
         }
 
-        rf1 = new RandomForest(X,y1,8,100000,5,3);
+        rf1 = new RandomForest(X,y1,20,100000,5,3);
 
-         rf2 = new RandomForest(X,y2,8,100000,5,3);
+         rf2 = new RandomForest(X,y2,20,100000,5,3);
         //System.out.println(rf2.error()+"error of rf1");
     }
 

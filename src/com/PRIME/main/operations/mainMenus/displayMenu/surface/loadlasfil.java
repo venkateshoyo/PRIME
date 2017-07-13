@@ -67,7 +67,7 @@ public class loadlasfil {
                     while (text.indexOf(" ", textindex) > 0) {
                         if (++parameterindex == 0) {
                             values[index][parameterindex] =  Double.parseDouble(text.substring(textindex, text.indexOf(" ", textindex)));
-                            System.out.println(text.substring(textindex, text.indexOf(" ", textindex)));
+                            //System.out.println(text.substring(textindex, text.indexOf(" ", textindex)));
 
 
                         }
@@ -119,9 +119,9 @@ public class loadlasfil {
                     Matcher matcher = regex.matcher(text);
                     while (matcher.find()) {
                         increment = Double.parseDouble(matcher.group(1));
-                        System.out.println(increment);
+                        //System.out.println(increment);
                         datas /= increment;
-                        System.out.println(datas);
+                        //System.out.println(datas);
                     }
                 } else if (text.length() > 5 && (text.substring(0, 5).equalsIgnoreCase("DEPTH"))) {
 
@@ -208,8 +208,6 @@ public class loadlasfil {
         engine.put("df", dataframe.build());
         engine.put("LATITUDE",lati);engine.put("LONGITUDE",longi);
         engine.eval("newdf1 = data.frame(LATI = LATITUDE,LONG = LONGITUDE,DEPTH = df$DEPTH)");
-       // engine.eval("write.csv(newdf,'C:/Users/hkban/Desktop/org.jzy3d-0.9-tutorials/src/demos/org/jzy3d/demos/surface/well.csv',row.names=F,col.names=F)");
-        //engine.eval("df$LATI = LATI");engine.eval("df$LONG = LONG");
         ListVector list = (ListVector)engine.eval("newdf1");
         String path = System.getProperty("user.dir");
         engine.eval(new FileReader(path+"/src/com/PRIME/main/operations/mainMenus/displayMenu/surface/PorandSat.R"));
