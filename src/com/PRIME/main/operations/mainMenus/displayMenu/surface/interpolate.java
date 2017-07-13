@@ -69,29 +69,81 @@ public class interpolate {
     public List interpolatesurface( ListVector list1,String Parameter) throws ScriptException {
         RandomForest rf = null;
         RandomForest rfu = null;
+        List<Double> intensity = new ArrayList<>();
+        List<Double> intensity1 = new ArrayList<>();
+        double ma=Double.MIN_VALUE;
+        double mi = Double.MAX_VALUE;
         if(Parameter =="Saturation")
         {
             rf=rf1;
+            DoubleVector lati= (DoubleVector)list1.get(0);
+            DoubleVector longi= (DoubleVector)list1.get(1);
+            DoubleVector depths= (DoubleVector)list1.get(2);
+
+            for (int i=0;i<lati.length();i++){
+                double val =rf.predict(new double[] {lati.get(i),longi.get(i),depths.get(i)});
+                intensity.add(val);
+                ma =Double.max(ma,val);
+                mi= Double.min(mi,val);
+            }
+            for(int i=0;i<lati.length();i++)
+            {
+                intensity1.add(intensity.get(i)/(ma-mi));
+            }
+
+
         }
         else if(Parameter =="NEUT")
         {
+
             rf=rf2;
+            DoubleVector lati= (DoubleVector)list1.get(0);
+            DoubleVector longi= (DoubleVector)list1.get(1);
+            DoubleVector depths= (DoubleVector)list1.get(2);
+
+            for (int i=0;i<lati.length();i++){
+                double val =rf.predict(new double[] {lati.get(i),longi.get(i),depths.get(i)});
+                intensity.add(val);
+                ma =Double.max(ma,val);
+                mi= Double.min(mi,val);
+            }
+            for(int i=0;i<lati.length();i++)
+            {
+                intensity1.add(intensity.get(i)/(ma-mi));
+            }
         }
         else if(Parameter =="OOIP")
         {
 
             rf=rf1;
             rfu=rf2;
-        }
-        DoubleVector lati= (DoubleVector)list1.get(0);
-        DoubleVector longi= (DoubleVector)list1.get(1);
-        DoubleVector depths= (DoubleVector)list1.get(2);
-        List<Double> intensity = new ArrayList<>();
-        for (int i=0;i<lati.length();i++){
-            intensity.add(rf.predict(new double[] {lati.get(i),longi.get(i),depths.get(i)}));
+            double Area = 1.0;
+            double Height = 1.0;
+            double VolumeFactor = 1.0;
+
+            DoubleVector lati= (DoubleVector)list1.get(0);
+            DoubleVector longi= (DoubleVector)list1.get(1);
+            DoubleVector depths= (DoubleVector)list1.get(2);
+            double[] NEUT = new double[lati.length()];
+            double[] Saturation = new double[lati.length()];
+
+            for (int i=0;i<lati.length();i++){
+                //intensity.add(rfp.predict(new double[] {lati.get(i),longi.get(i),depths.get(i)}));
+                NEUT[i] = rf.predict(new double[] {lati.get(i),longi.get(i),depths.get(i)});
+                Saturation[i] = rfu.predict(new double[] {lati.get(i),longi.get(i),depths.get(i)});
+                double val =(( 7758*Area*Height*NEUT[i]*(1 - Saturation[i]) )/VolumeFactor );
+                intensity.add(val);
+                ma =Double.max(ma,val);
+                mi= Double.min(mi,val);
+            }
+            for(int i=0;i<lati.length();i++)
+            {
+                intensity1.add(intensity.get(i)/(ma-mi));
+            }
         }
 
-       return intensity;
+
+       return intensity1;
     }
 
 //    public List interpolateOOIP( ListVector list1) throws ScriptException {

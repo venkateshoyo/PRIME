@@ -94,6 +94,7 @@ public class ColorWaveDemo {
         region.setOnAction(e -> {
             countsu++;
             windowregion window = new windowregion();
+
             Shape regionsh = null;
             try {
                 regionsh = window.coordinates(wellnames);
@@ -102,8 +103,16 @@ public class ColorWaveDemo {
             } catch (ScriptException e1) {
                 e1.printStackTrace();
             }
+            if(window.flag == true)
+            {
+                System.out.println("Colorwavedemo");
+                Scatter scattersh= window.Discrete();
+                chart.getScene().add(scattersh);
+                chart1.getScene().add(scattersh);
+            }
             chart.getScene().add(regionsh);
             chart1.getScene().add(regionsh);
+
 
             chart.getView().setBoundManual(chart1.getView().getBounds());
             chart.getView().setAxe(new AxeBox(chart1.getView().getBounds()));

@@ -61,6 +61,7 @@ public class main extends Application {
 
         window.setMaximized(true);
         window.show();
+        window.setOnCloseRequest(e->{System.exit(0);});
 
         //creating shortcut class object
         shortcuts.shortcuts();

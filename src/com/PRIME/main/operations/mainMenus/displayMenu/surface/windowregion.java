@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import org.jzy3d.plot3d.primitives.Scatter;
 import org.jzy3d.plot3d.primitives.Shape;
 import org.renjin.sexp.ListVector;
 import com.PRIME.main.operations.mainMenus.displayMenu.surface.RegionPlot;
@@ -26,6 +27,8 @@ public class windowregion {
     List<Point3D> uppersurface= new ArrayList<>();
     List<Point3D> lowersurface= new ArrayList<>();
     Shape surface = null;
+    Scatter scatter =null;
+    static boolean flag = false;
 
     GridPane gp = new GridPane();
     public Shape coordinates(List<String> wellnames) throws IOException, ScriptException {
@@ -80,12 +83,16 @@ public class windowregion {
         Label Parameter = new Label("Parameter");
         gp.add(Parameter,0,++row);
         RadioButton Saturation  = new RadioButton("Saturation");
+        Saturation.setUserData("Saturation");
         Saturation.setToggleGroup(paramvalue);
+        Saturation.setSelected(true);
         gp.add(Saturation,1,row);
         RadioButton Neut = new RadioButton("NEUT");
+        Neut.setUserData("NEUT");
         Neut.setToggleGroup(paramvalue);
         gp.add(Neut,2,row);
         RadioButton OOIP = new RadioButton("OOIP");
+        OOIP.setUserData("OOIP");
         OOIP.setToggleGroup(paramvalue);
         gp.add(OOIP,3,row);
 
@@ -94,9 +101,11 @@ public class windowregion {
         gp.add(Plots,0,++row);
         ToggleGroup plotvalue = new ToggleGroup();
         RadioButton ScatterPoints = new RadioButton("ScatterPlots");
+        ScatterPoints.setUserData("ScatterPlots");
         ScatterPoints.setToggleGroup(plotvalue);
         gp.add(ScatterPoints,1,row);
         RadioButton Surfaceplots = new RadioButton("SurfacePlots");
+        Surfaceplots.setUserData("SurfacePlots");
         Surfaceplots.setToggleGroup(plotvalue);
         gp.add(Surfaceplots,2,row);
         Button show = new Button("SHOW SURFACE");
@@ -121,6 +130,11 @@ public class windowregion {
                     lowersurface.add(point2);
                 }
             }
+            String plotval="";
+            if(plotvalue.getSelectedToggle()!=null)
+            {plotval=plotvalue.getSelectedToggle().getUserData().toString();}
+
+
             RegionPlot plot  = null;
             try {
                 plot = new RegionPlot();
@@ -138,11 +152,22 @@ public class windowregion {
                 e1.printStackTrace();
             }
             try {
-                surface = plot.Regionplot(list1,list2,wellnames,paramvalue.getSelectedToggle().toString(),plotvalue.getSelectedToggle().toString());
+                surface = plot.Regionplot(list1,list2,wellnames,paramvalue.getSelectedToggle().getUserData().toString(),plotval);
             } catch (IOException e1) {
                 e1.printStackTrace();
             } catch (ScriptException e1) {
                 e1.printStackTrace();
+            }
+
+            if(plotval=="ScatterPlots")
+            {
+                System.out.println("window region");
+                try {
+                     scatter = plot.Scatterplot();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+                flag = true;
             }
             primaryStage.close();
         });
@@ -154,5 +179,9 @@ public class windowregion {
         primaryStage.setScene(scene);
         primaryStage.showAndWait();
         return surface;
+    }
+
+    public Scatter Discrete(){
+        return scatter;
     }
 }

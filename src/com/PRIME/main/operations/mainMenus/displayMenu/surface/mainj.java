@@ -42,7 +42,7 @@ public class mainj  {
         Scene scene = new Scene(layout,1500,1500);
         primaryStage.setScene(scene);
         primaryStage.show();
-        primaryStage.setOnCloseRequest(e->{System.exit(0);});
+
 
         primaryStage.setResizable(false);
     }
