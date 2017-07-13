@@ -2,10 +2,7 @@ package com.PRIME.main.operations.mainMenus.displayMenu.surface;
 
 import javafx.geometry.Point3D;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -32,6 +29,7 @@ public class windowregion {
 
     GridPane gp = new GridPane();
     public Shape coordinates(List<String> wellnames) throws IOException, ScriptException {
+
         TextField xval1[]= new TextField[wellnames.size()];
         TextField yval1[]= new TextField[wellnames.size()];
         TextField zval1[]= new TextField[wellnames.size()];
@@ -78,9 +76,31 @@ public class windowregion {
             addbutton[i]= new RadioButton();
             gp.add(addbutton[i],7,row);
         }
+        ToggleGroup paramvalue = new ToggleGroup();
+        Label Parameter = new Label("Parameter");
+        gp.add(Parameter,0,++row);
+        RadioButton Saturation  = new RadioButton("Saturation");
+        Saturation.setToggleGroup(paramvalue);
+        gp.add(Saturation,1,row);
+        RadioButton Neut = new RadioButton("NEUT");
+        Neut.setToggleGroup(paramvalue);
+        gp.add(Neut,2,row);
+        RadioButton OOIP = new RadioButton("OOIP");
+        OOIP.setToggleGroup(paramvalue);
+        gp.add(OOIP,3,row);
+
+
+        Label Plots = new Label("Plots");
+        gp.add(Plots,0,++row);
+        ToggleGroup plotvalue = new ToggleGroup();
+        RadioButton ScatterPoints = new RadioButton("ScatterPlots");
+        ScatterPoints.setToggleGroup(plotvalue);
+        gp.add(ScatterPoints,1,row);
+        RadioButton Surfaceplots = new RadioButton("SurfacePlots");
+        Surfaceplots.setToggleGroup(plotvalue);
+        gp.add(Surfaceplots,2,row);
         Button show = new Button("SHOW SURFACE");
         gp.add(show,8,++row);
-
 
 
         show.setOnAction(e->{
@@ -118,7 +138,7 @@ public class windowregion {
                 e1.printStackTrace();
             }
             try {
-                surface = plot.Regionplot(list1,list2,wellnames);
+                surface = plot.Regionplot(list1,list2,wellnames,paramvalue.getSelectedToggle().toString(),plotvalue.getSelectedToggle().toString());
             } catch (IOException e1) {
                 e1.printStackTrace();
             } catch (ScriptException e1) {

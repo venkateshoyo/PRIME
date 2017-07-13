@@ -111,6 +111,8 @@ public class ColorWaveDemo {
             chart.getView().setMaximized(false);
         });
 
+
+
         Shape polygon = new Shape();
         ColorMapper rainbowMap = new ColorMapper(new ColorMapRainbow(), 0, 1);
         polygon.setColorMapper(rainbowMap);

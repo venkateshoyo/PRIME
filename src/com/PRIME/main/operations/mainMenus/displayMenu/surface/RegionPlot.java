@@ -4,6 +4,7 @@ import org.jzy3d.colors.Color;
 import org.jzy3d.colors.ColorMapper;
 import org.jzy3d.colors.colormaps.ColorMapRainbow;
 import org.jzy3d.maths.Coord3d;
+import org.jzy3d.plot3d.primitives.AbstractDrawable;
 import org.jzy3d.plot3d.primitives.Point;
 import org.jzy3d.plot3d.primitives.Polygon;
 import org.jzy3d.plot3d.primitives.Shape;
@@ -23,14 +24,16 @@ import java.util.List;
  */
 public class RegionPlot {
 
+    public String parameter = "";
     public  List<String> wellnames = new ArrayList<>();
     public interpolate values;
 
     public RegionPlot() throws ScriptException {
     }
 
-    public Shape Regionplot(ListVector vect1, ListVector vect2, List<String> wellnames) throws IOException, ScriptException {
+    public Shape Regionplot(ListVector vect1, ListVector vect2, List<String> wellnames, String paramvalue, String plotvalue) throws IOException, ScriptException {
     this.wellnames = wellnames;
+    this.parameter = paramvalue;
         values =new interpolate(wellnames);
         DoubleVector pointsX = (DoubleVector) (vect1.get(0));
         DoubleVector pointsY = (DoubleVector) (vect1.get(1));
@@ -127,6 +130,7 @@ public class RegionPlot {
         surface.setWireframeColor(Color.RED);
 
 
+
         return surface;
     }
 
@@ -140,7 +144,7 @@ public class RegionPlot {
         DoubleVector pointsZ = (DoubleVector) (vect.get(2));
 
 
-        List<Double> intensity = values.interpolatesurface(vect, "NEUT");
+        List<Double> intensity = values.interpolatesurface(vect,parameter);
 
 
         List<Polygon> polygons = new ArrayList<Polygon>();

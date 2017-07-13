@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class Surfaceplot {
 
-    public Shape Surfaceplot(ListVector vect,List<String> wellnames) throws IOException, ScriptException {
+    public Shape Surfaceplot(ListVector vect,List<String> wellnames,String Parameter) throws IOException, ScriptException {
 
 
         DoubleVector pointsX = (DoubleVector)(vect.get(0));
@@ -28,7 +28,7 @@ public class Surfaceplot {
         DoubleVector pointsZ =(DoubleVector)(vect.get(2));
         interpolate values = new interpolate(wellnames);
 
-        List<Double> intensity =values.interpolatesurface(vect,"NEUT");
+        List<Double> intensity =values.interpolatesurface(vect,Parameter);
 
 
 

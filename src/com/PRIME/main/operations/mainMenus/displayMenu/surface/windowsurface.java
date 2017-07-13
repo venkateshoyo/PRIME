@@ -46,6 +46,7 @@ public class windowsurface {
         gp.add(ycoordi,2,0);
         Label zcoordi = new Label("zcoordi");
         gp.add(zcoordi,3,0);
+
         Label Add = new Label("ADDWELL");
         gp.add(Add,4,0);
         for(int i=0;i<wellnames.size();i++)
@@ -62,6 +63,18 @@ public class windowsurface {
             addbutton[i]= new RadioButton();
             gp.add(addbutton[i],4,row);
         }
+        ToggleGroup paramvalue = new ToggleGroup();
+        Label Parameter = new Label("Parameter");
+        gp.add(Parameter,0,++row);
+        RadioButton Saturation  = new RadioButton("Saturation");
+        Saturation.setToggleGroup(paramvalue);
+        gp.add(Saturation,1,row);
+        RadioButton Neut = new RadioButton("NEUT");
+        Neut.setToggleGroup(paramvalue);
+        gp.add(Neut,2,row);
+        RadioButton OOIP = new RadioButton("OOIP");
+        OOIP.setToggleGroup(paramvalue);
+        gp.add(OOIP,3,row);
 Button show = new Button("SHOW SURFACE");
         gp.add(show,5,++row);
 
@@ -85,7 +98,7 @@ Button show = new Button("SHOW SURFACE");
                 e1.printStackTrace();
             }
             try {
-                surface = plot.Surfaceplot(list,wellnames);
+                surface = plot.Surfaceplot(list,wellnames,paramvalue.getSelectedToggle().toString());
             } catch (IOException e1) {
                 e1.printStackTrace();
             } catch (ScriptException e1) {

@@ -13,7 +13,7 @@ import java.io.IOException;
 public class Scatterplot {
 
     public Scatter Scatterplot(ListVector well) throws IOException {
-        //  System.out.println(path);
+
         ListVector vect = well;
         int size =(int)(well.get(0).length());
         Coord3d[] points = new Coord3d[size];
