@@ -46,7 +46,7 @@ public class RegionPlot {
         DoubleVector pointsY1 = (DoubleVector) (vect2.get(1));
         DoubleVector pointsZ1 = (DoubleVector) (vect2.get(2));
         double[] gap = new double[pointsX.length()];
-        int zlength = 10;
+        int zlength = 100;
         for (int i = 0; i < pointsX.length(); i++) {
             gap[i] = Math.abs(pointsZ1.get(i) - pointsZ.get(i)) / zlength;
         }
@@ -72,7 +72,7 @@ public class RegionPlot {
         if (plotvalue == "SurfacePlots") {
             polygons.addAll(Surfaceplot(vect1, wellnames));
             polygons.addAll(Surfaceplot(vect2, wellnames));
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < zlength; i++) {
                 engine.put("i", i);
                 engine.eval("Surf$DEPTH = Surf$DEPTH - step");
                 ListVector NewSurface = (ListVector) engine.eval("Surf");

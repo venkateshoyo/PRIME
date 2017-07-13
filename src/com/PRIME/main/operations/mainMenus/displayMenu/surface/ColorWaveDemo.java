@@ -37,6 +37,8 @@ public class ColorWaveDemo {
 
         Chart chart1 = new Chart(Quality.Advanced, "swing");
         Chart chart = new Chart(Quality.Advanced, "swing"); // Use "swing" canvas
+ //      Chart chart1 = new Chart(Quality.Fastest, "swing");
+//        Chart chart = new Chart(Quality.Fastest, "swing"); // Use "swing" canvas
 
         chart.addController(new CameraMouseController(chart));
         final SwingNode swingNode = new SwingNode();

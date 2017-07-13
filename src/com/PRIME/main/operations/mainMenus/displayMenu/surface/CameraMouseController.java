@@ -206,12 +206,13 @@ public class CameraMouseController extends AbstractCameraController implements M
 //                    bounds.setZmax((float) scaleZ.getMax());
 //                }
 //                chart().getView().setAxe(new AxeBox(bounds));
-                 this.zoomZ(factor);
-                 this.zoomX(factor);
-                  this.zoomY(factor);
+            this.zoomZ(factor);
 
             } else {
-                this.zoomZ(factor);
+
+            this.zoomZ(factor);
+            this.zoomX(factor);
+            this.zoomY(factor);
 
             }
 
