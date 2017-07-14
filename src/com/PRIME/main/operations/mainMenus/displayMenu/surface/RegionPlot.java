@@ -46,7 +46,7 @@ public class RegionPlot {
         DoubleVector pointsY1 = (DoubleVector) (vect2.get(1));
         DoubleVector pointsZ1 = (DoubleVector) (vect2.get(2));
         double[] gap = new double[pointsX.length()];
-        int zlength = 100;
+        int zlength = 10;
         for (int i = 0; i < pointsX.length(); i++) {
             gap[i] = Math.abs(pointsZ1.get(i) - pointsZ.get(i)) / zlength;
         }

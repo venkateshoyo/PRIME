@@ -67,12 +67,16 @@ public class windowsurface {
         Label Parameter = new Label("Parameter");
         gp.add(Parameter,0,++row);
         RadioButton Saturation  = new RadioButton("Saturation");
+        Saturation.setUserData("Saturation");
         Saturation.setToggleGroup(paramvalue);
+        Saturation.setSelected(true);
         gp.add(Saturation,1,row);
         RadioButton Neut = new RadioButton("NEUT");
+        Neut.setUserData("NEUT");
         Neut.setToggleGroup(paramvalue);
         gp.add(Neut,2,row);
         RadioButton OOIP = new RadioButton("OOIP");
+        OOIP.setUserData("OOIP");
         OOIP.setToggleGroup(paramvalue);
         gp.add(OOIP,3,row);
 Button show = new Button("SHOW SURFACE");
@@ -81,6 +85,9 @@ Button show = new Button("SHOW SURFACE");
 
 
         show.setOnAction(e->{
+//                        uppersurface.add(new Point3D(-39.43171,174.18095,3565.55040));
+//            uppersurface.add(new Point3D(-39.47241,174.17548,5000.02440));
+//            uppersurface.add(new Point3D(-39.49464,174.18576,3000.09760));
             for(int i=0;i<wellnames.size();i++)
             {
                 if(addbutton[i].isSelected()) {
@@ -98,7 +105,8 @@ Button show = new Button("SHOW SURFACE");
                 e1.printStackTrace();
             }
             try {
-                surface = plot.Surfaceplot(list,wellnames,paramvalue.getSelectedToggle().toString());
+                //surface =
+                        plot.Surfaceplot(list,wellnames,paramvalue.getSelectedToggle().getUserData().toString());
             } catch (IOException e1) {
                 e1.printStackTrace();
             } catch (ScriptException e1) {
