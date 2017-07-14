@@ -15,6 +15,8 @@ public class loadlasfile {
     public String parameter[]=new String[30];
     public int noOfParameter=-1;
     public double range[][];
+    public static Double MaxLati = Double.MIN_VALUE;public static Double MinLati = Double.MAX_VALUE;
+    public static Double MaxLong = Double.MIN_VALUE;public static Double MinLong = Double.MAX_VALUE;
 
     public void loadlas(File selectedlas)throws IOException{
         BufferedReader bufferedReader;
