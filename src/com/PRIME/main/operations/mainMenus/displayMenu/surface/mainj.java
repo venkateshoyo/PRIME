@@ -44,7 +44,7 @@ public class mainj  {
         primaryStage.show();
 
 
-        primaryStage.setResizable(false);
+        primaryStage.setMaximized(true);
     }
 
 

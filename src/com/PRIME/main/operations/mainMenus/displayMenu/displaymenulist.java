@@ -1,6 +1,7 @@
 package com.PRIME.main.operations.mainMenus.displayMenu;
 
 import com.PRIME.main.operations.mainMenus.displayMenu.pdfreader.ParsePdfFiles;
+import com.PRIME.main.operations.mainMenus.displayMenu.surface.mainj;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 
@@ -14,7 +15,14 @@ public class displaymenulist {
         display_location.setOnAction(e -> System.out.println(""));
 
         MenuItem display_logs = new MenuItem( "L_ogs");
-        display_logs.setOnAction(e -> {ParsePdfFiles.method();});
+        display_logs.setOnAction(e -> {
+                mainj surface = new mainj();
+            try {
+                surface.mainmethod();
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+            System.out.println("");});
 
         MenuItem display_seimic = new MenuItem( "_Seismic");
         display_seimic.setOnAction(e -> System.out.println(""));
