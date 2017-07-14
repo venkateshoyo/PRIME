@@ -10,7 +10,15 @@
     <orderEntry type="library" exported="" name="GMapFX" level="project" />
     <orderEntry type="library" exported="" name="fontawesome" level="project" />
     <orderEntry type="library" exported="" name="sql" level="project" />
-    <orderEntry type="library" exported="" name="3D" level="project" />
-    <orderEntry type="library" exported="" name="ml" level="project" />
+    <orderEntry type="library" exported="" name="lib" level="project" />
+    <orderEntry type="library" exported="" name="gluegen-rt" level="project" />
+    <orderEntry type="library" exported="" name="libsvm" level="project" />
+    <orderEntry type="library" name="gluegen-rt-natives-windows-amd64" level="project" />
+    <orderEntry type="library" name="jogl-all-natives-windows-amd64" level="project" />
+    <orderEntry type="library" name="com.github.haifengl.smile-core-1.3.1" level="project" />
+    <orderEntry type="library" name="org.slf4j.slf4j-api-1.7.21" level="project" />
+    <orderEntry type="library" name="org.slf4j.slf4j-simple-1.7.21" level="project" />
+    <orderEntry type="library" name="3D" level="project" />
+    <orderEntry type="library" name="ml" level="project" />
   </component>
 </module>

@@ -2,6 +2,7 @@ package com.PRIME.main.operations.mainMenus.displayMenu.surface;
 
 import org.renjin.sexp.DoubleVector;
 import org.renjin.sexp.ListVector;
+import smile.math.Math;
 import smile.regression.RandomForest;
 
 import javax.script.ScriptEngine;
@@ -10,7 +11,13 @@ import javax.script.ScriptException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
+
+import smile.sampling.Bagging;
 import smile.util.MulticoreExecutor;
+import smile.validation.CrossValidation;
+import smile.validation.RMSE;
+import smile.validation.Validation;
 
 /**
  * Created by HP on 7/11/2017.
@@ -59,9 +66,60 @@ public class interpolate {
 
         }
 
-        rf1 = new RandomForest(X,y1,20,100000,5,3);
+        int[] Mtry = {2,3};int[] NodeSize = {4,5,6};
 
-         rf2 = new RandomForest(X,y2,20,100000,5,3);
+        double[][] xtrain = new double[1000][];double[][] xtest = new double[200][];
+        double[] y1train = new double[1000];double[] y2train = new double[1000];
+        double[] y1test = new double[200];double[] y2test = new double[200];
+        //CrossValidation cv = new CrossValidation(1000,3);
+        RMSE rsq = new RMSE();
+        int[] rows1 = new int[1000];
+        double[] predicted1 = new double[200]; double[] predicted2 = new double[200];
+        for (int i = 0;i<1000;i++){
+            rows1[i] = (int)Math.random(0,X.length);
+            xtrain[i] = X[rows1[i]];
+            y1train[i] = y1[rows1[i]];
+            y2train[i] = y2[rows1[i]];
+        }
+        int[] rows2 = new int[200];
+        for (int i = 0;i<200;i++){
+            rows2[i] = (int)Math.random(0,X.length);
+            xtest[i] = X[rows2[i]];
+            y1test[i] = y1[rows2[i]];
+            y2test[i] = y2[rows2[i]];
+        }
+        double MinRMSE1 = Double.MAX_VALUE; double MinRMSE2 = Double.MAX_VALUE;
+        int OptimizedMtry1=2; int OptimizedNodeSize1 = 4;
+        int OptimizedMtry2=2; int OptimizedNodeSize2 = 4;
+        for (int N:NodeSize){
+            for (int M:Mtry){
+               RandomForest model1 = new RandomForest(xtrain,y1train,20,100000,N,M);
+               System.out.println(model1.error() + "N "+ N);
+                RandomForest model2 = new RandomForest(xtrain,y2train,20,100000,N,M);
+                System.out.println(model2.error() + "M"+ M);
+               for (int i=0;i<200;i++){
+                   predicted1[i]=model1.predict(xtest[i]);
+                   predicted2[i]=model2.predict(xtest[i]);
+               }
+                double temp1 = rsq.measure(predicted1,y1test);
+                double temp2 = rsq.measure(predicted2,y2test);
+                if (temp1 < MinRMSE1){
+                    MinRMSE1=temp1;
+                    OptimizedMtry1=M;
+                    OptimizedNodeSize1=N;
+                }
+                if (temp2 < MinRMSE2){
+                    MinRMSE2=temp2;
+                    OptimizedMtry2=M;
+                    OptimizedNodeSize2=N;
+                }
+            }
+        }
+        System.out.println("Mtry1 -" + OptimizedMtry1 + "NodeSize1 -"+ OptimizedNodeSize1);
+        System.out.println("Mtry2 -" + OptimizedMtry2 + "NodeSize2 -"+ OptimizedNodeSize2);
+        rf1 = new RandomForest(X,y1,20,100000,OptimizedNodeSize1,OptimizedMtry1);
+
+         rf2 = new RandomForest(X,y2,20,100000,OptimizedNodeSize2,OptimizedMtry2);
 
     }
 
@@ -86,10 +144,7 @@ public class interpolate {
                 ma =Double.max(ma,val);
                 mi= Double.min(mi,val);
             }
-            for(int i=0;i<lati.length();i++)
-            {
-                intensity1.add(intensity.get(i)/(ma-mi));
-            }
+
 
 
         }
@@ -107,10 +162,7 @@ public class interpolate {
                 ma =Double.max(ma,val);
                 mi= Double.min(mi,val);
             }
-            for(int i=0;i<lati.length();i++)
-            {
-                intensity1.add(intensity.get(i)/(ma-mi));
-            }
+
         }
         else if(Parameter =="OOIP")
         {
@@ -136,14 +188,11 @@ public class interpolate {
                 ma =Double.max(ma,val);
                 mi= Double.min(mi,val);
             }
-            for(int i=0;i<lati.length();i++)
-            {
-                intensity1.add(intensity.get(i)/(ma-mi));
-            }
+
         }
 
 
-       return intensity1;
+       return intensity;
     }
 
     public List interpolatesurface( List<Double> listx,List<Double> listy,List<Double> listz,String Parameter) throws ScriptException {
@@ -163,10 +212,7 @@ public class interpolate {
                 ma =Double.max(ma,val);
                 mi= Double.min(mi,val);
             }
-            for(int i=0;i<listx.size();i++)
-            {
-                intensity1.add(intensity.get(i)/(ma-mi));
-            }
+
 
 
         }
@@ -182,10 +228,7 @@ public class interpolate {
                 ma =Double.max(ma,val);
                 mi= Double.min(mi,val);
             }
-            for(int i=0;i<listx.size();i++)
-            {
-                intensity1.add(intensity.get(i)/(ma-mi));
-            }
+
         }
         else if(Parameter =="OOIP")
         {
@@ -209,14 +252,11 @@ public class interpolate {
                 ma =Double.max(ma,val);
                 mi= Double.min(mi,val);
             }
-            for(int i=0;i<listx.size();i++)
-            {
-                intensity1.add(intensity.get(i)/(ma-mi));
-            }
+
         }
 
 
-        return intensity1;
+        return intensity;
     }
 
 

@@ -23,7 +23,7 @@ calculatePOROSITY= function(df,newdf){
 }
 
 calculateTEMP= function(df,newdf){
-  Tsurface = 24; Tempgrad = -17.22/30.48            # Degree Celcius/metre
+  Tsurface = 24; Tempgrad = 0.556/30.48            # Degree Celcius/metre
   newdf$TEMP = Tsurface + (Tempgrad * df[,names(df)[1]])
   return (newdf)
 }
