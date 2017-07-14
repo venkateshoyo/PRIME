@@ -103,7 +103,7 @@ public class RegionPlot {
                         polygond1.add(new Point(new Coord3d((double) (pointsX.get(((i) * val) + j)), (double) (pointsY.get(((i) * val) + j)), (double) (tempz.get(((i) * val) + j) - (gap[(i * val) + j]*(k+1))))));
                        // polygond1.setColor(new Color(258, 0, 0, 0.1f));
                         Double col = intensity1.get( (j*(zlength+1)+k)*(i+1) ) * 100;
-                        polygond1.setColor(rainbowMap1.getColor(col.intValue()).alphaSelf(0.2f));
+                        polygond1.setColor(rainbowMap1.getColor(col.intValue()).alphaSelf(0.1f));
                         polygons.add(polygond1);
                     }
                 }
