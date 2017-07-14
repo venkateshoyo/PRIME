@@ -35,10 +35,10 @@ public class ColorWaveDemo {
     public BorderPane method() throws IOException {
 
 
-        Chart chart1 = new Chart(Quality.Advanced, "swing");
-        Chart chart = new Chart(Quality.Advanced, "swing"); // Use "swing" canvas
- //      Chart chart1 = new Chart(Quality.Fastest, "swing");
-//        Chart chart = new Chart(Quality.Fastest, "swing"); // Use "swing" canvas
+       // Chart chart1 = new Chart(Quality.Advanced, "swing");
+        //Chart chart = new Chart(Quality.Advanced, "swing"); // Use "swing" canvas
+       Chart chart1 = new Chart(Quality.Fastest, "swing");
+        Chart chart = new Chart(Quality.Fastest, "swing"); // Use "swing" canvas
 
         chart.addController(new CameraMouseController(chart));
         final SwingNode swingNode = new SwingNode();
@@ -112,8 +112,10 @@ public class ColorWaveDemo {
                 chart.getScene().add(scattersh);
                 chart1.getScene().add(scattersh);
             }
-            chart.getScene().add(regionsh);
-            chart1.getScene().add(regionsh);
+            else {
+                chart.getScene().add(regionsh);
+                chart1.getScene().add(regionsh);
+            }
 
 
             chart.getView().setBoundManual(chart1.getView().getBounds());
