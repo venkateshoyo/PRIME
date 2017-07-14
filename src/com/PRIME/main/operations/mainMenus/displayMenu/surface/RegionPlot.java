@@ -57,10 +57,13 @@ public class RegionPlot {
 
 
         ListVector temp;
+        DoubleVector tempz ;
         if ((pointsZ1.get(0) >= pointsZ.get(0))) {
             temp = vect2;
+            tempz = pointsZ1;
         } else {
             temp = vect1;
+            tempz = pointsZ;
         }
         ScriptEngineManager factory = new ScriptEngineManager();
         ScriptEngine engine = factory.getEngineByName("Renjin");
@@ -94,10 +97,10 @@ public class RegionPlot {
                     for (int k = 0; k < zlength+2; k++) {
 
                         Polygon polygond1 = new Polygon();
-                        polygond1.add(new Point(new Coord3d((double) (pointsX.get((i * val) + j)), (double) (pointsY.get((i * val) + j)), (double) (pointsZ.get((i * val) + j)) - (gap[(i * val) + j]*k))));
-                        polygond1.add(new Point(new Coord3d((double) (pointsX.get((i * val) + j + 1)), (double) (pointsY.get((i * val) + j + 1)), (double) (pointsZ.get((i * val) + j + 1)) - (gap[(i * val) + j]*k))));
-                        polygond1.add(new Point(new Coord3d((double) (pointsX.get(((i) * val) + j + 1)), (double) (pointsY.get(((i) * val) + j + 1)), (double) (pointsZ.get(((i) * val) + j + 1) - (gap[(i * val) + j]*(k+1))))));
-                        polygond1.add(new Point(new Coord3d((double) (pointsX.get(((i) * val) + j)), (double) (pointsY.get(((i) * val) + j)), (double) (pointsZ.get(((i) * val) + j) - (gap[(i * val) + j]*(k+1))))));
+                        polygond1.add(new Point(new Coord3d((double) (pointsX.get((i * val) + j)), (double) (pointsY.get((i * val) + j)), (double) (tempz.get((i * val) + j)) - (gap[(i * val) + j]*k))));
+                        polygond1.add(new Point(new Coord3d((double) (pointsX.get((i * val) + j + 1)), (double) (pointsY.get((i * val) + j + 1)), (double) (tempz.get((i * val) + j + 1)) - (gap[(i * val) + j]*k))));
+                        polygond1.add(new Point(new Coord3d((double) (pointsX.get(((i) * val) + j + 1)), (double) (pointsY.get(((i) * val) + j + 1)), (double) (tempz.get(((i) * val) + j + 1) - (gap[(i * val) + j]*(k+1))))));
+                        polygond1.add(new Point(new Coord3d((double) (pointsX.get(((i) * val) + j)), (double) (pointsY.get(((i) * val) + j)), (double) (tempz.get(((i) * val) + j) - (gap[(i * val) + j]*(k+1))))));
                        // polygond1.setColor(new Color(258, 0, 0, 0.1f));
                         Double col = intensity1.get( (j*(zlength+2)+k)*(i+1) ) * 10000;
                         polygond1.setColor(rainbowMap1.getColor(col.intValue()));
@@ -123,10 +126,10 @@ public class RegionPlot {
                 for (int i = 0; i < size-1 ; i++) {
                     for (int k = 0; k < zlength+2; k++) {
                         Polygon polygond1 = new Polygon();
-                        polygond1.add(new Point(new Coord3d((double) (pointsX.get((i * size) + j * (size - 1))), (double) (pointsY.get((i * size) + j * (size - 1))), (double) (pointsZ.get((i * size) + j * (size - 1)) - (gap[(i * size) + j * (size - 1)]*k)))));
-                        polygond1.add(new Point(new Coord3d((double) (pointsX.get(((i + 1) * size) + j * (size - 1))), (double) (pointsY.get(((i + 1) * size) + j * (size - 1))), (double) (pointsZ.get(((i + 1) * size) + j * (size - 1)) - (gap[(i * size) + j * (size - 1)]*k)))));
-                        polygond1.add(new Point(new Coord3d((double) (pointsX.get(((i + 1) * size) + j * (size - 1))), (double) (pointsY.get(((i + 1) * size) + j * (size - 1))), (double) (pointsZ.get(((i + 1) * size) + j * (size - 1)) - (gap[(i * size) + j * (size - 1)]*(k+1))))));
-                        polygond1.add(new Point(new Coord3d((double) (pointsX.get(((i) * size) + j * (size - 1))), (double) (pointsY.get(((i) * size) + j * (size - 1))), (double) (pointsZ.get(((i) * size) + j * (size - 1)) - (gap[(i * size) + j * (size - 1)]*(k+1))))));
+                        polygond1.add(new Point(new Coord3d((double) (pointsX.get((i * size) + j * (size - 1))), (double) (pointsY.get((i * size) + j * (size - 1))), (double) (tempz.get((i * size) + j * (size - 1)) - (gap[(i * size) + j * (size - 1)]*k)))));
+                        polygond1.add(new Point(new Coord3d((double) (pointsX.get(((i + 1) * size) + j * (size - 1))), (double) (pointsY.get(((i + 1) * size) + j * (size - 1))), (double) (tempz.get(((i + 1) * size) + j * (size - 1)) - (gap[(i * size) + j * (size - 1)]*k)))));
+                        polygond1.add(new Point(new Coord3d((double) (pointsX.get(((i + 1) * size) + j * (size - 1))), (double) (pointsY.get(((i + 1) * size) + j * (size - 1))), (double) (tempz.get(((i + 1) * size) + j * (size - 1)) - (gap[(i * size) + j * (size - 1)]*(k+1))))));
+                        polygond1.add(new Point(new Coord3d((double) (pointsX.get(((i) * size) + j * (size - 1))), (double) (pointsY.get(((i) * size) + j * (size - 1))), (double) (tempz.get(((i) * size) + j * (size - 1)) - (gap[(i * size) + j * (size - 1)]*(k+1))))));
                        // polygond1.setColor(new Color(258, 0, 0, 0.1f));
                         Double col = intensity2.get( ((i*(zlength+2))+k)*(j+1) ) * 10000;
                         polygond1.setColor(rainbowMap1.getColor(col.intValue()));
