@@ -105,8 +105,7 @@ Button show = new Button("SHOW SURFACE");
                 e1.printStackTrace();
             }
             try {
-                //surface =
-                        plot.Surfaceplot(list,wellnames,paramvalue.getSelectedToggle().getUserData().toString());
+                surface = plot.Surfaceplot(list,wellnames,paramvalue.getSelectedToggle().getUserData().toString());
             } catch (IOException e1) {
                 e1.printStackTrace();
             } catch (ScriptException e1) {
