@@ -15,6 +15,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -33,7 +34,7 @@ public class ParsePdfFiles {
         // System.out.println(System.getProperty("user.dir"));
         PdfReader reader;
         File folder = new File(folderpath);
-        File[] listOfFiles = folder.listFiles();
+        File[] listOfFiles = folder.listFiles(new FilenameFilter(){public boolean accept(File folder,String filename){return filename.endsWith(".pdf");}});
         String but = "";
         int count =0;
         try {
