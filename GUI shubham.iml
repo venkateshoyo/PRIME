@@ -14,5 +14,7 @@
     <orderEntry type="library" name="itextpdf-5.5.11" level="project" />
     <orderEntry type="library" exported="" name="3D" level="project" />
     <orderEntry type="library" name="ml" level="project" />
+    <orderEntry type="library" name="R User Library" level="project" />
+    <orderEntry type="library" name="R Skeletons" level="application" />
   </component>
 </module>
