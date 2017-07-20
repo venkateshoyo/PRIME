@@ -1,20 +1,19 @@
 package com.PRIME.main.operations.main;
 
-import com.PRIME.main.operations.mainMenus.analysisMenu.analysismenulist;
-import com.PRIME.main.operations.mainMenus.editMenu.editmenulist;
-import com.PRIME.main.operations.mainMenus.fileMenu.filemenulist;
-import com.PRIME.main.operations.mainMenus.projectMenu.*;
-import com.PRIME.main.operations.mainMenus.dataMenu.*;
-import com.PRIME.main.operations.mainMenus.helpMenu.*;
-import com.PRIME.main.operations.mainMenus.displayMenu.*;
-import com.PRIME.main.operations.mainMenus.programmerMenu.*;
+import com.PRIME.main.operations.menubars.analysisMenu.analysismenulist;
+import com.PRIME.main.operations.menubars.editMenu.editmenulist;
+import com.PRIME.main.operations.menubars.fileMenu.filemenulist;
+import com.PRIME.main.operations.menubars.projectMenu.*;
+import com.PRIME.main.operations.menubars.dataMenu.*;
+import com.PRIME.main.operations.menubars.helpMenu.*;
+import com.PRIME.main.operations.menubars.displayMenu.*;
+import com.PRIME.main.operations.menubars.programmerMenu.*;
 
 import com.PRIME.main.operations.toolbars.analysisMenu.crossplot;
 import com.PRIME.main.operations.toolbars.analysisMenu.toolBar;
 import com.PRIME.main.operations.toolbars.dataMenu.lasload;
 import com.PRIME.main.operations.toolbars.displayMenu.display;
 import com.PRIME.main.operations.toolbars.editMenu.edit;
-import com.PRIME.main.operations.toolbars.fileMenu.file;
 import com.PRIME.main.operations.toolbars.helpMenu.help;
 import com.PRIME.main.operations.toolbars.programmerMenu.calculator;
 import com.PRIME.main.operations.toolbars.projectMenu.recent;

@@ -1,14 +1,10 @@
 package com.PRIME.main.operations.main;
 
 import com.PRIME.main.operations.close.closeconfirm;
-import com.PRIME.main.operations.main.sidebar.SidebarPanel;
-import com.PRIME.main.operations.toolbars.fileMenu.file;
+import com.PRIME.main.operations.sidebar.SidebarPanel;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
