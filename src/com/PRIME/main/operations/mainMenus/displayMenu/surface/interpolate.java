@@ -94,9 +94,9 @@ public class interpolate {
         for (int N:NodeSize){
             for (int M:Mtry){
                RandomForest model1 = new RandomForest(xtrain,y1train,20,100000,N,M);
-               System.out.println(model1.error() + "N "+ N);
+               //System.out.println(model1.error() + "N "+ N);
                 RandomForest model2 = new RandomForest(xtrain,y2train,20,100000,N,M);
-                System.out.println(model2.error() + "M"+ M);
+                //System.out.println(model2.error() + "M"+ M);
                for (int i=0;i<200;i++){
                    predicted1[i]=model1.predict(xtest[i]);
                    predicted2[i]=model2.predict(xtest[i]);
@@ -115,8 +115,8 @@ public class interpolate {
                 }
             }
         }
-        System.out.println("Mtry1 -" + OptimizedMtry1 + "NodeSize1 -"+ OptimizedNodeSize1);
-        System.out.println("Mtry2 -" + OptimizedMtry2 + "NodeSize2 -"+ OptimizedNodeSize2);
+        //System.out.println("Mtry1 -" + OptimizedMtry1 + "NodeSize1 -"+ OptimizedNodeSize1);
+        //System.out.println("Mtry2 -" + OptimizedMtry2 + "NodeSize2 -"+ OptimizedNodeSize2);
         rf1 = new RandomForest(X,y1,20,100000,OptimizedNodeSize1,OptimizedMtry1);
 
          rf2 = new RandomForest(X,y2,20,100000,OptimizedNodeSize2,OptimizedMtry2);
