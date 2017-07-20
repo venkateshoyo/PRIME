@@ -1,8 +1,8 @@
 # df - Stored dataframe
+df[df==-999.25]=NA
 newdf = data.frame(DEPTH=df[names(df)[1]])
 
 calculateRHOG= function(df,newdf){
-
   d1=2.6;d2=2.5;d3=2.4;d4=2.5;d5=2.75;              # Densities of components
   comp1=0;comp2=0;comp3=0;comp4=0;comp5=0;bool=F;
   if ("Vsh" %in% names(df)){bool=T;comp1=df$Vsh}    # Shale
@@ -67,4 +67,3 @@ if (! "Saturation" %in% names(df)){
 }else{newdf$Saturation = df$Saturation}
 newdf[newdf==-999.25]=NA
 newdf = newdf[complete.cases(newdf),]
-# write.csv(newdf,"C:\\Users\\Admin\\Desktop\\NEWDF.csv",row.names=F)
