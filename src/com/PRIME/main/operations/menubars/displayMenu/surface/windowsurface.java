@@ -80,16 +80,16 @@ Button show = new Button("SHOW SURFACE");
 
 
         show.setOnAction(e->{
-//                        uppersurface.add(new Point3D(-39.43171,174.18095,3565.55040));
-//            uppersurface.add(new Point3D(-39.47241,174.17548,5000.02440));
-//            uppersurface.add(new Point3D(-39.49464,174.18576,3000.09760));
-            for(int i=0;i<wellnames.size();i++)
-            {
-                if(addbutton[i].isSelected()) {
-                    Point3D point = new Point3D(Double.parseDouble(xval[i].getText()), Double.parseDouble(yval[i].getText()), Double.parseDouble(zval[i].getText()));
-                    uppersurface.add(point);
-                }
-            }
+                        uppersurface.add(new Point3D(-39.43171,174.18095,3065.55040));
+            uppersurface.add(new Point3D(-39.47241,174.17548,4500.02440));
+            uppersurface.add(new Point3D(-39.49464,174.18576,2500.09760));
+//            for(int i=0;i<wellnames.size();i++)
+//            {
+//                if(addbutton[i].isSelected()) {
+//                    Point3D point = new Point3D(Double.parseDouble(xval[i].getText()), Double.parseDouble(yval[i].getText()), Double.parseDouble(zval[i].getText()));
+//                    uppersurface.add(point);
+//                }
+//            }
             Surfaceplot plot  = new Surfaceplot();
             ListVector list = null;
             try {
@@ -100,7 +100,7 @@ Button show = new Button("SHOW SURFACE");
                 e1.printStackTrace();
             }
             try {
-                //surface =
+                surface =
                         plot.Surfaceplot(list,wellnames,paramvalue.getSelectedToggle().getUserData().toString());
             } catch (IOException e1) {
                 e1.printStackTrace();
