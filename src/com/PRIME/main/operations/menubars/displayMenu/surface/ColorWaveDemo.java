@@ -19,34 +19,29 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 public class ColorWaveDemo {
+
     static List< Pair<String,Point3D> > welldata = new ArrayList<>();
     static List<String> wellnames = new ArrayList<>();
     static ArrayList<Double> paramter = new ArrayList<>();
-
-
     int countsu = 0;
     int countsc =0;
 
 
     public BorderPane method() throws IOException {
 
-
        // Chart chart1 = new Chart(Quality.Advanced, "swing");
         //Chart chart = new Chart(Quality.Advanced, "swing"); // Use "swing" canvas
-       Chart chart1 = new Chart(Quality.Fastest, "swing");
+        Chart chart1 = new Chart(Quality.Fastest, "swing");
         Chart chart = new Chart(Quality.Fastest, "swing"); // Use "swing" canvas
 
         chart.addController(new CameraMouseController(chart));
         final SwingNode swingNode = new SwingNode();
         BorderPane layout = new BorderPane();
 
-        Button addsurface = new Button("loadsurface");
-        Button region = new Button("region");
-        Button addwell = new Button("addwell");
+        Button addsurface = new Button("Load Surface");
+        Button region = new Button("Mark Region");
+        Button addwell = new Button("Add well");
 
         addsurface.setOnAction(e -> {
             countsu++;

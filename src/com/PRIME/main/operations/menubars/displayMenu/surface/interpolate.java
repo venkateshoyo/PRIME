@@ -14,9 +14,6 @@ import java.util.List;
 
 import smile.validation.RMSE;
 
-/**
- * Created by HP on 7/11/2017.
- */
 public class interpolate {
 
     public  RandomForest rf1;

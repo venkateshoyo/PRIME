@@ -32,9 +32,6 @@ public class loadlasfil {
     public static Double MinDepth =Double.MAX_VALUE;
     public static HashMap<String,ListVector > allwell = new HashMap<>();
 
-
-
-
     public ListVector loadlas(String name,File selectedlas) throws IOException, ScriptException {
         BufferedReader bufferedReader;
         try {
@@ -46,7 +43,6 @@ public class loadlasfil {
             boolean Isdata = false, Isparameter = false;
             int index = 0, parameterindex = -1;
 
-            //Reading each line and storing each parameter value to temporary matrix
             //Reading each line and storing each parameter value to temporary matrix
             while ((text = bufferedReader.readLine()) != null && text.length() > 0) {
 
@@ -62,10 +58,8 @@ public class loadlasfil {
                     while (text.indexOf(" ", textindex) > 0) {
                         if (++parameterindex == 0) {
                             values[index][parameterindex] =  Double.parseDouble(text.substring(textindex, text.indexOf(" ", textindex)));
-
-
-
                         }
+
                         //0.3048 factor to convert meter to feet
                         else{
                             values[index][parameterindex] = Double.parseDouble(text.substring(textindex, text.indexOf(" ", textindex)));
@@ -96,8 +90,6 @@ public class loadlasfil {
                         double depth =Double.parseDouble(matcher.group(1));
                         datas -= depth;
                         MinDepth = Math.min(MinDepth,depth);
-
-
                     }
                 } else if (text.length() > 4 && (text.substring(0, 4).equalsIgnoreCase("STOP"))) {
 
@@ -114,15 +106,12 @@ public class loadlasfil {
                     Matcher matcher = regex.matcher(text);
                     while (matcher.find()) {
                         increment = Double.parseDouble(matcher.group(1));
-
                         datas /= increment;
-
                     }
                 } else if (text.length() > 5 && (text.substring(0, 5).equalsIgnoreCase("DEPTH"))) {
 
                     //Checking for Start Depth Data and working accordingly
                     Isparameter = true;
-
                     parameter[++noOfParameter] = "DEPTH";
                 } else if (Isparameter && !(text.substring(0, 2).equalsIgnoreCase("~A"))) {
 
@@ -149,9 +138,6 @@ public class loadlasfil {
                         lati = Double.parseDouble(matcher.group(1));
                         MinLati = Math.min(MinLati,lati);
                         MaxLati = Math.max(MaxLati, lati);
-
-
-
                     }
                 } else if (text.length() > 4 && (text.substring(0, 4).equalsIgnoreCase("LONG"))) {
 
@@ -162,7 +148,6 @@ public class loadlasfil {
                         longi = Double.parseDouble(matcher.group(1));
                         MinLong = Math.min(MinLong,longi);
                         MaxLong = Math.max(MaxLong, longi);
-
                     }
                 } else if (text.length() > 4 && (text.substring(0, 4).equalsIgnoreCase("WELL"))) {
 
@@ -175,14 +160,10 @@ public class loadlasfil {
 
             range[0][0] = values[0][0];
             range[1][0] = values[(int) datas][0];
-
-
-
         }
         catch (FileNotFoundException ex) {}
         catch (IOException ex) {}
         finally {}
-
 
         noOfParameter++;
         double transpose[][] = new double[noOfParameter][values.length];
@@ -191,20 +172,26 @@ public class loadlasfil {
             for (int r = 0 ; r < values.length ; r++ )
                 transpose[c][r] = values[r][c];
         }
+
         ListVector.NamedBuilder dataframe = ListVector.newNamedBuilder();
         dataframe.setAttribute(Symbols.CLASS, new StringArrayVector("data.frame"));
         dataframe.setAttribute(Symbols.ROW_NAMES, new IntSequence(1, 1, values.length));
+
         for(int col=0;col<noOfParameter;col++) {
             double[] valuesds = transpose[col];
             dataframe.add(parameter[col], new DoubleArrayVector(valuesds));
         }
+
         ScriptEngineManager factory = new ScriptEngineManager();
         ScriptEngine engine = factory.getEngineByName("Renjin");
+
         engine.put("df", dataframe.build());
         engine.put("LATITUDE",lati);engine.put("LONGITUDE",longi);
         engine.eval("newdf1 = data.frame(LATI = LATITUDE,LONG = LONGITUDE,DEPTH = df$DEPTH)");
+
         ListVector list = (ListVector)engine.eval("newdf1");
         String path = System.getProperty("user.dir");
+
         engine.eval(new FileReader(path+"/src/com/PRIME/main/operations/menubars/displayMenu/surface/PorandSat.R"));
         engine.put("LATITUDE",lati);engine.put("LONGITUDE",longi);
         engine.eval("newdf$LATI = LATITUDE;newdf$LONG = LONGITUDE;");
@@ -212,13 +199,6 @@ public class loadlasfil {
         ListVector list1 = (ListVector)engine.eval("DATA");
         allwell.put(name,list1);
 
-
-
-//        try {
-//            engine.eval(new FileReader("C:/Users/Admin/Desktop/PorandSat.R"));
-//        } catch (ScriptException e) {
-//            e.printStackTrace();
-//        }
         return list;
     }
 }

@@ -10,10 +10,11 @@ import com.PRIME.main.operations.menubars.displayMenu.*;
 import com.PRIME.main.operations.menubars.programmerMenu.*;
 
 import com.PRIME.main.operations.toolbars.analysisMenu.crossplot;
-import com.PRIME.main.operations.toolbars.analysisMenu.toolBar;
+import com.PRIME.main.operations.toolbars.toolBarFontAwesome;
 import com.PRIME.main.operations.toolbars.dataMenu.lasload;
 import com.PRIME.main.operations.toolbars.displayMenu.display;
 import com.PRIME.main.operations.toolbars.editMenu.edit;
+import com.PRIME.main.operations.toolbars.fileMenu.file;
 import com.PRIME.main.operations.toolbars.helpMenu.help;
 import com.PRIME.main.operations.toolbars.programmerMenu.calculator;
 import com.PRIME.main.operations.toolbars.projectMenu.recent;
@@ -29,13 +30,13 @@ class menubar {
         main ob = new main();
         Stage mainstage = ob.getstage();
         MenuBar menuBar= new MenuBar();
-        vbox.getChildren().addAll(menuBar, toolBar.method());
+        vbox.getChildren().addAll(menuBar, toolBarFontAwesome.method());
 
         //File Menu
         Menu fileMenu = filemenulist.filemenulist();
         fileMenu.setOnShown(e->{
             vbox.getChildren().clear();
-            vbox.getChildren().addAll(menuBar, toolBar.method()/*file.fileToolbar()*/);
+            vbox.getChildren().addAll(menuBar, file.fileToolbar());
         });
 
         //Edit Menu

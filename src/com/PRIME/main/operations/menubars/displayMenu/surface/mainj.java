@@ -7,9 +7,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * Created by hkban on 7/6/2017.
- */
 public class mainj  {
 
     public void mainmethod() throws Exception {
@@ -19,18 +16,15 @@ public class mainj  {
         BorderPane layout = new BorderPane();
 
         layout.setCenter(swingNode);
-//        layout.setTop(vb);
         try {
             layout = new ColorWaveDemo().method();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
         Scene scene = new Scene(layout,1500,1500);
         primaryStage.setScene(scene);
         primaryStage.show();
-
 
         primaryStage.setMaximized(true);
     }
