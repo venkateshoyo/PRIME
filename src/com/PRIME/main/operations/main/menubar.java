@@ -1,16 +1,16 @@
 package com.PRIME.main.operations.main;
 
-import com.PRIME.main.operations.mainMenus.analysisMenu.analysismenulist;
-import com.PRIME.main.operations.mainMenus.editMenu.editmenulist;
-import com.PRIME.main.operations.mainMenus.fileMenu.filemenulist;
-import com.PRIME.main.operations.mainMenus.projectMenu.*;
-import com.PRIME.main.operations.mainMenus.dataMenu.*;
-import com.PRIME.main.operations.mainMenus.helpMenu.*;
-import com.PRIME.main.operations.mainMenus.displayMenu.*;
-import com.PRIME.main.operations.mainMenus.programmerMenu.*;
+import com.PRIME.main.operations.menubars.analysisMenu.analysismenulist;
+import com.PRIME.main.operations.menubars.editMenu.editmenulist;
+import com.PRIME.main.operations.menubars.fileMenu.filemenulist;
+import com.PRIME.main.operations.menubars.projectMenu.*;
+import com.PRIME.main.operations.menubars.dataMenu.*;
+import com.PRIME.main.operations.menubars.helpMenu.*;
+import com.PRIME.main.operations.menubars.displayMenu.*;
+import com.PRIME.main.operations.menubars.programmerMenu.*;
 
 import com.PRIME.main.operations.toolbars.analysisMenu.crossplot;
-import com.PRIME.main.operations.toolbars.analysisMenu.toolBar;
+import com.PRIME.main.operations.toolbars.toolBarFontAwesome;
 import com.PRIME.main.operations.toolbars.dataMenu.lasload;
 import com.PRIME.main.operations.toolbars.displayMenu.display;
 import com.PRIME.main.operations.toolbars.editMenu.edit;
@@ -30,13 +30,13 @@ class menubar {
         main ob = new main();
         Stage mainstage = ob.getstage();
         MenuBar menuBar= new MenuBar();
-        vbox.getChildren().addAll(menuBar, toolBar.method());
+        vbox.getChildren().addAll(menuBar, toolBarFontAwesome.method());
 
         //File Menu
         Menu fileMenu = filemenulist.filemenulist();
         fileMenu.setOnShown(e->{
             vbox.getChildren().clear();
-            vbox.getChildren().addAll(menuBar, toolBar.method()/*file.fileToolbar()*/);
+            vbox.getChildren().addAll(menuBar, file.fileToolbar());
         });
 
         //Edit Menu
