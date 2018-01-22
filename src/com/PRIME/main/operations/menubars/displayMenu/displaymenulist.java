@@ -1,6 +1,6 @@
 package com.PRIME.main.operations.menubars.displayMenu;
 
-import com.PRIME.main.operations.menubars.displayMenu.surface.mainj;
+import com.PRIME.main.operations.menubars.displayMenu.surface.display;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 
@@ -15,13 +15,13 @@ public class displaymenulist {
 
         MenuItem display_logs = new MenuItem( "L_ogs");
         display_logs.setOnAction(e -> {
-                mainj surface = new mainj();
+            display surface = new display();
             try {
                 surface.mainmethod();
             } catch (Exception e1) {
                 e1.printStackTrace();
             }
-            System.out.println("");});
+        });
 
         MenuItem display_seimic = new MenuItem( "_Seismic");
         display_seimic.setOnAction(e -> System.out.println(""));

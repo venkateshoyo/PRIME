@@ -32,8 +32,6 @@ public class ColorWaveDemo {
 
         Chart chart1 = new Chart(Quality.Fastest, "swing");
         Chart chart = new Chart(Quality.Fastest, "swing"); // Use "swing" canvas
-//        Chart chart1 = new Chart(Quality.Fastest, "swing");
-//        Chart chart = new Chart(Quality.Fastest, "swing"); // Use "swing" canvas
 
         chart.addController(new CameraMouseController(chart));
         final SwingNode swingNode = new SwingNode();
@@ -49,9 +47,7 @@ public class ColorWaveDemo {
             Shape surface = null;
             try {
                 surface = window.coordinates(wellnames);
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            } catch (ScriptException e1) {
+            } catch (IOException | ScriptException e1) {
                 e1.printStackTrace();
             }
             chart.getScene().add(surface);
@@ -69,7 +65,7 @@ public class ColorWaveDemo {
         addwell.setOnAction(e -> {
             windowwell well = new windowwell();
             Scatter wellplot = well.coordinates();
-            wellnames.add(well.name);
+            wellnames.add(windowwell.name);
             chart1.getScene().add(wellplot);
             chart.getScene().add(wellplot);
             if (countsc == 0&& countsu==0) {
@@ -141,9 +137,6 @@ public class ColorWaveDemo {
 
         return layout;
 
-    }
-
-    public ColorWaveDemo() {
     }
 
 }
