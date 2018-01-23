@@ -37,30 +37,9 @@ public class ColorWaveDemo {
         final SwingNode swingNode = new SwingNode();
         BorderPane layout = new BorderPane();
 
+        Button addwell = new Button("Add well");
         Button addsurface = new Button("Load Surface");
         Button region = new Button("Mark Region");
-        Button addwell = new Button("Add well");
-
-        addsurface.setOnAction(e -> {
-            countsu++;
-                windowsurface window = new windowsurface();
-            Shape surface = null;
-            try {
-                surface = window.coordinates(wellnames);
-            } catch (IOException | ScriptException e1) {
-                e1.printStackTrace();
-            }
-            chart.getScene().add(surface);
-            chart1.getScene().add(surface);
-
-            chart.getView().setBoundManual(chart1.getView().getBounds());
-            chart.getView().setAxe(new AxeBox(chart1.getView().getBounds()));
-            chart.getView().setSquared(true);
-            chart.getView().setMaximized(false);
-
-
-        });
-
 
         addwell.setOnAction(e -> {
             windowwell well = new windowwell();
@@ -82,6 +61,27 @@ public class ColorWaveDemo {
                     chart.getView().setAxe(new AxeBox(chart1.getView().getBounds()));
                 chart.getView().setSquared(true);
             }
+        });
+
+
+        addsurface.setOnAction(e -> {
+            countsu++;
+            windowsurface window = new windowsurface();
+            Shape surface = null;
+            try {
+                surface = window.coordinates(wellnames);
+            } catch (IOException | ScriptException e1) {
+                e1.printStackTrace();
+            }
+            chart.getScene().add(surface);
+            chart1.getScene().add(surface);
+
+            chart.getView().setBoundManual(chart1.getView().getBounds());
+            chart.getView().setAxe(new AxeBox(chart1.getView().getBounds()));
+            chart.getView().setSquared(true);
+            chart.getView().setMaximized(false);
+
+
         });
 
         region.setOnAction(e -> {
