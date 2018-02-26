@@ -14,6 +14,7 @@ import javax.script.ScriptException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by hkban on 7/10/2017.
@@ -144,20 +145,16 @@ public class windowregion {
             try {
                 list1 = Surface.method(uppersurface);
                 list2 = Surface.method(lowersurface);
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            } catch (ScriptException e1) {
+            } catch (IOException | ScriptException e1) {
                 e1.printStackTrace();
             }
             try {
                 surface = plot.Regionplot(list1,list2,wellnames,paramvalue.getSelectedToggle().getUserData().toString(),plotval);
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            } catch (ScriptException e1) {
+            } catch (IOException | ScriptException e1) {
                 e1.printStackTrace();
             }
 
-            if(plotval=="ScatterPlots")
+            if(Objects.equals(plotval, "ScatterPlots"))
             {
 
                 try {

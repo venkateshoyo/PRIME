@@ -14,6 +14,7 @@ import javax.script.ScriptException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 /**
@@ -72,7 +73,7 @@ public class RegionPlot {
         engine.put("Surf", temp);
         engine.put("step", gap);
         List<Polygon> polygons = new ArrayList<Polygon>();
-        if (plotvalue == "SurfacePlots") {
+        if (Objects.equals(plotvalue, "SurfacePlots")) {
             polygons.addAll(Surfaceplot(vect1, wellnames));
             polygons.addAll(Surfaceplot(vect2, wellnames));
 
@@ -174,7 +175,7 @@ public class RegionPlot {
             scatter = new Scatter(points, colors);
             scatter.setWidth(5f);
         }
-if(flag ==false)
+if(!flag)
         {
         int size = (int) Math.sqrt(pointsX.length());
 
