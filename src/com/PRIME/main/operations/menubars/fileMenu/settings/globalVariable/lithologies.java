@@ -14,6 +14,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.util.Callback;
+
+import java.util.Random;
 
 public class lithologies {
 
@@ -67,36 +70,34 @@ public class lithologies {
         colour.setMinWidth(200);
         colour.setCellValueFactory( new PropertyValueFactory<lithoInfo, String>("colour"));
 
+        char hexColor[] = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
+
+        colour.setCellFactory(new Callback<TableColumn, TableCell>() {
+            public TableCell call(TableColumn param) {
+                return new TableCell<lithoInfo, String>() {
+
+                    @Override
+                    public void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (!isEmpty()) {
+                            this.setStyle("-fx-background-color: #"+
+                                    hexColor[new Random().nextInt(15)]+
+                                    hexColor[new Random().nextInt(15)]+
+                                    hexColor[new Random().nextInt(15)]+
+                                    hexColor[new Random().nextInt(15)]+
+                                    hexColor[new Random().nextInt(15)]+
+                                    hexColor[new Random().nextInt(15)]
+                            );
+                        }
+                    }
+                };
+            }
+        });
+
         table.setItems(data);
         table.getColumns().addAll(name, value, pattern, colour);
         table.setFixedCellSize(25);
         table.prefHeightProperty().bind(table.fixedCellSizeProperty().multiply(Bindings.size(table.getItems()).add(1.01)));
-
-//        colour.setCellFactory(column -> {
-//            return new TableCell<lithoInfo, String>() {
-//                @Override
-//                protected void updateItem(LocalDate item, boolean empty) {
-//                    super.updateItem(item, empty);
-//
-//                    if (item == null || empty) {
-//                        setText(null);
-//                        setStyle("");
-//                    } else {
-//                        // Format date.
-//                        setText(myDateFormatter.format(item));
-//
-//                        // Style all dates in March with a different color.
-//                        if (item.getMonth() == Month.MARCH) {
-//                            setTextFill(Color.CHOCOLATE);
-//                            setStyle("-fx-background-color: yellow");
-//                        } else {
-//                            setTextFill(Color.BLACK);
-//                            setStyle("");
-//                        }
-//                    }
-//                }
-//            };
-//        });
 
         final VBox vbox = new VBox();
         vbox.setSpacing(5);
