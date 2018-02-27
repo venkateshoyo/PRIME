@@ -18,7 +18,7 @@ import javafx.stage.StageStyle;
 import java.util.HashMap;
 import java.util.Map;
 
-public class simpleCalculator extends Application {
+public class simpleCalc extends Application {
 
     private static final String[][] template = {
             { "7", "8", "9", "/" },

@@ -2,8 +2,7 @@ package com.PRIME.main.functions.closeW;
 
 import com.PRIME.database.closeWIndow.getCloseCheck;
 import com.PRIME.database.closeWIndow.setCloseCheck;
-import com.PRIME.database.utils.DBUtils;
-import com.PRIME.main.operations.main.main;
+import com.PRIME.main.operations.main.home;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -20,12 +19,11 @@ import javafx.stage.Stage;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class closewindow {
 
     public void closefunction(){
-        main ob = new main();
+        home ob = new home();
 
         Connection con = null;
         PreparedStatement stmt = null;

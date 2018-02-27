@@ -27,7 +27,7 @@ class menubar {
     VBox vbox = new VBox();
     public VBox displayMenuBar(){
 
-        main ob = new main();
+        home ob = new home();
         Stage mainstage = ob.getstage();
         MenuBar menuBar= new MenuBar();
         vbox.getChildren().addAll(menuBar, toolBarFontAwesome.method());

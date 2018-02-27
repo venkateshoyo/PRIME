@@ -10,7 +10,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class main extends Application {
+public class home extends Application {
     public static Stage window;
     public BorderPane layout;
     public static Scene scene;
@@ -52,7 +52,7 @@ public class main extends Application {
         scene = new Scene(layout,600,500);
         window.setScene(scene);
 
-        scene.getStylesheets().add(main.class.getResource("../../resources/css/main.css").toExternalForm());
+        scene.getStylesheets().add(home.class.getResource("../../resources/css/main.css").toExternalForm());
         window.getIcons().add(new Image(getClass().getResourceAsStream("../../resources/images/main_favicon.png")));
 
         window.setMaximized(true);
