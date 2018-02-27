@@ -1,5 +1,6 @@
 package com.PRIME.main.operations.menubars.fileMenu;
 
+import com.PRIME.main.operations.menubars.fileMenu.settings.globalVariable.main;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
@@ -61,8 +62,12 @@ public class filemenulist {
         exportFile.setOnAction(e -> System.out.println());
         exportFile.setDisable(true);
 
-        MenuItem settings = new MenuItem("Se_ttings");
-        settings.setOnAction(e -> System.out.println());
+        Menu settings = new Menu("Se_ttings");
+
+        MenuItem globalVariable = new MenuItem( "Global Variable Settings");
+        globalVariable.setOnAction(e -> main.UI());
+
+        settings.getItems().addAll(globalVariable);
 
         SeparatorMenuItem fileseparater_4= new SeparatorMenuItem();
 
