@@ -1,6 +1,7 @@
 package com.PRIME.main.operations.menubars.projectMenu;
 
 import javafx.scene.control.*;
+import com.PRIME.main.operations.menubars.projectMenu.projectSetting.*;
 
 public class projectmenulist {
 
@@ -35,16 +36,6 @@ public class projectmenulist {
         RadioMenuItem onehourautosave = new RadioMenuItem("1 hour");
         onehourautosave.setOnAction(e -> System.out.println(""));
 
-        MenuItem projectViewer = new MenuItem( "Project Viewer");
-        projectViewer.setOnAction(e -> {
-            projectViewer Test = new projectViewer();
-            try {
-                Test.project();
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        });
-
         ToggleGroup toggle = new ToggleGroup();
 
         none.setToggleGroup(toggle);
@@ -57,13 +48,26 @@ public class projectmenulist {
         CustomMenuItem custom = new CustomMenuItem(manual);
         custom.setHideOnClick(false);
 
+        autosave.getItems().addAll(none,onehourautosave,halfhourautosave,custom);
+
         //________________________________________________________________________________
 
-        autosave.getItems().addAll(none,onehourautosave,halfhourautosave,custom);
+        MenuItem projectViewer = new MenuItem( "Project Viewer");
+        projectViewer.setOnAction(e -> {
+            projectViewer Test = new projectViewer();
+            try {
+                Test.project();
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        });
+
+        MenuItem projectSetting = new MenuItem( "Project Settings");
+        projectSetting.setOnAction(e -> main.UI());
 
         //Project Sub Menu ends-----------------------------------------------------------------------------------------
 
-        projectMenu.getItems().addAll(openproject,newproject,recentproject,lastsaveproject,autosave,projectViewer);
+        projectMenu.getItems().addAll(openproject,newproject,recentproject,lastsaveproject,autosave,projectViewer, projectSetting);
 
         return projectMenu;
     }
