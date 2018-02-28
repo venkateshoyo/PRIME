@@ -29,14 +29,14 @@ public class logID {
                     new logInfo("Sat", "", "Sat Sw So Sg sxo SWE SWT SWE-CPX SWT-CPX SXO-CPX SWEU-CPX SXOU-CPX","","0","1","",""),
                     new logInfo("Cal", "", "Cal Cali Caliper BS RUGOSIT BIT DI DD CLDC CSGS CDGW HD1_PPC1 HD2_PPC1","","5.906","19.685","",""),
                     new logInfo("p_Sonic", "", "Sonic DT DTL SON DTC DT4P DTCO DT35 DTMA DTCRC-CPX STCFNL-CPX","","152.4","50.801","",""),
-                    new logInfo("s_Sonic", "", "DTSM DTSML DTS DTSRC-CPX DTSFNL-CPX","","609.6","121.","",""),
-                    new logInfo("Depth", "", "Depth Dept","","2000","6000","",""),
-                    new logInfo("Time", "", "Time twt TWT owt TR21 TR11 TR22 TR12","","2000","6000","",""),
-                    new logInfo("Poisson_Ratio", "", "Poisson Poissons Poisson's Pois sigma ratio PR PR-CPX","","2000","6000","",""),
-                    new logInfo("Trace", "", "TRACE","","2000","6000","",""),
-                    new logInfo("AI", "", "AI AI AI-CPX","","2000","6000","",""),
-                    new logInfo("SI", "", "SI","","2000","6000","",""),
-                    new logInfo("Mu", "", "MU UMOD-CPX","","2000","6000","","")
+                    new logInfo("s_Sonic", "", "DTSM DTSML DTS DTSRC-CPX DTSFNL-CPX","","609.6","121.92","",""),
+                    new logInfo("Depth", "", "Depth Dept","","0","16404.199","",""),
+                    new logInfo("Time", "", "Time twt TWT owt TR21 TR11 TR22 TR12","","0","5000","",""),
+                    new logInfo("Poisson_Ratio", "", "Poisson Poissons Poisson's Pois sigma ratio PR PR-CPX","","0","0.5","",""),
+                    new logInfo("Trace", "", "TRACE","","-1","1","",""),
+                    new logInfo("AI", "", "AI AI AI-CPX","","4000","12000","",""),
+                    new logInfo("SI", "", "SI","","2000","12000","",""),
+                    new logInfo("Mu", "", "MU UMOD-CPX","","0","100","","")
             );
 
     public static BorderPane logIDTable(){
@@ -94,6 +94,22 @@ public class logID {
         colourScale.setMinWidth(100);
         colourScale.setCellValueFactory( new PropertyValueFactory<logInfo, String>("colourScale"));
 
+        colourScale.setCellFactory(new Callback<TableColumn, TableCell>() {
+            public TableCell call(TableColumn param) {
+                return new TableCell<logInfo, String>() {
+
+                    @Override
+                    public void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (!isEmpty()) {
+                            this.setStyle("-fx-background-color: linear-gradient(to right, #ff3232 , #ffe34c , #76eec6 , #000080)");
+                        }
+                    }
+                };
+            }
+        });
+
+        table.getColumns().clear();
         table.setItems(data);
         table.getColumns().addAll(logType, displayUnits, logStrings, common, plotMin, plotMax, defaultColour, colourScale);
         table.setFixedCellSize(25);

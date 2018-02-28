@@ -94,6 +94,7 @@ public class lithologies {
             }
         });
 
+        table.getColumns().clear();
         table.setItems(data);
         table.getColumns().addAll(name, value, pattern, colour);
         table.setFixedCellSize(25);
