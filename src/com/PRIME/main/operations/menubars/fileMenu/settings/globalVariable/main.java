@@ -15,20 +15,21 @@ public class main {
 
         TabPane tabPane = new TabPane();
 
-        Tab set = new Tab("Lithologies");
-        set.setClosable(false);
-        set.setContent(lithologies.lithoTable());
+        Tab lithologyTab = new Tab("Lithologies");
+        lithologyTab.setClosable(false);
+        lithologyTab.setContent(lithologies.lithoTable());
 
-        Tab contents= new Tab("LogID Strings and Display Units");
-        contents.setClosable(false);
+        Tab logIdTab= new Tab("LogID Strings and Display Units");
+        logIdTab.setClosable(false);
+        logIdTab.setContent(logID.logIDTable());
 
-        Tab comments = new Tab("Minerals");
-        comments.setClosable(false);
+        Tab mineralTab = new Tab("Minerals");
+        mineralTab.setClosable(false);
 
-        Tab logs = new Tab("fluids");
-        logs.setClosable(false);
+        Tab fluidTab = new Tab("fluids");
+        fluidTab.setClosable(false);
 
-        tabPane.getTabs().addAll(set,contents,comments,logs);
+        tabPane.getTabs().addAll(lithologyTab,logIdTab,mineralTab,fluidTab);
 
         layout.setCenter(tabPane);
 
